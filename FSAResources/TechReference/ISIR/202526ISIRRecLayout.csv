@@ -1,0 +1,4886 @@
+﻿"2025–26 ISIR Record Layout 
+November 2024 ",,,,,,,,
+Field #,FAFSA Category and #,Start Position,End Position,Length,Changes,Field Name,Valid Content,
+"Transaction Identification: FAFSA Identification UUID, Transaction UUID, Application and 
+Transaction Data Sources, Model, Transaction Dates, etc.",,,,,,,,
+1,N/A,1,1,1,Revised the valid content,Year Indicator,"6, will always be “6” (for 2025–26)",
+2,N/A,2,37,36,None,FAFSA UUID,Alphanumeric ,
+3,N/A,38,73,36,None,Transaction UUID,Alphanumeric,
+4,N/A,74,109,36,None,Person UUID,Alphanumeric,
+5,N/A,110,111,2,None,Transaction Number,01 to 99,
+6,N/A,112,112,1,None,Dependency Model,"D = Dependent 
+I = Independent 
+Z = Provisional Independent  
+X = Rejected Dependent
+Y = Rejected Independent",
+7,N/A,113,113,1,None,Application Source,"1 = Electronic Data Exchange
+2 = Online FAFSA
+3 = FAFSA Partner Portal
+4 = Paper
+5 = FPS
+6 = FSAIC",
+8,N/A,114,121,8,Revised the valid content,Application Receipt Date,"Format is CCYYMMDD
+20241001 to 20260630 
+Blank",
+9,N/A,122,122,1,None,Transaction Source,"1 = Electronic Data Exchange
+2 = Online FAFSA
+3 = FAFSA Partner Portal
+4 = Paper
+5 = FPS
+6 = FSAIC",
+10,N/A,123,123,1,None,Transaction Type,"A = Application
+C = Correction",
+11,N/A,124,124,1,None,Transaction Language ,"E = English
+S = Spanish",
+12,N/A,125,132,8,Revised the valid content,Transaction Receipt Date,"Format is CCYYMMDD
+20241001 to 20260930",
+13,N/A,133,140,8,Revised the valid content,Transaction Process Date ,"Format is CCYYMMDD
+20241001 to 20260930",
+14,N/A,141,170,30,None,Transaction Status ,"Processed
+Processed with Action Required",
+15,N/A,171,173,3,None,Renewal Data Used,"Yes
+Blank",
+16,N/A,174,174,1,Added value A,FPS Correction Reason,"A = FTIM Result Update
+C = COD FWS Update
+D = Drug Abuse Hold Release Expired Date
+F = Drug Abuse Hold Release FSA
+L = Identity Hold Release
+M = DHS Secondary Results Processing
+N = NSLDS Postscreening
+P = Reprocessing
+W = NTIS Death File Match
+Y = Identity Verification
+Blank",
+17,N/A,175,175,1,None,SAI Change Flag,"1 = SAI Increased
+2 = SAI Decreased
+Blank",
+18,N/A,176,181,6,None,SAI,"-1500 to 999999 
+Blank",
+19,N/A,182,187,6,None,Provisional SAI,"-1500 to 999999 
+Blank",
+20,N/A,188,188,1,None,SAI Formula ,"A = Dependent 
+B = Independent without dependents
+C = Independent with dependents
+Blank",
+21,N/A,189,190,2,None,SAI Computation Type,"1 = Dep. Max Pell = 1 and Unmarried
+2 = Dep. Max Pell = 1 and Married
+3 = Dep. Max Pell = 2 and AGI >0 and <= 225% poverty line
+4 = Dep. Max Pell = 3 and AGI >0 and <= 175% poverty line
+5 = Indep. Max Pell = 1 and Unmarried 
+6 = Indep. Max Pell = 1 and Married
+7 = Indep. Max Pell = 2 and AGI >0 and <= 225% poverty line
+8 = Indep. Max Pell = 3 and AGI >0 and <= 175% poverty line
+9 to 13 = For Federal Student Aid use only
+Blank",
+22,N/A,191,191,1,None,Max Pell Indicator,"1 = Nonfiler
+2 = Single parent and AGI <= 225% poverty line
+3 = Not a single parent and AGI <= 175% poverty line
+Blank",
+23,N/A,192,192,1,None,Minimum Pell Indicator,"1 = Dep. Single parent and AGI <= 325% poverty line 
+2 = Dep. Not a single Parent and AGI <=275% poverty line 
+3 = Indep. Single parent and AGI <=400% poverty line 
+4 = Indep. Not a single parent and <=350% poverty line 
+5 = Indep. Not a parent and <=275% of poverty line 
+Blank",
+24,N/A,193,242,50,None,Filler: Student Information,For Federal Student Aid use only,
+"Student Demographic, Identity, and Contact Information ",,,,,,,,
+25,"Student Identity 
+1a",243,277,35,None,First Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+26,1b,278,292,15,None,Middle Name,"First character must contain a letter
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+27,1c,293,327,35,None,Last Name,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+First character must contain a letter and second character must be non-numeric",
+28,1d,328,337,10,None,Suffix,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+29,1e,338,345,8,Revised valid content,Date of Birth,"19000101 to current date
+Numeric within valid range. 
+Format is CCYYMMDD where MM is 01 to 12, (CC is 19 and YY is 00 to 99) or (CC is 20 and YY is 00 to 25). Valid day range depending on month (see table below).
+
+Month Valid Day Range
+ 01: 01-31
+ 02: 01 to 28 (unless year is divisible by 4 for non-centurial years or 400 for centurial years, then 01 to 29 is valid)
+ 03: 01-31
+ 04: 01-30
+ 05: 01-31
+ 06: 01-30
+ 07: 01-31
+ 08: 01-31
+ 09: 01-30
+ 10: 01-31
+ 11: 01-30
+ 12: 01-31",
+30,1f,346,354,9,Revised description,"Social Security Number 
+Pseudo SSNs created in a cycle prior to 2024–25 will begin with 666
+Pseudo SSNs created in 2024–25 cycle or later will begin with 000","000010001 to 999999999
+",
+31,1g,355,363,9,None,ITIN ,"900000000 to 999999999
+Blank",
+32,"Student Contact Information
+2a",364,373,10,None,Phone Number,"0000000000 to 9999999999
+Blank",
+33,2b,374,423,50,None,Email Address,"1. One and only one at-sign '@' allowed.
+2. Before the at-sign:
+-at least one valid character
+-all characters in the range of ASCII 33 – 126, except for the following thirteen characters: < > ( ) [ ] \ , ; : "" @ ^
+-period cannot be first, last or adjacent to another period.
+3. After the at-sign:
+-at least one valid character
+-only letters, digits, hyphen, underscore and period (A to Z, A to Z, 0 to 9, -, _, .)
+-Hyphen, underscore and period cannot be first, last, or adjacent to a period
+Blank",
+34,2c,424,463,40,None,Street Address,"If non-blank, first character must be non-blank.
+Alphanumeric 0 to 9 
+Uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+35,2d,464,493,30,None,City,"If non-blank, first character must be non-blank.
+Alphanumeric 0 to 9 
+Uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+36,2e,494,495,2,None,State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+37,2f,496,505,10,None,Zip Code,"Alphanumeric 0 to 9 
+Uppercase and lowercase A to Z
+- (dash)
+ (space)
+Blank",
+38,2g,506,507,2,None,Country,"Valid two letter code (See Country Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+39,N/A,508,557,50,None,Filler: Student Demographic,For Federal Student Aid use only,
+"Student Non-Financial Information (Dependency, Marital Status, etc.)",,,,,,,,
+40,"Student Marital Status
+3",558,558,1,None,Marital Status,"1 = Single (Never married)
+2 = Married (not separated)
+3 = Remarried
+4 = Divorced
+5 = Separated
+6 = Widowed
+Blank",
+41,"Student College or Career School Plans
+4a",559,559,1,Revised the cycle year in the field name,Grade Level in College 2025–26,"1 = First Year (Freshman)
+2 = Second Year (Sophomore)
+3 = Other Undergraduate (Junior or Senior)
+4 = College Graduate, Professional or Beyond (MBA, M.D., Ph.D., etc.)
+Blank",
+42,4b,560,560,1,Revised the cycle year in the field name,First Bachelor's Degree Before 2025–26 School Year,"1 = Yes
+2 = No
+Blank",
+43,4c,561,561,1,None,Pursuing Teacher Certification?,"1 = Yes
+2 = No
+Blank",
+44,"Student Personal Circumstances
+5a",562,562,1,None,Active Duty?,"1 = Yes
+Blank",
+45,5b,563,563,1,None,Veteran?,"1 = Yes
+Blank",
+46,5c,564,564,1,None,Child or Other Dependents?,"1 = Yes
+Blank",
+47,5d,565,565,1,None,Parents Deceased?,"1 = Yes
+Blank",
+48,5e,566,566,1,None,Ward of Court?,"1 = Yes
+Blank",
+49,5f,567,567,1,None,In Foster Care?,"1 = Yes
+Blank",
+50,5g,568,568,1,None,Emancipated Minor?,"1 = Yes
+Blank",
+51,5h,569,569,1,None,Legal Guardianship?,"1 = Yes
+Blank",
+52,5i,570,570,1,None,Personal Circumstances: None of the above,"1 = Yes
+Blank",
+53,"Student Homelessness
+6a",571,571,1,Revised FAFSA category name ,"Unaccompanied Homeless Youth, or is Unaccompanied, At Risk of Homelessness, and Self-Supporting?","1 = Yes
+2 = No
+Blank",
+54,6b,572,572,1,None,Unaccompanied and Homeless (General)?,"1 = Yes
+Blank",
+55,6c,573,573,1,None,Unaccompanied and Homeless (HS)?,"1 = Yes
+Blank",
+56,6d,574,574,1,None,Unaccompanied and Homeless (TRIO)?,"1 = Yes
+Blank",
+57,6e,575,575,1,None,Unaccompanied and Homeless (FAA)?,"1 = Yes
+Blank",
+58,6f,576,576,1,Revised the field name,Student Homelessness: None of the Above,"1 = Yes
+Blank",
+59,"Student Unusual Circumstances
+7",577,577,1,None,Unusual Circumstance?,"1 = Yes
+2 = No
+Blank",
+60,"Apply for a Direct Unsubsidized Loan Only
+8",578,578,1,None,Unsub Only,"1 = Yes
+2 = No
+Blank",
+61,"Family Size 
+9",579,580,2,None,Updated Family Size,"0 to 99
+Blank",
+62,"Number in College
+10",581,582,2,None,Number in College,"0 to 99
+Blank",
+Student Demographic Information ,,,,,,,,
+63,"Student Citizenship Status
+13a",583,583,1,None,Citizenship Status,"1 = U.S. Citizen
+2 = Eligible Non-citizen
+3 = Neither Citizen nor Eligible Non-citizen
+Blank",
+64,13b,584,592,9,None,A-Number,"000000001 to 999999999
+Blank",
+65,"Student State of Legal Residence 
+14a",593,594,2,None,State of Legal Residence,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+66,14b,595,600,6,None,Legal Residence Date,"Numeric within valid date range; 190001 to current date
+Format is CCYYMM 
+Blank",
+67,"Parent Education Status
+15",601,601,1,None,Either Parent Attend College ,"1 = Neither parent attended college
+2 = One or both parents attended college, but neither parent completed college
+3 = One or both parents completed college
+4 = Don’t know
+Blank",
+68,"Parent Killed in Line of Duty 
+16",602,602,1,None,Parent Killed in the Line of Duty ,"1 = Yes
+2 = No
+Blank",
+69,"Student High School Information
+17a",603,603,1,None,High School Completion Status,"1 = High school diploma
+2 = State recognized high school equivalent (e.g. GED)
+3 = Homeschooled
+4 = None of the Above
+Blank",
+70,17b,604,663,60,None,High School Name,"Alphanumeric; 0 to 9, uppercase and lowercase A to Z
+ . (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+% (percent or care of)
+& (ampersand)
+/ (slash)
+, (comma)
+: (colon)
+“” (quotation marks; must be used in pairs)
+( ) (parenthesis)
++ (plus)
+! (exclamation point)
+Blank",
+71,17c,664,691,28,None,High School City,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+% (percent or care of)
+& (ampersand)
+/ (slash)
+, (comma)
+Blank",
+72,17d,692,693,2,None,High School State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+73,17e,694,694,1,None,High School Equivalent Diploma Name,"1 = General Education Development (GED)
+2 = High School Equivalency Test (HiSET)
+3 = Test Assessing Secondary Completion (TASC)
+4 = Other
+Blank",
+74,17f,695,696,2,None,High School Equivalent Diploma State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+Student Manually Entered Financial,,,,,,,,
+75,"Federal Benefits Received
+18a",697,697,1,None,Received EITC,"1 = Yes
+Blank",
+76,18b,698,698,1,None,Received Federal Housing Assistance,"1 = Yes
+Blank",
+77,18c,699,699,1,None,Received Free/Reduced Price Lunch,"1 = Yes
+Blank",
+78,18d,700,700,1,None,Received Medicaid,"1 = Yes
+Blank",
+79,18e,701,701,1,None,Received Refundable Credit for 36B Health Plan,"1 = Yes
+Blank",
+80,18f,702,702,1,None,Received SNAP,"1 = Yes
+Blank",
+81,18g,703,703,1,None,Received Supplemental Security Income,"1 = Yes
+Blank",
+82,18h,704,704,1,None,Received TANF,"1 = Yes
+Blank",
+83,18i,705,705,1,None,Received WIC,"1 = Yes
+Blank",
+84,18j,706,706,1,None,Federal Benefits: None of the Above,"1 = Yes
+Blank",
+85,"Student Tax Filing Status
+19a",707,707,1,None,Filed 1040 or 1040NR,"1 = Yes
+2 = No
+Blank",
+86,19b,708,708,1,None,Filed Non-U.S. Tax Return,"1 = Yes
+2 = No
+Blank",
+87,19c,709,709,1,None,Filed Joint Return With Current Spouse,"1 = Yes
+2 = No
+Blank",
+88,"Student 20xx Tax Return Information
+20a",710,710,1,None,Tax Return Filing Status,"1 = Single
+2 = Married-Filed Joint Return
+3 = Married-Filed Separate Return
+4 = Head of Household
+5 = Qualifying surviving spouse
+Blank",
+89,20b,711,721,11,None,Income Earned from Work,"0 to 99999999999
+Blank",
+90,20c,722,732,11,None,Tax Exempt Interest Income,"0 to 99999999999
+Blank",
+91,20d,733,743,11,None,Untaxed Portions of IRA Distributions,"0 to 99999999999
+Blank",
+92,20e,744,754,11,None,IRA Rollover,"0 to 99999999999
+Blank",
+93,20f,755,765,11,None,Untaxed Portions of Pensions,"0 to 99999999999
+Blank",
+94,20g,766,776,11,None,Pension Rollover,"0 to 99999999999
+Blank",
+95,20h,777,786,10,None,Adjusted Gross Income,"-999999999 to 999999999
+Blank",
+96,20i,787,795,9,None,Income Tax Paid,"0 to 999999999
+Blank",
+97,20j,796,796,1,None,Earned Income Tax Credit Received During Tax Year?,"1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+98,20k,797,807,11,None,"Deductible Payments to IRA, Keogh, Other","0 to 99999999999
+Blank",
+99,20l,808,816,9,None,Education Credits,"0 to 999999999
+Blank",
+100,20m,817,817,1,None,"Filed Schedule A, B, D, E, F or H?","1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+101,20n,818,829,12,None,Schedule C Amount,"-99999999999 to 99999999999
+Blank",
+102,20o,830,836,7,None,College Grant and Scholarship Aid ,"0 to 9999999
+Blank",
+103,20p,837,846,10,None,Foreign Earned Income Exclusion,"-999999999 to 999999999
+Blank",
+104,"Annual Child Support Received 
+21",847,853,7,None,Child Support Received,"0 to 9999999
+Blank",
+105,"Student Assets
+22a",854,860,7,None,"Total of Cash, Savings, and Checking Accounts ","0 to 9999999
+Blank",
+106,22b,861,867,7,None,Net Worth of Current Investments,"0 to 9999999
+Blank",
+107,22c,868,874,7,None,Net Worth of Businesses and Investment Farms,"0 to 9999999
+Blank",
+"Student School Choices, Consent, Approval, and Signature",,,,,,,,
+108,"Colleges
+23a",875,880,6,None,"College #1
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+109,23b,881,886,6,None,"College #2
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+110,23c,887,892,6,None,"College #3
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+111,23d,893,898,6,None,"College #4
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+112,23e,899,904,6,None,"College #5
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+113,23f,905,910,6,None,"College #6
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+114,23g,911,916,6,None,"College #7
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+115,23h,917,922,6,None,"College #8
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+116,23i,923,928,6,None,"College #9
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+117,23j,929,934,6,None,"College #10
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+118,23k,935,940,6,None,"College #11
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+119,23l,941,946,6,None,"College #12
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+120,23m,947,952,6,None,"College #13
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+121,23n,953,958,6,None,"College #14
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+122,23o,959,964,6,None,"College #15
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+123,23p,965,970,6,None,"College #16
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+124,23q,971,976,6,None,"College #17
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+125,23r,977,982,6,None,"College #18
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+126,23s,983,988,6,None,"College #19
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+127,23t,989,994,6,None,"College #20
+Must be a number of a school certified for participation in EDE","X00000 to X99999
+Blank
+Valid characters for the first position are 0 (zero), B, E, or G.",
+128,"Student Consent, Approval, and Signature
+24a",995,995,1,None,Consent to Retrieve and Disclose FTI ,"1 = Granted
+2 = Not Granted
+Blank",
+129,24b,996,996,1,None,Signature,"1 = Yes
+Blank",
+130,24c,997,1004,8,Revised valid content,Signature Date,"Format is CCYYMMDD
+20241001 to 20260930
+Blank",
+131,N/A,1005,1054,50,None,Filler: Student Financial and School,For Federal Student Aid use only,
+"Student Spouse Demographic, Identity, and Contact Information",,,,,,,,
+132,"Student Spouse Identity Information
+25a",1055,1089,35,None,First Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+133,25b,1090,1104,15,None,Middle Name,"First character must contain a letter
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+134,25c,1105,1139,35,None,Last Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+135,25d,1140,1149,10,None,Suffix,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+136,25e,1150,1157,8,Revised valid content,Date of Birth,"19000101 to current date
+Numeric within valid range. 
+Format is CCYYMMDD where MM is 01 to 12, (CC is 19 and YY is 00 to 99) or (CC is 20 and YY is 00 to 25). Valid day range depending on month (see table below).
+
+Month Valid Day Range
+ 01	01-31
+ 02	01 to 28 (unless year is divisible by 4 for non-centurial years or 400 for centurial years, then 01 to 29 is valid)
+ 03	01-31
+ 04	01-30
+ 05	01-31
+ 06	01-30
+ 07	01-31
+ 08	01-31
+ 09	01-30
+ 10	01-31
+ 11	01-30
+ 12	01-31
+Blank",
+137,25f,1158,1166,9,None,Social Security Number,"000000000 to 999999999
+Blank",
+138,25g,1167,1175,9,None,ITIN ,"900000000 to 999999999
+Blank",
+139,"Student Spouse Contact Information
+26a",1176,1185,10,None,Phone Number,"0000000000 to 9999999999
+Blank",
+140,26b,1186,1235,50,None,Email Address,"1. One and only one at-sign '@' allowed.
+2. Before the at-sign:
+-at least one valid character
+-all characters in the range of ASCII 33 – 126, except for the following thirteen characters: < > ( ) [ ] \ , ; : "" @ ^
+-period cannot be first, last or adjacent to another period.
+3. After the at-sign:
+-at least one valid character
+-only letters, digits, hyphen, underscore and period (A to Z, A to Z, 0 to 9, -, _, .)
+-Hyphen, underscore and period cannot be first, last, or adjacent to a period
+Blank",
+141,26c,1236,1275,40,None,Street Address,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+142,26d,1276,1305,30,None,City,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+143,26e,1306,1307,2,None,State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+144,26f,1308,1317,10,None,Zip Code,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+- (dash)
+ (space)
+Blank",
+145,26g,1318,1319,2,None,Country,"Valid two letter code (See Country Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+"Student Spouse Manually Entered Financial Information, Consent, Approval, and Signature ",,,,,,,,
+146,"Student Spouse Tax Filing Status
+27a",1320,1320,1,None,Filed 1040 or 1040NR,"1 = Yes
+2 = No
+Blank",
+147,27b,1321,1321,1,None,Filed non-U.S. tax return,"1 = Yes
+2 = No
+Blank",
+148,"Student Spouse 20xx Tax Return Information
+28a",1322,1322,1,None,Tax Return Filing Status,"1 = Single
+2 = Married-Filed Joint Return
+3 = Married-Filed Separate Return
+4 = Head of Household
+5 = Qualifying surviving spouse
+Blank",
+149,28b,1323,1333,11,None,Income Earned from Work,"0 to 99999999999
+Blank",
+150,28c,1334,1344,11,None,Tax Exempt Interest Income,"0 to 99999999999
+Blank",
+151,28d,1345,1355,11,None,Untaxed Portions of IRA Distributions,"0 to 99999999999
+Blank",
+152,28e,1356,1366,11,None,IRA Rollover,"0 to 99999999999
+Blank",
+153,28f,1367,1377,11,None,Untaxed Portions of Pensions,"0 to 99999999999
+Blank",
+154,28g,1378,1388,11,None,Pension Rollover,"0 to 99999999999
+Blank",
+155,28h,1389,1398,10,None,Adjusted Gross Income,"-999999999 to 999999999
+Blank",
+156,28i,1399,1407,9,None,Income Tax Paid,"0 to 999999999
+Blank",
+157,28j,1408,1418,11,None,"Deductible Payments to IRA, Keogh, Other","0 to 99999999999
+Blank",
+158,28k,1419,1427,9,None,Education Credits,"0 to 999999999
+Blank",
+159,28l,1428,1428,1,None,"Filed Schedule A, B, D, E, F or H?","1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+160,28m,1429,1440,12,None,Schedule C Amount,"-99999999999 to 99999999999
+Blank",
+161,28n,1441,1450,10,None,Foreign Earned Income Exclusion,"-999999999 to 999999999
+Blank",
+162,"Student Spouse Consent, Approval, and Signature
+29a",1451,1451,1,None,Consent to Retrieve and Disclose FTI ,"1 = Granted
+2 = Not Granted
+Blank",
+163,29b,1452,1452,1,None,Signature,"1 = Yes
+Blank",
+164,29c,1453,1460,8,Revised valid content,Signature Date,"Format is CCYYMMDD
+20241001 to 20260930
+Blank",
+165,N/A ,1461,1510,50,None,Filler: Student Spouse ,For Federal Student Aid use only,
+"Parent Demographic, Identity, and Contact Information",,,,,,,,
+166,"Parent Identity Information
+30a",1511,1545,35,None,First Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+167,30b,1546,1560,15,None,Middle Name,"First character must contain a letter
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+168,30c,1561,1595,35,None,Last Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+169,30d,1596,1605,10,None,Suffix,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+170,30e,1606,1613,8,Revised valid content,Date of Birth,"19000101 to current date
+Numeric within valid range. 
+Format is CCYYMMDD where MM is 01 to 12, (CC is 19 and YY is 00 to 99) or (CC is 20 and YY is 00 to 25). Valid day range depending on month (see table below).
+
+Month Valid Day Range
+ 01	01-31
+ 02	01 to 28 (unless year is divisible by 4 for non-centurial years or 400 for centurial years, then 01 to 29 is valid)
+ 03	01-31
+ 04	01-30
+ 05	01-31
+ 06	01-30
+ 07	01-31
+ 08	01-31
+ 09	01-30
+ 10	01-31
+ 11	01-30
+ 12	01-31
+Blank",
+171,30f,1614,1622,9,None,Social Security Number,"000000000 to 999999999
+Blank",
+172,30g,1623,1631,9,None,ITIN,"900000000 to 999999999
+Blank",
+173,"Parent Information
+31a",1632,1641,10,None,Phone Number,"0000000000 to 9999999999
+Blank",
+174,31b,1642,1691,50,None,Email Address,"1. One and only one at-sign '@' allowed.
+2. Before the at-sign:
+-at least one valid character
+-all characters in the range of ASCII 33 – 126, except for the following thirteen characters: < > ( ) [ ] \ , ; : "" @ ^
+-period cannot be first, last or adjacent to another period.
+3. After the at-sign:
+-at least one valid character
+-only letters, digits, hyphen, underscore and period (A to Z, A to Z, 0 to 9, -, _, .)
+-Hyphen, underscore and period cannot be first, last, or adjacent to a period
+Blank",
+175,31c,1692,1731,40,None,Street Address,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+176,31d,1732,1761,30,None,City,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+177,31e,1762,1763,2,None,State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+178,31f,1764,1773,10,None,Zip Code,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+- (dash)
+ (space)
+Blank",
+179,31g,1774,1775,2,None,Country,"Valid two letter code (See Country Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+Parent Non-Financial Information,,,,,,,,
+180,"Parent Current Marital Status
+32",1776,1776,1,None,Marital Status,"1 = Never married
+2 = Unmarried, living together
+3 = Married (not separated)
+4 = Remarried
+5 = Divorced
+6 = Separated
+7 = Widowed
+Blank",
+181,"Parent State of Legal Residence
+33a",1777,1778,2,None,State of Legal Residence,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+182,33b,1779,1784,6,None,Legal Residence Date,"Numeric within valid date range; 190001 to current date
+Format is CCYYMM
+Blank",
+183,"Family Size
+34",1785,1786,2,None,Updated Family Size,"0 to 99
+Blank",
+184,"Number in College
+35",1787,1788,2,None,Number in College,"0 to 99
+Blank",
+"Parent Manually Entered Financial Information, Consent, Approval, and Signature",,,,,,,,
+185,"Federal Benefits Received
+36a",1789,1789,1,None,Received EITC,"1 = Yes
+Blank",
+186,36b,1790,1790,1,None,Received Federal Housing Assistance,"1 = Yes
+Blank",
+187,36c,1791,1791,1,None,Received Free/Reduced Price Lunch,"1 = Yes
+Blank",
+188,36d,1792,1792,1,None,Received Medicaid,"1 = Yes
+Blank",
+189,36e,1793,1793,1,None,Received Refundable Credit for 36B Health Plan,"1 = Yes
+Blank",
+190,36f,1794,1794,1,None,Received SNAP,"1 = Yes
+Blank",
+191,36g,1795,1795,1,None,Received Supplemental Security Income,"1 = Yes
+Blank",
+192,36h,1796,1796,1,None,Received TANF,"1 = Yes
+Blank",
+193,36i,1797,1797,1,None,Received WIC,"1 = Yes
+Blank",
+194,36j,1798,1798,1,None,Federal Benefits: None of the Above,"1 = Yes
+Blank",
+195,37a,1799,1799,1,None,Filed 1040 or 1040NR,"1 = Yes
+2 = No
+Blank",
+196,37b,1800,1800,1,None,Filed non-U.S. tax return,"1 = Filed or will file a tax return with Puerto Rico or another U.S. territory
+2 = Filed or will file a foreign tax return
+3 = Did not and will not file a foreign tax return – earned income in a foreign country or employee of an international organization that did not require tax filing
+4 = Did not and will not file a U.S. tax return – earned U.S. income below the tax filing threshold
+5 = Did not and will not file a U.S. tax return – reasons other than low income
+6 = Did not and will not file any tax return – no earned income
+Blank",
+197,37c,1801,1801,1,None,Filed Joint Return With Current Spouse,"1 = Yes
+2 = No
+Blank",
+198,38a,1802,1802,1,None,Tax Return Filing Status,"1 = Single
+2 = Married-Filed Joint Return
+3 = Married-Filed Separate Return
+4 = Head of Household
+5 = Qualifying surviving spouse
+Blank",
+199,38b,1803,1813,11,None,Income Earned from Work,"0 to 99999999999
+Blank",
+200,38c,1814,1824,11,None,Tax Exempt Interest Income,"0 to 99999999999
+Blank",
+201,38d,1825,1835,11,None,Untaxed Portions of IRA Distributions,"0 to 99999999999
+Blank",
+202,38e,1836,1846,11,None,IRA Rollover,"0 to 99999999999
+Blank",
+203,38f,1847,1857,11,None,Untaxed Portions of Pensions,"0 to 99999999999
+Blank",
+204,38g,1858,1868,11,None,Pension Rollover,"0 to 99999999999
+Blank",
+205,38h,1869,1878,10,None,Adjusted Gross Income,"-999999999 to 999999999
+Blank",
+206,38i,1879,1887,9,None,Income Tax Paid,"0 to 999999999
+Blank",
+207,38j,1888,1888,1,None,Earned Income Tax Credit Received During Tax Year?,"1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+208,38k,1889,1899,11,None,"Deductible Payments to IRA, Keogh, Other","0 to 99999999999
+Blank",
+209,38l,1900,1908,9,None,Education Credits,"0 to 999999999
+Blank",
+210,38m,1909,1909,1,None,"Filed Schedule A, B, D, E, F or H?","1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+211,38n,1910,1921,12,None,Schedule C Amount,"-99999999999 to 99999999999
+Blank",
+212,38o,1922,1928,7,None,College Grant and Scholarship Aid ,"0 to 9999999
+Blank",
+213,38p,1929,1938,10,None,Foreign Earned Income Exclusion,"-999999999 to 999999999
+Blank",
+214,"Annual Child Support Received 
+39",1939,1945,7,None,Child Support Received,"0 to 9999999
+Blank",
+215,"Parent Assets
+40a",1946,1952,7,None,"Total of Cash, Savings, and Checking Accounts ","0 to 9999999
+Blank",
+216,40b,1953,1959,7,None,Net Worth of Current Investments,"0 to 9999999
+Blank",
+217,40c,1960,1966,7,None,Net Worth of Businesses and Investment Farms,"0 to 9999999
+Blank",
+218,"Parent Consent, Approval, and Signature
+41a",1967,1967,1,None,Consent to Retrieve and Disclose FTI ,"1 = Granted
+2 = Not Granted
+Blank",
+219,41b,1968,1968,1,None,Signature,"1 = Yes
+Blank",
+220,41c,1969,1976,8,Revised valid content,Signature Date,"Format is CCYYMMDD
+20241001 to 20260930
+Blank",
+221,N/A ,1977,2026,50,None,Filler: Parent,For Federal Student Aid use only,
+"Parent Spouse or Partner Demographic, Identity, and Contact Information",,,,,,,,
+222,"Parent Spouse or Partner Identity
+42a",2027,2061,35,None,First Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+223,42b,2062,2076,15,None,Middle Name,"First character must contain a letter
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+224,42c,2077,2111,35,None,Last Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+225,42d,2112,2121,10,None,Suffix,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+226,42e,2122,2129,8,Revised valid content,Date of Birth,"19000101 to current date
+Numeric within valid range. 
+Format is CCYYMMDD where MM is 01 to 12, (CC is 19 and YY is 00 to 99) or (CC is 20 and YY is 00 to 25). Valid day range depending on month (see table below).
+
+Month Valid Day Range
+ 01	01-31
+ 02	01 to 28 (unless year is divisible by 4 for non-centurial years or 400 for centurial years, then 01 to 29 is valid)
+ 03	01-31
+ 04	01-30
+ 05	01-31
+ 06	01-30
+ 07	01-31
+ 08	01-31
+ 09	01-30
+ 10	01-31
+ 11	01-30
+ 12	01-31
+Blank",
+227,42f,2130,2138,9,None,Social Security Number,"000000000 to 999999999
+Blank",
+228,42g,2139,2147,9,None,ITIN,"900000000 to 999999999
+Blank",
+229,43a,2148,2157,10,None,Phone Number,"0000000000 to 9999999999
+Blank",
+230,43b,2158,2207,50,None,Email Address,"1. One and only one at-sign '@' allowed.
+2. Before the at-sign:
+-at least one valid character
+-all characters in the range of ASCII 33 – 126, except for the following thirteen characters: < > ( ) [ ] \ , ; : "" @ ^
+-period cannot be first, last or adjacent to another period.
+3. After the at-sign:
+-at least one valid character
+-only letters, digits, hyphen, underscore and period (A to Z, A to Z, 0 to 9, -, _, .)
+-Hyphen, underscore and period cannot be first, last, or adjacent to a period
+Blank",
+231,43c,2208,2247,40,None,Street Address,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+232,43d,2248,2277,30,None,City,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+233,43e,2278,2279,2,None,State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+234,43f,2280,2289,10,None,Zip Code,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+- (dash)
+ (space)
+Blank",
+235,43g,2290,2291,2,None,Country,"Valid two letter code (See Country Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+"Parent Spouse or Partner Manually Entered Financial Information, Consent, Approval, and Signature",,,,,,,,
+236,"Parent Spouse or Partner Tax Filing Status
+44a",2292,2292,1,None,Filed 1040 or 1040NR,"1 = Yes
+2 = No
+Blank",
+237,44b,2293,2293,1,None,Filed non-U.S. tax return,"1 = Filed or will file a tax return with Puerto Rico or another U.S. territory
+2 = Filed or will file a foreign tax return
+3 = Did not and will not file a foreign tax return – earned income in a foreign country or employee of an international organization that did not require tax filing
+4 = Did not and will not file a U.S. tax return – earned U.S. income below the tax filing threshold
+5 = Did not and will not file a U.S. tax return – reasons other than low income
+6 = Did not and will not file any tax return – no earned income
+Blank",
+238,"Parent Spouse or Partner 20xx Tax Return Information
+45a",2294,2294,1,None,Tax Return Filing Status,"1 = Single
+2 = Married-Filed Joint Return
+3 = Married-Filed Separate Return
+4 = Head of Household
+5 = Qualifying surviving spouse
+Blank",
+239,45b,2295,2305,11,None,Income Earned from Work,"0 to 99999999999
+Blank",
+240,45c,2306,2316,11,None,Tax Exempt Interest Income,"0 to 99999999999
+Blank",
+241,45d,2317,2327,11,None,Untaxed Portions of IRA Distributions,"0 to 99999999999
+Blank",
+242,45e,2328,2338,11,None,IRA Rollover,"0 to 99999999999
+Blank",
+243,45f,2339,2349,11,None,Untaxed Portions of Pensions,"0 to 99999999999
+Blank",
+244,45g,2350,2360,11,None,Pension Rollover,"0 to 99999999999
+Blank",
+245,45h,2361,2370,10,None,Adjusted Gross Income,"-999999999 to 999999999
+Blank",
+246,45i,2371,2379,9,None,Income Tax Paid,"0 to 999999999
+Blank",
+247,45j,2380,2390,11,None,"Deductible Payments to IRA, Keogh, Other","0 to 99999999999
+Blank",
+248,45k,2391,2399,9,None,Education Credits,"0 to 999999999
+Blank",
+249,45l,2400,2400,1,None,"Filed Schedule A, B, D, E, F or H?","1 = Yes
+2 = No
+3 = Don't Know
+Blank",
+250,45m,2401,2412,12,None,Schedule C Amount,"-99999999999 to 99999999999
+Blank",
+251,45n,2413,2422,10,None,Foreign Earned Income Exclusion,"-999999999 to 999999999
+Blank",
+252,"Parent Spouse or Partner Consent, Approval, and Signature 
+46a",2423,2423,1,None,Consent to Retrieve and Disclose FTI ,"1 = Granted
+2 = Not Granted
+Blank",
+253,46b,2424,2424,1,None,Signature,"1 = Yes
+Blank",
+254,46c,2425,2432,8,Revised valid content,Signature Date,"Format is CCYYMMDD
+20241001 to 20260930
+Blank",
+255,N/A ,2433,2482,50,None,Filler: Parent Spouse or Partner,For Federal Student Aid use only,
+"Preparer Information
+Indicates that a preparer filled out the application and provided their credentials",,,,,,,,
+256,"Preparer Identity
+47a",2483,2517,35,None,First Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+257,47b,2518,2552,35,None,Last Name,"First character must contain a letter and second character must be non-numeric
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+ (space)
+Blank",
+258,47c,2553,2561,9,None,Social Security Number,"001010001 to 999999999
+Blank
+",
+259,47d,2562,2570,9,None,EIN,"000000000 to 999999999
+Blank",
+260,"Preparer Information
+48a",2571,2600,30,None,Affiliation,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+% (percent or care of)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+261,48b,2601,2640,40,None,Street Address,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+# (number)
+@ (at)
+& (ampersand)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+262,48c,2641,2670,30,None,City,"If non-blank, first character must be non-blank.
+Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+. (period)
+- (dash)
+' (apostrophe)
+/ (slash)
+, (comma)
+ (spaces)
+Blank",
+263,48d,2671,2672,2,None,State,"Valid two letter code (See State Codes in FAFSA Specifications Guide, Volume 4B.)
+Blank",
+264,48e,2673,2682,10,None,Zip Code,"Alphanumeric: 0 to 9 and uppercase and lowercase A to Z
+- (dash)
+ (space)
+Blank",
+265,"Preparer Signature
+49a",2683,2683,1,None,Signature,"1 = Yes
+Blank",
+266,49b,2684,2691,8,Revised valid content,Signature Date,"Format is CCYYMMDD
+20241001 to 20260930
+Blank",
+267,N/A ,2692,2741,50,None,Filler: Preparer,For Federal Student Aid use only,
+ FPS Processing Information,,,,,,,,
+268,N/A ,2742,2742,1,None,Student Affirmation Status ,"1 = Yes
+Blank",
+269,N/A ,2743,2743,1,None,Student Spouse Affirmation Status ,"1 = Yes
+Blank",
+270,N/A ,2744,2744,1,None,Parent Affirmation Status ,"1 = Yes
+Blank",
+271,N/A ,2745,2745,1,None,Parent Spouse or Partner Affirmation Status ,"1 = Yes
+Blank",
+272,N/A ,2746,2753,8,Revised valid content,Student Date Consent Granted,"Numeric within valid date range; 19000101 to 20261231
+Format is CCYYMMDD
+Blank",
+273,N/A ,2754,2761,8,Revised valid content,Student Spouse Date Consent Granted,"Numeric within valid date range; 19000101 to 20261231
+Format is CCYYMMDD
+Blank",
+274,N/A ,2762,2769,8,Revised valid content,Parent Date Consent Granted,"Numeric within valid date range; 19000101 to 20261231
+Format is CCYYMMDD
+Blank",
+275,N/A ,2770,2777,8,Revised valid content,Parent Spouse or Partner Date Consent Granted,"Numeric within valid date range; 19000101 to 20261231
+Format is CCYYMMDD
+Blank",
+276,N/A ,2778,2778,1,None,Student Transunion Match Status ,"1 = No match
+2 = Date of birth mismatch 
+3 = First name mismatch
+4 = Last name mismatch
+5 = Address mismatch
+6 = Full match
+7 = Inconclusive
+Blank = Not needed",
+277,N/A ,2779,2779,1,None,Student Spouse Transunion Match Status ,"1 = No match
+2 = Date of birth mismatch 
+3 = First name mismatch
+4 = Last name mismatch
+5 = Address mismatch
+6 = Full match
+7 = Inconclusive
+Blank = Not needed",
+278,N/A ,2780,2780,1,None,Parent Transunion Match Status ,"1 = No match
+2 = Date of birth mismatch 
+3 = First name mismatch
+4 = Last name mismatch
+5 = Address mismatch
+6 = Full match
+7 = Inconclusive
+Blank = Not needed",
+279,N/A ,2781,2781,1,None,Parent Spouse or Partner Transunion Match Status ,"1 = No match
+2 = Date of birth mismatch 
+3 = First name mismatch
+4 = Last name mismatch
+5 = Address mismatch
+6 = Full match
+7 = Inconclusive
+Blank = Not needed",
+280,N/A ,2782,2783,2,None,Correction Applied against Transaction Number,"01 to 99
+Blank = Transaction not a result of a correction",
+281,N/A ,2784,2784,1,None,Professional Judgment,"1 = Yes
+2 = Failed professional judgment
+Blank = No professional judgment requested",
+282,N/A ,2785,2785,1,None,Dependency Override Indicator,"1 = Dependent to Independent Override
+2 = Override Canceled
+3 = Failed Dependency Override
+Blank = No FAA override",
+283,N/A ,2786,2791,6,None,FAA Federal School Code,"X00000 to X99999
+Valid characters for first position are 0 (zero), B, E, or G
+Blank = Always blank on school and servicer ISIRs; for state agencies, no dependency override or professional judgment done",
+284,N/A ,2792,2792,1,None,FAA Signature,"1 = Yes
+Blank",
+285,N/A ,2793,2793,1,None,IASG indicator,"1 = Eligible for IASG
+2 = Eligible, grandfathered for IASG
+3 = Not Eligible for IASG
+Blank = No Determination",
+286,N/A ,2794,2794,1,None,Children of Fallen Heroes Indicator,"1 = Eligible for CFH
+2 = Eligible, grandfathered for CFH
+3 = Not Eligible for CFH
+Blank = No Determination",
+287,N/A ,2795,2801,7,None,Electronic Transaction Indicator (ETI) Destination Number,"“FTXXXXX” where XXXXX is the 5-digit alphanumeric code assigned by SAIG staff
+Blank",
+288,N/A ,2802,2802,1,None,Student Signature Source,"1 = Paper
+2 = FSA ID
+3 = FAA or EDE
+Blank",
+289,N/A ,2803,2803,1,None,Student Spouse Signature Source,"1 = Paper
+2 = FSA ID
+3 = FAA or EDE
+Blank",
+290,N/A ,2804,2804,1,None,Parent Signature Source,"1 = Paper
+2 = FSA ID
+3 = FAA or EDE
+Blank",
+291,N/A ,2805,2805,1,None,Parent Spouse or Partner Signature Source,"1 = Paper
+2 = FSA ID
+3 = FAA or EDE
+Blank",
+292,N/A ,2806,2806,1,None,"Special Handling Indicator
+","* = Damaged Form
+@ = ED Special Handle Request
+D = Applicant younger than 13 at startup
+C = Incarcerated applicant
+Blank = No special handling required",
+293,N/A ,2807,2807,1,None,Address Only Change Flag,"1 = Correction to student fields
+2 = Correction to student spouse fields
+3 = Correction to parent fields
+4 = Correction to parent spouse fields
+5 = Correction to student and contributor fields
+Blank = No change ",
+294,N/A ,2808,2808,1,None,FPS Pushed ISIR Flag,"Y = Transaction automatically sent to school
+Blank = Transaction not automatically sent to school",
+295,N/A ,2809,2809,1,None,Reject Status Change Flag ,"Y = Reject status has changed 
+Blank = No change to reject status ",
+296,N/A ,2810,2811,2,None,Verification Tracking Flag ,"V1 = Standard Verification Group 
+V2 = For Federal Student Aid use only 
+V3 = For Federal Student Aid use only 
+V4 = Custom Verification Group 
+V5 = Aggregate Verification Group 
+V6 = For Federal Student Aid Use only 
+Blank ",
+297,N/A ,2812,2812,1,None,Student Is Selected For Verification ,"Y = Selected
+N = Not selected
+* = A subsequent transaction was selected for verification ",
+298,N/A ,2813,2813,1,None,Incarcerated Applicant Flag,"1 = Correctional Facility Address File 
+2 = Received via Incarcerated P.O. Box 
+3 = Incarcerated Applicant Flag set by FAA
+4 = Incarcerated Applicant Flag removed by FAA
+Blank",
+299,N/A ,2814,2815,2,None,NSLDS Transaction Number ,"01 to 99 
+Blank ",
+300,N/A ,2816,2816,1,None,NSLDS Database Results Flag ,"1 = Record matched, data sent 
+2 = SSN match, no name or date of birth match, no data sent 
+3 = SSN not found in NSLDS 
+4 = Full match, no relevant data to send 
+5 = Real-time transaction not sent to NSLDS 
+Blank = Record not sent, all NSLDS fields will be blank ",
+301,N/A ,2817,2817,1,None,High School Flag,"Y = Reported High School not found on valid high school file 
+Blank ",
+302,N/A ,2818,2829,12,None,Student Total Federal Work Study Earnings,"0 to 999999999999 
+Blank",
+303,N/A ,2830,2841,12,None,Student Spouse Total Federal Work Study Earnings,"0 to 999999999999 
+Blank",
+304,N/A ,2842,2853,12,None,Parent Total Federal Work Study Earnings,"0 to 999999999999 
+Blank",
+305,N/A ,2854,2865,12,None,Parent Spouse or Partner Total Federal Work Study Earnings,"0 to 999999999999 
+Blank",
+306,N/A ,2866,2880,15,None,Total Parent Allowances Against Income,"0 to 999999999999999 
+Blank",
+307,N/A ,2881,2895,15,None,Parent Payroll Tax Allowance,"0 to 999999999999999 
+Blank",
+308,N/A ,2896,2910,15,None,Parent Income Protection Allowance (IPA),"0 to 999999999999999 
+Blank",
+309,N/A ,2911,2925,15,None,Parent Employment Expense Allowance (PEEA),"0 to 999999999999999 
+Blank",
+310,N/A ,2926,2940,15,None,Parent Available Income (PAI),"-99999999999999 to 999999999999999
+Blank",
+311,N/A ,2941,2955,15,None,Parent Adjusted Available Income (PAAI),"-99999999999999 to 999999999999999
+Blank",
+312,N/A ,2956,2970,15,Revised valid content,Parent Contribution (PC),"-1826 to 999999999999999 
+Blank",
+313,N/A ,2971,2985,15,None,Student Payroll Tax Allowance,"0 to 999999999999999 
+Blank",
+314,N/A ,2986,3000,15,None,Student Income Protection Allowance (IPA),"0 to 999999999999999 
+Blank",
+315,N/A ,3001,3015,15,None,Student Allowance for Parents’ Negative Adjusted Available Income,"0 to 999999999999999 
+Blank",
+316,N/A ,3016,3030,15,None,Student Employment Expense Allowance (SEEA),"0 to 999999999999999 
+Blank",
+317,N/A ,3031,3045,15,None,Total Student Allowances Against Income,"0 to 999999999999999 
+Blank",
+318,N/A ,3046,3060,15,None,Student Available Income (StAI),"-99999999999999 to 999999999999999
+Blank",
+319,N/A ,3061,3075,15,None,Student Contribution from Income (SCI),"-99999999999999 to 999999999999999
+Blank",
+320,N/A ,3076,3090,15,None,Student Adjusted Available Income (SAAI),"-99999999999999 to 999999999999999
+Blank",
+321,N/A ,3091,3105,15,Revised valid content,Total Student Contribution from SAAI,"-1826 to 999999999999999 
+Blank",
+322,N/A,3106,3112,7,None,Parent Discretionary Net Worth (PDNW) ,"0 to 9999999
+Blank",
+323,N/A,3113,3119,7,None,Parent Net Worth (PNW) ,"0 to 9999999
+Blank",
+324,N/A,3120,3131,12,None,Parent Asset Protection Allowance (PAPA),"0 to 999999999999
+Blank",
+325,N/A,3132,3143,12,None,Parent Contribution from Assets (PCA),"0 to 999999999999
+Blank",
+326,N/A,3144,3150,7,None,Student Net Worth (SNW) ,"0 to 9999999
+Blank",
+327,N/A,3151,3162,12,None,Student Asset Protection Allowance (SAPA),"0 to 999999999999
+Blank",
+328,N/A,3163,3174,12,None,Student Contribution from Assets (SCA),"0 to 999999999999
+Blank",
+329,N/A,3175,3177,3,None,Assumed Student Family Size,"1 to 198
+Blank",
+330,N/A,3178,3180,3,None,Assumed Parent Family Size,"1 to 297
+Blank",
+"Correction, Highlight, and Verify Flags
+The following FAFSA fields have a Correction Flag, Highlight Flag and Verify Flag. These flags are grouped together with the Correction Flag as the first character, the Highlight Flag as the second character followed by the Verify Flag as the last character. The valid content for all fields in this section are as follows:
+Correction Flag 
+  0 = No correction made
+  1= Field corrected on this transaction (i.e., changed to another value; a correction from blank to zero is also considered a correction)
+  2 = Field corrected on previous transaction (i.e., changed to another value; a correction from blank to zero is also considered a correction)
+Highlight Flag
+  0 = No highlight made
+  1 = Field highlighted
+Verify Flag
+  0 = Verification not needed
+  1 = Reentered to the same value
+  2 = Verification needed",,,,,,,,
+331,N/A ,3181,3183,3,None,"Student First Name Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+332,N/A ,3184,3186,3,None,"Student Middle Name Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+333,N/A ,3187,3189,3,None,"Student Last Name Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+334,N/A ,3190,3192,3,None,"Student Suffix Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+335,N/A ,3193,3195,3,None,"Student Date of Birth Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+336,N/A ,3196,3198,3,None,"Student Social Security Number Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+337,N/A ,3199,3201,3,None,"Student ITIN Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+338,N/A ,3202,3204,3,None,"Student Phone Number Correction, Highlight, and Verify flags","See description in the Correction, Highlight, and Verify Flags heading above.",
+339,N/A ,3205,3207,3,None,"Student Email Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+340,N/A ,3208,3210,3,None,"Student Street Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+341,N/A ,3211,3213,3,None,"Student City Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+342,N/A ,3214,3216,3,None,"Student State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+343,N/A ,3217,3219,3,None,"Student Zip Code Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+344,N/A ,3220,3222,3,None,"Student Country Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+345,N/A ,3223,3225,3,None,"Student Marital Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+346,N/A ,3226,3228,3,Revised field name,"Student Grade Level in College 2025–26 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+347,N/A ,3229,3231,3,Revised field name,"Student First Bachelor's Degree Before 2025–26 School Year Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+348,N/A ,3232,3234,3,None,"Student Pursuing Teacher Certification? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+349,N/A ,3235,3237,3,None,"Student Active Duty? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+350,N/A ,3238,3240,3,None,"Student Veteran? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+351,N/A ,3241,3243,3,None,"Student Child or Other Dependents? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+352,N/A ,3244,3246,3,None,"Student Parents Deceased? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+353,N/A ,3247,3249,3,None,"Student Ward of Court? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+354,N/A ,3250,3252,3,None,"Student In Foster Care? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+355,N/A ,3253,3255,3,None,"Student Emancipated Minor? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+356,N/A ,3256,3258,3,None,"Student Legal Guardianship? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+357,N/A ,3259,3261,3,None,"Student None of the above (Personal Circumstances) Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+358,N/A ,3262,3264,3,None,"Student Unaccompanied Homeless Youth, or is Unaccompanied, At Risk of Homelessness, and Self-Supporting? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+359,N/A ,3265,3267,3,None,"Student Unaccompanied and Homeless (General)? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+360,N/A ,3268,3270,3,None,"Student Unaccompanied and Homeless (HS)? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+361,N/A ,3271,3273,3,None,"Student Unaccompanied and Homeless (TRIO)? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+362,N/A ,3274,3276,3,None,"Student Unaccompanied and Homeless (FAA)? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+363,N/A ,3277,3279,3,Revised field name,"Student Homelessness: None of the above Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+364,N/A ,3280,3282,3,None,"Student Has Unusual Circumstance Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+365,N/A ,3283,3285,3,None,"Student Unsub Only Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+366,N/A ,3286,3288,3,None,"Student Updated Family Size Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+367,N/A ,3289,3291,3,None,"Student Number in College Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+368,N/A ,3292,3294,3,None,"Student Citizenship Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+369,N/A ,3295,3297,3,None,"Student A-Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+370,N/A ,3298,3300,3,None,"Student State of Legal Residence Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+371,N/A ,3301,3303,3,None,"Student Legal Residence Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+372,N/A ,3304,3306,3,None,"Student Either Parent Attend College Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+373,N/A ,3307,3309,3,None,"Student Parent Killed in the Line of Duty Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+374,N/A ,3310,3312,3,None,"Student High School Completion Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+375,N/A ,3313,3315,3,None,"Student High School Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+376,N/A ,3316,3318,3,None,"Student High School City Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+377,N/A ,3319,3321,3,None,"Student High School State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+378,N/A ,3322,3324,3,None,"Student High School Equivalent Diploma Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+379,N/A ,3325,3327,3,None,"Student High School Equivalent Diploma State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+380,N/A ,3328,3330,3,None,"Student Received EITC? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+381,N/A ,3331,3333,3,None,"Student Received Federal Housing Assistance? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+382,N/A ,3334,3336,3,None,"Student Received Free/Reduced Price Lunch? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+383,N/A ,3337,3339,3,None,"Student Received Medicaid? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+384,N/A ,3340,3342,3,None,"Student Received Refundable Credit for 36B Health Plan? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+385,N/A ,3343,3345,3,None,"Student Received SNAP? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+386,N/A ,3346,3348,3,None,"Student Received Supplemental Security Income? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+387,N/A ,3349,3351,3,None,"Student Received TANF? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+388,N/A ,3352,3354,3,None,"Student Received WIC? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+389,N/A ,3355,3357,3,None,"Student None of the above (Federal Benefits) Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+390,N/A ,3358,3360,3,None,"Student Filed 1040 or 1040NR? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+391,N/A ,3361,3363,3,None,"Student Filed Non-U.S. Tax Return? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+392,N/A ,3364,3366,3,None,"Student Filed Joint Return With Current Spouse? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+393,N/A ,3367,3369,3,None,"Student Tax Return Filing Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+394,N/A ,3370,3372,3,None,"Student Income Earned from Work Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+395,N/A ,3373,3375,3,None,"Student Tax Exempt Interest Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+396,N/A ,3376,3378,3,None,"Student Untaxed Portions of IRA Distributions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+397,N/A ,3379,3381,3,None,"Student IRA Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+398,N/A ,3382,3384,3,None,"Student Untaxed Portions of Pensions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+399,N/A ,3385,3387,3,None,"Student Pension Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+400,N/A ,3388,3390,3,None,"Student Adjusted Gross Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+401,N/A ,3391,3393,3,None,"Student Income Tax Paid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+402,N/A ,3394,3396,3,None,"Student Earned Income Tax Credit Received During Tax Year? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+403,N/A ,3397,3399,3,None,"Student Deductible Payments to IRA, Keogh, Other Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+404,N/A ,3400,3402,3,None,"Student Education Credits Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+405,N/A ,3403,3405,3,None,"Student Filed Schedule A, B, D, E, F or H? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+406,N/A ,3406,3408,3,None,"Student Schedule C Amount Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+407,N/A ,3409,3411,3,None,"Student College Grant and Scholarship Aid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+408,N/A ,3412,3414,3,None,"Student Foreign Earned Income Exclusion Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+409,N/A ,3415,3417,3,None,"Student Child Support Received Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+410,N/A ,3418,3420,3,None,"Student Net Worth of Businesses and Investment Farms Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+411,N/A ,3421,3423,3,None,"Student Net Worth of Current Investments Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+412,N/A ,3424,3426,3,None,"Student Total of Cash, Savings, and Checking Accounts Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+413,N/A ,3427,3429,3,None,"Student College #1 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+414,N/A ,3430,3432,3,None,"Student College #2 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+415,N/A ,3433,3435,3,None,"Student College #3 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+416,N/A ,3436,3438,3,None,"Student College #4 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+417,N/A ,3439,3441,3,None,"Student College #5 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+418,N/A ,3442,3444,3,None,"Student College #6 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+419,N/A ,3445,3447,3,None,"Student College #7 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+420,N/A ,3448,3450,3,None,"Student College #8 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+421,N/A ,3451,3453,3,None,"Student College #9 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+422,N/A ,3454,3456,3,None,"Student College #10 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+423,N/A ,3457,3459,3,None,"Student College #11 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+424,N/A ,3460,3462,3,None,"Student College #12 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+425,N/A ,3463,3465,3,None,"Student College #13 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+426,N/A ,3466,3468,3,None,"Student College #14 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+427,N/A ,3469,3471,3,None,"Student College #15 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+428,N/A ,3472,3474,3,None,"Student College #16 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+429,N/A ,3475,3477,3,None,"Student College #17 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+430,N/A ,3478,3480,3,None,"Student College #18 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+431,N/A ,3481,3483,3,None,"Student College #19 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+432,N/A ,3484,3486,3,None,"Student College #20 Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+433,N/A ,3487,3489,3,None,"Student Consent to Retrieve and Disclose FTI Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+434,N/A ,3490,3492,3,None,"Student Signature Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+435,N/A ,3493,3495,3,None,"Student Signature Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+436,N/A ,3496,3498,3,None,"Student Spouse First Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+437,N/A ,3499,3501,3,None,"Student Spouse Middle Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+438,N/A ,3502,3504,3,None,"Student Spouse Last Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+439,N/A ,3505,3507,3,None,"Student Spouse Suffix Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+440,N/A ,3508,3510,3,None,"Student Spouse Date of Birth Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+441,N/A ,3511,3513,3,None,"Student Spouse Social Security Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+442,N/A ,3514,3516,3,None,"Student Spouse ITIN Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+443,N/A ,3517,3519,3,None,"Student Spouse Phone Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+444,N/A ,3520,3522,3,None,"Student Spouse Email Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+445,N/A ,3523,3525,3,None,"Student Spouse Street Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+446,N/A ,3526,3528,3,None,"Student Spouse City Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+447,N/A ,3529,3531,3,None,"Student Spouse State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+448,N/A ,3532,3534,3,None,"Student Spouse Zip Code Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+449,N/A ,3535,3537,3,None,"Student Spouse Country Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+450,N/A ,3538,3540,3,None,"Student Spouse Filed 1040 or 1040NR? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+451,N/A ,3541,3543,3,None,"Student Spouse Filed non-U.S. tax return? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+452,N/A ,3544,3546,3,None,"Student Spouse Tax Return Filing Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+453,N/A ,3547,3549,3,None,"Student Spouse Income Earned from Work Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+454,N/A ,3550,3552,3,None,"Student Spouse Tax Exempt Interest Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+455,N/A ,3553,3555,3,None,"Student Spouse Untaxed Portions of IRA Distributions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+456,N/A ,3556,3558,3,None,"Student Spouse IRA Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+457,N/A ,3559,3561,3,None,"Student Spouse Untaxed Portions of Pensions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+458,N/A ,3562,3564,3,None,"Student Spouse Pension Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+459,N/A ,3565,3567,3,None,"Student Spouse Adjusted Gross Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+460,N/A ,3568,3570,3,None,"Student Spouse Income Tax Paid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+461,N/A ,3571,3573,3,None,"Student Spouse Deductible Payments to IRA, Keogh, Other Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+462,N/A ,3574,3576,3,None,"Student Spouse Education Credits Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+463,N/A ,3577,3579,3,None,"Student Spouse Filed Schedule A, B, D, E, F or H? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+464,N/A ,3580,3582,3,None,"Student Spouse Schedule C Amount Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+465,N/A ,3583,3585,3,None,"Student Spouse Foreign Earned Income Exclusion Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+466,N/A ,3586,3588,3,None,"Student Spouse Consent to Retrieve and Disclose FTI Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+467,N/A ,3589,3591,3,None,"Student Spouse Signature Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+468,N/A ,3592,3594,3,None,"Student Spouse Signature Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+469,N/A ,3595,3597,3,None,"Parent First Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+470,N/A ,3598,3600,3,None,"Parent Middle Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+471,N/A ,3601,3603,3,None,"Parent Last Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+472,N/A ,3604,3606,3,None,"Parent Suffix Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+473,N/A ,3607,3609,3,None,"Parent Date of Birth Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+474,N/A ,3610,3612,3,None,"Parent Social Security Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+475,N/A ,3613,3615,3,None,"Parent ITIN Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+476,N/A ,3616,3618,3,None,"Parent Phone Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+477,N/A ,3619,3621,3,None,"Parent Email Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+478,N/A ,3622,3624,3,None,"Parent Street Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+479,N/A ,3625,3627,3,None,"Parent City Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+480,N/A ,3628,3630,3,None,"Parent State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+481,N/A ,3631,3633,3,None,"Parent Zip Code Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+482,N/A ,3634,3636,3,None,"Parent Country Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+483,N/A ,3637,3639,3,None,"Parent Marital Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+484,N/A ,3640,3642,3,None,"Parent State of Legal Residence Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+485,N/A ,3643,3645,3,None,"Parent Legal Residence Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+486,N/A ,3646,3648,3,None,"Parent Updated Family Size Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+487,N/A ,3649,3651,3,None,"Parent Number in College Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+488,N/A ,3652,3654,3,None,"Parent Received EITC? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+489,N/A ,3655,3657,3,None,"Parent Received Federal Housing Assistance? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+490,N/A ,3658,3660,3,None,"Parent Received Free/Reduced Price Lunch? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+491,N/A ,3661,3663,3,None,"Parent Received Medicaid? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+492,N/A ,3664,3666,3,None,"Parent Received Refundable Credit for 36B Health Plan? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+493,N/A ,3667,3669,3,None,"Parent Received SNAP? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+494,N/A ,3670,3672,3,None,"Parent Received Supplemental Security Income? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+495,N/A ,3673,3675,3,None,"Parent Received TANF? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+496,N/A ,3676,3678,3,None,"Parent Received WIC? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+497,N/A ,3679,3681,3,None,"Parent None of the Above (Federal Benefits) Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+498,N/A ,3682,3684,3,None,"Parent Filed 1040 or 1040NR? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+499,N/A ,3685,3687,3,None,"Parent Filed non-U.S. tax return? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+500,N/A ,3688,3690,3,None,"Parent Filed Joint Return With Current Spouse? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+501,N/A ,3691,3693,3,None,"Parent Tax Return Filing Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+502,N/A ,3694,3696,3,None,"Parent Income Earned from Work Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+503,N/A ,3697,3699,3,None,"Parent Tax Exempt Interest Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+504,N/A ,3700,3702,3,None,"Parent Untaxed Portions of IRA Distributions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+505,N/A ,3703,3705,3,None,"Parent IRA Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+506,N/A ,3706,3708,3,None,"Parent Untaxed Portions of Pensions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+507,N/A ,3709,3711,3,None,"Parent Pension Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+508,N/A ,3712,3714,3,None,"Parent Adjusted Gross Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+509,N/A ,3715,3717,3,None,"Parent Income Tax Paid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+510,N/A ,3718,3720,3,None,"Parent Earned Income Tax Credit Received During Tax Year? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+511,N/A ,3721,3723,3,None,"Parent Deductible Payments to IRA, Keogh, Other Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+512,N/A ,3724,3726,3,None,"Parent Education Credits Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+513,N/A ,3727,3729,3,None,"Parent Filed Schedule A, B, D, E, F or H? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+514,N/A ,3730,3732,3,None,"Parent Schedule C Amount Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+515,N/A ,3733,3735,3,None,"Parent College Grant and Scholarship Aid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+516,N/A ,3736,3738,3,None,"Parent Foreign Earned Income Exclusion Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+517,N/A ,3739,3741,3,None,"Parent Child Support Received Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+518,N/A ,3742,3744,3,None,"Parent Net Worth of Current Investments Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+519,N/A ,3745,3747,3,None,"Parent Total of Cash, Savings, and Checking Accounts Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+520,N/A ,3748,3750,3,None,"Parent Net Worth of Businesses and Investment Farms Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+521,N/A ,3751,3753,3,None,"Parent Consent to Retrieve and Disclose FTI Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+522,N/A ,3754,3756,3,None,"Parent Signature Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+523,N/A ,3757,3759,3,None,"Parent Signature Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+524,N/A ,3760,3762,3,None,"Parent Spouse or Partner First Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+525,N/A ,3763,3765,3,None,"Parent Spouse or Partner Middle Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+526,N/A ,3766,3768,3,None,"Parent Spouse or Partner Last Name Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+527,N/A ,3769,3771,3,None,"Parent Spouse or Partner Suffix Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+528,N/A ,3772,3774,3,None,"Parent Spouse or Partner Date of Birth Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+529,N/A ,3775,3777,3,None,"Parent Spouse or Partner Social Security Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+530,N/A ,3778,3780,3,None,"Parent Spouse or Partner ITIN Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+531,N/A ,3781,3783,3,None,"Parent Spouse or Partner Phone Number Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+532,N/A ,3784,3786,3,None,"Parent Spouse or Partner Email Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+533,N/A ,3787,3789,3,None,"Parent Spouse or Partner Street Address Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+534,N/A ,3790,3792,3,None,"Parent Spouse or Partner City Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+535,N/A ,3793,3795,3,None,"Parent Spouse or Partner State Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+536,N/A ,3796,3798,3,None,"Parent Spouse or Partner Zip Code Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+537,N/A ,3799,3801,3,None,"Parent Spouse or Partner Country Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+538,N/A ,3802,3804,3,None,"Parent Spouse or Partner Filed 1040 or 1040NR? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+539,N/A ,3805,3807,3,None,"Parent Spouse or Partner Filed non-U.S. tax return? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+540,N/A ,3808,3810,3,None,"Parent Spouse or Partner Tax Return Filing Status Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+541,N/A ,3811,3813,3,None,"Parent Spouse or Partner Income Earned from Work Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+542,N/A ,3814,3816,3,None,"Parent Spouse or Partner Tax Exempt Interest Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+543,N/A ,3817,3819,3,None,"Parent Spouse or Partner Untaxed Portions of IRA Distributions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+544,N/A ,3820,3822,3,None,"Parent Spouse or Partner IRA Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+545,N/A ,3823,3825,3,None,"Parent Spouse or Partner Untaxed Portions of Pensions Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+546,N/A ,3826,3828,3,None,"Parent Spouse or Partner Pension Rollover Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+547,N/A ,3829,3831,3,None,"Parent Spouse or Partner Adjusted Gross Income Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+548,N/A ,3832,3834,3,None,"Parent Spouse or Partner Income Tax Paid Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+549,N/A ,3835,3837,3,None,"Parent Spouse or Partner Deductible Payments to IRA, Keogh, Other Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+550,N/A ,3838,3840,3,None,"Parent Spouse or Partner Education Credits Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+551,N/A ,3841,3843,3,None,"Parent Spouse or Partner Filed Schedule A, B, D, E, F or H? Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+552,N/A ,3844,3846,3,None,"Parent Spouse or Partner Schedule C Amount Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+553,N/A ,3847,3849,3,None,"Parent Spouse or Partner Foreign Earned Income Exclusion Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+554,N/A ,3850,3852,3,None,"Parent Spouse or Partner Consent to Retrieve and Disclose FTI Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+555,N/A ,3853,3855,3,None,"Parent Spouse or Partner Signature Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+556,N/A ,3856,3858,3,None,"Parent Spouse or Partner Signature Date Correction, Highlight, and Verify Flags ","See description in the Correction, Highlight, and Verify Flags heading above.",
+Matches and Other Processing Information ,,,,,,,,
+557,N/A ,3859,3859,1,None,DHS Primary Match Status,"Y = Confirmed eligible noncitizen
+N = Not confirmed eligible noncitizen
+P = Pending
+D = Duplicate Case
+I = Invalid A-Number
+S = Not sent
+Blank = Not needed",
+558,N/A ,3860,3860,1,Changed to Filler,Filler,For Federal Student Aid use only,
+559,N/A ,3861,3875,15,None,DHS Case Number,"Format is 9999999999999XX; where 9 = Numerals 0 to 9, and 
+X = Uppercase letters A to Z
+Blank ",
+560,N/A ,3876,3876,1,None,NSLDS Match Status ,"1 = Eligible for Title IV Aid
+2 = Default
+3 = Overpayment
+4 = Default and overpayment 
+5 = Processed in Realtime
+7 = Match and no data provided
+8 = Not sent 
+Blank",
+561,N/A ,3877,3882,6,None,NSLDS Postscreening Reason Code ,"01 = Default added 
+02 = Overpayment added 
+03 = Default resolved 
+04 = Overpayment resolved 
+05 = Master Promissory Note status change 
+06 = Loan went into disability discharged status 
+07 = Loan out of disability discharged status 
+08 = Closed school 
+09 = Exceeded subsidized loan limit 
+10 = Exceeded combined loan limit 
+11 = Exceeding subsidized loan limit resolved 
+12 = Exceeding combined loan limit resolved 
+13 = For Federal Student Aid use only 
+14 = Loan entered active bankruptcy 
+15 = PLUS Master Promissory Note status change 
+16 = Grad PLUS Master Promissory Note status change 
+17 = Fraud conviction added 
+18 = Fraud conviction resolved 
+19 = TEACH Grant converted to a loan 
+20 = Pell eligible and met or exceeded Pell lifetime limit 
+21 = No longer meeting or exceeding Pell lifetime limit 
+22 = Pell eligible and close to Pell lifetime limit 
+23 = No longer close to Pell lifetime limit 
+24 = Unusual enrollment history status change 
+25 = Subsidized Usage Limit Applies Flag status change 
+26 = Confirmed loan subsidy status change 
+27 = Decrease in Subsidized usage period 
+99 = Other 
+Blank = Not an NSLDS postscreening transaction",
+562,N/A ,3883,3883,1,None,Student SSA Citizenship Flag Results ,"A = U.S. citizen 
+B = Legal alien, eligible to work 
+C = Legal alien, not eligible to work 
+D = Other
+E = Alien, student restricted, work authorized 
+F = Conditionally legalized alien 
+N = Unable to confirm citizenship due to no match on SSN, name or date of birth 
+* = Foreign 
+Blank = Domestic born (U.S. citizen) if Student SSA Match Status equals 4 or No match conducted if SSA Match Status does not equal 4 ",
+563,N/A ,3884,3884,1,None,Student SSA Match Status,"1 = Not found by SSA
+2 = DOB mismatch
+3 = Name mismatch
+4 = Full match
+5 = Deceased
+6 = SSN not verified
+8 = Not sent
+9 = Not needed 
+Blank",
+564,N/A ,3885,3885,1,None,Student Spouse SSA Match Status,"1 = Not found by SSA
+2 = DOB mismatch
+3 = Name mismatch
+4 = Full match
+5 = Deceased
+6 = SSN not verified
+8 = Not sent
+9 = Not needed 
+Blank",
+565,N/A ,3886,3886,1,None,Parent SSA Match Status ,"1 = Not found by SSA
+2 = DOB mismatch
+3 = Name mismatch
+4 = Full match
+5 = Deceased
+6 = SSN not verified
+8 = Not sent
+9 = Not needed 
+Blank",
+566,N/A ,3887,3887,1,None,Parent Spouse or Partner SSA Match Status,"1 = Not found by SSA
+2 = DOB mismatch
+3 = Name mismatch
+4 = Full match
+5 = Deceased
+6 = SSN not verified
+8 = Not sent
+9 = Not needed
+Blank ",
+567,N/A ,3888,3888,1,None,VA Match Flag,"1 = Confirmed 
+2 = Not Qualifying Veteran
+3 = Not found by VA
+4 = Active Duty
+8 = Not sent
+Blank = Not needed ",
+568,N/A ,3889,3948,60,None,Comment Codes ,Twenty 3-digit numeric comment codes,
+569,N/A ,3949,3949,1,None,Drug Abuse Hold Indicator,"J = Record placed on hold by Dept. of Justice
+S = Record released from hold
+Blank = Not on hold",
+570,N/A ,3950,3950,1,Revised the year reference in the valid content,Graduate Flag,"Y = Yes response to First Bachelor’s Degree By 07-01-2025 question and/or graduate status question 
+Blank = Graduate flag not set ",
+571,N/A ,3951,3951,1,None,Pell Grant Eligibility Flag,"Y = This transaction determined eligible for a Federal Pell Grant 
+Blank = This transaction determined ineligible for a Federal Pell Grant ",
+572,N/A ,3952,3953,2,None,Reprocessed Reason Code ,"01 to 99 
+01 = Reprocessed due to change in the Pell Maximum SAI
+50 = System-generated from the match bypass process 
+Blank = Not a reprocessed transaction ",
+573,N/A ,3954,3954,1,None,FPS C Flag,"Y = FPS C flag set, resolution required on one or more match results 
+Blank = No flag set ",
+574,N/A ,3955,3955,1,None,FPS C Change Flag,"Y = FPS C flag has changed 
+Blank = No change to FPS C flag ",
+575,N/A ,3956,3957,2,None,Electronic Federal School Code Indicator Identifies which school listed in ISIR fields initiated this transaction. ,"1 = Federal school code #1 
+2 = Federal school code #2 
+3 = Federal school code #3 
+4 = Federal school code #4 
+5 = Federal school code #5 
+6 = Federal school code #6 
+7 = Federal school code #7 
+8 = Federal school code #8 
+9 = Federal school code #9 
+10 = Federal school code #10
+11 = Federal school code #11 
+12 = Federal school code #12 
+13 = Federal school code #13 
+14 = Federal school code #14 
+15 = Federal school code #15 
+16 = Federal school code #16 
+17 = Federal school code #17 
+18 = Federal school code #18 
+19 = Federal school code #19 
+20 = Federal school code #20 
+Blank = Always blank on school and servicer ISIRs; for state agencies, no federal school code ",
+576,N/A ,3958,4067,110,None,Reject Reason Codes ,"Uppercase letters A to Z 
+Numbers 1 to 99
+Blank = Applicant not rejected",
+577,N/A ,4068,4068,1,None,Electronic Transaction Indicator (ETI) Flag,"1 = School did not generate transaction, receives ISIR daily
+2 = School generated, receives ISIR daily
+3 = School did not generate transaction, ISIR pushed
+4 = School generated transaction, ISIR pushed 
+5 = School did not generate transaction, FPS system generated 
+6 = School generated, ISIR request school
+7 = School did not generate, ISIR Request school
+A = State Resident, receives ISIRs daily
+B = Non-Resident, receives ISIRs daily
+C = State Resident, ISIR Pushed
+D = Non-Resident, ISIR Pushed
+E = State Resident, ISIR Request State
+F = Non-Resident, ISIR Request State
+Blank = School or state is not found or not participating",
+578,N/A ,4069,4069,1,None,Student Last Name/ SSN Change Flag,"N = Last name change
+S = Social Security number change
+B = Social Security number and last name change
+Blank = No change",
+579,N/A,4070,4081,12,None,High School Code,"Alphanumeric
+0 to 9
+Uppercase and lowercase A to Z
+Blank",
+580,N/A,4082,4082,1,None,Verification Selection Change Flag,"Y = Selected for verification on this transaction, not selected for verification on any previous non-rejected transaction
+C = Selected for verification on this transaction, Verification Tracking Flag is not equal to Verification Tracking Flag on transaction being corrected
+Blank",
+581,N/A ,4083,4087,5,None,Use User Provided Data Only,"True
+False
+Blank",
+582,N/A ,4088,4448,361,None,Filler,For Federal Student Aid use only,
+NSLDS Information ,,,,,,,,
+583,N/A ,4449,4449,1,None,NSLDS Pell Overpayment Flag,"D = Deferred
+N = N/A
+S = Satisfactory payment arrangements
+F = Fraud
+Y = Overpayment
+Blank",
+584,N/A ,4450,4457,8,None,NSLDS Pell Overpayment Contact,"Numeric school code or region code
+N/A
+Y (more than one)
+Blank",
+585,N/A ,4458,4458,1,None,NSLDS FSEOG Overpayment Flag,"D = Deferred
+N = N/A
+S = Satisfactory payment arrangements
+F = Fraud
+Y = Overpayment
+Blank",
+586,N/A ,4459,4466,8,None,NSLDS FSEOG Overpayment Contact,"Numeric school code or region code
+N/A
+Y (more than one)
+Blank",
+587,N/A ,4467,4467,1,None,NSLDS Perkins Overpayment Flag,"D = Deferred
+N = N/A
+S = Satisfactory payment arrangements
+F = Fraud
+Y = Overpayment
+Blank",
+588,N/A ,4468,4475,8,None,NSLDS Perkins Overpayment Contact,"Numeric school code or region code
+N/A
+Y (more than one)
+Blank",
+589,N/A,4476,4476,1,None,NSLDS TEACH Grant Overpayment Flag,"D = Deferred
+N = N/A
+S = Satisfactory payment arrangements
+F = Fraud
+Y = Overpayment
+Blank",
+590,N/A,4477,4484,8,None,NSLDS TEACH Grant Overpayment Contact,"Numeric school code or region code
+N/A
+Y (more than one)
+Blank",
+591,N/A,4485,4485,1,None,NSLDS Iraq and Afghanistan Service Grant Overpayment Flag ,"D = Deferred
+N = N/A
+S = Satisfactory payment arrangements
+F = Fraud
+Y = Overpayment
+Blank",
+592,N/A,4486,4493,8,None,NSLDS Iraq and Afghanistan Service Grant Overpayment Contact,"Numeric school code or region code
+N/A
+Y (more than one)
+Blank",
+593,N/A,4494,4494,1,None,NSLDS Defaulted Loan Flag,"Y = Yes 
+N = No
+Blank",
+594,N/A,4495,4495,1,None,NSLDS Discharged Loan Flag,"D = Death
+N = None
+P = Permanent
+Blank",
+595,N/A,4496,4496,1,None,NSLDS Fraud Loan Flag,"Y = Yes 
+N = No
+Blank = Record not sent for match",
+596,N/A,4497,4497,1,None,NSLDS Satisfactory Arrangements Flag,"Y = Yes 
+N = No
+Blank",
+597,N/A,4498,4498,1,None,NSLDS Active Bankruptcy Flag,"Y = Yes 
+N = No
+Blank",
+598,N/A,4499,4499,1,None,NSLDS TEACH Grant Loan Convertedd to Loan Flag,"Y = Yes 
+N = No
+Blank",
+599,N/A,4500,4505,6,None,NSLDS Aggregate Subsidized Outstanding Principal Balance,"Numeric
+N/A
+Blank",
+600,N/A,4506,4511,6,None,NSLDS Aggregate Unsubsidized Outstanding Principal Balance,"Numeric
+N/A
+Blank",
+601,N/A,4512,4517,6,None,NSLDS Aggregate Combined Outstanding Principal Balance,"Numeric
+N/A
+Blank",
+602,N/A,4518,4523,6,None,NSLDS Aggregate Unallocated Consolidated Outstanding Principal Balance,"Numeric
+N/A
+Blank",
+603,N/A,4524,4529,6,None,NSLDS Aggregate TEACH Loan Principal Balance,"Numeric
+N/A
+Blank",
+604,N/A,4530,4535,6,None,NSLDS Aggregate Subsidized Pending Disbursement,"Numeric
+N/A
+Blank",
+605,N/A,4536,4541,6,None,NSLDS Aggregate Unsubsidized Pending Disbursement,"Numeric
+N/A
+Blank",
+606,N/A,4542,4547,6,None,NSLDS Aggregate Combined Pending Disbursement,"Numeric
+N/A
+Blank",
+607,N/A,4548,4553,6,None,NSLDS Aggregate Subsidized Total,"Numeric
+N/A
+Blank",
+608,N/A,4554,4559,6,None,NSLDS Aggregate Unsubsidized Total,"Numeric
+N/A
+Blank",
+609,N/A,4560,4565,6,None,NSLDS Aggregate Combined Total,"Numeric
+N/A
+Blank",
+610,N/A,4566,4571,6,None,NSLDS Unallocated Consolidated Total,"Numeric
+N/A
+Blank",
+611,N/A,4572,4577,6,None,NSLDS TEACH Loan Total,"Numeric
+N/A
+Blank",
+612,N/A,4578,4583,6,None,NSLDS Perkins Total Disbursements ,"Numeric
+N/A
+Blank",
+613,N/A,4584,4589,6,None,NSLDS Perkins Current Year Disbursement Amount,"Numeric
+N/A
+Blank",
+614,N/A,4590,4595,6,None,NSLDS Aggregate TEACH Grant Undergraduate Disbursed Total,"Numeric
+N/A
+Blank",
+615,N/A,4596,4601,6,None,NSLDS Aggregate TEACH Graduate Disbursement Amount,"Numeric
+N/A
+Blank",
+616,N/A,4602,4602,1,None,NSLDS Defaulted Loan Change Flag,"# = Changed
+N = Did not change
+Blank",
+617,N/A,4603,4603,1,None,NSLDS Fraud Loan Change Flag,"# = Changed
+N = Did not change
+Blank",
+618,N/A,4604,4604,1,None,NSLDS Discharged Loan Change Flag,"# = Changed
+N = Did not change
+Blank",
+619,N/A,4605,4605,1,None,NSLDS Loan Satisfactory Repayment Change Flag,"# = Changed
+N = Did not change
+Blank",
+620,N/A,4606,4606,1,None,NSLDS Active Bankruptcy Change Flag,"# = Changed
+N = Did not change
+Blank",
+621,N/A,4607,4607,1,None,NSLDS TEACH Grant to Loan Conversion Change Flag,"# = Changed
+N = Did not change
+Blank",
+622,N/A,4608,4608,1,None,NSLDS Overpayments Change Flag,"# = Changed
+N = Did not change
+Blank",
+623,N/A,4609,4609,1,None,NSLDS Aggregate Loan Change Flag,"# = Changed
+N = Did not change
+Blank",
+624,N/A,4610,4610,1,None,NSLDS Perkins Loan Change Flag,"# = Changed
+N = Did not change
+Blank",
+625,N/A,4611,4611,1,None,NSLDS Pell Payment Change Flag,"# = Changed
+N = Did not change
+Blank",
+626,N/A,4612,4612,1,None,NSLDS TEACH Grant Change Flag,"# = Changed
+N = Did not change
+Blank",
+627,N/A,4613,4613,1,None,NSLDS Additional Pell Flag,"Y = Yes 
+N = No
+Blank",
+628,N/A,4614,4614,1,None,NSLDS Additional Loans Flag,"Y = Yes 
+N = No
+Blank",
+629,N/A,4615,4615,1,None,NSLDS Additional TEACH Grant Flag,"Y = Yes 
+N = No
+Blank",
+630,N/A,4616,4616,1,None,NSLDS Direct Loan Master Prom Note Flag,"A = Active
+C = Closed
+I = Inactive
+N = No Master Promissory Note on file
+Blank = No data from NSLDS",
+631,N/A,4617,4617,1,None,"NSLDS Direct Loan PLUS Master Prom Note Flag
+
+This flag indicates the status of the Master Promissory Note for the parent who has borrowed a PLUS loan on behalf of this student.","A = Active
+C = Closed
+E = Inactive due to the linking of a PLUS Loan with an endorser
+I = Inactive
+N = No Master Promissory Note on file
+Blank = No data from NSLDS",
+632,N/A,4618,4618,1,None,"NSLDS Direct Loan Graduate PLUS Master Prom Note Flag
+
+This flag indicates the status of the Master Promissory Note for the graduate student who has borrowed a PLUS loan.","A = Active
+C = Closed
+E = Inactive due to the linking of a PLUS Loan with an endorser
+I = Inactive
+N = No Master Promissory Note on file
+Blank = No data from NSLDS",
+633,N/A,4619,4619,1,None,NSLDS Undergraduate Subsidized Loan Limit Flag,"C = Close to or equal to limit
+E = Exceeded limit
+N = No problem
+R = Exceeded loan limit and reaffirmed debt
+Blank",
+634,N/A,4620,4620,1,None,NSLDS Undergraduate Combined Loan Limit Flag,"C = Close to or equal to limit
+E = Exceeded limit
+N = No problem
+R = Exceeded loan limit and reaffirmed debt
+Blank",
+635,N/A,4621,4621,1,None,NSLDS Graduate Subsidized Loan Limit Flag,"C = Close to or equal to limit
+E = Exceeded limit
+N = No problem
+R = Exceeded loan limit and reaffirmed debt
+Blank",
+636,N/A,4622,4622,1,None,NSLDS Graduate Combined Loan Limit Flag,"C = Close to or equal to limit
+E = Exceeded limit
+N = No problem
+R = Exceeded loan limit and reaffirmed debt
+Blank",
+637,N/A,4623,4623,1,None,NSLDS Pell Lifetime Limit Flag,"C = Close to Pell limit
+E = Met or Exceeded Pell limit
+H = High Pell percent
+N = No problem 
+Blank",
+638,N/A,4624,4630,7,None,NSLDS Pell Lifetime Eligibility Used,"Numeric
+Format is 99v99999
+Blank
+“v” is an implied decimal and is not included in the output.
+Example: 01.00000 is 0100.000%",
+639,N/A,4631,4631,1,None,NSLDS SULA Flag,"Y = Yes 
+N = No
+Blank",
+640,N/A,4632,4637,6,None,NSLDS Subsidized Limit Eligiblity Used,"Numeric
+Format is 999v999
+Blank
+“v” is an implied decimal and is not included in the output",
+641,N/A,4638,4638,1,None,NSLDS Unusual Enrollment History Flag,"2 = Possible enrollment pattern problem, school may need to resolve
+3 = Questionable enrollment pattern, school must resolve
+N = Enrollment pattern not unusual, no school action required
+Blank = Record not sent for match",
+642,N/A,4639,4658,20,None,Filler,For Federal Student Aid use only,
+643,N/A,4659,4660,2,None,NSLDS Pell Sequence Number (1),"01 to 03
+Blank",
+644,N/A,4661,4663,3,None,NSLDS Pell Verification Flag (1),"Alpha
+N/A
+Blank",
+645,N/A,4664,4669,6,None,NSLDS SAI (1),"-1500 to 999999
+N/A 
+Blank",
+646,N/A,4670,4677,8,None,NSLDS Pell School Code (1),"Numeric
+N/A
+Blank",
+647,N/A,4678,4679,2,None,NSLDS Pell Transaction Number (1),"Numeric
+Blank",
+648,N/A,4680,4687,8,None,NSLDS Pell Disbursement Date (1),"Numeric (CCYYMMDD)
+N/A
+Blank",
+649,N/A,4688,4693,6,None,"NSLDS Pell Scheduled Amount (1)
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+650,N/A,4694,4699,6,None,"NSLDS Pell Amount Paid to Date (1)
+
+Whole dollar amount with leading zeros","Numeric
+Blank",
+651,N/A,4700,4706,7,None,"NSLDS Pell Percent Eligibility Used Decimal (1)
+Percent with four decimal places assumed for example, 50% - 0500000.","Numeric
+Blank",
+652,N/A,4707,4712,6,None,"NSLDS Pell Award Amount (1)
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+653,N/A,4713,4713,1,None,NSLDS Additional Eligibility Indicator (1),"Y = Yes 
+N = No
+Blank",
+654,N/A,4714,4733,20,None,Filler,For Federal Student Aid use only,
+655,N/A,4734,4735,2,None,NSLDS Pell Sequence Number (2),"01 to 03
+Blank",
+656,N/A,4736,4738,3,None,NSLDS Pell Verification Flag (2),"Alpha
+N/A
+Blank",
+657,N/A,4739,4744,6,None,NSLDS SAI (2),"-1500 to 999999
+N/A 
+Blank",
+658,N/A,4745,4752,8,None,NSLDS Pell School Code (2),"Numeric
+N/A
+Blank",
+659,N/A,4753,4754,2,None,NSLDS Pell Transaction Number (2),"Numeric
+Blank",
+660,N/A,4755,4762,8,None,NSLDS Pell Last Disbursement Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+661,N/A,4763,4768,6,None,"NSLDS Pell Scheduled Amount (2)
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+662,N/A,4769,4774,6,None,"NSLDS Pell Amount Paid to Date (2)
+
+Whole dollar amount with leading zeros","Numeric
+Blank",
+663,N/A,4775,4781,7,None,"NSLDS Pell Percent Eligibility Used Decimal (2)
+Percent with four decimal places assumed for example, 50% - 0500000.","Numeric
+Blank",
+664,N/A,4782,4787,6,None,"NSLDS Pell Award Amount (2)
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+665,N/A,4788,4788,1,None,NSLDS Additional Eligibility Indicator (2),"Y or N
+Blank",
+666,N/A,4789,4808,20,None,Filler,For Federal Student Aid use only,
+667,N/A,4809,4810,2,None,NSLDS Pell Sequence Number (3),"01 to 03
+Blank",
+668,N/A,4811,4813,3,None,NSLDS Pell Verification Flag (3),"Alpha
+N/A
+Blank",
+669,N/A,4814,4819,6,None,NSLDS SAI (3),"-1500 to 999999
+N/A 
+Blank",
+670,N/A,4820,4827,8,None,NSLDS Pell School Code (3),"Numeric
+N/A
+Blank",
+671,N/A,4828,4829,2,None,NSLDS Pell Transaction Number (3),"Numeric
+Blank",
+672,N/A,4830,4837,8,None,NSLDS Pell Last Disbursement Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+673,N/A,4838,4843,6,None,"NSLDS Pell Scheduled Amount (3)
+
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+674,N/A,4844,4849,6,None,"NSLDS Pell Amount Paid to Date (3)
+
+Whole dollar amount with leading zeros","Numeric
+Blank",
+675,N/A,4850,4856,7,None,"NSLDS Pell Percent Eligibility Used Decimal (3)
+
+Percent with four decimal places assumed for example, 50% - 0500000.","Numeric
+Blank",
+676,N/A,4857,4862,6,None,"NSLDS Pell Award Amount (3)
+
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+677,N/A,4863,4863,1,None,NSLDS Additional Eligibility Indicator (3),"Y = Yes 
+N = No
+Blank",
+678,N/A,4864,4883,20,None,Filler,For Federal Student Aid use only,
+679,N/A,4884,4885,2,None,NSLDS TEACH Grant Sequence (1),"01 to 03
+Blank",
+680,N/A,4886,4893,8,None,NSLDS TEACH Grant School Code (1),"Numeric
+Blank",
+681,N/A,4894,4895,2,None,NSLDS TEACH Grant Transaction Number (1),"Numeric
+Blank",
+682,N/A,4896,4903,8,None,NSLDS TEACH Grant Last Disbursement Date (1),"Numeric (CCYYMMDD)
+N/A
+Blank",
+683,N/A,4904,4909,6,None,"NSLDS TEACH Grant Scheduled Amount (1)
+
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+684,N/A,4910,4915,6,None,"NSLDS TEACH Grant Amount Paid to Date (1)
+
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+685,N/A,4916,4921,6,None,"NSLDS TEACH Grant Award Amount (1)
+
+Whole dollar amount with leading zeros.","Numeric
+Blank",
+686,N/A,4922,4922,1,None,NSLDS TEACH Grant Academic Year Level (1),"Numeric
+Blank",
+687,N/A,4923,4926,4,None,NSLDS TEACH Grant Award Year (1),"Numeric
+Blank",
+688,N/A,4927,4927,1,None,NSLDS TEACH Grant Loan Conversion Flag (1),"Y = Yes 
+N = No
+Blank",
+689,N/A,4928,4931,4,None,NSLDS TEACH Grant Discharge Code (1),"HC02 = Coronavirus
+N/A
+Blank",
+690,N/A,4932,4937,6,None,NSLDS TEACH Grant Discharge Amount (1),"000000 to 999999
+N/A
+Blank",
+691,N/A,4938,4943,6,None,NSLDS-TEACH Grant Adjusted Disbursement (1),"000000 to 999999
+N/A
+Blank",
+692,N/A,4944,4963,20,None,Filler,For Federal Student Aid use only,
+693,N/A,4964,4965,2,None,NSLDS TEACH Grant Sequence (2),"01 to 03
+Blank",
+694,N/A,4966,4973,8,None,NSLDS TEACH Grant School Code (2),"Numeric
+Blank",
+695,N/A,4974,4975,2,None,NSLDS TEACH Grant Transaction Number (2),"Numeric
+Blank",
+696,N/A,4976,4983,8,None,NSLDS TEACH Grant Last Disbursement Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+697,N/A,4984,4989,6,None,NSLDS TEACH Grant Scheduled Amount (2),"Numeric
+Blank",
+698,N/A,4990,4995,6,None,NSLDS TEACH Grant Amount Paid to Date (2),"Numeric
+Blank",
+699,N/A,4996,5001,6,None,NSLDS TEACH Grant Award Amount (2),"Numeric
+Blank",
+700,N/A,5002,5002,1,None,NSLDS TEACH Grant Academic Year Level (2),"Numeric
+Blank",
+701,N/A,5003,5006,4,None,NSLDS TEACH Grant Award Year (2),"Numeric
+Blank",
+702,N/A,5007,5007,1,None,NSLDS TEACH Grant Loan Conversion Flag (2),"Y = Yes 
+N = No
+Blank",
+703,N/A,5008,5011,4,None,NSLDS TEACH Grant Discharge Code (2),"HC02 = Coronavirus
+N/A
+Blank",
+704,N/A,5012,5017,6,None,NSLDS TEACH Grant Discharge Amount (2),"000000 to 999999
+N/A
+Blank",
+705,N/A,5018,5023,6,None,NSLDS-TEACH Grant Adjusted Disbursement (2),"000000 to 999999
+N/A
+Blank",
+706,N/A,5024,5043,20,None,Filler,For Federal Student Aid use only,
+707,N/A,5044,5045,2,None,NSLDS TEACH Grant Sequence (3),"01 to 03
+Blank",
+708,N/A,5046,5053,8,None,NSLDS TEACH Grant School Code (3),"Numeric
+Blank",
+709,N/A,5054,5055,2,None,NSLDS TEACH Grant Transaction Number (3),"Numeric
+Blank",
+710,N/A,5056,5063,8,None,NSLDS TEACH Grant Last Disbursement Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+711,N/A,5064,5069,6,None,NSLDS TEACH Grant Scheduled Amount (3),"Numeric
+Blank",
+712,N/A,5070,5075,6,None,NSLDS TEACH Grant Amount Paid to Date (3),"Numeric
+Blank",
+713,N/A,5076,5081,6,None,NSLDS TEACH Grant Award Amount (3),"Numeric
+Blank",
+714,N/A,5082,5082,1,None,NSLDS TEACH Grant Academic Year Level (3),"Numeric
+Blank",
+715,N/A,5083,5086,4,None,NSLDS TEACH Grant Award Year (3),"Numeric
+Blank",
+716,N/A,5087,5087,1,None,NSLDS TEACH Grant Loan Conversion Flag (3),"Y = Yes 
+N = No
+Blank",
+717,N/A,5088,5091,4,None,NSLDS TEACH Grant Discharge Code (3),"HC02 = Coronavirus
+N/A
+Blank",
+718,N/A,5092,5097,6,None,NSLDS TEACH Grant Discharge Amount (3),"000000 to 999999
+N/A
+Blank",
+719,N/A,5098,5103,6,None,NSLDS-TEACH Grant Adjusted Disbursement (3),"000000 to 999999
+N/A
+Blank",
+720,N/A,5104,5123,20,None,Filler,For Federal Student Aid use only,
+721,N/A,5124,5125,2,None,NSLDS Loan Sequence Number (1),"01 to 06
+Blank",
+722,N/A,5126,5126,1,None,NSLDS Loan Defaulted Recent Indicator (1),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+723,N/A,5127,5127,1,None,NSLDS Loan Change Flag (1) ,"# = Changed
+N = Did not change
+Blank",
+724,N/A,5128,5129,2,None,NSLDS Loan Type Code (1) ,"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+725,N/A,5130,5135,6,None,NSLDS Loan Net Amount (1) ,"000000 to 999999
+Blank",
+726,N/A,5136,5137,2,None,NSLDS Loan Current Status Code (1) ,"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+727,N/A,5138,5145,8,None,NSLDS Loan Current Status Date (1) ,"Format is CCYYMMDD
+N/A
+Blank",
+728,N/A,5146,5151,6,None,NSLDS Loan Outstanding Principal Balance (1) ,"000000 to 999999
+N/A
+Blank",
+729,N/A,5152,5159,8,None,NSLDS Loan Outstanding Principal Balance Date (1) ,"Numeric (CCYYMMDD)
+N/A
+Blank",
+730,N/A,5160,5167,8,None,NSLDS Loan Period Begin Date (1) ,"Numeric (CCYYMMDD)
+N/A
+Blank",
+731,N/A,5168,5175,8,None,NSLDS Loan Period End Date (1) ,"Numeric (CCYYMMDD)
+N/A
+Blank",
+732,N/A,5176,5178,3,None,NSLDS Loan Guaranty (1) Agency Code,"Numeric
+N/A
+Blank",
+733,N/A,5179,5181,3,None,NSLDS Loan Contact Type (1) ,"SCH = School
+LEN = Lender
+EDR = ED region
+GA = Guaranty agency or federal loan servicer
+LNS = Lender servicer
+DDP = Disability data provider
+RDS = U.S. Department of Education
+N/A
+Blank",
+734,N/A,5182,5189,8,None,NSLDS Loan School Code (1) ,"Alphanumeric
+N/A
+Blank",
+735,N/A,5190,5197,8,None,NSLDS Loan Contact Code (1) ,"Alphanumeric
+N/A
+Blank",
+736,N/A,5198,5200,3,None,NSLDS Loan Grade Level (1) ,"Alphanumeric
+N/A
+Blank",
+737,N/A,5201,5201,1,None,NSLDS Loan Additional Unsubsidized Flag (1) ,"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+738,N/A,5202,5202,1,None,NSLDS Loan Capitalized Interest Flag (1) ,"Y = Yes 
+N = No
+Blank",
+739,N/A,5203,5208,6,None,NSLDS Loan Disbursement Amount (1) ,"000000 to 999999
+N/A
+Blank",
+740,N/A,5209,5216,8,None,NSLDS Loan Disbursement Date (1) ,"Numeric (CCYYMMDD)
+N/A
+Blank",
+741,N/A,5217,5217,1,None,NSLDS Loan Confirmed Loan Subsidy Status (1) ,"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+742,N/A,5218,5225,8,None,NSLDS Loan Confirmed Loan Subsidy Status Date (1) ,"Numeric (CCYYMMDD)
+N/A
+Blank",
+743,N/A,5226,5245,20,None,Filler,For Federal Student Aid use only,
+744,N/A,5246,5247,2,None,NSLDS Loan Sequence Number (2) ,"01 to 06
+Blank",
+745,N/A,5248,5248,1,None,NSLDS Loan Defaulted Recent Indicator (2),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+746,N/A,5249,5249,1,None,NSLDS Loan Change Flag (2),"# = Changed
+N = Did not change
+Blank",
+747,N/A,5250,5251,2,None,NSLDS Loan Type Code (2),"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+748,N/A,5252,5257,6,None,NSLDS Loan Net Amount (2),"000000 to 999999
+Blank",
+749,N/A,5258,5259,2,None,NSLDS Loan Current Status Code (2),"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+750,N/A,5260,5267,8,None,NSLDS Loan Current Status Date (2),"Format is CCYYMMDD
+N/A
+Blank",
+751,N/A,5268,5273,6,None,NSLDS Loan Outstanding Principal Balance (2),"000000 to 999999
+N/A
+Blank",
+752,N/A,5274,5281,8,None,NSLDS Loan Outstanding Principal Balance Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+753,N/A,5282,5289,8,None,NSLDS Loan Period Begin Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+754,N/A,5290,5297,8,None,NSLDS Loan Period End Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+755,N/A,5298,5300,3,None,NSLDS Loan Guaranty Agency Code (2),"Numeric
+N/A
+Blank",
+756,N/A,5301,5303,3,None,NSLDS Loan Contact Type (2),"Alpha
+N/A
+Blank",
+757,N/A,5304,5311,8,None,NSLDS Loan School Code (2),"Alphanumeric
+N/A
+Blank",
+758,N/A,5312,5319,8,None,NSLDS Loan Contact Code (2),"Alphanumeric
+N/A
+Blank",
+759,N/A,5320,5322,3,None,NSLDS Loan Grade Level (2),"Alphanumeric
+N/A
+Blank",
+760,N/A,5323,5323,1,None,NSLDS Loan Additional Unsubsidized Flag (2),"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+761,N/A,5324,5324,1,None,NSLDS Loan Capitalized Interest Flag (2),"Y = Yes 
+N = No
+Blank",
+762,N/A,5325,5330,6,None,NSLDS Loan Disbursement Amount (2),"000000 to 999999
+N/A
+Blank",
+763,N/A,5331,5338,8,None,NSLDS Loan Disbursement Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+764,N/A,5339,5339,1,None,NSLDS Loan Confirmed Loan Subsidy Status (2),"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+765,N/A,5340,5347,8,None,NSLDS Loan Confirmed Loan Subsidy Status Date (2),"Numeric (CCYYMMDD)
+N/A
+Blank",
+766,N/A,5348,5367,20,None,Filler,For Federal Student Aid use only,
+767,N/A,5368,5369,2,None,NSLDS Loan Sequence Number (3),"01 to 06
+Blank",
+768,N/A,5370,5370,1,None,NSLDS Loan Defaulted Recent Indicator (3),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+769,N/A,5371,5371,1,None,NSLDS Loan Change Flag (3),"# = Changed
+N = Did not change
+Blank",
+770,N/A,5372,5373,2,None,NSLDS Loan Type Code (3),"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+771,N/A,5374,5379,6,None,NSLDS Loan Net Amount (3),"000000 to 999999
+Blank",
+772,N/A,5380,5381,2,None,NSLDS Loan Current Status Code (3),"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+773,N/A,5382,5389,8,None,NSLDS Loan Current Status Date (3),"Format is CCYYMMDD
+N/A
+Blank",
+774,N/A,5390,5395,6,None,NSLDS Loan Outstanding Principal Balance (3),"000000 to 999999
+N/A
+Blank",
+775,N/A,5396,5403,8,None,NSLDS Loan Outstanding Principal Balance Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+776,N/A,5404,5411,8,None,NSLDS Loan Period Begin Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+777,N/A,5412,5419,8,None,NSLDS Loan Period End Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+778,N/A,5420,5422,3,None,NSLDS Loan Guaranty Agency Code (3),"Numeric
+N/A
+Blank",
+779,N/A,5423,5425,3,None,NSLDS Loan Contact Type (3),"Alpha
+N/A
+Blank",
+780,N/A,5426,5433,8,None,NSLDS Loan School Code (3),"Alphanumeric
+N/A
+Blank",
+781,N/A,5434,5441,8,None,NSLDS Loan Contact Code (3),"Alphanumeric
+N/A
+Blank",
+782,N/A,5442,5444,3,None,NSLDS Loan Grade Level (3),"Alphanumeric
+N/A
+Blank",
+783,N/A,5445,5445,1,None,NSLDS Loan Additional Unsubsidized Flag (3),"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+784,N/A,5446,5446,1,None,NSLDS Loan Capitalized Interest Flag (3),"Y = Yes 
+N = No
+Blank",
+785,N/A,5447,5452,6,None,NSLDS Loan Disbursement Amount (3),"000000 to 999999
+N/A
+Blank",
+786,N/A,5453,5460,8,None,NSLDS Loan Disbursement Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+787,N/A,5461,5461,1,None,NSLDS Loan Confirmed Loan Subsidy Status (3),"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+788,N/A,5462,5469,8,None,NSLDS Loan Confirmed Loan Subsidy Status Date (3),"Numeric (CCYYMMDD)
+N/A
+Blank",
+789,N/A,5470,5489,20,None,Filler,For Federal Student Aid use only,
+790,N/A,5490,5491,2,None,NSLDS Loan Sequence Number (4),"01 to 06
+Blank",
+791,N/A,5492,5492,1,None,NSLDS Loan Defaulted Recent Indicator (4),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+792,N/A,5493,5493,1,None,NSLDS Loan Change Flag (4),"# = Changed
+N = Did not change
+Blank",
+793,N/A,5494,5495,2,None,NSLDS Loan Type Code (4),"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+794,N/A,5496,5501,6,None,NSLDS Loan Net Amount (4),"000000 to 999999
+Blank",
+795,N/A,5502,5503,2,None,NSLDS Loan Current Status Code (4),"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+796,N/A,5504,5511,8,None,NSLDS Loan Current Status Date (4),"Format is CCYYMMDD
+N/A
+Blank",
+797,N/A,5512,5517,6,None,NSLDS Loan Outstanding Principal Balance (4),"000000 to 999999
+N/A
+Blank",
+798,N/A,5518,5525,8,None,NSLDS Loan Outstanding Principal Balance Date (4),"Numeric (CCYYMMDD)
+N/A
+Blank",
+799,N/A,5526,5533,8,None,NSLDS Loan Period Begin Date (4),"Numeric (CCYYMMDD)
+N/A
+Blank",
+800,N/A,5534,5541,8,None,NSLDS Loan Period End Date (4),"Numeric (CCYYMMDD)
+N/A
+Blank",
+801,N/A,5542,5544,3,None,NSLDS Loan Guaranty Agency Code (4),"Numeric
+N/A
+Blank",
+802,N/A,5545,5547,3,None,NSLDS Loan Contact Type (4),"Alpha
+N/A
+Blank",
+803,N/A,5548,5555,8,None,NSLDS Loan School Code (4),"Alphanumeric
+N/A
+Blank",
+804,N/A,5556,5563,8,None,NSLDS Loan Contact Code (4),"Alphanumeric
+N/A
+Blank",
+805,N/A,5564,5566,3,None,NSLDS Loan Grade Level (4),"Alphanumeric
+N/A
+Blank",
+806,N/A,5567,5567,1,None,NSLDS Loan Additional Unsubsidized Flag (4),"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+807,N/A,5568,5568,1,None,NSLDS Loan Capitalized Interest Flag (4),"Y = Yes 
+N = No
+Blank",
+808,N/A,5569,5574,6,None,NSLDS Loan Disbursement Amount (4),"000000 to 999999
+N/A
+Blank",
+809,N/A,5575,5582,8,None,NSLDS Loan Disbursement Date (4),"Numeric (CCYYMMDD)
+N/A
+Blank",
+810,N/A,5583,5583,1,None,NSLDS Loan Confirmed Loan Subsidy Status (4),"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+811,N/A,5584,5591,8,Revised the field name,NSLDS Loan Subsidy Status Date (4),"Numeric (CCYYMMDD)
+N/A
+Blank",
+812,N/A,5592,5611,20,None,Filler,For Federal Student Aid use only,
+813,N/A,5612,5613,2,None,NSLDS Loan Sequence Number (5),"01 to 06
+Blank",
+814,N/A,5614,5614,1,None,NSLDS Loan Defaulted Recent Indicator (5),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+815,N/A,5615,5615,1,None,NSLDS Loan Change Flag (5),"# = Changed
+N = Did not change
+Blank",
+816,N/A,5616,5617,2,None,NSLDS Loan Type Code (5),"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+817,N/A,5618,5623,6,None,NSLDS Loan Net Amount (5),"000000 to 999999
+Blank",
+818,N/A,5624,5625,2,None,NSLDS Loan Current Status Code (5),"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+819,N/A,5626,5633,8,None,NSLDS Loan Current Status Date (5),"Format is CCYYMMDD
+N/A
+Blank",
+820,N/A,5634,5639,6,None,NSLDS Loan Outstanding Principal Balance (5),"000000 to 999999
+N/A
+Blank",
+821,N/A,5640,5647,8,None,NSLDS Loan Outstanding Principal Balance Date (5),"Numeric (CCYYMMDD)
+N/A
+Blank",
+822,N/A,5648,5655,8,None,NSLDS Loan Period Begin Date (5),"Numeric (CCYYMMDD)
+N/A
+Blank",
+823,N/A,5656,5663,8,None,NSLDS Loan Period End Date (5),"Numeric (CCYYMMDD)
+N/A
+Blank",
+824,N/A,5664,5666,3,None,NSLDS Loan Guaranty Agency Code (5),"Numeric
+N/A
+Blank",
+825,N/A,5667,5669,3,None,NSLDS Loan Contact Type (5),"Alpha
+N/A
+Blank",
+826,N/A,5670,5677,8,None,NSLDS Loan School Code (5),"Alphanumeric
+N/A
+Blank",
+827,N/A,5678,5685,8,None,NSLDS Loan Contact Code (5),"Alphanumeric
+N/A
+Blank",
+828,N/A,5686,5688,3,None,NSLDS Loan Grade Level (5),"Alphanumeric
+N/A
+Blank",
+829,N/A,5689,5689,1,None,NSLDS Loan Additional Unsubsidized Flag (5),"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+830,N/A,5690,5690,1,None,NSLDS Loan Capitalized Interest Flag (5),"Y = Yes 
+N = No
+Blank",
+831,N/A,5691,5696,6,None,NSLDS Loan Disbursement Amount (5),"000000 to 999999
+N/A
+Blank",
+832,N/A,5697,5704,8,None,NSLDS Loan Disbursement Date (5),"Numeric (CCYYMMDD)
+N/A
+Blank",
+833,N/A,5705,5705,1,None,NSLDS Loan Confirmed Loan Subsidy Status (5),"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+834,N/A,5706,5713,8,Revised the field name,NSLDS Loan Subsidy Status Date (5),"Numeric (CCYYMMDD)
+N/A
+Blank",
+835,N/A,5714,5733,20,None,Filler,For Federal Student Aid use only,
+836,N/A,5734,5735,2,None,NSLDS Loan Sequence Number (6),"01 to 06
+Blank",
+837,N/A,5736,5736,1,None,NSLDS Loan Defaulted Recent Indicator (6),"D = Defaulted
+R = Recent
+T = Discharged
+F = Fraud
+Blank",
+838,N/A,5737,5737,1,None,NSLDS Loan Change Flag (6),"# = Changed
+N = Did not change
+Blank",
+839,N/A,5738,5739,2,None,NSLDS Loan Type Code (6),"Alpha Code
+Blank
+
+See “NSLDS Loan Program Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+840,N/A,5740,5745,6,None,NSLDS Loan Net Amount (6),"000000 to 999999
+Blank",
+841,N/A,5746,5747,2,None,NSLDS Loan Current Status Code (6),"Alpha Code
+Blank
+
+See “NSLDS Loan Current Status Codes” in the FAFSA® Specifications Guide, Volume 4B, Processing Codes",
+842,N/A,5748,5755,8,None,NSLDS Loan Current Status Date (6),"Format is CCYYMMDD
+N/A
+Blank",
+843,N/A,5756,5761,6,None,NSLDS Loan Outstanding Principal Balance (6),"000000 to 999999
+N/A
+Blank",
+844,N/A,5762,5769,8,None,NSLDS Loan Outstanding Principal Balance Date (6),"Numeric (CCYYMMDD)
+N/A
+Blank",
+845,N/A,5770,5777,8,None,NSLDS Loan Period Begin Date (6),"Numeric (CCYYMMDD)
+N/A
+Blank",
+846,N/A,5778,5785,8,None,NSLDS Loan Period End Date (6),"Numeric (CCYYMMDD)
+N/A
+Blank",
+847,N/A,5786,5788,3,None,NSLDS Loan Guaranty Agency Code (6),"Numeric
+N/A
+Blank",
+848,N/A,5789,5791,3,None,NSLDS Loan Contact Type (6),"Alpha
+N/A
+Blank",
+849,N/A,5792,5799,8,None,NSLDS Loan School Code (6),"Alphanumeric
+N/A
+Blank",
+850,N/A,5800,5807,8,None,NSLDS Loan Contact Code (6),"Alphanumeric
+N/A
+Blank",
+851,N/A,5808,5810,3,None,NSLDS Loan Grade Level (6),"Alphanumeric
+N/A
+Blank",
+852,N/A,5811,5811,1,None,NSLDS Loan Additional Unsubsidized Flag (6),"P = PLUS denial
+H = Health professional
+B = Both
+N = Neither
+Blank",
+853,N/A,5812,5812,1,None,NSLDS Loan Capitalized Interest Flag (6),"Y = Yes 
+N = No
+Blank",
+854,N/A,5813,5818,6,None,NSLDS Loan Disbursement Amount (6),"000000 to 999999
+N/A
+Blank",
+855,N/A,5819,5826,8,None,NSLDS Loan Disbursement Date (6),"Numeric (CCYYMMDD)
+N/A
+Blank",
+856,N/A,5827,5827,1,None,NSLDS Loan Confirmed Loan Subsidy Status (6),"L = Lost Subsidy
+R = Reinstated Subsidy
+N = Not Applicable
+Blank",
+857,N/A,5828,5835,8,Revised the field name,NSLDS Loan Subsidy Status Date (6),"Numeric (CCYYMMDD)
+N/A
+Blank",
+858,N/A,5836,6999,1164,None,Filler,For Federal Student Aid use only,
+FTIM Information ,,,,,,,,
+859,N/A,7000,7035,36,None,Filler,For Federal Student Aid use only,
+Student FTI-M Information,,,,,,,,
+860,N/A,7036,7085,50,None,Filler,For Federal Student Aid use only,
+861,N/A,7086,7096,11,None,FTI label start,"Exact string: “CUI//SP-TAX”
+Blank",
+862,N/A,7097,7100,4,None,Returned tax year,"Year in format: “CCYY”
+Blank",
+863,N/A,7101,7101,1,None,Filing status code,"1 = Single
+2 = Married–Filed Joint Return
+3 = Married–Filed Separate Return
+4 = Head of Household
+5 = Qualifying Surviving Spouse 
+Blank",
+864,N/A,7102,7111,10,None,Adjusted Gross Income,"-999999999 to 9999999999
+Blank",
+865,N/A,7112,7113,2,None,Number of exemptions,"0 to 99
+Blank",
+866,N/A,7114,7115,2,None,Number of dependents,"0 to 99
+Blank",
+867,N/A,7116,7126,11,None,Total income earned amount,"0 to 99999999999
+Blank",
+868,N/A,7127,7135,9,Revised the field name,Income Tax Paid,"0 to 999999999
+Blank",
+869,N/A,7136,7144,9,Revised the field name,Education credits,"0 to 999999999
+Blank",
+870,N/A,7145,7155,11,None,Untaxed IRA distributions,"0 to 99999999999
+Blank",
+871,N/A,7156,7166,11,None,IRA deductible and payments,"0 to 99999999999
+Blank",
+872,N/A,7167,7177,11,None,Tax exempt interest,"0 to 99999999999
+Blank",
+873,N/A,7178,7188,11,None,Untaxed pensions amount,"0 to 99999999999
+Blank",
+874,N/A,7189,7200,12,None,Schedule C net profit/loss,"-99999999999 to 99999999999
+Blank",
+875,N/A,7201,7201,1,None,Schedule A indicator,"1 = Yes
+2 = No
+Blank",
+876,N/A,7202,7202,1,None,Schedule B indicator,"1 = Yes
+2 = No
+Blank",
+877,N/A,7203,7203,1,None,Schedule D indicator,"1 = Yes
+2 = No
+Blank",
+878,N/A,7204,7204,1,None,Schedule E indicator,"1 = Yes
+2 = No
+Blank",
+879,N/A,7205,7205,1,None,Schedule F indicator,"1 = Yes
+2 = No
+Blank",
+880,N/A,7206,7206,1,None,Schedule H indicator,"1 = Yes
+2 = No
+Blank",
+881,N/A,7207,7209,3,None,IRS response code,"200 = Successful Request
+203 = PII Match Failed
+206 = Partial Delivery of Content
+212 = Cannot Verify Return Data
+214 = No Return on File
+Blank",
+Student Spouse FTI-M Information,,,,,,,,
+882,N/A,7210,7213,4,None,Returned tax year,"Year in format: “CCYY”
+Blank",
+883,N/A,7214,7214,1,None,Filing status code,"1 = Single
+2 = Married–Filed Joint Return
+3 = Married–Filed Separate Return
+4 = Head of Household
+5 = Qualifying Surviving Spouse 
+Blank",
+884,N/A,7215,7224,10,None,Adjusted Gross Income,"-999999999 to 9999999999
+Blank",
+885,N/A,7225,7226,2,None,Number of exemptions,"0 to 99
+Blank",
+886,N/A,7227,7228,2,None,Number of dependents,"0 to 99
+Blank",
+887,N/A,7229,7239,11,None,Total income earned amount,"0 to 99999999999
+Blank",
+888,N/A,7240,7248,9,Revised the field name,Income Tax Paid,"0 to 999999999
+Blank",
+889,N/A,7249,7257,9,Revised the field name,Education credits,"0 to 999999999
+Blank",
+890,N/A,7258,7268,11,None,Untaxed IRA distributions,"0 to 99999999999
+Blank",
+891,N/A,7269,7279,11,None,IRA deductible and payments,"0 to 99999999999
+Blank",
+892,N/A,7280,7290,11,None,Tax exempt interest,"0 to 99999999999
+Blank",
+893,N/A,7291,7301,11,None,Untaxed pensions amount,"0 to 99999999999
+Blank",
+894,N/A,7302,7313,12,None,Schedule C net profit/loss,"-99999999999 to 99999999999
+Blank",
+895,N/A,7314,7314,1,None,Schedule A indicator,"1 = Yes
+2 = No
+Blank",
+896,N/A,7315,7315,1,None,Schedule B indicator,"1 = Yes
+2 = No
+Blank",
+897,N/A,7316,7316,1,None,Schedule D indicator,"1 = Yes
+2 = No
+Blank",
+898,N/A,7317,7317,1,None,Schedule E indicator,"1 = Yes
+2 = No
+Blank",
+899,N/A,7318,7318,1,None,Schedule F indicator,"1 = Yes
+2 = No
+Blank",
+900,N/A,7319,7319,1,None,Schedule H indicator,"1 = Yes
+2 = No
+Blank",
+901,N/A,7320,7322,3,None,IRS response code,"200 = Successful Request
+203 = PII Match Failed
+206 = Partial Delivery of Content
+212 = Cannot Verify Return Data
+214 = No Return on File
+Blank",
+Parent FTI-M Information ,,,,,,,,
+902,N/A,7323,7326,4,None,Returned tax year,"Year in format: “CCYY”
+Blank",
+903,N/A,7327,7327,1,None,Filing status code,"1 = Single
+2 = Married–Filed Joint Return
+3 = Married–Filed Separate Return
+4 = Head of Household
+5 = Qualifying Surviving Spouse 
+Blank",
+904,N/A,7328,7337,10,None,Adjusted Gross Income,"-999999999 to 9999999999
+Blank",
+905,N/A,7338,7339,2,None,Number of exemptions,"0 to 99
+Blank",
+906,N/A,7340,7341,2,None,Number of dependents,"0 to 99
+Blank",
+907,N/A,7342,7352,11,None,Total income earned amount,"0 to 99999999999
+Blank",
+908,N/A,7353,7361,9,Revised the field name,Income Tax Paid,"0 to 999999999
+Blank",
+909,N/A,7362,7370,9,Revised the field name,Education credits,"0 to 999999999
+Blank",
+910,N/A,7371,7381,11,None,Untaxed IRA distributions,"0 to 99999999999
+Blank",
+911,N/A,7382,7392,11,None,IRA deductible and payments,"0 to 99999999999
+Blank",
+912,N/A,7393,7403,11,None,Tax exempt interest,"0 to 99999999999
+Blank",
+913,N/A,7404,7414,11,None,Untaxed pensions amount,"0 to 99999999999
+Blank",
+914,N/A,7415,7426,12,None,Schedule C net profit/loss,"-99999999999 to 99999999999
+Blank",
+915,N/A,7427,7427,1,None,Schedule A indicator,"1 = Yes
+2 = No
+Blank",
+916,N/A,7428,7428,1,None,Schedule B indicator,"1 = Yes
+2 = No
+Blank",
+917,N/A,7429,7429,1,None,Schedule D indicator,"1 = Yes
+2 = No
+Blank",
+918,N/A,7430,7430,1,None,Schedule E indicator,"1 = Yes
+2 = No
+Blank",
+919,N/A,7431,7431,1,None,Schedule F indicator,"1 = Yes
+2 = No
+Blank",
+920,N/A,7432,7432,1,None,Schedule H indicator,"1 = Yes
+2 = No
+Blank",
+921,N/A,7433,7435,3,None,IRS response code,"200 = Successful Request
+203 = PII Match Failed
+206 = Partial Delivery of Content
+212 = Cannot Verify Return Data
+214 = No Return on File
+Blank",
+Parent Spouse or Partner FTI-M Information,,,,,,,,
+922,N/A,7436,7439,4,None,Returned tax year,"Year in format: “CCYY”
+Blank",
+923,N/A,7440,7440,1,None,Filing status code,"1 = Single
+2 = Married–Filed Joint Return
+3 = Married–Filed Separate Return
+4 = Head of Household
+5 = Qualifying Surviving Spouse 
+Blank",
+924,N/A,7441,7450,10,None,Adjusted Gross Income,"-999999999 to 9999999999
+Blank",
+925,N/A,7451,7452,2,None,Number of exemptions,"0 to 99
+Blank",
+926,N/A,7453,7454,2,None,Number of dependents,"0 to 99
+Blank",
+927,N/A,7455,7465,11,None,Total income earned amount,"0 to 99999999999
+Blank",
+928,N/A,7466,7474,9,Revised the field name,Income Tax Paid,"0 to 999999999
+Blank",
+929,N/A,7475,7483,9,Revised the field name,Education credits,"0 to 999999999
+Blank",
+930,N/A,7484,7494,11,None,Untaxed IRA distributions,"0 to 99999999999
+Blank",
+931,N/A,7495,7505,11,None,IRA deductible and payments,"0 to 99999999999
+Blank",
+932,N/A,7506,7516,11,None,Tax exempt interest,"0 to 99999999999
+Blank",
+933,N/A,7517,7527,11,None,Untaxed pensions amount,"0 to 99999999999
+Blank",
+934,N/A,7528,7539,12,None,Schedule C net profit/loss,"-99999999999 to 99999999999
+Blank",
+935,N/A,7540,7540,1,None,Schedule A indicator,"1 = Yes
+2 = No
+Blank",
+936,N/A,7541,7541,1,None,Schedule B indicator,"1 = Yes
+2 = No
+Blank",
+937,N/A,7542,7542,1,None,Schedule D indicator,"1 = Yes
+2 = No
+Blank",
+938,N/A,7543,7543,1,None,Schedule E indicator,"1 = Yes
+2 = No
+Blank",
+939,N/A,7544,7544,1,None,Schedule F indicator,"1 = Yes
+2 = No
+Blank",
+940,N/A,7545,7545,1,None,Schedule H indicator,"1 = Yes
+2 = No
+Blank",
+941,N/A,7546,7548,3,None,IRS response code,"200 = Successful Request
+203 = PII Match Failed
+206 = Partial Delivery of Content
+212 = Cannot Verify Return Data
+214 = No Return on File
+Blank",
+942,N/A,7549,7559,11,None,FTI label end,"Exact string: “CUI//SP-TAX”
+Blank",
+943,N/A,7560,7609,50,None,Filler,For Federal Student Aid use only,
+Total Income Information,,,,,,,,
+944,N/A,7610,7624,15,None,Student total income,"-99999999999999 to 999999999999999 
+Blank",
+945,N/A,7625,7639,15,None,Parent total income,"-99999999999999 to 999999999999999 
+Blank",
+946,N/A,7640,7654,15,None,FISAP total income,"-99999999999999 to 999999999999999
+Blank ",
+947,N/A,7655,7704,50,None,Filler,For Federal Student Aid use only,
+N/A,N/A,N/A,7704,N/A,None,Total Length ,N/A,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,

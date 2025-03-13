@@ -1,6 +1,8 @@
 package isirmodels
 
-type ISIRRecord struct {
+import "time"
+
+type ISIRecord struct {
 	// Field # 1
 	YearIndicator string
 
@@ -23,7 +25,7 @@ type ISIRRecord struct {
 	ApplicationSource string
 
 	// Field # 8
-	ApplicationReceiptDate string
+	ApplicationReceiptDate time.Time
 
 	// Field # 9
 	TransactionSource string
@@ -35,10 +37,10 @@ type ISIRRecord struct {
 	TransactionLanguage string
 
 	// Field # 12
-	TransactionReceiptDate string
+	TransactionReceiptDate time.Time
 
 	// Field # 13
-	TransactionProcessedDate string
+	TransactionProcessedDate time.Time
 
 	// Field # 14
 	TransactionStatus string
@@ -83,7 +85,7 @@ type ISIRRecord struct {
 	StudentSuffix string
 
 	// Field # 29
-	StudentDateOfBirth string
+	StudentDateOfBirth time.Time
 
 	// Field # 30
 	StudentSSN string
@@ -191,7 +193,7 @@ type ISIRRecord struct {
 	StudentStateOfLegalResidence string
 
 	// Field # 66
-	StudentLegalResidenceDate string
+	StudentLegalResidenceDate time.Time
 
 	// Field # 67
 	StudentEitherParentAttendCollege string
@@ -383,7 +385,7 @@ type ISIRRecord struct {
 	StudentSignature string
 
 	// Field # 130
-	StudentSignatureDate string
+	StudentSignatureDate time.Time
 
 	// Field # 132
 	StudentSpouseFirstName string
@@ -398,7 +400,7 @@ type ISIRRecord struct {
 	StudentSpouseSuffix string
 
 	// Field # 136
-	StudentSpouseDateOfBirth string
+	StudentSpouseDateOfBirth time.Time
 
 	// Field # 137
 	StudentSpouseSSN string
@@ -482,7 +484,7 @@ type ISIRRecord struct {
 	StudentSpouseSignature string
 
 	// Field # 164
-	StudentSpouseSignatureDate string
+	StudentSpouseSignatureDate time.Time
 
 	// Field # 166
 	ParentFirstName string
@@ -497,7 +499,7 @@ type ISIRRecord struct {
 	ParentSuffix string
 
 	// Field # 170
-	ParentDateOfBirth string
+	ParentDateOfBirth time.Time
 
 	// Field # 171
 	ParentSSN string
@@ -533,7 +535,7 @@ type ISIRRecord struct {
 	ParentStateOfLegalResidence string
 
 	// Field # 182
-	ParentLegalResidenceDate string
+	ParentLegalResidenceDate time.Time
 
 	// Field # 183
 	ParentUpdatedFamilySize string
@@ -647,7 +649,7 @@ type ISIRRecord struct {
 	ParentSignature string
 
 	// Field # 220
-	ParentSignatureDate string
+	ParentSignatureDate time.Time
 
 	// Field # 222
 	ParentSpouseFirstName string
@@ -662,7 +664,7 @@ type ISIRRecord struct {
 	ParentSpouseSuffix string
 
 	// Field # 226
-	ParentSpouseDateOfBirth string
+	ParentSpouseDateOfBirth time.Time
 
 	// Field # 227
 	ParentSpouseSSN string
@@ -746,7 +748,7 @@ type ISIRRecord struct {
 	ParentSpouseSignature string
 
 	// Field # 254
-	ParentSpouseSignatureDate string
+	ParentSpouseSignatureDate time.Time
 
 	// Field # 256
 	PreparerFirstName string
@@ -779,7 +781,7 @@ type ISIRRecord struct {
 	PreparerSignature string
 
 	// Field # 266
-	PreparerSignatureDate string
+	PreparerSignatureDate time.Time
 
 	// Field # 268
 	StudentAffirmationStatus string
@@ -794,16 +796,16 @@ type ISIRRecord struct {
 	ParentSpouseOrPartnerAffirmationStatus string
 
 	// Field # 272
-	StudentDateConsentGranted string
+	StudentDateConsentGranted time.Time
 
 	// Field # 273
-	StudentSpouseDateConsentGranted string
+	StudentSpouseDateConsentGranted time.Time
 
 	// Field # 274
-	ParentDateConsentGranted string
+	ParentDateConsentGranted time.Time
 
 	// Field # 275
-	ParentSpouseOrPartnerDateConsentGranted string
+	ParentSpouseOrPartnerDateConsentGranted time.Time
 
 	// Field # 276
 	StudentTransunionMatchStatus string
@@ -1913,13 +1915,13 @@ type ISIRRecord struct {
 	NSLDSPellTransactionNumber1 string
 
 	// Field # 648
-	NSLDSPellLastDisbursementDate1 string
+	NSLDSPellLastDisbursementDate1 time.Time
 
 	// Field # 649
 	NSLDSPellScheduledAmount1 string
 
 	// Field # 650
-	NSLDSPellAmountPaidToDate1 string
+	NSLDSPellAmountPaidToDate1 time.Time
 
 	// Field # 651
 	NSLDSPellPercentEligibilityUsedDecimal1 string
@@ -1946,13 +1948,13 @@ type ISIRRecord struct {
 	NSLDSPellTransactionNumber2 string
 
 	// Field # 660
-	NSLDSPellLastDisbursementDate2 string
+	NSLDSPellLastDisbursementDate2 time.Time
 
 	// Field # 661
 	NSLDSPellScheduledAmount2 string
 
 	// Field # 662
-	NSLDSPellAmountPaidToDate2 string
+	NSLDSPellAmountPaidToDate2 time.Time
 
 	// Field # 663
 	NSLDSPellPercentEligibilityUsedDecimal2 string
@@ -1979,13 +1981,13 @@ type ISIRRecord struct {
 	NSLDSPellTransactionNumber3 string
 
 	// Field # 672
-	NSLDSPellLastDisbursementDate3 string
+	NSLDSPellLastDisbursementDate3 time.Time
 
 	// Field # 673
 	NSLDSPellScheduledAmount3 string
 
 	// Field # 674
-	NSLDSPellAmountPaidToDate3 string
+	NSLDSPellAmountPaidToDate3 time.Time
 
 	// Field # 675
 	NSLDSPellPercentEligibilityUsedDecimal3 string
@@ -2006,13 +2008,13 @@ type ISIRRecord struct {
 	NSLDSTEACHGrantTransactionNumber1 string
 
 	// Field # 682
-	NSLDSTEACHGrantLastDisbursementDate1 string
+	NSLDSTEACHGrantLastDisbursementDate1 time.Time
 
 	// Field # 683
 	NSLDSTEACHGrantScheduledAmount1 string
 
 	// Field # 684
-	NSLDSTEACHGrantAmountPaidToDate1 string
+	NSLDSTEACHGrantAmountPaidToDate1 time.Time
 
 	// Field # 685
 	NSLDSTEACHGrantAwardAmount1 string
@@ -2045,13 +2047,13 @@ type ISIRRecord struct {
 	NSLDSTEACHGrantTransactionNumber2 string
 
 	// Field # 696
-	NSLDSTEACHGrantLastDisbursementDate2 string
+	NSLDSTEACHGrantLastDisbursementDate2 time.Time
 
 	// Field # 697
 	NSLDSTEACHGrantScheduledAmount2 string
 
 	// Field # 698
-	NSLDSTEACHGrantAmountPaidToDate2 string
+	NSLDSTEACHGrantAmountPaidToDate2 time.Time
 
 	// Field # 699
 	NSLDSTEACHGrantAwardAmount2 string
@@ -2084,13 +2086,13 @@ type ISIRRecord struct {
 	NSLDSTEACHGrantTransactionNumber3 string
 
 	// Field # 710
-	NSLDSTEACHGrantLastDisbursementDate3 string
+	NSLDSTEACHGrantLastDisbursementDate3 time.Time
 
 	// Field # 711
 	NSLDSTEACHGrantScheduledAmount3 string
 
 	// Field # 712
-	NSLDSTEACHGrantAmountPaidToDate3 string
+	NSLDSTEACHGrantAmountPaidToDate3 time.Time
 
 	// Field # 713
 	NSLDSTEACHGrantAwardAmount3 string
@@ -2132,19 +2134,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode1 string
 
 	// Field # 727
-	NSLDSLoanCurrentStatusDate1 string
+	NSLDSLoanCurrentStatusDate1 time.Time
 
 	// Field # 728
 	NSLDSLoanOutstandingPrincipalBalance1 string
 
 	// Field # 729
-	NSLDSLoanOutstandingPrincipalBalanceDate1 string
+	NSLDSLoanOutstandingPrincipalBalanceDate1 time.Time
 
 	// Field # 730
-	NSLDSLoanPeriodBeginDate1 string
+	NSLDSLoanPeriodBeginDate1 time.Time
 
 	// Field # 731
-	NSLDSLoanPeriodEndDate1 string
+	NSLDSLoanPeriodEndDate1 time.Time
 
 	// Field # 732
 	NSLDSLoanGuarantyAgencyCode1 string
@@ -2171,13 +2173,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount1 string
 
 	// Field # 740
-	NSLDSLoanDisbursementDate1 string
+	NSLDSLoanDisbursementDate1 time.Time
 
 	// Field # 741
 	NSLDSLoanConfirmedLoanSubsidyStatus1 string
 
 	// Field # 742
-	NSLDSLoanSubsidyStatusDate1 string
+	NSLDSLoanSubsidyStatusDate1 time.Time
 
 	// Field # 744
 	NSLDSLoanSequenceNumber2 string
@@ -2198,19 +2200,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode2 string
 
 	// Field # 750
-	NSLDSLoanCurrentStatusDate2 string
+	NSLDSLoanCurrentStatusDate2 time.Time
 
 	// Field # 751
 	NSLDSLoanOutstandingPrincipalBalance2 string
 
 	// Field # 752
-	NSLDSLoanOutstandingPrincipalBalanceDate2 string
+	NSLDSLoanOutstandingPrincipalBalanceDate2 time.Time
 
 	// Field # 753
-	NSLDSLoanPeriodBeginDate2 string
+	NSLDSLoanPeriodBeginDate2 time.Time
 
 	// Field # 754
-	NSLDSLoanPeriodEndDate2 string
+	NSLDSLoanPeriodEndDate2 time.Time
 
 	// Field # 755
 	NSLDSLoanGuarantyAgencyCode2 string
@@ -2237,13 +2239,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount2 string
 
 	// Field # 763
-	NSLDSLoanDisbursementDate2 string
+	NSLDSLoanDisbursementDate2 time.Time
 
 	// Field # 764
 	NSLDSLoanConfirmedLoanSubsidyStatus2 string
 
 	// Field # 765
-	NSLDSLoanSubsidyStatusDate2 string
+	NSLDSLoanSubsidyStatusDate2 time.Time
 
 	// Field # 767
 	NSLDSLoanSequenceNumber3 string
@@ -2264,19 +2266,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode3 string
 
 	// Field # 773
-	NSLDSLoanCurrentStatusDate3 string
+	NSLDSLoanCurrentStatusDate3 time.Time
 
 	// Field # 774
 	NSLDSLoanOutstandingPrincipalBalance3 string
 
 	// Field # 775
-	NSLDSLoanOutstandingPrincipalBalanceDate3 string
+	NSLDSLoanOutstandingPrincipalBalanceDate3 time.Time
 
 	// Field # 776
-	NSLDSLoanPeriodBeginDate3 string
+	NSLDSLoanPeriodBeginDate3 time.Time
 
 	// Field # 777
-	NSLDSLoanPeriodEndDate3 string
+	NSLDSLoanPeriodEndDate3 time.Time
 
 	// Field # 778
 	NSLDSLoanGuarantyAgencyCode3 string
@@ -2303,13 +2305,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount3 string
 
 	// Field # 786
-	NSLDSLoanDisbursementDate3 string
+	NSLDSLoanDisbursementDate3 time.Time
 
 	// Field # 787
 	NSLDSLoanConfirmedLoanSubsidyStatus3 string
 
 	// Field # 788
-	NSLDSLoanSubsidyStatusDate3 string
+	NSLDSLoanSubsidyStatusDate3 time.Time
 
 	// Field # 790
 	NSLDSLoanSequenceNumber4 string
@@ -2330,19 +2332,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode4 string
 
 	// Field # 796
-	NSLDSLoanCurrentStatusDate4 string
+	NSLDSLoanCurrentStatusDate4 time.Time
 
 	// Field # 797
 	NSLDSLoanOutstandingPrincipalBalance4 string
 
 	// Field # 798
-	NSLDSLoanOutstandingPrincipalBalanceDate4 string
+	NSLDSLoanOutstandingPrincipalBalanceDate4 time.Time
 
 	// Field # 799
-	NSLDSLoanPeriodBeginDate4 string
+	NSLDSLoanPeriodBeginDate4 time.Time
 
 	// Field # 800
-	NSLDSLoanPeriodEndDate4 string
+	NSLDSLoanPeriodEndDate4 time.Time
 
 	// Field # 801
 	NSLDSLoanGuarantyAgencyCode4 string
@@ -2369,13 +2371,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount4 string
 
 	// Field # 809
-	NSLDSLoanDisbursementDate4 string
+	NSLDSLoanDisbursementDate4 time.Time
 
 	// Field # 810
 	NSLDSLoanConfirmedLoanSubsidyStatus4 string
 
 	// Field # 811
-	NSLDSLoanSubsidyStatusDate4 string
+	NSLDSLoanSubsidyStatusDate4 time.Time
 
 	// Field # 813
 	NSLDSLoanSequenceNumber5 string
@@ -2396,19 +2398,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode5 string
 
 	// Field # 819
-	NSLDSLoanCurrentStatusDate5 string
+	NSLDSLoanCurrentStatusDate5 time.Time
 
 	// Field # 820
 	NSLDSLoanOutstandingPrincipalBalance5 string
 
 	// Field # 821
-	NSLDSLoanOutstandingPrincipalBalanceDate5 string
+	NSLDSLoanOutstandingPrincipalBalanceDate5 time.Time
 
 	// Field # 822
-	NSLDSLoanPeriodBeginDate5 string
+	NSLDSLoanPeriodBeginDate5 time.Time
 
 	// Field # 823
-	NSLDSLoanPeriodEndDate5 string
+	NSLDSLoanPeriodEndDate5 time.Time
 
 	// Field # 824
 	NSLDSLoanGuarantyAgencyCode5 string
@@ -2435,13 +2437,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount5 string
 
 	// Field # 832
-	NSLDSLoanDisbursementDate5 string
+	NSLDSLoanDisbursementDate5 time.Time
 
 	// Field # 833
 	NSLDSLoanConfirmedLoanSubsidyStatus5 string
 
 	// Field # 834
-	NSLDSLoanSubsidyStatusDate5 string
+	NSLDSLoanSubsidyStatusDate5 time.Time
 
 	// Field # 836
 	NSLDSLoanSequenceNumber6 string
@@ -2462,19 +2464,19 @@ type ISIRRecord struct {
 	NSLDSLoanCurrentStatusCode6 string
 
 	// Field # 842
-	NSLDSLoanCurrentStatusDate6 string
+	NSLDSLoanCurrentStatusDate6 time.Time
 
 	// Field # 843
 	NSLDSLoanOutstandingPrincipalBalance6 string
 
 	// Field # 844
-	NSLDSLoanOutstandingPrincipalBalanceDate6 string
+	NSLDSLoanOutstandingPrincipalBalanceDate6 time.Time
 
 	// Field # 845
-	NSLDSLoanPeriodBeginDate6 string
+	NSLDSLoanPeriodBeginDate6 time.Time
 
 	// Field # 846
-	NSLDSLoanPeriodEndDate6 string
+	NSLDSLoanPeriodEndDate6 time.Time
 
 	// Field # 847
 	NSLDSLoanGuarantyAgencyCode6 string
@@ -2501,13 +2503,13 @@ type ISIRRecord struct {
 	NSLDSLoanDisbursementAmount6 string
 
 	// Field # 855
-	NSLDSLoanDisbursementDate6 string
+	NSLDSLoanDisbursementDate6 time.Time
 
 	// Field # 856
 	NSLDSLoanConfirmedLoanSubsidyStatus6 string
 
 	// Field # 857
-	NSLDSLoanSubsidyStatusDate6 string
+	NSLDSLoanSubsidyStatusDate6 time.Time
 
 	// Field # 861
 	FTILabelStart string
