@@ -1,10 +1,10 @@
 package fsaservices
 
 import (
-	"FSAModule/internal/isirconv"
-	"FSAModule/pkg/isirmodels"
 	"bufio"
 	"fmt"
+	"github.com/rpatton4/fsa/internal/isirconv"
+	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"io"
 	"strings"
 )
