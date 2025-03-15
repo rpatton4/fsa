@@ -1,9 +1,9 @@
 package isirconv
 
 import (
-	"FSAModule/pkg/isirmodels"
 	"errors"
 	"fmt"
+	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"strings"
 	"time"
 )
