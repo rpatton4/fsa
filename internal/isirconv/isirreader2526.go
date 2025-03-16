@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/rpatton4/fsa/pkg/isirmodels"
+	"log/slog"
 	"strings"
 	"time"
 )
@@ -3697,9 +3698,15 @@ const fisapTotalIncomeStartIndex int = 7640
 const fisapTotalIncomeLength int = 15
 
 func ParseISIR(s string) (isirmodels.ISIRecord, error) {
+	slog.Debug("Parsing an expected ISIR record from fixed format")
 	if len(s) != totalISIRLength {
+		slog.Error("Expected ISIR to be length %d, received string with length %d", totalISIRLength, len(s))
 		return isirmodels.ISIRecord{}, errors.New(fmt.Sprintf("Input ISIR string is the incorrect length, expected %d and received %d", totalISIRLength, len(s)))
 	}
+
+	slog.Info("Parsing record", "FAFSAUUID", strings.TrimSpace(s[fafsaUUIDStartIndex-1:(fafsaUUIDStartIndex-1)+fafsaUUIDLength]),
+		"TransactionUUID", strings.TrimSpace(s[transactionUUIDStartIndex-1:(transactionUUIDStartIndex-1)+transactionUUIDLength]),
+		"PersonUUID", strings.TrimSpace(s[transactionUUIDStartIndex-1:(transactionUUIDStartIndex-1)+transactionUUIDLength]))
 
 	r := isirmodels.ISIRecord{
 		YearIndicator: strings.TrimSpace(s[yearIndicatorStartIndex-1 : (yearIndicatorStartIndex-1)+yearIndicatorLength]), // Field # 1
