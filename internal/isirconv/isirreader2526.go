@@ -10,6 +10,7 @@ import (
 )
 
 const isirDateLayout = "20060102"
+const isirDateShortLayout = "200601"
 
 const totalISIRLength int = 7704
 
@@ -3700,7 +3701,7 @@ const fisapTotalIncomeLength int = 15
 func ParseISIR(s string) (isirmodels.ISIRecord, error) {
 	slog.Debug("Parsing an expected ISIR record from fixed format")
 	if len(s) != totalISIRLength {
-		slog.Error("Expected ISIR to be length %d, received string with length %d", totalISIRLength, len(s))
+		slog.Error(fmt.Sprintf("Expected ISIR to be length %d, received string with length %d", totalISIRLength, len(s)))
 		return isirmodels.ISIRecord{}, errors.New(fmt.Sprintf("Input ISIR string is the incorrect length, expected %d and received %d", totalISIRLength, len(s)))
 	}
 
@@ -3835,7 +3836,7 @@ func ParseISIR(s string) (isirmodels.ISIRecord, error) {
 
 		StudentStateOfLegalResidence: strings.TrimSpace(s[studentStateOfLegalResidenceStartIndex-1 : (studentStateOfLegalResidenceStartIndex-1)+studentStateOfLegalResidenceLength]), // Field # 65
 
-		StudentLegalResidenceDate: parseISIRDate(strings.TrimSpace(s[studentLegalResidenceDateStartIndex-1 : (studentLegalResidenceDateStartIndex-1)+studentLegalResidenceDateLength])), // Field # 66
+		StudentLegalResidenceDate: parseISIRDateShort(strings.TrimSpace(s[studentLegalResidenceDateStartIndex-1 : (studentLegalResidenceDateStartIndex-1)+studentLegalResidenceDateLength])), // Field # 66
 
 		StudentEitherParentAttendCollege: strings.TrimSpace(s[studentEitherParentAttendCollegeStartIndex-1 : (studentEitherParentAttendCollegeStartIndex-1)+studentEitherParentAttendCollegeLength]), // Field # 67
 
@@ -4063,7 +4064,7 @@ func ParseISIR(s string) (isirmodels.ISIRecord, error) {
 
 		ParentStateOfLegalResidence: strings.TrimSpace(s[parentStateOfLegalResidenceStartIndex-1 : (parentStateOfLegalResidenceStartIndex-1)+parentStateOfLegalResidenceLength]), // Field # 181
 
-		ParentLegalResidenceDate: parseISIRDate(strings.TrimSpace(s[parentLegalResidenceDateStartIndex-1 : (parentLegalResidenceDateStartIndex-1)+parentLegalResidenceDateLength])), // Field # 182
+		ParentLegalResidenceDate: parseISIRDateShort(strings.TrimSpace(s[parentLegalResidenceDateStartIndex-1 : (parentLegalResidenceDateStartIndex-1)+parentLegalResidenceDateLength])), // Field # 182
 
 		ParentUpdatedFamilySize: strings.TrimSpace(s[parentUpdatedFamilySizeStartIndex-1 : (parentUpdatedFamilySizeStartIndex-1)+parentUpdatedFamilySizeLength]), // Field # 183
 
@@ -5558,6 +5559,16 @@ func ParseISIR(s string) (isirmodels.ISIRecord, error) {
 
 func parseISIRDate(s string) time.Time {
 	parsedDate, err := time.Parse(isirDateLayout, s)
+
+	if err != nil {
+		return time.Time{}
+	}
+
+	return parsedDate
+}
+
+func parseISIRDateShort(s string) time.Time {
+	parsedDate, err := time.Parse(isirDateShortLayout, s)
 
 	if err != nil {
 		return time.Time{}
