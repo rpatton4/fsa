@@ -1054,7 +1054,7 @@ type ISIRecord struct {
 	StudentPersonalCircumstancesNoneOfTheAboveCHVFlags string
 
 	// Field # 358
-	StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlags string
+	StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags string
 
 	// Field # 359
 	StudentUnaccompaniedAndHomelessGeneralCHVFlags string
