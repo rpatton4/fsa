@@ -1,4 +1,4 @@
-package isirconv
+package isirlayout
 
 import (
 	"errors"
