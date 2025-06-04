@@ -2,7 +2,7 @@ package fsaservices
 
 import (
 	"bufio"
-	"github.com/rpatton4/fsa/internal/isirlayout"
+	"github.com/rpatton4/fsa/internal/isirparser"
 	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"io"
 	"log/slog"
@@ -24,7 +24,7 @@ func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, error) {
 			slog.Debug("Skipping empty line in ISIR stream")
 			continue
 		}
-		rec, err := isirlayout.ParseISIR(line)
+		rec, err := isirparser.ParseISIR2526(line)
 		if err != nil {
 			slog.Error("Error parsing line from ISIR file", "error", err.Error())
 			return records, err
