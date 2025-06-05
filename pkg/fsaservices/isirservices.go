@@ -9,11 +9,10 @@ import (
 	"strings"
 )
 
-// TODO Look for award year info (from file names for ex.) to determine which internal implementation of services to use
-
 func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, error) {
 	slog.Info("Parsing ISIR stream")
 	records := make([]isirmodels.ISIRecord, 0)
+	linesParsed, linesSkipped := 0, 0
 	fScanner := bufio.NewScanner(stream)
 
 	for fScanner.Scan() {
@@ -24,13 +23,29 @@ func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, error) {
 			slog.Debug("Skipping empty line in ISIR stream")
 			continue
 		}
-		rec, err := isirparser.ParseISIR2526(line)
+
+		ay, err := isirparser.DetermineAYFromISIRLine(line)
 		if err != nil {
-			slog.Error("Error parsing line from ISIR file", "error", err.Error())
+			slog.Error("Error determining AY from ISIR line, skipping ISIR line", "error", err.Error())
+			linesSkipped++
+			continue
+		}
+
+		p, err := isirparser.CreateISIRParser(ay)
+		if err != nil {
+			slog.Error("Error creating parser for ISIR line, skipping line", "error", err.Error())
+			linesSkipped++
+			continue
+		}
+
+		rec, err := p.ParseISIR(line)
+		if err != nil {
+			slog.Error("Error parsing line from ISIR file, stopping stream processing", "error", err.Error())
 			return records, err
 		}
 		records = append(records, rec)
-
+		linesParsed++
 	}
+	slog.Info("Parsed ISIR stream", "lines_parsed", linesParsed, "lines_skipped", linesSkipped)
 	return records, nil
 }

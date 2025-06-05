@@ -21,6 +21,20 @@ type ISIRParser interface {
 	ParseISIR(record string) (isirmodels.ISIRecord, error)
 }
 
+// Factory method to create a parser which understands the format for the given award year
+func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, error) {
+	switch y {
+	case fsaconstants.AwardYear2425:
+		return nil, errors.New("No ISIR Parser available for AY 2425")
+	case fsaconstants.AwardYear2526:
+		return &ISIRParser2526{}, nil
+	case fsaconstants.AwardYear2627:
+		return nil, errors.New("No ISIR Parser available for AY 2627")
+	default:
+		return nil, errors.New("No ISIR Parser available for AY " + string(y))
+	}
+}
+
 // Reads a line containing an ISIR record and determines which Award Year the ISIR is for
 func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, error) {
 	v, err := getAwardYearValue(l)
