@@ -6,6 +6,7 @@ package fsamodels
 import (
 	"fmt"
 	"github.com/rpatton4/fsa/pkg"
+	"github.com/rpatton4/fsa/pkg/fsatypes"
 )
 
 // MinAddressLineLength is the minimum length in characters for any address line as mandated for CommonRecord
@@ -29,10 +30,10 @@ const MaxPostalCodeLength = 10
 // PostalAddress A representation of a mailing address. This is a simplified version of the CommonRecord XML
 // schema structures for address, combining US domestic and international address info
 type PostalAddress struct {
-	AddressLine1      string
-	AddressLine2      string
-	AddressLine3      string
-	City              string
+	AddressLine1      fsatypes.AddressLine
+	AddressLine2      fsatypes.AddressLine
+	AddressLine3      fsatypes.AddressLine
+	City              fsatypes.City
 	StateProvinceCode string
 	PostalCode        string
 	CountryCode       string
