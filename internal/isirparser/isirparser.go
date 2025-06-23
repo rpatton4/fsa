@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: © 2025 Robert Patton robpatton@infiniteskye.com
+// SPDX-License-Identifier: Apache-2.0
+
 // The isirparser package contains behavior for reading an Institutional Student
 // Information Record (ISIR) from the standard fixed format provided by the
 // Department of Education and populating an isirecord struct with the data
@@ -24,14 +27,10 @@ type ISIRParser interface {
 // Factory method to create a parser which understands the format for the given award year
 func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, error) {
 	switch y {
-	case fsaconstants.AwardYear2425:
-		return nil, errors.New("No ISIR Parser available for AY 2425")
 	case fsaconstants.AwardYear2526:
 		return &ISIRParser2526{}, nil
-	case fsaconstants.AwardYear2627:
-		return nil, errors.New("No ISIR Parser available for AY 2627")
 	default:
-		return nil, errors.New("No ISIR Parser available for AY " + string(y))
+		return nil, errors.New("no ISIR Parser available for AY " + y.String())
 	}
 }
 
@@ -48,8 +47,9 @@ func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, error) {
 	case "6":
 		return fsaconstants.AwardYear2526, nil
 	default:
-		slog.Error("Unable to determine the Award Year from the ISIR", "AY value", v)
-		return fsaconstants.AwardYearUnknown, errors.New("Unable to determine the Award Year from the ISIR")
+		msg := "unable to determine the Award Year from the ISIR"
+		slog.Error(msg, "AY value", v)
+		return fsaconstants.AwardYearUnknown, errors.New(msg)
 	}
 }
 
@@ -57,8 +57,9 @@ func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, error) {
 // based on formats for different ISIR years
 func getAwardYearValue(l string) (string, error) {
 	if len(l) < 1 {
-		slog.Error("Unable to determine AY value from an empty record")
-		return "", errors.New("Unable to determine AY value from an empty record")
+		msg := "unable to determine AY value from an empty record"
+		slog.Error(msg)
+		return "", errors.New(msg)
 	}
 	// As of June 2025, the AY field is always the first character of the line
 	return string(l[0]), nil

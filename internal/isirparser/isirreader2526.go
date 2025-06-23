@@ -1,7 +1,9 @@
+// SPDX-FileCopyrightText: © 2025 Robert Patton robpatton@infiniteskye.com
+// SPDX-License-Identifier: Apache-2.0
+
 package isirparser
 
 import (
-	"errors"
 	"fmt"
 	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"log/slog"
@@ -9,6 +11,7 @@ import (
 	"time"
 )
 
+// <editor-fold desc="Field Definition Constants">
 const isirDateLayout2526 = "20060102"
 const isirDateShortLayout2526 = "200601"
 
@@ -3698,6 +3701,8 @@ const parentTotalIncomeLength2526 int = 15
 const fisapTotalIncomeStartIndex2526 int = 7640
 const fisapTotalIncomeLength2526 int = 15
 
+//</editor-fold>
+
 type ISIRParser2526 struct {
 }
 
@@ -3705,7 +3710,7 @@ func (parser *ISIRParser2526) ParseISIR(record string) (isirmodels.ISIRecord, er
 	slog.Debug("Parsing an expected ISIR record from fixed format")
 	if len(record) != totalISIRLength2526 {
 		slog.Error(fmt.Sprintf("Expected ISIR to be length %d, received string with length %d", totalISIRLength2526, len(record)))
-		return isirmodels.ISIRecord{}, errors.New(fmt.Sprintf("Input ISIR string is the incorrect length, expected %d and received %d", totalISIRLength2526, len(record)))
+		return isirmodels.ISIRecord{}, fmt.Errorf("input ISIR string is the incorrect length, expected %d and received %d", totalISIRLength2526, len(record))
 	}
 
 	slog.Info("Parsing record", "FAFSAUUID", strings.TrimSpace(record[fafsaUUIDStartIndex2526-1:(fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]),
