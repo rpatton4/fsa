@@ -27,7 +27,7 @@ const (
 type FSAError struct {
 	Code           ErrorCode
 	Message        string
-	UpstreamErrors []FSAError
+	UpstreamErrors []*FSAError
 }
 
 func (e *FSAError) Error() string {
