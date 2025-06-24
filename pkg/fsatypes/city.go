@@ -16,10 +16,10 @@ type City string
 func NewCity(s string) (City, error) {
 	l := len(s)
 	if l < minCityLength {
-		return "", fmt.Errorf("city is too short, value is '%s', length: %d, min length: %d", s, l, minNameLength)
+		return "", fmt.Errorf("city is too short, value is '%s', length: %d, min length: %d", s, l, minCityLength)
 	}
 	if l > maxCityLength {
-		return "", fmt.Errorf("city is too long, value is '%s', length: %d, max length: %d", s, l, maxNameLength)
+		return "", fmt.Errorf("city is too long, value is '%s', length: %d, max length: %d", s, l, maxCityLength)
 	}
 	return City(s), nil
 }

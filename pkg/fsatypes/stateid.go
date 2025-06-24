@@ -16,10 +16,10 @@ type StateID string
 func NewStateID(s string) (StateID, error) {
 	l := len(s)
 	if l < minStateIDLength {
-		return "", fmt.Errorf("state ID is too short, value is '%s', length: %d, min length: %d", s, l, minNameLength)
+		return "", fmt.Errorf("state ID is too short, value is '%s', length: %d, min length: %d", s, l, minStateIDLength)
 	}
 	if l > maxStateIDLength {
-		return "", fmt.Errorf("state ID is too long, value is '%s', length: %d, max length: %d", s, l, maxNameLength)
+		return "", fmt.Errorf("state ID is too long, value is '%s', length: %d, max length: %d", s, l, maxStateIDLength)
 	}
 	return StateID(s), nil
 }

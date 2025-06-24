@@ -3,15 +3,20 @@
 
 package pkg
 
+import "fmt"
+
 // ErrorCode An error code used or emitted by the FSA module
 type ErrorCode int
 
 // Enumeration of all possible error codes used within or emitted by the FSA Module.
 // The integer values may change, use the constant names for safety
 const (
-	PostalAddressLineInvalid = iota + 1
+	PostalAddressValidationFailed = iota + 1
+	PostalAddressLineInvalid
 	PostalAddressCityLengthInvalid
+	PostalAddressStateProvinceLengthInvalid
 	PostalAddressPostalCodeInvalid
+	PostalAddressCountryCodeInvalid
 )
 
 // FSAError The implementation of an error, specific to the FSA module.  This simply extends the concept of
@@ -20,6 +25,11 @@ const (
 // the message may indicate that a field value is too long while the code only indicates that the
 // length is invalid
 type FSAError struct {
-	Code    ErrorCode
-	Message string
+	Code           ErrorCode
+	Message        string
+	UpstreamErrors []FSAError
+}
+
+func (e *FSAError) Error() string {
+	return fmt.Sprintf("code: %d, message: %s, upstream errors: %d", e.Code, e.Message, len(e.UpstreamErrors))
 }

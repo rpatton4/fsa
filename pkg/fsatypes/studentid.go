@@ -16,10 +16,10 @@ type StudentID string
 func NewStudentID(s string) (StudentID, error) {
 	l := len(s)
 	if l < minStudentIdLength {
-		return "", fmt.Errorf("student ID is too short, value is '%s', length: %d, min length: %d", s, l, minNameLength)
+		return "", fmt.Errorf("student ID is too short, value is '%s', length: %d, min length: %d", s, l, minStudentIdLength)
 	}
 	if l > maxStudentIdLength {
-		return "", fmt.Errorf("student ID is too long, value is '%s', length: %d, max length: %d", s, l, maxNameLength)
+		return "", fmt.Errorf("student ID is too long, value is '%s', length: %d, max length: %d", s, l, maxStudentIdLength)
 	}
 	return StudentID(s), nil
 }
