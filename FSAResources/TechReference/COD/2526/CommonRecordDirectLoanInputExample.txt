@@ -1,0 +1,132 @@
+COMMON RECORD DIRECT LOAN INPUT EXAMPLE
+
+O*N95TG05675    ,CLS=COMRECIN,XXX,BAT=00000000000000000,NCT=000001 
+
+<?xml version="1.0" encoding="UTF-8"?> 
+<CommonRecord xmlns="http://www.ed.gov/FSA/COD/2024/v5.0c" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.ed.gov/FSA/COD/2024/v5.0c 
+CommonRecord5.0c.xsd"> 
+
+<TransmissionData> 
+<DocumentID>2025-07-09T12:05:31.9810005675</DocumentID> 
+<CreatedDateTime>2025-07-09T12:05:31.01</CreatedDateTime> 
+<Source> 
+<School> 
+<RoutingID>10005675</RoutingID> 
+</School> 
+</Source> 
+<Destination> 
+<COD> 
+<RoutingID>00000001</RoutingID> 
+</COD> 
+</Destination> 
+<Software> 
+<SoftwareProvider>mite</SoftwareProvider> 
+<SoftwareVersion>2.0</SoftwareVersion> 
+</Software> 
+<FullResponseCode>F</FullResponseCode> 
+</TransmissionData> 
+<ReportingSchool> 
+<RoutingID>10005675</RoutingID> 
+<ReportedFinancialSummary> 
+<FinancialAwardType>DLSubsidized</FinancialAwardType> 
+<FinancialAwardYear>2026</FinancialAwardYear> 
+<TotalCount>1</TotalCount> 
+<TotalReportedAward>500.00</TotalReportedAward> 
+<TotalReportedDisbursement>500.00</TotalReportedDisbursement> 
+</ReportedFinancialSummary> 
+<AttendedSchool> 
+<RoutingID>10005675</RoutingID> 
+<Student> 
+<Index> 
+<SSN>001055109</SSN> 
+<BirthDate>1969-05-11</BirthDate> 
+<LastName>KOZLOW</LastName> 
+</Index> 
+<Name> 
+<FirstName>MARGE</FirstName> 
+<MiddleName>Sarah</MiddleName> 
+<Suffix>Jr</Suffix> 
+</Name> 
+<Contacts> 
+<PermanentAddress> 
+<AddressLine>CHIPCASE CRT</AddressLine> 
+<City>Grainfield city</City> 
+<StateProvinceCode>KS</StateProvinceCode> 
+<PostalCode>45345</PostalCode> 
+</PermanentAddress> 
+</Contacts> 
+<Citizenship> 
+<CitizenshipStatusCode>1</CitizenshipStatusCode> 
+</Citizenship> 
+<DLLoanInformation AwardKey="01"> 
+<OriginationFeePercent>1.072</OriginationFeePercent> 
+<InterestRebatePercent>0</InterestRebatePercent> 
+<PromissoryNotePrintCode>S</PromissoryNotePrintCode> 
+<DisclosureStatementPrintCode>Y</DisclosureStatementPrintCode> 
+<StudentLevelCode>0</StudentLevelCode> 
+<FinancialAwardBeginDate>2025-07-02</FinancialAwardBeginDate> 
+<FinancialAwardEndDate>2026-07-01</FinancialAwardEndDate> 
+<AcademicYearBeginDate>2025-07-02</AcademicYearBeginDate> 
+<AcademicYearEndDate>2026-07-01</AcademicYearEndDate> 
+</DLLoanInformation> 
+<DLSubsidized> 
+<AwardKey>01</AwardKey> 
+<FinancialAwardYear>2026</FinancialAwardYear> 
+<FPSTransactionNumber>01</FPSTransactionNumber> 
+<FinancialAwardAmount>500</FinancialAwardAmount> 
+<DependencyStatusCode>D</DependencyStatusCode> 
+<EntranceCounseling>true</EntranceCounseling> 
+<DefaultOverpayCode>N</DefaultOverpayCode> 
+<FinancialAwardNumber>001</FinancialAwardNumber> 
+<FinancialAwardID>001055109S26G05675001</FinancialAwardID> 
+<DirectLoanAttendanceCost>35000</DirectLoanAttendanceCost> 
+<FinancialAwardCreateDate>2025-05-13</FinancialAwardCreateDate> 
+<ProgramOfStudy>004</ProgramOfStudy> 
+<StudentEligibilityCode>01</StudentEligibilityCode> 
+<AbilityToBenefitTestAdministratorCode>01</AbilityToBenefitTestAdministratorCode> 
+<AbilityToBenefitTestCode>01</AbilityToBenefitTestCode> 
+<AbilityToBenefitStateCode>MD</AbilityToBenefitStateCode> 
+<AbilityToBenefitCompletionDate>2025-05-13</AbilityToBenefitCompletionDate> 
+<Disbursement Number="01"> 
+<DisbursementAmount>500</DisbursementAmount> 
+<DisbursementDate>2025-03-13</DisbursementDate> 
+<DisbursementReleaseIndicator>true</DisbursementReleaseIndicator> 
+<DisbursementSequenceNumber>01</DisbursementSequenceNumber> 
+<EnrollmentSchoolCode>00567500</EnrollmentSchoolCode> 
+<PaymentPeriodStartDate>2025-03-13</PaymentPeriodStartDate> 
+<PaymentPeriodEndDate>2026-06-01</PaymentPeriodEndDate> 
+<EnrollmentStatus>F</EnrollmentStatus> 
+<CIP Number= "1">
+<ProgramCIPCode>11.0101</ProgramCIPCode> 
+<PublishedPgmLengthYears>4</PublishedPgmLengthYears> 
+<SpecialPrograms>B</SpecialPrograms> 
+<ProgramCredentialLevel>03</ProgramCredentialLevel> 
+</CIP>
+<CIP Number= "2">
+<ProgramCIPCode>17.8876</ProgramCIPCode> 
+<PublishedPgmLengthMonths>4</PublishedPgmLengthMonths> 
+<WeeksProgramsAcademicYear>16</WeeksProgramsAcademicYear>
+<SpecialPrograms>B</SpecialPrograms> 
+<ProgramCredentialLevel>03</ProgramCredentialLevel> 
+</CIP>
+<CIP Number= "3">
+<ProgramCIPCode>27.8895</ProgramCIPCode> 
+<PublishedPgmLengthYears>4</PublishedPgmLengthYears> 
+<SpecialPrograms>B</SpecialPrograms> 
+<ProgramCredentialLevel>03</ProgramCredentialLevel> 
+</CIP>
+<ProgramCIPCodeYear>2020</ProgramCIPCodeYear> 
+<DisbursementNetAmount>495</DisbursementNetAmount> 
+<DisbursementFeeAmount>5</DisbursementFeeAmount> 
+<InterestRebateAmount>0</InterestRebateAmount> 
+</Disbursement> 
+</DLSubsidized> 
+</Student> 
+</AttendedSchool> 
+</ReportingSchool> 
+
+</CommonRecord> 
+
+O*N05TG05675    ,CLS=COMRECIN,XXX,BAT=00000000000000000,NCT=000001 
