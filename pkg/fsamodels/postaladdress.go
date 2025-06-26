@@ -4,7 +4,7 @@
 package fsamodels
 
 import (
-	"github.com/rpatton4/fsa/pkg"
+	"github.com/rpatton4/fsa/pkg/fsaservices"
 	"github.com/rpatton4/fsa/pkg/fsatypes"
 )
 
@@ -20,10 +20,10 @@ type PostalAddress struct {
 	CountryCode       fsatypes.CountryCode
 }
 
-func NewPostalAddress(line1 string, line2 string, line3 string, city string, stateProvinceCode string, postalCode string, countryCode string) (*PostalAddress, *pkg.FSAError) {
+func NewPostalAddress(line1 string, line2 string, line3 string, city string, stateProvinceCode string, postalCode string, countryCode string) (*PostalAddress, *fsaservices.FSAError) {
 	var pa PostalAddress
-	wrapperError := pkg.FSAError{
-		Code:    pkg.PostalAddressValidationFailed,
+	wrapperError := fsaservices.FSAError{
+		Code:    fsaservices.PostalAddressValidationFailed,
 		Message: "postal address failed validation, see upstream errors",
 	}
 

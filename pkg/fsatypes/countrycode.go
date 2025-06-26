@@ -5,7 +5,7 @@ package fsatypes
 
 import (
 	"fmt"
-	"github.com/rpatton4/fsa/pkg"
+	"github.com/rpatton4/fsa/pkg/fsaservices"
 )
 
 const exactCountryCodeLength = 2
@@ -13,10 +13,10 @@ const exactCountryCodeLength = 2
 type CountryCode string
 
 // NewCountryCode validates the input string in terms of what COD will accept, which is CountryCode == 2 characters
-func NewCountryCode(s string) (CountryCode, *pkg.FSAError) {
+func NewCountryCode(s string) (CountryCode, *fsaservices.FSAError) {
 	if len(s) != exactCountryCodeLength {
-		return "", &pkg.FSAError{
-			Code:    pkg.PostalAddressCountryCodeInvalid,
+		return "", &fsaservices.FSAError{
+			Code:    fsaservices.PostalAddressCountryCodeInvalid,
 			Message: fmt.Sprintf("country code length is invalid, value is '%s', length: %d, length must be: %d", s, len(s), minAddressLineLength),
 		}
 	}

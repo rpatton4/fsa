@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © 2025 Robert Patton robpatton@infiniteskye.com
 // SPDX-License-Identifier: Apache-2.0
 
-package pkg
+package fsaservices
 
 import "fmt"
 
@@ -17,6 +17,9 @@ const (
 	PostalAddressStateProvinceLengthInvalid
 	PostalAddressPostalCodeInvalid
 	PostalAddressCountryCodeInvalid
+	ISIRParseError
+	LibraryConfigurationErrorISIRAYUnrecognized
+	AYDeterminationErrorEmptyISIRInputLine
 )
 
 // FSAError The implementation of an error, specific to the FSA module.  This simply extends the concept of

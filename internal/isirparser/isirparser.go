@@ -15,27 +15,32 @@ package isirparser
 
 import (
 	"errors"
+	"fmt"
 	"github.com/rpatton4/fsa/pkg/fsaconstants"
+	"github.com/rpatton4/fsa/pkg/fsaservices"
 	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"log/slog"
 )
 
 type ISIRParser interface {
-	ParseISIR(record string) (isirmodels.ISIRecord, error)
+	ParseISIR(record string) (isirmodels.ISIRecord, *fsaservices.FSAError)
 }
 
 // Factory method to create a parser which understands the format for the given award year
-func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, error) {
+func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, *fsaservices.FSAError) {
 	switch y {
 	case fsaconstants.AwardYear2526:
 		return &ISIRParser2526{}, nil
 	default:
-		return nil, errors.New("no ISIR Parser available for AY " + y.String())
+		return nil, &fsaservices.FSAError{
+			Code:    fsaservices.LibraryConfigurationErrorISIRAYUnrecognized,
+			Message: fmt.Sprintf("no ISIR Parser available for AY " + y.String()),
+		}
 	}
 }
 
 // Reads a line containing an ISIR record and determines which Award Year the ISIR is for
-func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, error) {
+func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, *fsaservices.FSAError) {
 	v, err := getAwardYearValue(l)
 	if err != nil {
 		return fsaconstants.AwardYearUnknown, err
@@ -55,11 +60,14 @@ func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, error) {
 
 // Retrieves the value for the award year from the given ISIR line.  Contains any logic to locate that field
 // based on formats for different ISIR years
-func getAwardYearValue(l string) (string, error) {
+func getAwardYearValue(l string) (string, *fsaservices.FSAError) {
 	if len(l) < 1 {
 		msg := "unable to determine AY value from an empty record"
 		slog.Error(msg)
-		return "", errors.New(msg)
+		return "", &fsaservices.FSAError{
+			Code:    fsaservices.AYDeterminationErrorEmptyISIRInputLine,
+			Message: msg,
+		}
 	}
 	// As of June 2025, the AY field is always the first character of the line
 	return string(l[0]), nil

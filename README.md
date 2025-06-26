@@ -49,7 +49,26 @@ will be included here.
 TBD
 
 ## ISIR Service Functions
-TBD
+The fsaservices.ParseISIRStream function is the entry point for converting a data stream with ISIR data
+to the models.  The function and related logic will determine the source format from the data
+stream itself, for example which format to use based on award year. Calling into the function is
+very straightforward: pass it a stream of ISIR data as received from ED and receive back a slice
+of fsamodels.ISIRecord or an error. See [Error Handling](##error-handling) for more information on that
+subject. Sample code (with an obviously fake ISIR for brevity) is:
+```aiignore
+package main
+
+import (
+    "github.com/rpatton4/fsa/pkg/fsaservices"
+	"github.com/rpatton4/fsa/pkg/isirmodels"
+	"strings"
+)
+
+func main() {
+    s := "fake isir"
+    r, err := fsaservices.ParseISIRStream(strings.NewReader(s))
+}
+```
 
 ## Design Note: Models
 The library provides a set of "models" which reflect ED's concept of the key domain entities.
@@ -60,6 +79,8 @@ As an example, the library's concept of a Student model is certainly going to be
 any used within your system because it only cares about information needed for Financial Aid processing versus grades,
 attendance, registration etc. These models are not intended to be used as the building blocks
 of a student system or anything like that, for this reason.
+
+## Error Handling
 
 # Contributing
 TBD

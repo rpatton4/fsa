@@ -6,17 +6,19 @@ package fsaservices
 import (
 	"bufio"
 	"github.com/rpatton4/fsa/internal/isirparser"
+	"github.com/rpatton4/fsa/pkg/fsaconstants"
 	"github.com/rpatton4/fsa/pkg/isirmodels"
 	"io"
 	"log/slog"
 	"strings"
 )
 
-func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, error) {
+func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, FSAError) {
 	slog.Info("Parsing ISIR stream")
 	records := make([]isirmodels.ISIRecord, 0)
 	linesParsed, linesSkipped := 0, 0
 	fScanner := bufio.NewScanner(stream)
+	var parsers = make(map[fsaconstants.AwardYear]isirparser.ISIRParser)
 
 	for fScanner.Scan() {
 		line := fScanner.Text()
@@ -34,11 +36,17 @@ func ParseISIRStream(stream io.Reader) ([]isirmodels.ISIRecord, error) {
 			continue
 		}
 
-		p, err := isirparser.CreateISIRParser(ay)
-		if err != nil {
-			slog.Error("Error creating parser for ISIR line, skipping line", "errorMessage", err.Error())
-			linesSkipped++
-			continue
+		p, ok := parsers[ay]
+
+		// Reuse parsers we've already created
+		if !ok {
+			p, err := isirparser.CreateISIRParser(ay)
+			if err != nil {
+				slog.Error("Error creating parser for ISIR line, skipping line", "errorMessage", err.Error())
+				linesSkipped++
+				continue
+			}
+			parsers[ay] = p
 		}
 
 		rec, err := p.ParseISIR(line)
