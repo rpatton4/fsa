@@ -13,8 +13,8 @@ import (
 )
 
 // <editor-fold desc="Field Definition Constants">
-const isirDateLayout2526 = "20060102"
-const isirDateShortLayout2526 = "200601"
+const isirDateLayout2526 = "20060102"    // CCYYMMDD
+const isirDateShortLayout2526 = "200601" // CCYYMM
 
 const totalISIRLength2526 int = 7704
 
@@ -3708,7 +3708,7 @@ type ISIRParser2526 struct {
 }
 
 func (parser *ISIRParser2526) ParseISIR(record string) (fsamodels.ISIRecord, *fsaerrors.Error) {
-	slog.Debug("Parsing an expected ISIR record from fixed format")
+	slog.Debug("ParseISIR(record) starting")
 	if len(record) != totalISIRLength2526 {
 		slog.Error(fmt.Sprintf("Expected ISIR to be length %d, received string with length %d", totalISIRLength2526, len(record)))
 		return fsamodels.ISIRecord{}, &fsaerrors.Error{
@@ -3717,7 +3717,7 @@ func (parser *ISIRParser2526) ParseISIR(record string) (fsamodels.ISIRecord, *fs
 		}
 	}
 
-	slog.Info("Parsing record", "FAFSAUUID", strings.TrimSpace(record[fafsaUUIDStartIndex2526-1:(fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]),
+	slog.Debug("ParseISIR(record): Parsing record", "FAFSAUUID", strings.TrimSpace(record[fafsaUUIDStartIndex2526-1:(fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]),
 		"TransactionUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
 		"PersonUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]))
 	// <editor-fold desc="Parsing Fields">
@@ -5565,6 +5565,7 @@ func (parser *ISIRParser2526) ParseISIR(record string) (fsamodels.ISIRecord, *fs
 		FISAPTotalIncome: strings.TrimSpace(record[fisapTotalIncomeStartIndex2526-1 : (fisapTotalIncomeStartIndex2526-1)+fisapTotalIncomeLength2526]), // Field # 946
 	}
 	//</editor-fold>
+	slog.Debug("ParseISIR(record) finished")
 	return r, nil
 }
 

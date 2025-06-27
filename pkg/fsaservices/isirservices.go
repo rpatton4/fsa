@@ -15,13 +15,13 @@ import (
 )
 
 func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error) {
-	slog.Info("Parsing ISIR stream")
+	slog.Debug("ParseISIRStream(stream) starting")
 	records := make([]fsamodels.ISIRecord, 0)
 	linesParsed, linesSkipped := 0, 0
 	fScanner := bufio.NewScanner(stream)
 	var parsers = make(map[fsaconstants.AwardYear]isirparser.ISIRParser)
 
-	for fScanner.Scan() {
+	for cur := 1; fScanner.Scan(); cur++ {
 		line := fScanner.Text()
 
 		// Determine whether the line is empty, meaning invalid, and skip if so
@@ -36,6 +36,7 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 			linesSkipped++
 			continue
 		}
+		slog.Debug("Determined AY from ISIR line", "current line number", cur, "ay", ay)
 
 		p, ok := parsers[ay]
 
@@ -49,6 +50,9 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 			}
 			parsers[ay] = np
 			p = np
+			slog.Debug("Created new ISIR parser for AY", "ay", ay)
+		} else {
+			slog.Debug("Reusing existing ISIR parser for AY", "ay", ay)
 		}
 
 		rec, err := p.ParseISIR(line)
@@ -59,6 +63,6 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 		records = append(records, rec)
 		linesParsed++
 	}
-	slog.Info("Parsed ISIR stream", "lines_parsed", linesParsed, "lines_skipped", linesSkipped)
+	slog.Debug("ParseISIRStream(stream) finished", "lines_parsed", linesParsed, "lines_skipped", linesSkipped, "records produced", len(records))
 	return records, nil
 }

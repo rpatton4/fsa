@@ -45,15 +45,28 @@ read from a stream to parse the data into models, or take data from models and p
 in the requested ED format. As different formats are implemented an example of usage for each
 will be included here.
 
+## Usage Note: Unused Fields and Empty Values
+Due to the nature of FA processing and student information, many fields in the models
+will often be unused or empty.  The zero value for a field is used to indicate this condition
+of being empty, effectively what we would consider null in other contexts. This is 
+obvious in most cases, but please note it when using `time.Time` fields.
+
 ## Usage Note: Award Years
-TBD
+ED will often change data formats for new Award Years (AY) so AY is almost always part of
+the context of whatever is being executed.  Wherever possible the AY will be detected
+from the data being processed itself, but in some cases the library may need to be told
+which AY to use. For example, as of now the AY for an ISIR can be determined from the record
+itself.  Alternately, some message classes for COD reports may not include the AY in the
+data stream itself (just in the file name), so since the library won't know the file name
+it will need to be told. And of course, when transforming data from the internal models to
+a format to be sent to ED the AY will need to be specified.
 
 ## ISIR Service Functions
 The fsaservices.ParseISIRStream function is the entry point for converting a data stream with ISIR data
 to the models.  The function and related logic will determine the source format from the data
 stream itself, for example which format to use based on award year. Calling into the function is
 very straightforward: pass it a stream of ISIR data as received from ED and receive back a slice
-of fsamodels.ISIRecord or an error. See [Error Handling](##error-handling) for more information on that
+of fsamodels.ISIRecord or an error. See [Error Handling](#error-handling) for more information on that
 subject. Sample code (with an obviously fake ISIR for brevity) is:
 ```aiignore
 package main
