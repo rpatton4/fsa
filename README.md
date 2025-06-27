@@ -60,8 +60,8 @@ package main
 
 import (
     "github.com/rpatton4/fsa/pkg/fsaservices"
-	"github.com/rpatton4/fsa/pkg/fsamodels"
-	"strings"
+    "github.com/rpatton4/fsa/pkg/fsamodels"
+    "strings"
 )
 
 func main() {
