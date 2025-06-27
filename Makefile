@@ -17,8 +17,11 @@ lint: cyclo
 	go vet -vettool=$(which shadow) ./pkg/fsaservices
 	errcheck ./...
 
+test:
+	go test ./...
+
 build: vet
-	go build -o ./ISIRDBLoadJob cmd/main/azurefunctionhandler.go
+	go build -o ./fsa
 
 run:
 	func start

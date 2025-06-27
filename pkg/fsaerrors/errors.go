@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © 2025 Robert Patton robpatton@infiniteskye.com
 // SPDX-License-Identifier: Apache-2.0
 
-package fsaservices
+package fsaerrors
 
 import "fmt"
 
@@ -22,17 +22,17 @@ const (
 	AYDeterminationErrorEmptyISIRInputLine
 )
 
-// FSAError The implementation of an error, specific to the FSA module.  This simply extends the concept of
+// Error The implementation of an error, specific to the FSA module.  This simply extends the concept of
 // errors.Error with a code for the purposes of comparisons and internationalization of messages.
 // In many cases the code will be slightly less detailed than the included message, for example
 // the message may indicate that a field value is too long while the code only indicates that the
 // length is invalid
-type FSAError struct {
+type Error struct {
 	Code           ErrorCode
 	Message        string
-	UpstreamErrors []*FSAError
+	UpstreamErrors []*Error
 }
 
-func (e *FSAError) Error() string {
+func (e *Error) Error() string {
 	return fmt.Sprintf("code: %d, message: %s, upstream errors: %d", e.Code, e.Message, len(e.UpstreamErrors))
 }

@@ -14,33 +14,32 @@
 package isirparser
 
 import (
-	"errors"
 	"fmt"
 	"github.com/rpatton4/fsa/pkg/fsaconstants"
-	"github.com/rpatton4/fsa/pkg/fsaservices"
-	"github.com/rpatton4/fsa/pkg/isirmodels"
+	"github.com/rpatton4/fsa/pkg/fsaerrors"
+	"github.com/rpatton4/fsa/pkg/fsamodels"
 	"log/slog"
 )
 
 type ISIRParser interface {
-	ParseISIR(record string) (isirmodels.ISIRecord, *fsaservices.FSAError)
+	ParseISIR(record string) (fsamodels.ISIRecord, *fsaerrors.Error)
 }
 
 // Factory method to create a parser which understands the format for the given award year
-func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, *fsaservices.FSAError) {
+func CreateISIRParser(y fsaconstants.AwardYear) (ISIRParser, *fsaerrors.Error) {
 	switch y {
 	case fsaconstants.AwardYear2526:
 		return &ISIRParser2526{}, nil
 	default:
-		return nil, &fsaservices.FSAError{
-			Code:    fsaservices.LibraryConfigurationErrorISIRAYUnrecognized,
-			Message: fmt.Sprintf("no ISIR Parser available for AY " + y.String()),
+		return nil, &fsaerrors.Error{
+			Code:    fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,
+			Message: fmt.Sprintf("no ISIR Parser available for AY %s", y.String()),
 		}
 	}
 }
 
 // Reads a line containing an ISIR record and determines which Award Year the ISIR is for
-func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, *fsaservices.FSAError) {
+func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, *fsaerrors.Error) {
 	v, err := getAwardYearValue(l)
 	if err != nil {
 		return fsaconstants.AwardYearUnknown, err
@@ -52,20 +51,23 @@ func DetermineAYFromISIRLine(l string) (fsaconstants.AwardYear, *fsaservices.FSA
 	case "6":
 		return fsaconstants.AwardYear2526, nil
 	default:
-		msg := "unable to determine the Award Year from the ISIR"
-		slog.Error(msg, "AY value", v)
-		return fsaconstants.AwardYearUnknown, errors.New(msg)
+		msg := fmt.Sprintf("unable to determine the Award Year from the ISIR, value='%s'", v)
+		slog.Error(msg)
+		return fsaconstants.AwardYearUnknown, &fsaerrors.Error{
+			Code:    fsaerrors.AYDeterminationErrorEmptyISIRInputLine,
+			Message: msg,
+		}
 	}
 }
 
 // Retrieves the value for the award year from the given ISIR line.  Contains any logic to locate that field
 // based on formats for different ISIR years
-func getAwardYearValue(l string) (string, *fsaservices.FSAError) {
+func getAwardYearValue(l string) (string, *fsaerrors.Error) {
 	if len(l) < 1 {
 		msg := "unable to determine AY value from an empty record"
 		slog.Error(msg)
-		return "", &fsaservices.FSAError{
-			Code:    fsaservices.AYDeterminationErrorEmptyISIRInputLine,
+		return "", &fsaerrors.Error{
+			Code:    fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,
 			Message: msg,
 		}
 	}

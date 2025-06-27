@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © 2025 Robert Patton robpatton@infiniteskye.com
 // SPDX-License-Identifier: Apache-2.0
 
-package isirmodels
+package fsamodels
 
 import "time"
 

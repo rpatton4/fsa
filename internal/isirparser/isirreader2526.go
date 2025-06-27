@@ -5,8 +5,8 @@ package isirparser
 
 import (
 	"fmt"
-	"github.com/rpatton4/fsa/pkg/fsaservices"
-	"github.com/rpatton4/fsa/pkg/isirmodels"
+	"github.com/rpatton4/fsa/pkg/fsaerrors"
+	"github.com/rpatton4/fsa/pkg/fsamodels"
 	"log/slog"
 	"strings"
 	"time"
@@ -3707,12 +3707,12 @@ const fisapTotalIncomeLength2526 int = 15
 type ISIRParser2526 struct {
 }
 
-func (parser *ISIRParser2526) ParseISIR(record string) (isirmodels.ISIRecord, *fsaservices.FSAError) {
+func (parser *ISIRParser2526) ParseISIR(record string) (fsamodels.ISIRecord, *fsaerrors.Error) {
 	slog.Debug("Parsing an expected ISIR record from fixed format")
 	if len(record) != totalISIRLength2526 {
 		slog.Error(fmt.Sprintf("Expected ISIR to be length %d, received string with length %d", totalISIRLength2526, len(record)))
-		return isirmodels.ISIRecord{}, &fsaservices.FSAError{
-			Code:    fsaservices.ISIRParseError,
+		return fsamodels.ISIRecord{}, &fsaerrors.Error{
+			Code:    fsaerrors.ISIRParseError,
 			Message: fmt.Sprintf("input ISIR string is the incorrect length, expected %d and received %d", totalISIRLength2526, len(record)),
 		}
 	}
@@ -3721,7 +3721,7 @@ func (parser *ISIRParser2526) ParseISIR(record string) (isirmodels.ISIRecord, *f
 		"TransactionUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
 		"PersonUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]))
 	// <editor-fold desc="Parsing Fields">
-	r := isirmodels.ISIRecord{
+	r := fsamodels.ISIRecord{
 		YearIndicator: strings.TrimSpace(record[yearIndicatorStartIndex2526-1 : (yearIndicatorStartIndex2526-1)+yearIndicatorLength2526]), // Field # 1
 
 		FAFSAUUID: strings.TrimSpace(record[fafsaUUIDStartIndex2526-1 : (fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]), // Field # 2
