@@ -60,13 +60,28 @@ package main
 
 import (
     "github.com/rpatton4/fsa/pkg/fsaservices"
-	"github.com/rpatton4/fsa/pkg/isirmodels"
+	"github.com/rpatton4/fsa/pkg/fsamodels"
 	"strings"
 )
 
 func main() {
-    s := "fake isir"
+    s := "replace with valid ISIR line"
     r, err := fsaservices.ParseISIRStream(strings.NewReader(s))
+    
+    if err != nil {
+        fmt.Println(err.Error())
+        if len(err.UpstreamErrors()) >0 {
+            fmt.Println("Upstream errors: ")
+            for i, e := range err.UpstreamErrors {
+                fmt.Println(e.Error())
+            }
+        }
+        return
+    }
+    
+    for i, isir := range r {
+        fmt.Println(isir[i].TransactionUUID)
+    }
 }
 ```
 
@@ -81,15 +96,29 @@ attendance, registration etc. These models are not intended to be used as the bu
 of a student system or anything like that, for this reason.
 
 ## Error Handling
+The `fsaerrors.Error` type is used to represent errors occurring while transforming data between the models 
+and the various formats.  These errors indicate either runtime errors for invalid data such as a field being set to a string
+which is longer than what COD will accept, or build time errors for missing or out of date configuration such 
+as trying to import a CommonRecord from COD for an award year which is not yet supported by the library.
+
+The custom error type fulfills the Go error interface so it can be used in the standard way, but has been
+created to provide some additional functionality:
+
+- An error code, which is numeric identifier for the specific error.  This is intended to be used for providing error message in languages other than English
+- Embedded upstream errors, which occur during at least two scenarios:
+  - When a validation process is being run on a high level model, so that all validation errors throughout the model can be determined and returned at once
+  - When an error occurs several layers deep in the code, to provide more context for the error in something like a stack trace
 
 # Contributing
-TBD
+Anyone is welcome to fork the repository and submit issues for suggestions on improvements, but I'd like to
+hold off on PRs for now until the library has implement CommonRecord and at least one or two message classes.
+
+Please feel free to contact me with questions or suggestions which are not marketing or sales related.
 
 # Usage of Artifical Intelligence
 No Generative AI was enslaved or harmed during the development of this library, to date.
 Various models were tried but not ultimately used because they failed miserably to produce
-functional code. AI will be tested occasionally to see if any model improves enough to save time versus
-wasting time, and is likely to be put to work at that point.
+functional code. AI will be tested occasionally to see if any model gets off acid, and is likely to be put to work at that point.
 
 
 # License
