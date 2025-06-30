@@ -7,2765 +7,2765 @@ import "time"
 
 type ISIRecord struct {
 	// Field # 1
-	YearIndicator string
+	YearIndicator string `json:",omitempty"`
 
 	// Field # 2
-	FAFSAUUID string
+	FAFSAUUID string `json:",omitempty"`
 
 	// Field # 3
-	TransactionUUID string
+	TransactionUUID string `json:",omitempty"`
 
 	// Field # 4
-	PersonUUID string
+	PersonUUID string `json:",omitempty"`
 
 	// Field # 5
-	TransactionNumber string
+	TransactionNumber string `json:",omitempty"`
 
 	// Field # 6
-	DependencyModel string
+	DependencyModel string `json:",omitempty"`
 
 	// Field # 7
-	ApplicationSource string
+	ApplicationSource string `json:",omitempty"`
 
 	// Field # 8
-	ApplicationReceiptDate time.Time
+	ApplicationReceiptDate time.Time `json:",omitempty"`
 
 	// Field # 9
-	TransactionSource string
+	TransactionSource string `json:",omitempty"`
 
 	// Field # 10
-	TransactionType string
+	TransactionType string `json:",omitempty"`
 
 	// Field # 11
-	TransactionLanguage string
+	TransactionLanguage string `json:",omitempty"`
 
 	// Field # 12
-	TransactionReceiptDate time.Time
+	TransactionReceiptDate time.Time `json:",omitempty"`
 
 	// Field # 13
-	TransactionProcessedDate time.Time
+	TransactionProcessedDate time.Time `json:",omitempty"`
 
 	// Field # 14
-	TransactionStatus string
+	TransactionStatus string `json:",omitempty"`
 
 	// Field # 15
-	RenewalDataUsed string
+	RenewalDataUsed string `json:",omitempty"`
 
 	// Field # 16
-	FPSCorrectionReason string
+	FPSCorrectionReason string `json:",omitempty"`
 
 	// Field # 17
-	SAIChangeFlag string
+	SAIChangeFlag string `json:",omitempty"`
 
 	// Field # 18
-	SAI string
+	SAI string `json:",omitempty"`
 
 	// Field # 19
-	ProvisionalSAI string
+	ProvisionalSAI string `json:",omitempty"`
 
 	// Field # 20
-	SAIFormula string
+	SAIFormula string `json:",omitempty"`
 
 	// Field # 21
-	SAIComputationType string
+	SAIComputationType string `json:",omitempty"`
 
 	// Field # 22
-	MaxPellIndicator string
+	MaxPellIndicator string `json:",omitempty"`
 
 	// Field # 23
-	MinimumPellIndicator string
+	MinimumPellIndicator string `json:",omitempty"`
 
 	// Field # 25
-	StudentFirstName string
+	StudentFirstName string `json:",omitempty"`
 
 	// Field # 26
-	StudentMiddleName string
+	StudentMiddleName string `json:",omitempty"`
 
 	// Field # 27
-	StudentLastName string
+	StudentLastName string `json:",omitempty"`
 
 	// Field # 28
-	StudentSuffix string
+	StudentSuffix string `json:",omitempty"`
 
 	// Field # 29
-	StudentDateOfBirth time.Time
+	StudentDateOfBirth time.Time `json:",omitempty"`
 
 	// Field # 30
-	StudentSSN string
+	StudentSSN string `json:",omitempty"`
 
 	// Field # 31
-	StudentITIN string
+	StudentITIN string `json:",omitempty"`
 
 	// Field # 32
-	StudentPhoneNumber string
+	StudentPhoneNumber string `json:",omitempty"`
 
 	// Field # 33
-	StudentEmailAddress string
+	StudentEmailAddress string `json:",omitempty"`
 
 	// Field # 34
-	StudentStreetAddress string
+	StudentStreetAddress string `json:",omitempty"`
 
 	// Field # 35
-	StudentCity string
+	StudentCity string `json:",omitempty"`
 
 	// Field # 36
-	StudentState string
+	StudentState string `json:",omitempty"`
 
 	// Field # 37
-	StudentZipCode string
+	StudentZipCode string `json:",omitempty"`
 
 	// Field # 38
-	StudentCountry string
+	StudentCountry string `json:",omitempty"`
 
 	// Field # 40
-	StudentMaritalStatus string
+	StudentMaritalStatus string `json:",omitempty"`
 
 	// Field # 41
-	StudentGradeLevel string
+	StudentGradeLevel string `json:",omitempty"`
 
 	// Field # 42
-	StudentFirstBachelorsDegreeBefore2526 string
+	StudentFirstBachelorsDegreeBefore2526 string `json:",omitempty"`
 
 	// Field # 43
-	StudentPursuingTeacherCertification string
+	StudentPursuingTeacherCertification string `json:",omitempty"`
 
 	// Field # 44
-	StudentActiveDuty string
+	StudentActiveDuty string `json:",omitempty"`
 
 	// Field # 45
-	StudentVeteran string
+	StudentVeteran string `json:",omitempty"`
 
 	// Field # 46
-	StudentChildOrOtherDependents string
+	StudentChildOrOtherDependents string `json:",omitempty"`
 
 	// Field # 47
-	StudentParentsDeceased string
+	StudentParentsDeceased string `json:",omitempty"`
 
 	// Field # 48
-	StudentWardOfCourt string
+	StudentWardOfCourt string `json:",omitempty"`
 
 	// Field # 49
-	StudentInFosterCare string
+	StudentInFosterCare string `json:",omitempty"`
 
 	// Field # 50
-	StudentEmancipatedMinor string
+	StudentEmancipatedMinor string `json:",omitempty"`
 
 	// Field # 51
-	StudentLegalGuardianship string
+	StudentLegalGuardianship string `json:",omitempty"`
 
 	// Field # 52
-	StudentPersonalCircumstancesNoneOfTheAbove string
+	StudentPersonalCircumstancesNoneOfTheAbove string `json:",omitempty"`
 
 	// Field # 53
-	StudentUnaccompaniedHomelessYouthAndSelfSupporting string
+	StudentUnaccompaniedHomelessYouthAndSelfSupporting string `json:",omitempty"`
 
 	// Field # 54
-	StudentUnaccompaniedHomelessGeneral string
+	StudentUnaccompaniedHomelessGeneral string `json:",omitempty"`
 
 	// Field # 55
-	StudentUnaccompaniedHomelessHS string
+	StudentUnaccompaniedHomelessHS string `json:",omitempty"`
 
 	// Field # 56
-	StudentUnaccompaniedHomelessTRIO string
+	StudentUnaccompaniedHomelessTRIO string `json:",omitempty"`
 
 	// Field # 57
-	StudentUnaccompaniedHomelessFAA string
+	StudentUnaccompaniedHomelessFAA string `json:",omitempty"`
 
 	// Field # 58
-	StudentHomelessnessNoneOfTheAbove string
+	StudentHomelessnessNoneOfTheAbove string `json:",omitempty"`
 
 	// Field # 59
-	StudentUnusualCircumstance string
+	StudentUnusualCircumstance string `json:",omitempty"`
 
 	// Field # 60
-	StudentUnsubOnly string
+	StudentUnsubOnly string `json:",omitempty"`
 
 	// Field # 61
-	StudentUpdatedFamilySize string
+	StudentUpdatedFamilySize string `json:",omitempty"`
 
 	// Field # 62
-	StudentNumberInCollege string
+	StudentNumberInCollege string `json:",omitempty"`
 
 	// Field # 63
-	StudentCitizenshipStatus string
+	StudentCitizenshipStatus string `json:",omitempty"`
 
 	// Field # 64
-	StudentANumber string
+	StudentANumber string `json:",omitempty"`
 
 	// Field # 65
-	StudentStateOfLegalResidence string
+	StudentStateOfLegalResidence string `json:",omitempty"`
 
 	// Field # 66
-	StudentLegalResidenceDate time.Time
+	StudentLegalResidenceDate time.Time `json:",omitempty"`
 
 	// Field # 67
-	StudentEitherParentAttendCollege string
+	StudentEitherParentAttendCollege string `json:",omitempty"`
 
 	// Field # 68
-	StudentParentKilledInTheLineOfDuty string
+	StudentParentKilledInTheLineOfDuty string `json:",omitempty"`
 
 	// Field # 69
-	StudentHighSchoolCompletionStatus string
+	StudentHighSchoolCompletionStatus string `json:",omitempty"`
 
 	// Field # 70
-	StudentHighSchoolName string
+	StudentHighSchoolName string `json:",omitempty"`
 
 	// Field # 71
-	StudentHighSchoolCity string
+	StudentHighSchoolCity string `json:",omitempty"`
 
 	// Field # 72
-	StudentHighSchoolState string
+	StudentHighSchoolState string `json:",omitempty"`
 
 	// Field # 73
-	StudentHighSchoolEquivalentDiplomaName string
+	StudentHighSchoolEquivalentDiplomaName string `json:",omitempty"`
 
 	// Field # 74
-	StudentHighSchoolEquivalentDiplomaState string
+	StudentHighSchoolEquivalentDiplomaState string `json:",omitempty"`
 
 	// Field # 75
-	StudentManuallyEnteredReceivedEITC string
+	StudentManuallyEnteredReceivedEITC string `json:",omitempty"`
 
 	// Field # 76
-	StudentManuallyEnteredReceivedFederalHousingAssistance string
+	StudentManuallyEnteredReceivedFederalHousingAssistance string `json:",omitempty"`
 
 	// Field # 77
-	StudentManuallyEnteredReceivedFreeReducedPriceLunch string
+	StudentManuallyEnteredReceivedFreeReducedPriceLunch string `json:",omitempty"`
 
 	// Field # 78
-	StudentManuallyEnteredReceivedMedicaid string
+	StudentManuallyEnteredReceivedMedicaid string `json:",omitempty"`
 
 	// Field # 79
-	StudentManuallyEnteredReceivedRefundableCreditFor36BHealthPlan string
+	StudentManuallyEnteredReceivedRefundableCreditFor36BHealthPlan string `json:",omitempty"`
 
 	// Field # 80
-	StudentManuallyEnteredReceivedSNAP string
+	StudentManuallyEnteredReceivedSNAP string `json:",omitempty"`
 
 	// Field # 81
-	StudentManuallyEnteredReceivedSupplementalSecurityIncome string
+	StudentManuallyEnteredReceivedSupplementalSecurityIncome string `json:",omitempty"`
 
 	// Field # 82
-	StudentManuallyEnteredReceivedTANF string
+	StudentManuallyEnteredReceivedTANF string `json:",omitempty"`
 
 	// Field # 83
-	StudentManuallyEnteredReceivedWIC string
+	StudentManuallyEnteredReceivedWIC string `json:",omitempty"`
 
 	// Field # 84
-	StudentManuallyEnteredFederalBenefitsNoneOfTheAbove string
+	StudentManuallyEnteredFederalBenefitsNoneOfTheAbove string `json:",omitempty"`
 
 	// Field # 85
-	StudentManuallyEnteredFiled1040Or1040NR string
+	StudentManuallyEnteredFiled1040Or1040NR string `json:",omitempty"`
 
 	// Field # 86
-	StudentManuallyEnteredFiledNonUSTaxReturn string
+	StudentManuallyEnteredFiledNonUSTaxReturn string `json:",omitempty"`
 
 	// Field # 87
-	StudentManuallyEnteredFiledJointReturnWithCurrentSpouse string
+	StudentManuallyEnteredFiledJointReturnWithCurrentSpouse string `json:",omitempty"`
 
 	// Field # 88
-	StudentManuallyEnteredTaxReturnFilingStatus string
+	StudentManuallyEnteredTaxReturnFilingStatus string `json:",omitempty"`
 
 	// Field # 89
-	StudentManuallyEnteredIncomeEarnedFromWork string
+	StudentManuallyEnteredIncomeEarnedFromWork string `json:",omitempty"`
 
 	// Field # 90
-	StudentManuallyEnteredTaxExemptInterestIncome string
+	StudentManuallyEnteredTaxExemptInterestIncome string `json:",omitempty"`
 
 	// Field # 91
-	StudentManuallyEnteredUntaxedPortionsOfIRADistributions string
+	StudentManuallyEnteredUntaxedPortionsOfIRADistributions string `json:",omitempty"`
 
 	// Field # 92
-	StudentManuallyEnteredIRARollover string
+	StudentManuallyEnteredIRARollover string `json:",omitempty"`
 
 	// Field # 93
-	StudentManuallyEnteredUntaxedPortionsOfPensions string
+	StudentManuallyEnteredUntaxedPortionsOfPensions string `json:",omitempty"`
 
 	// Field # 94
-	StudentManuallyEnteredPensionRollover string
+	StudentManuallyEnteredPensionRollover string `json:",omitempty"`
 
 	// Field # 95
-	StudentManuallyEnteredAdjustedGrossIncome string
+	StudentManuallyEnteredAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 96
-	StudentManuallyEnteredIncomeTaxPaid string
+	StudentManuallyEnteredIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 97
-	StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear string
+	StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear string `json:",omitempty"`
 
 	// Field # 98
-	StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther string
+	StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther string `json:",omitempty"`
 
 	// Field # 99
-	StudentManuallyEnteredEducationCredits string
+	StudentManuallyEnteredEducationCredits string `json:",omitempty"`
 
 	// Field # 100
-	StudentManuallyEnteredFiledScheduleABDEFH string
+	StudentManuallyEnteredFiledScheduleABDEFH string `json:",omitempty"`
 
 	// Field # 101
-	StudentManuallyEnteredScheduleCAmount string
+	StudentManuallyEnteredScheduleCAmount string `json:",omitempty"`
 
 	// Field # 102
-	StudentManuallyEnteredCollegeGrantAndScholarshipAid string
+	StudentManuallyEnteredCollegeGrantAndScholarshipAid string `json:",omitempty"`
 
 	// Field # 103
-	StudentManuallyEnteredForeignEarnedIncomeExclusion string
+	StudentManuallyEnteredForeignEarnedIncomeExclusion string `json:",omitempty"`
 
 	// Field # 104
-	StudentManuallyEnteredChildSupportReceived string
+	StudentManuallyEnteredChildSupportReceived string `json:",omitempty"`
 
 	// Field # 105
-	StudentManuallyEnteredTotalOfCashSavingsAndCheckingAccounts string
+	StudentManuallyEnteredTotalOfCashSavingsAndCheckingAccounts string `json:",omitempty"`
 
 	// Field # 106
-	StudentManuallyEnteredNetWorthOfCurrentInvestments string
+	StudentManuallyEnteredNetWorthOfCurrentInvestments string `json:",omitempty"`
 
 	// Field # 107
-	StudentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarms string
+	StudentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarms string `json:",omitempty"`
 
 	// Field # 108
-	StudentCollege1 string
+	StudentCollege1 string `json:",omitempty"`
 
 	// Field # 109
-	StudentCollege2 string
+	StudentCollege2 string `json:",omitempty"`
 
 	// Field # 110
-	StudentCollege3 string
+	StudentCollege3 string `json:",omitempty"`
 
 	// Field # 111
-	StudentCollege4 string
+	StudentCollege4 string `json:",omitempty"`
 
 	// Field # 112
-	StudentCollege5 string
+	StudentCollege5 string `json:",omitempty"`
 
 	// Field # 113
-	StudentCollege6 string
+	StudentCollege6 string `json:",omitempty"`
 
 	// Field # 114
-	StudentCollege7 string
+	StudentCollege7 string `json:",omitempty"`
 
 	// Field # 115
-	StudentCollege8 string
+	StudentCollege8 string `json:",omitempty"`
 
 	// Field # 116
-	StudentCollege9 string
+	StudentCollege9 string `json:",omitempty"`
 
 	// Field # 117
-	StudentCollege10 string
+	StudentCollege10 string `json:",omitempty"`
 
 	// Field # 118
-	StudentCollege11 string
+	StudentCollege11 string `json:",omitempty"`
 
 	// Field # 119
-	StudentCollege12 string
+	StudentCollege12 string `json:",omitempty"`
 
 	// Field # 120
-	StudentCollege13 string
+	StudentCollege13 string `json:",omitempty"`
 
 	// Field # 121
-	StudentCollege14 string
+	StudentCollege14 string `json:",omitempty"`
 
 	// Field # 122
-	StudentCollege15 string
+	StudentCollege15 string `json:",omitempty"`
 
 	// Field # 123
-	StudentCollege16 string
+	StudentCollege16 string `json:",omitempty"`
 
 	// Field # 124
-	StudentCollege17 string
+	StudentCollege17 string `json:",omitempty"`
 
 	// Field # 125
-	StudentCollege18 string
+	StudentCollege18 string `json:",omitempty"`
 
 	// Field # 126
-	StudentCollege19 string
+	StudentCollege19 string `json:",omitempty"`
 
 	// Field # 127
-	StudentCollege20 string
+	StudentCollege20 string `json:",omitempty"`
 
 	// Field # 128
-	StudentConsentToRetrieveAndDiscloseFTI string
+	StudentConsentToRetrieveAndDiscloseFTI string `json:",omitempty"`
 
 	// Field # 129
-	StudentSignature string
+	StudentSignature string `json:",omitempty"`
 
 	// Field # 130
-	StudentSignatureDate time.Time
+	StudentSignatureDate time.Time `json:",omitempty"`
 
 	// Field # 132
-	StudentSpouseFirstName string
+	StudentSpouseFirstName string `json:",omitempty"`
 
 	// Field # 133
-	StudentSpouseMiddleName string
+	StudentSpouseMiddleName string `json:",omitempty"`
 
 	// Field # 134
-	StudentSpouseLastName string
+	StudentSpouseLastName string `json:",omitempty"`
 
 	// Field # 135
-	StudentSpouseSuffix string
+	StudentSpouseSuffix string `json:",omitempty"`
 
 	// Field # 136
-	StudentSpouseDateOfBirth time.Time
+	StudentSpouseDateOfBirth time.Time `json:",omitempty"`
 
 	// Field # 137
-	StudentSpouseSSN string
+	StudentSpouseSSN string `json:",omitempty"`
 
 	// Field # 138
-	StudentSpouseITIN string
+	StudentSpouseITIN string `json:",omitempty"`
 
 	// Field # 139
-	StudentSpousePhoneNumber string
+	StudentSpousePhoneNumber string `json:",omitempty"`
 
 	// Field # 140
-	StudentSpouseEmailAddress string
+	StudentSpouseEmailAddress string `json:",omitempty"`
 
 	// Field # 141
-	StudentSpouseStreetAddress string
+	StudentSpouseStreetAddress string `json:",omitempty"`
 
 	// Field # 142
-	StudentSpouseCity string
+	StudentSpouseCity string `json:",omitempty"`
 
 	// Field # 143
-	StudentSpouseState string
+	StudentSpouseState string `json:",omitempty"`
 
 	// Field # 144
-	StudentSpouseZipCode string
+	StudentSpouseZipCode string `json:",omitempty"`
 
 	// Field # 145
-	StudentSpouseCountry string
+	StudentSpouseCountry string `json:",omitempty"`
 
 	// Field # 146
-	StudentSpouseFiled1040Or1040NR string
+	StudentSpouseFiled1040Or1040NR string `json:",omitempty"`
 
 	// Field # 147
-	StudentSpouseFiledNonUSTaxReturn string
+	StudentSpouseFiledNonUSTaxReturn string `json:",omitempty"`
 
 	// Field # 148
-	StudentSpouseTaxReturnFilingStatus string
+	StudentSpouseTaxReturnFilingStatus string `json:",omitempty"`
 
 	// Field # 149
-	StudentSpouseIncomeEarnedFromWork string
+	StudentSpouseIncomeEarnedFromWork string `json:",omitempty"`
 
 	// Field # 150
-	StudentSpouseTaxExemptInterestIncome string
+	StudentSpouseTaxExemptInterestIncome string `json:",omitempty"`
 
 	// Field # 151
-	StudentSpouseUntaxedPortionsOfIRADistributions string
+	StudentSpouseUntaxedPortionsOfIRADistributions string `json:",omitempty"`
 
 	// Field # 152
-	StudentSpouseIRARollover string
+	StudentSpouseIRARollover string `json:",omitempty"`
 
 	// Field # 153
-	StudentSpouseUntaxedPortionsOfPensions string
+	StudentSpouseUntaxedPortionsOfPensions string `json:",omitempty"`
 
 	// Field # 154
-	StudentSpousePensionRollover string
+	StudentSpousePensionRollover string `json:",omitempty"`
 
 	// Field # 155
-	StudentSpouseAdjustedGrossIncome string
+	StudentSpouseAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 156
-	StudentSpouseIncomeTaxPaid string
+	StudentSpouseIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 157
-	StudentSpouseDeductiblePaymentsToIRAKeoghOther string
+	StudentSpouseDeductiblePaymentsToIRAKeoghOther string `json:",omitempty"`
 
 	// Field # 158
-	StudentSpouseEducationCredits string
+	StudentSpouseEducationCredits string `json:",omitempty"`
 
 	// Field # 159
-	StudentSpouseFiledScheduleABDEFH string
+	StudentSpouseFiledScheduleABDEFH string `json:",omitempty"`
 
 	// Field # 160
-	StudentSpouseScheduleCAmount string
+	StudentSpouseScheduleCAmount string `json:",omitempty"`
 
 	// Field # 161
-	StudentSpouseForeignEarnedIncomeExclusion string
+	StudentSpouseForeignEarnedIncomeExclusion string `json:",omitempty"`
 
 	// Field # 162
-	StudentSpouseConsentToRetrieveAndDiscloseFTI string
+	StudentSpouseConsentToRetrieveAndDiscloseFTI string `json:",omitempty"`
 
 	// Field # 163
-	StudentSpouseSignature string
+	StudentSpouseSignature string `json:",omitempty"`
 
 	// Field # 164
-	StudentSpouseSignatureDate time.Time
+	StudentSpouseSignatureDate time.Time `json:",omitempty"`
 
 	// Field # 166
-	ParentFirstName string
+	ParentFirstName string `json:",omitempty"`
 
 	// Field # 167
-	ParentMiddleName string
+	ParentMiddleName string `json:",omitempty"`
 
 	// Field # 168
-	ParentLastName string
+	ParentLastName string `json:",omitempty"`
 
 	// Field # 169
-	ParentSuffix string
+	ParentSuffix string `json:",omitempty"`
 
 	// Field # 170
-	ParentDateOfBirth time.Time
+	ParentDateOfBirth time.Time `json:",omitempty"`
 
 	// Field # 171
-	ParentSSN string
+	ParentSSN string `json:",omitempty"`
 
 	// Field # 172
-	ParentITIN string
+	ParentITIN string `json:",omitempty"`
 
 	// Field # 173
-	ParentPhoneNumber string
+	ParentPhoneNumber string `json:",omitempty"`
 
 	// Field # 174
-	ParentEmailAddress string
+	ParentEmailAddress string `json:",omitempty"`
 
 	// Field # 175
-	ParentStreetAddress string
+	ParentStreetAddress string `json:",omitempty"`
 
 	// Field # 176
-	ParentCity string
+	ParentCity string `json:",omitempty"`
 
 	// Field # 177
-	ParentState string
+	ParentState string `json:",omitempty"`
 
 	// Field # 178
-	ParentZipCode string
+	ParentZipCode string `json:",omitempty"`
 
 	// Field # 179
-	ParentCountry string
+	ParentCountry string `json:",omitempty"`
 
 	// Field # 180
-	ParentMaritalStatus string
+	ParentMaritalStatus string `json:",omitempty"`
 
 	// Field # 181
-	ParentStateOfLegalResidence string
+	ParentStateOfLegalResidence string `json:",omitempty"`
 
 	// Field # 182
-	ParentLegalResidenceDate time.Time
+	ParentLegalResidenceDate time.Time `json:",omitempty"`
 
 	// Field # 183
-	ParentUpdatedFamilySize string
+	ParentUpdatedFamilySize string `json:",omitempty"`
 
 	// Field # 184
-	ParentNumberInCollege string
+	ParentNumberInCollege string `json:",omitempty"`
 
 	// Field # 185
-	ParentReceivedEITC string
+	ParentReceivedEITC string `json:",omitempty"`
 
 	// Field # 186
-	ParentReceivedFederalHousingAssistance string
+	ParentReceivedFederalHousingAssistance string `json:",omitempty"`
 
 	// Field # 187
-	ParentReceivedFreeReducedPriceLunch string
+	ParentReceivedFreeReducedPriceLunch string `json:",omitempty"`
 
 	// Field # 188
-	ParentReceivedMedicaid string
+	ParentReceivedMedicaid string `json:",omitempty"`
 
 	// Field # 189
-	ParentReceivedRefundableCreditFor36BHealthPlan string
+	ParentReceivedRefundableCreditFor36BHealthPlan string `json:",omitempty"`
 
 	// Field # 190
-	ParentReceivedSNAP string
+	ParentReceivedSNAP string `json:",omitempty"`
 
 	// Field # 191
-	ParentReceivedSupplementalSecurityIncome string
+	ParentReceivedSupplementalSecurityIncome string `json:",omitempty"`
 
 	// Field # 192
-	ParentReceivedTANF string
+	ParentReceivedTANF string `json:",omitempty"`
 
 	// Field # 193
-	ParentReceivedWIC string
+	ParentReceivedWIC string `json:",omitempty"`
 
 	// Field # 194
-	ParentFederalBenefitsNoneOfTheAbove string
+	ParentFederalBenefitsNoneOfTheAbove string `json:",omitempty"`
 
 	// Field # 195
-	ParentFiled1040Or1040NR string
+	ParentFiled1040Or1040NR string `json:",omitempty"`
 
 	// Field # 196
-	ParentFileNonUSTaxReturn string
+	ParentFileNonUSTaxReturn string `json:",omitempty"`
 
 	// Field # 197
-	ParentFiledJointReturnWithCurrentSpouse string
+	ParentFiledJointReturnWithCurrentSpouse string `json:",omitempty"`
 
 	// Field # 198
-	ParentTaxReturnFilingStatus string
+	ParentTaxReturnFilingStatus string `json:",omitempty"`
 
 	// Field # 199
-	ParentIncomeEarnedFromWork string
+	ParentIncomeEarnedFromWork string `json:",omitempty"`
 
 	// Field # 200
-	ParentTaxExemptInterestIncome string
+	ParentTaxExemptInterestIncome string `json:",omitempty"`
 
 	// Field # 201
-	ParentUntaxedPortionsOfIRADistributions string
+	ParentUntaxedPortionsOfIRADistributions string `json:",omitempty"`
 
 	// Field # 202
-	ParentIRARollover string
+	ParentIRARollover string `json:",omitempty"`
 
 	// Field # 203
-	ParentUntaxedPortionsOfPensions string
+	ParentUntaxedPortionsOfPensions string `json:",omitempty"`
 
 	// Field # 204
-	ParentPensionRollover string
+	ParentPensionRollover string `json:",omitempty"`
 
 	// Field # 205
-	ParentAdjustedGrossIncome string
+	ParentAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 206
-	ParentIncomeTaxPaid string
+	ParentIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 207
-	ParentEarnedIncomeTaxCreditReceivedDuringTaxYear string
+	ParentEarnedIncomeTaxCreditReceivedDuringTaxYear string `json:",omitempty"`
 
 	// Field # 208
-	ParentDeductiblePaymentsToIRAKeoghOther string
+	ParentDeductiblePaymentsToIRAKeoghOther string `json:",omitempty"`
 
 	// Field # 209
-	ParentEducationCredits string
+	ParentEducationCredits string `json:",omitempty"`
 
 	// Field # 210
-	ParentFiledScheduleABDEFH string
+	ParentFiledScheduleABDEFH string `json:",omitempty"`
 
 	// Field # 211
-	ParentScheduleCAmount string
+	ParentScheduleCAmount string `json:",omitempty"`
 
 	// Field # 212
-	ParentCollegeGrantAndScholarshipAid string
+	ParentCollegeGrantAndScholarshipAid string `json:",omitempty"`
 
 	// Field # 213
-	ParentForeignEarnedIncomeExclusion string
+	ParentForeignEarnedIncomeExclusion string `json:",omitempty"`
 
 	// Field # 214
-	ParentChildSupportReceived string
+	ParentChildSupportReceived string `json:",omitempty"`
 
 	// Field # 215
-	ParentTotalOfCashSavingsAndCheckingAccounts string
+	ParentTotalOfCashSavingsAndCheckingAccounts string `json:",omitempty"`
 
 	// Field # 216
-	ParentNetWorthOfCurrentInvestments string
+	ParentNetWorthOfCurrentInvestments string `json:",omitempty"`
 
 	// Field # 217
-	ParentNetWorthOfBusinessesAndInvestmentFarms string
+	ParentNetWorthOfBusinessesAndInvestmentFarms string `json:",omitempty"`
 
 	// Field # 218
-	ParentConsentToRetrieveAndDiscloseFTI string
+	ParentConsentToRetrieveAndDiscloseFTI string `json:",omitempty"`
 
 	// Field # 219
-	ParentSignature string
+	ParentSignature string `json:",omitempty"`
 
 	// Field # 220
-	ParentSignatureDate time.Time
+	ParentSignatureDate time.Time `json:",omitempty"`
 
 	// Field # 222
-	ParentSpouseFirstName string
+	ParentSpouseFirstName string `json:",omitempty"`
 
 	// Field # 223
-	ParentSpouseMiddleName string
+	ParentSpouseMiddleName string `json:",omitempty"`
 
 	// Field # 224
-	ParentSpouseLastName string
+	ParentSpouseLastName string `json:",omitempty"`
 
 	// Field # 225
-	ParentSpouseSuffix string
+	ParentSpouseSuffix string `json:",omitempty"`
 
 	// Field # 226
-	ParentSpouseDateOfBirth time.Time
+	ParentSpouseDateOfBirth time.Time `json:",omitempty"`
 
 	// Field # 227
-	ParentSpouseSSN string
+	ParentSpouseSSN string `json:",omitempty"`
 
 	// Field # 228
-	ParentSpouseITIN string
+	ParentSpouseITIN string `json:",omitempty"`
 
 	// Field # 229
-	ParentSpousePhoneNumber string
+	ParentSpousePhoneNumber string `json:",omitempty"`
 
 	// Field # 230
-	ParentSpouseEmailAddress string
+	ParentSpouseEmailAddress string `json:",omitempty"`
 
 	// Field # 231
-	ParentSpouseStreetAddress string
+	ParentSpouseStreetAddress string `json:",omitempty"`
 
 	// Field # 232
-	ParentSpouseCity string
+	ParentSpouseCity string `json:",omitempty"`
 
 	// Field # 233
-	ParentSpouseState string
+	ParentSpouseState string `json:",omitempty"`
 
 	// Field # 234
-	ParentSpouseZipCode string
+	ParentSpouseZipCode string `json:",omitempty"`
 
 	// Field # 235
-	ParentSpouseCountry string
+	ParentSpouseCountry string `json:",omitempty"`
 
 	// Field # 236
-	ParentSpouseFiled1040Or1040NR string
+	ParentSpouseFiled1040Or1040NR string `json:",omitempty"`
 
 	// Field # 237
-	ParentSpouseFileNonUSTaxReturn string
+	ParentSpouseFileNonUSTaxReturn string `json:",omitempty"`
 
 	// Field # 238
-	ParentSpouseTaxReturnFilingStatus string
+	ParentSpouseTaxReturnFilingStatus string `json:",omitempty"`
 
 	// Field # 239
-	ParentSpouseIncomeEarnedFromWork string
+	ParentSpouseIncomeEarnedFromWork string `json:",omitempty"`
 
 	// Field # 240
-	ParentSpouseTaxExemptInterestIncome string
+	ParentSpouseTaxExemptInterestIncome string `json:",omitempty"`
 
 	// Field # 241
-	ParentSpouseUntaxedPortionsOfIRADistributions string
+	ParentSpouseUntaxedPortionsOfIRADistributions string `json:",omitempty"`
 
 	// Field # 242
-	ParentSpouseIRARollover string
+	ParentSpouseIRARollover string `json:",omitempty"`
 
 	// Field # 243
-	ParentSpouseUntaxedPortionsOfPensions string
+	ParentSpouseUntaxedPortionsOfPensions string `json:",omitempty"`
 
 	// Field # 244
-	ParentSpousePensionRollover string
+	ParentSpousePensionRollover string `json:",omitempty"`
 
 	// Field # 245
-	ParentSpouseAdjustedGrossIncome string
+	ParentSpouseAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 246
-	ParentSpouseIncomeTaxPaid string
+	ParentSpouseIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 247
-	ParentSpouseDeductiblePaymentsToIRAKeoghOther string
+	ParentSpouseDeductiblePaymentsToIRAKeoghOther string `json:",omitempty"`
 
 	// Field # 248
-	ParentSpouseEducationCredits string
+	ParentSpouseEducationCredits string `json:",omitempty"`
 
 	// Field # 249
-	ParentSpouseFiledScheduleABDEFH string
+	ParentSpouseFiledScheduleABDEFH string `json:",omitempty"`
 
 	// Field # 250
-	ParentSpouseScheduleCAmount string
+	ParentSpouseScheduleCAmount string `json:",omitempty"`
 
 	// Field # 251
-	ParentSpouseForeignEarnedIncomeExclusion string
+	ParentSpouseForeignEarnedIncomeExclusion string `json:",omitempty"`
 
 	// Field # 252
-	ParentSpouseConsentToRetrieveAndDiscloseFTI string
+	ParentSpouseConsentToRetrieveAndDiscloseFTI string `json:",omitempty"`
 
 	// Field # 253
-	ParentSpouseSignature string
+	ParentSpouseSignature string `json:",omitempty"`
 
 	// Field # 254
-	ParentSpouseSignatureDate time.Time
+	ParentSpouseSignatureDate time.Time `json:",omitempty"`
 
 	// Field # 256
-	PreparerFirstName string
+	PreparerFirstName string `json:",omitempty"`
 
 	// Field # 257
-	PreparerLastName string
+	PreparerLastName string `json:",omitempty"`
 
 	// Field # 258
-	PreparerSSN string
+	PreparerSSN string `json:",omitempty"`
 
 	// Field # 259
-	PreparerEIN string
+	PreparerEIN string `json:",omitempty"`
 
 	// Field # 260
-	PreparerAffiliation string
+	PreparerAffiliation string `json:",omitempty"`
 
 	// Field # 261
-	PreparerStreetAddress string
+	PreparerStreetAddress string `json:",omitempty"`
 
 	// Field # 262
-	PreparerCity string
+	PreparerCity string `json:",omitempty"`
 
 	// Field # 263
-	PreparerState string
+	PreparerState string `json:",omitempty"`
 
 	// Field # 264
-	PreparerZipCode string
+	PreparerZipCode string `json:",omitempty"`
 
 	// Field # 265
-	PreparerSignature string
+	PreparerSignature string `json:",omitempty"`
 
 	// Field # 266
-	PreparerSignatureDate time.Time
+	PreparerSignatureDate time.Time `json:",omitempty"`
 
 	// Field # 268
-	StudentAffirmationStatus string
+	StudentAffirmationStatus string `json:",omitempty"`
 
 	// Field # 269
-	StudentSpouseAffirmationStatus string
+	StudentSpouseAffirmationStatus string `json:",omitempty"`
 
 	// Field # 270
-	ParentAffirmationStatus string
+	ParentAffirmationStatus string `json:",omitempty"`
 
 	// Field # 271
-	ParentSpouseOrPartnerAffirmationStatus string
+	ParentSpouseOrPartnerAffirmationStatus string `json:",omitempty"`
 
 	// Field # 272
-	StudentDateConsentGranted time.Time
+	StudentDateConsentGranted time.Time `json:",omitempty"`
 
 	// Field # 273
-	StudentSpouseDateConsentGranted time.Time
+	StudentSpouseDateConsentGranted time.Time `json:",omitempty"`
 
 	// Field # 274
-	ParentDateConsentGranted time.Time
+	ParentDateConsentGranted time.Time `json:",omitempty"`
 
 	// Field # 275
-	ParentSpouseOrPartnerDateConsentGranted time.Time
+	ParentSpouseOrPartnerDateConsentGranted time.Time `json:",omitempty"`
 
 	// Field # 276
-	StudentTransunionMatchStatus string
+	StudentTransunionMatchStatus string `json:",omitempty"`
 
 	// Field # 277
-	StudentSpouseTransunionMatchStatus string
+	StudentSpouseTransunionMatchStatus string `json:",omitempty"`
 
 	// Field # 278
-	StudentParentTransunionMatchStatus string
+	StudentParentTransunionMatchStatus string `json:",omitempty"`
 
 	// Field # 279
-	StudentParentSpouseTransunionMatchStatus string
+	StudentParentSpouseTransunionMatchStatus string `json:",omitempty"`
 
 	// Field # 280
-	CorrectionAppliedAgainstTransactionNumber string
+	CorrectionAppliedAgainstTransactionNumber string `json:",omitempty"`
 
 	// Field # 281
-	ProfessionalJudgement string
+	ProfessionalJudgement string `json:",omitempty"`
 
 	// Field # 282
-	DependencyOverrideIndicator string
+	DependencyOverrideIndicator string `json:",omitempty"`
 
 	// Field # 283
-	FAAFederalSchoolCode string
+	FAAFederalSchoolCode string `json:",omitempty"`
 
 	// Field # 284
-	FAASignature string
+	FAASignature string `json:",omitempty"`
 
 	// Field # 285
-	IASGIndicator string
+	IASGIndicator string `json:",omitempty"`
 
 	// Field # 286
-	ChildrenOfFallenHeroesIndicator string
+	ChildrenOfFallenHeroesIndicator string `json:",omitempty"`
 
 	// Field # 287
-	ElectronicTransactionIndicatorDestinationNumber string
+	ElectronicTransactionIndicatorDestinationNumber string `json:",omitempty"`
 
 	// Field # 288
-	StudentSignatureSource string
+	StudentSignatureSource string `json:",omitempty"`
 
 	// Field # 289
-	StudentSpouseSignatureSource string
+	StudentSpouseSignatureSource string `json:",omitempty"`
 
 	// Field # 290
-	ParentSignatureSource string
+	ParentSignatureSource string `json:",omitempty"`
 
 	// Field # 291
-	ParentSpouseOrPartnerSignatureSource string
+	ParentSpouseOrPartnerSignatureSource string `json:",omitempty"`
 
 	// Field # 292
-	SpecialHandlingIndicator string
+	SpecialHandlingIndicator string `json:",omitempty"`
 
 	// Field # 293
-	AddressOnlyChangeFlag string
+	AddressOnlyChangeFlag string `json:",omitempty"`
 
 	// Field # 294
-	FPSPushedISIRFlag string
+	FPSPushedISIRFlag string `json:",omitempty"`
 
 	// Field # 295
-	RejectStatusChangeFlag string
+	RejectStatusChangeFlag string `json:",omitempty"`
 
 	// Field # 296
-	VerificationTrackingFlag string
+	VerificationTrackingFlag string `json:",omitempty"`
 
 	// Field # 297
-	StudentSelectedForVerification string
+	StudentSelectedForVerification string `json:",omitempty"`
 
 	// Field # 298
-	IncarceratedApplicantFlag string
+	IncarceratedApplicantFlag string `json:",omitempty"`
 
 	// Field # 299
-	NSLDSTransactionNumber string
+	NSLDSTransactionNumber string `json:",omitempty"`
 
 	// Field # 300
-	NSLDSDatabaseResultsFlag string
+	NSLDSDatabaseResultsFlag string `json:",omitempty"`
 
 	// Field # 301
-	HighSchoolFlag string
+	HighSchoolFlag string `json:",omitempty"`
 
 	// Field # 302
-	StudentTotalFederalWorkStudyEarnings string
+	StudentTotalFederalWorkStudyEarnings string `json:",omitempty"`
 
 	// Field # 303
-	StudentSpouseTotalFederalWorkStudyEarnings string
+	StudentSpouseTotalFederalWorkStudyEarnings string `json:",omitempty"`
 
 	// Field # 304
-	ParentTotalFederalWorkStudyEarnings string
+	ParentTotalFederalWorkStudyEarnings string `json:",omitempty"`
 
 	// Field # 305
-	ParentSpouseOrPartnerTotalFederalWorkStudyEarnings string
+	ParentSpouseOrPartnerTotalFederalWorkStudyEarnings string `json:",omitempty"`
 
 	// Field # 306
-	TotalParentAllowancesAgainstIncome string
+	TotalParentAllowancesAgainstIncome string `json:",omitempty"`
 
 	// Field # 307
-	ParentPayrollTaxAllowance string
+	ParentPayrollTaxAllowance string `json:",omitempty"`
 
 	// Field # 308
-	ParentIncomeProtectionAllowance string
+	ParentIncomeProtectionAllowance string `json:",omitempty"`
 
 	// Field # 309
-	ParentEmploymentExpenseAllowance string
+	ParentEmploymentExpenseAllowance string `json:",omitempty"`
 
 	// Field # 310
-	ParentAvailableIncome string
+	ParentAvailableIncome string `json:",omitempty"`
 
 	// Field # 311
-	ParentAdjustedAvailableIncome string
+	ParentAdjustedAvailableIncome string `json:",omitempty"`
 
 	// Field # 312
-	ParentContribution string
+	ParentContribution string `json:",omitempty"`
 
 	// Field # 313
-	StudentPayrollTaxAllowance string
+	StudentPayrollTaxAllowance string `json:",omitempty"`
 
 	// Field # 314
-	StudentIncomeProtectionAllowance string
+	StudentIncomeProtectionAllowance string `json:",omitempty"`
 
 	// Field # 315
-	StudentAllowanceForParentsNegativeAdjustedAvailableIncome string
+	StudentAllowanceForParentsNegativeAdjustedAvailableIncome string `json:",omitempty"`
 
 	// Field # 316
-	StudentEmploymentExpenseAllowance string
+	StudentEmploymentExpenseAllowance string `json:",omitempty"`
 
 	// Field # 317
-	TotalStudentAllowancesAgainstIncome string
+	TotalStudentAllowancesAgainstIncome string `json:",omitempty"`
 
 	// Field # 318
-	StudentAvailableIncome string
+	StudentAvailableIncome string `json:",omitempty"`
 
 	// Field # 319
-	StudentContributionFromIncome string
+	StudentContributionFromIncome string `json:",omitempty"`
 
 	// Field # 320
-	StudentAdjustedAvailableIncome string
+	StudentAdjustedAvailableIncome string `json:",omitempty"`
 
 	// Field # 321
-	TotalStudentContributionFromSAAI string
+	TotalStudentContributionFromSAAI string `json:",omitempty"`
 
 	// Field # 322
-	ParentDiscretionaryNetWorth string
+	ParentDiscretionaryNetWorth string `json:",omitempty"`
 
 	// Field # 323
-	ParentNetWorth string
+	ParentNetWorth string `json:",omitempty"`
 
 	// Field # 324
-	ParentAssetProtectionAllowance string
+	ParentAssetProtectionAllowance string `json:",omitempty"`
 
 	// Field # 325
-	ParentContributionFromAssets string
+	ParentContributionFromAssets string `json:",omitempty"`
 
 	// Field # 326
-	StudentNetWorth string
+	StudentNetWorth string `json:",omitempty"`
 
 	// Field # 327
-	StudentAssetProtectionAllowance string
+	StudentAssetProtectionAllowance string `json:",omitempty"`
 
 	// Field # 328
-	StudentContributionFromAssets string
+	StudentContributionFromAssets string `json:",omitempty"`
 
 	// Field # 329
-	AssumedStudentFamilySize string
+	AssumedStudentFamilySize string `json:",omitempty"`
 
 	// Field # 330
-	AssumedParentFamilySize string
+	AssumedParentFamilySize string `json:",omitempty"`
 
 	// Field # 331
-	StudentFirstNameCHVFlags string
+	StudentFirstNameCHVFlags string `json:",omitempty"`
 
 	// Field # 332
-	StudentMiddleNameCHVFlags string
+	StudentMiddleNameCHVFlags string `json:",omitempty"`
 
 	// Field # 333
-	StudentLastNameCHVFLags string
+	StudentLastNameCHVFLags string `json:",omitempty"`
 
 	// Field # 334
-	StudentSuffixCHVFLags string
+	StudentSuffixCHVFLags string `json:",omitempty"`
 
 	// Field # 335
-	StudentDateOfBirthCHVFLags string
+	StudentDateOfBirthCHVFLags string `json:",omitempty"`
 
 	// Field # 336
-	StudentSSNCHVFlags string
+	StudentSSNCHVFlags string `json:",omitempty"`
 
 	// Field # 337
-	StudentITINCHVFLags string
+	StudentITINCHVFLags string `json:",omitempty"`
 
 	// Field # 338
-	StudentPhoneNumberCHVFlags string
+	StudentPhoneNumberCHVFlags string `json:",omitempty"`
 
 	// Field # 339
-	StudentEmailAddressCHVFlags string
+	StudentEmailAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 340
-	StudentStreetAddressCHVFlags string
+	StudentStreetAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 341
-	StudentCityCHVFLags string
+	StudentCityCHVFLags string `json:",omitempty"`
 
 	// Field # 342
-	StudentStateCHVFlags string
+	StudentStateCHVFlags string `json:",omitempty"`
 
 	// Field # 343
-	StudentZipCodeCHVFlags string
+	StudentZipCodeCHVFlags string `json:",omitempty"`
 
 	// Field # 344
-	StudentCountryCHVFlags string
+	StudentCountryCHVFlags string `json:",omitempty"`
 
 	// Field # 345
-	StudentMaritalStatusCHVFlags string
+	StudentMaritalStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 346
-	StudentGradeLevelInCollegeCHVFlags string
+	StudentGradeLevelInCollegeCHVFlags string `json:",omitempty"`
 
 	// Field # 347
-	StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags string
+	StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags string `json:",omitempty"`
 
 	// Field # 348
-	StudentPursuingTeacherCertificationCHVFlags string
+	StudentPursuingTeacherCertificationCHVFlags string `json:",omitempty"`
 
 	// Field # 349
-	StudentActiveDutyCHVFlags string
+	StudentActiveDutyCHVFlags string `json:",omitempty"`
 
 	// Field # 350
-	StudentVeteranCHVFlags string
+	StudentVeteranCHVFlags string `json:",omitempty"`
 
 	// Field # 351
-	StudentChildOrOtherDependentsCHVFlags string
+	StudentChildOrOtherDependentsCHVFlags string `json:",omitempty"`
 
 	// Field # 352
-	StudentParentsDeceasedCHVFlags string
+	StudentParentsDeceasedCHVFlags string `json:",omitempty"`
 
 	// Field # 353
-	StudentWardOfCourtCHVFlags string
+	StudentWardOfCourtCHVFlags string `json:",omitempty"`
 
 	// Field # 354
-	StudentInFosterCareCHVFlags string
+	StudentInFosterCareCHVFlags string `json:",omitempty"`
 
 	// Field # 355
-	StudentEmancipatedMinorCHVFlags string
+	StudentEmancipatedMinorCHVFlags string `json:",omitempty"`
 
 	// Field # 356
-	StudentLegalGuardianshipCHVFlags string
+	StudentLegalGuardianshipCHVFlags string `json:",omitempty"`
 
 	// Field # 357
-	StudentPersonalCircumstancesNoneOfTheAboveCHVFlags string
+	StudentPersonalCircumstancesNoneOfTheAboveCHVFlags string `json:",omitempty"`
 
 	// Field # 358
-	StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags string
+	StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags string `json:",omitempty"`
 
 	// Field # 359
-	StudentUnaccompaniedAndHomelessGeneralCHVFlags string
+	StudentUnaccompaniedAndHomelessGeneralCHVFlags string `json:",omitempty"`
 
 	// Field # 360
-	StudentUnaccompaniedAndHomelessHSCHVFlags string
+	StudentUnaccompaniedAndHomelessHSCHVFlags string `json:",omitempty"`
 
 	// Field # 361
-	StudentUnaccompaniedAndHomelessTRIOCHVFlags string
+	StudentUnaccompaniedAndHomelessTRIOCHVFlags string `json:",omitempty"`
 
 	// Field # 362
-	StudentUnaccompaniedAndHomelessFAACHVFlags string
+	StudentUnaccompaniedAndHomelessFAACHVFlags string `json:",omitempty"`
 
 	// Field # 363
-	StudentHomelessnessNoneOfTheAboveCHVFlags string
+	StudentHomelessnessNoneOfTheAboveCHVFlags string `json:",omitempty"`
 
 	// Field # 364
-	StudentHasUnusualCircumstanceCHVFlags string
+	StudentHasUnusualCircumstanceCHVFlags string `json:",omitempty"`
 
 	// Field # 365
-	StudentUnsubOnlyCHVFlags string
+	StudentUnsubOnlyCHVFlags string `json:",omitempty"`
 
 	// Field # 366
-	StudentUpdatedFamilySizeCHVFlags string
+	StudentUpdatedFamilySizeCHVFlags string `json:",omitempty"`
 
 	// Field # 367
-	StudentNumberInCollegeCorrectionCHVFlags string
+	StudentNumberInCollegeCorrectionCHVFlags string `json:",omitempty"`
 
 	// Field # 368
-	StudentCitizenshipStatusCorrectionCHVFlags string
+	StudentCitizenshipStatusCorrectionCHVFlags string `json:",omitempty"`
 
 	// Field # 369
-	StudentANumberCHVFlags string
+	StudentANumberCHVFlags string `json:",omitempty"`
 
 	// Field # 370
-	StudentStateOfLegalResidenceCHVFlags string
+	StudentStateOfLegalResidenceCHVFlags string `json:",omitempty"`
 
 	// Field # 371
-	StudentLegalResidenceDateCHVFlags string
+	StudentLegalResidenceDateCHVFlags string `json:",omitempty"`
 
 	// Field # 372
-	StudentEitherParentAttendCollegeCHVFlags string
+	StudentEitherParentAttendCollegeCHVFlags string `json:",omitempty"`
 
 	// Field # 373
-	StudentParentKilledInTheLineOfDutyCHVFlags string
+	StudentParentKilledInTheLineOfDutyCHVFlags string `json:",omitempty"`
 
 	// Field # 374
-	StudentHighSchoolCompletionStatusCHVFlags string
+	StudentHighSchoolCompletionStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 375
-	StudentHighSchoolNameCHVFlags string
+	StudentHighSchoolNameCHVFlags string `json:",omitempty"`
 
 	// Field # 376
-	StudentHighSchoolCityCHVFlags string
+	StudentHighSchoolCityCHVFlags string `json:",omitempty"`
 
 	// Field # 377
-	StudentHighSchoolStateCHVFlags string
+	StudentHighSchoolStateCHVFlags string `json:",omitempty"`
 
 	// Field # 378
-	StudentHighSchoolEquivalentDiplomaNameCHVFlags string
+	StudentHighSchoolEquivalentDiplomaNameCHVFlags string `json:",omitempty"`
 
 	// Field # 379
-	StudentHighSchoolEquivalentDiplomaStateCHVFlags string
+	StudentHighSchoolEquivalentDiplomaStateCHVFlags string `json:",omitempty"`
 
 	// Field # 380
-	StudentReceivedEITCCHVFlags string
+	StudentReceivedEITCCHVFlags string `json:",omitempty"`
 
 	// Field # 381
-	StudentReceivedFederalHousingAssistanceCHVFlags string
+	StudentReceivedFederalHousingAssistanceCHVFlags string `json:",omitempty"`
 
 	// Field # 382
-	StudentReceivedFreeReducedPriceLunchCHVFlags string
+	StudentReceivedFreeReducedPriceLunchCHVFlags string `json:",omitempty"`
 
 	// Field # 383
-	StudentReceivedMedicaidCHVFlags string
+	StudentReceivedMedicaidCHVFlags string `json:",omitempty"`
 
 	// Field # 384
-	StudentReceivedRefundableCreditFor36BHealthPlanCHVFlags string
+	StudentReceivedRefundableCreditFor36BHealthPlanCHVFlags string `json:",omitempty"`
 
 	// Field # 385
-	StudentReceivedSNAPCHVFlags string
+	StudentReceivedSNAPCHVFlags string `json:",omitempty"`
 
 	// Field # 386
-	StudentReceivedSupplementalSecurityIncomeCHVFlags string
+	StudentReceivedSupplementalSecurityIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 387
-	StudentReceivedTANFCHVFlags string
+	StudentReceivedTANFCHVFlags string `json:",omitempty"`
 
 	// Field # 388
-	StudentReceivedWICCHVFlags string
+	StudentReceivedWICCHVFlags string `json:",omitempty"`
 
 	// Field # 389
-	StudentFederalBenefitsNoneOfTheAboveCHVFlags string
+	StudentFederalBenefitsNoneOfTheAboveCHVFlags string `json:",omitempty"`
 
 	// Field # 390
-	StudentFiled1040Or1040NRCHVFlags string
+	StudentFiled1040Or1040NRCHVFlags string `json:",omitempty"`
 
 	// Field # 391
-	StudentFiledNonUSTaxReturnCHVFlags string
+	StudentFiledNonUSTaxReturnCHVFlags string `json:",omitempty"`
 
 	// Field # 392
-	StudentFiledJointReturnWithCurrentSpouseCHVFlags string
+	StudentFiledJointReturnWithCurrentSpouseCHVFlags string `json:",omitempty"`
 
 	// Field # 393
-	StudentTaxReturnFilingStatusCHVFlags string
+	StudentTaxReturnFilingStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 394
-	StudentIncomeEarnedFromWorkCorrectionCHVFlags string
+	StudentIncomeEarnedFromWorkCorrectionCHVFlags string `json:",omitempty"`
 
 	// Field # 395
-	StudentTaxExemptInterestIncomeCHVFlags string
+	StudentTaxExemptInterestIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 396
-	StudentUntaxedPortionsOfIRADistributionsCHVFlags string
+	StudentUntaxedPortionsOfIRADistributionsCHVFlags string `json:",omitempty"`
 
 	// Field # 397
-	StudentIRARolloverCHVFlags string
+	StudentIRARolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 398
-	StudentUntaxedPortionsOfPensionsCHVFlags string
+	StudentUntaxedPortionsOfPensionsCHVFlags string `json:",omitempty"`
 
 	// Field # 399
-	StudentPensionRolloverCHVFlags string
+	StudentPensionRolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 400
-	StudentAdjustedGrossIncomeCHVFlags string
+	StudentAdjustedGrossIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 401
-	StudentIncomeTaxPaidCHVFlags string
+	StudentIncomeTaxPaidCHVFlags string `json:",omitempty"`
 
 	// Field # 402
-	StudentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags string
+	StudentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags string `json:",omitempty"`
 
 	// Field # 403
-	StudentDeductiblePaymentsToIRAKeoghOtherCHVFlags string
+	StudentDeductiblePaymentsToIRAKeoghOtherCHVFlags string `json:",omitempty"`
 
 	// Field # 404
-	StudentEducationCreditsCHVFlags string
+	StudentEducationCreditsCHVFlags string `json:",omitempty"`
 
 	// Field # 405
-	StudentFiledScheduleABDEFHCHVFlags string
+	StudentFiledScheduleABDEFHCHVFlags string `json:",omitempty"`
 
 	// Field # 406
-	StudentScheduleCAmountCHVFlags string
+	StudentScheduleCAmountCHVFlags string `json:",omitempty"`
 
 	// Field # 407
-	StudentCollegeGrantAndScholarshipAidCHVFlags string
+	StudentCollegeGrantAndScholarshipAidCHVFlags string `json:",omitempty"`
 
 	// Field # 408
-	StudentForeignEarnedIncomeExclusionCHVFlags string
+	StudentForeignEarnedIncomeExclusionCHVFlags string `json:",omitempty"`
 
 	// Field # 409
-	StudentChildSupportReceivedCHVFlags string
+	StudentChildSupportReceivedCHVFlags string `json:",omitempty"`
 
 	// Field # 410
-	StudentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags string
+	StudentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags string `json:",omitempty"`
 
 	// Field # 411
-	StudentNetWorthOfCurrentInvestmentsCHVFlags string
+	StudentNetWorthOfCurrentInvestmentsCHVFlags string `json:",omitempty"`
 
 	// Field # 412
-	StudentTotalOfCashSavingsAndCheckingCHVFlags string
+	StudentTotalOfCashSavingsAndCheckingCHVFlags string `json:",omitempty"`
 
 	// Field # 413
-	StudentCollege1CHVFlags string
+	StudentCollege1CHVFlags string `json:",omitempty"`
 
 	// Field # 414
-	StudentCollege2CHVFlags string
+	StudentCollege2CHVFlags string `json:",omitempty"`
 
 	// Field # 415
-	StudentCollege3CHVFlags string
+	StudentCollege3CHVFlags string `json:",omitempty"`
 
 	// Field # 416
-	StudentCollege4CHVFlags string
+	StudentCollege4CHVFlags string `json:",omitempty"`
 
 	// Field # 417
-	StudentCollege5CHVFlags string
+	StudentCollege5CHVFlags string `json:",omitempty"`
 
 	// Field # 418
-	StudentCollege6CHVFlags string
+	StudentCollege6CHVFlags string `json:",omitempty"`
 
 	// Field # 419
-	StudentCollege7CHVFlags string
+	StudentCollege7CHVFlags string `json:",omitempty"`
 
 	// Field # 420
-	StudentCollege8CHVFlags string
+	StudentCollege8CHVFlags string `json:",omitempty"`
 
 	// Field # 421
-	StudentCollege9CHVFlags string
+	StudentCollege9CHVFlags string `json:",omitempty"`
 
 	// Field # 422
-	StudentCollege10CHVFlags string
+	StudentCollege10CHVFlags string `json:",omitempty"`
 
 	// Field # 423
-	StudentCollege11CHVFlags string
+	StudentCollege11CHVFlags string `json:",omitempty"`
 
 	// Field # 424
-	StudentCollege12CHVFlags string
+	StudentCollege12CHVFlags string `json:",omitempty"`
 
 	// Field # 425
-	StudentCollege13CHVFlags string
+	StudentCollege13CHVFlags string `json:",omitempty"`
 
 	// Field # 426
-	StudentCollege14CHVFlags string
+	StudentCollege14CHVFlags string `json:",omitempty"`
 
 	// Field # 427
-	StudentCollege15CHVFlags string
+	StudentCollege15CHVFlags string `json:",omitempty"`
 
 	// Field # 428
-	StudentCollege16CHVFlags string
+	StudentCollege16CHVFlags string `json:",omitempty"`
 
 	// Field # 429
-	StudentCollege17CHVFlags string
+	StudentCollege17CHVFlags string `json:",omitempty"`
 
 	// Field # 430
-	StudentCollege18CHVFlags string
+	StudentCollege18CHVFlags string `json:",omitempty"`
 
 	// Field # 431
-	StudentCollege19CHVFlags string
+	StudentCollege19CHVFlags string `json:",omitempty"`
 
 	// Field # 432
-	StudentCollege20CHVFlags string
+	StudentCollege20CHVFlags string `json:",omitempty"`
 
 	// Field # 433
-	StudentConsentToRetrieveAndDiscloseFTICHVFlags string
+	StudentConsentToRetrieveAndDiscloseFTICHVFlags string `json:",omitempty"`
 
 	// Field # 434
-	StudentSignatureCHVFlags string
+	StudentSignatureCHVFlags string `json:",omitempty"`
 
 	// Field # 435
-	StudentSignatureDateCHVFlags string
+	StudentSignatureDateCHVFlags string `json:",omitempty"`
 
 	// Field # 436
-	StudentSpouseFirstNameCHVFlags string
+	StudentSpouseFirstNameCHVFlags string `json:",omitempty"`
 
 	// Field # 437
-	StudentSpouseMiddleNameCHVFlags string
+	StudentSpouseMiddleNameCHVFlags string `json:",omitempty"`
 
 	// Field # 438
-	StudentSpouseLastNameCHVFlags string
+	StudentSpouseLastNameCHVFlags string `json:",omitempty"`
 
 	// Field # 439
-	StudentSpouseSuffixCHVFlags string
+	StudentSpouseSuffixCHVFlags string `json:",omitempty"`
 
 	// Field # 440
-	StudentSpouseDateOfBirthCHVFlags string
+	StudentSpouseDateOfBirthCHVFlags string `json:",omitempty"`
 
 	// Field # 441
-	StudentSpouseSSNCHVFlags string
+	StudentSpouseSSNCHVFlags string `json:",omitempty"`
 
 	// Field # 442
-	StudentSpouseITINCHVFlags string
+	StudentSpouseITINCHVFlags string `json:",omitempty"`
 
 	// Field # 443
-	StudentSpousePhoneNumberCHVFlags string
+	StudentSpousePhoneNumberCHVFlags string `json:",omitempty"`
 
 	// Field # 444
-	StudentSpouseEmailAddressCHVFlags string
+	StudentSpouseEmailAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 445
-	StudentSpouseStreetAddressCHVFlags string
+	StudentSpouseStreetAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 446
-	StudentSpouseCityCHVFlags string
+	StudentSpouseCityCHVFlags string `json:",omitempty"`
 
 	// Field # 447
-	StudentSpouseStateCHVFlags string
+	StudentSpouseStateCHVFlags string `json:",omitempty"`
 
 	// Field # 448
-	StudentSpouseZipCodeCHVFlags string
+	StudentSpouseZipCodeCHVFlags string `json:",omitempty"`
 
 	// Field # 449
-	StudentSpouseCountryCHVFlags string
+	StudentSpouseCountryCHVFlags string `json:",omitempty"`
 
 	// Field # 450
-	StudentSpouseFiled1040Or1040NRCHVFlags string
+	StudentSpouseFiled1040Or1040NRCHVFlags string `json:",omitempty"`
 
 	// Field # 451
-	StudentSpouseFiledNonUSTaxReturnCHVFlags string
+	StudentSpouseFiledNonUSTaxReturnCHVFlags string `json:",omitempty"`
 
 	// Field # 452
-	StudentSpouseTaxReturnFilingStatusCHVFlags string
+	StudentSpouseTaxReturnFilingStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 453
-	StudentSpouseIncomeEarnedFromWorkCHVFlags string
+	StudentSpouseIncomeEarnedFromWorkCHVFlags string `json:",omitempty"`
 
 	// Field # 454
-	StudentSpouseTaxExemptInterestIncomeCHVFlags string
+	StudentSpouseTaxExemptInterestIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 455
-	StudentSpouseUntaxedPortionsOfIRADistributionsCHVFlags string
+	StudentSpouseUntaxedPortionsOfIRADistributionsCHVFlags string `json:",omitempty"`
 
 	// Field # 456
-	StudentSpouseIRARolloverCHVFlags string
+	StudentSpouseIRARolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 457
-	StudentSpouseUntaxedPortionsOfPensionsCHVFlags string
+	StudentSpouseUntaxedPortionsOfPensionsCHVFlags string `json:",omitempty"`
 
 	// Field # 458
-	StudentSpousePensionRolloverCHVFlags string
+	StudentSpousePensionRolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 459
-	StudentSpouseAdjustedGrossIncomeCHVFlags string
+	StudentSpouseAdjustedGrossIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 460
-	StudentSpouseIncomeTaxPaidCHVFlags string
+	StudentSpouseIncomeTaxPaidCHVFlags string `json:",omitempty"`
 
 	// Field # 461
-	StudentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags string
+	StudentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags string `json:",omitempty"`
 
 	// Field # 462
-	StudentSpouseEducationCreditsCHVFlags string
+	StudentSpouseEducationCreditsCHVFlags string `json:",omitempty"`
 
 	// Field # 463
-	StudentSpouseFiledScheduleABDEFHCHVFlags string
+	StudentSpouseFiledScheduleABDEFHCHVFlags string `json:",omitempty"`
 
 	// Field # 464
-	StudentSpouseScheduleCAmountCHVFlags string
+	StudentSpouseScheduleCAmountCHVFlags string `json:",omitempty"`
 
 	// Field # 465
-	StudentSpouseForeignEarnedIncomeExclusionCHVFlags string
+	StudentSpouseForeignEarnedIncomeExclusionCHVFlags string `json:",omitempty"`
 
 	// Field # 466
-	StudentSpouseConsentToRetrieveAndDiscloseFTICHVFlags string
+	StudentSpouseConsentToRetrieveAndDiscloseFTICHVFlags string `json:",omitempty"`
 
 	// Field # 467
-	StudentSpouseSignatureCHVFlags string
+	StudentSpouseSignatureCHVFlags string `json:",omitempty"`
 
 	// Field # 468
-	StudentSpouseSignatureDateCHVFlags string
+	StudentSpouseSignatureDateCHVFlags string `json:",omitempty"`
 
 	// Field # 469
-	ParentFirstNameCHVFlags string
+	ParentFirstNameCHVFlags string `json:",omitempty"`
 
 	// Field # 470
-	ParentMiddleNameCHVFlags string
+	ParentMiddleNameCHVFlags string `json:",omitempty"`
 
 	// Field # 471
-	ParentLastNameCHVFlags string
+	ParentLastNameCHVFlags string `json:",omitempty"`
 
 	// Field # 472
-	ParentSuffixCHVFlags string
+	ParentSuffixCHVFlags string `json:",omitempty"`
 
 	// Field # 473
-	ParentDateOfBirthCHVFlags string
+	ParentDateOfBirthCHVFlags string `json:",omitempty"`
 
 	// Field # 474
-	ParentSSNCHVFlags string
+	ParentSSNCHVFlags string `json:",omitempty"`
 
 	// Field # 475
-	ParentITINCHVFlags string
+	ParentITINCHVFlags string `json:",omitempty"`
 
 	// Field # 476
-	ParentPhoneNumberCHVFlags string
+	ParentPhoneNumberCHVFlags string `json:",omitempty"`
 
 	// Field # 477
-	ParentEmailAddressCHVFlags string
+	ParentEmailAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 478
-	ParentStreetAddressCHVFlags string
+	ParentStreetAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 479
-	ParentCityCHVFlags string
+	ParentCityCHVFlags string `json:",omitempty"`
 
 	// Field # 480
-	ParentStateCHVFlags string
+	ParentStateCHVFlags string `json:",omitempty"`
 
 	// Field # 481
-	ParentZipCodeCHVFlags string
+	ParentZipCodeCHVFlags string `json:",omitempty"`
 
 	// Field # 482
-	ParentCountryCHVFlags string
+	ParentCountryCHVFlags string `json:",omitempty"`
 
 	// Field # 483
-	ParentMaritalStatusCHVFlags string
+	ParentMaritalStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 484
-	ParentStateOfLegalResidenceCHVFlags string
+	ParentStateOfLegalResidenceCHVFlags string `json:",omitempty"`
 
 	// Field # 485
-	ParentLegalResidenceDateCHVFlags string
+	ParentLegalResidenceDateCHVFlags string `json:",omitempty"`
 
 	// Field # 486
-	ParentUpdatedFamilySizeCHVFlags string
+	ParentUpdatedFamilySizeCHVFlags string `json:",omitempty"`
 
 	// Field # 487
-	ParentNumberInCollegeCHVFlags string
+	ParentNumberInCollegeCHVFlags string `json:",omitempty"`
 
 	// Field # 488
-	ParentReceivedEITCCHVFlags string
+	ParentReceivedEITCCHVFlags string `json:",omitempty"`
 
 	// Field # 489
-	ParentReceivedFederalHousingAssistanceCHVFlags string
+	ParentReceivedFederalHousingAssistanceCHVFlags string `json:",omitempty"`
 
 	// Field # 490
-	ParentReceivedFreeReducedPriceLunchCHVFlags string
+	ParentReceivedFreeReducedPriceLunchCHVFlags string `json:",omitempty"`
 
 	// Field # 491
-	ParentReceivedMedicaidCHVFlags string
+	ParentReceivedMedicaidCHVFlags string `json:",omitempty"`
 
 	// Field # 492
-	ParentReceivedRefundableCreditFor36BHealthPlanCHVFlags string
+	ParentReceivedRefundableCreditFor36BHealthPlanCHVFlags string `json:",omitempty"`
 
 	// Field # 493
-	ParentReceivedSNAPCHVFlags string
+	ParentReceivedSNAPCHVFlags string `json:",omitempty"`
 
 	// Field # 494
-	ParentReceivedSupplementalSecurityIncomeCHVFlags string
+	ParentReceivedSupplementalSecurityIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 495
-	ParentReceivedTANFCHVFlags string
+	ParentReceivedTANFCHVFlags string `json:",omitempty"`
 
 	// Field # 496
-	ParentReceivedWICCHVFlags string
+	ParentReceivedWICCHVFlags string `json:",omitempty"`
 
 	// Field # 497
-	ParentFederalBenefitsNoneOfTheAboveCHVFlags string
+	ParentFederalBenefitsNoneOfTheAboveCHVFlags string `json:",omitempty"`
 
 	// Field # 498
-	ParentFiled1040Or1040NRCHVFlags string
+	ParentFiled1040Or1040NRCHVFlags string `json:",omitempty"`
 
 	// Field # 499
-	ParentFileNonUSTaxReturnCHVFlags string
+	ParentFileNonUSTaxReturnCHVFlags string `json:",omitempty"`
 
 	// Field # 500
-	ParentFiledJointReturnWithCurrentSpouseCHVFlags string
+	ParentFiledJointReturnWithCurrentSpouseCHVFlags string `json:",omitempty"`
 
 	// Field # 501
-	ParentTaxReturnFilingStatusCHVFlags string
+	ParentTaxReturnFilingStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 502
-	ParentIncomeEarnedFromWorkCHVFlags string
+	ParentIncomeEarnedFromWorkCHVFlags string `json:",omitempty"`
 
 	// Field # 503
-	ParentTaxExemptInterestIncomeCHVFlags string
+	ParentTaxExemptInterestIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 504
-	ParentUntaxedPortionsOfIRADistributionsCHVFlags string
+	ParentUntaxedPortionsOfIRADistributionsCHVFlags string `json:",omitempty"`
 
 	// Field # 505
-	ParentIRARolloverCHVFlags string
+	ParentIRARolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 506
-	ParentUntaxedPortionsOfPensionsCHVFlags string
+	ParentUntaxedPortionsOfPensionsCHVFlags string `json:",omitempty"`
 
 	// Field # 507
-	ParentPensionRolloverCHVFlags string
+	ParentPensionRolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 508
-	ParentAdjustedGrossIncomeCHVFlags string
+	ParentAdjustedGrossIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 509
-	ParentIncomeTaxPaidCHVFlags string
+	ParentIncomeTaxPaidCHVFlags string `json:",omitempty"`
 
 	// Field # 510
-	ParentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags string
+	ParentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags string `json:",omitempty"`
 
 	// Field # 511
-	ParentDeductiblePaymentsToIRAKeoghOtherCHVFlags string
+	ParentDeductiblePaymentsToIRAKeoghOtherCHVFlags string `json:",omitempty"`
 
 	// Field # 512
-	ParentEducationCreditsCHVFlags string
+	ParentEducationCreditsCHVFlags string `json:",omitempty"`
 
 	// Field # 513
-	ParentFiledScheduleABDEFHCHVFlags string
+	ParentFiledScheduleABDEFHCHVFlags string `json:",omitempty"`
 
 	// Field # 514
-	ParentScheduleCAmountCHVFlags string
+	ParentScheduleCAmountCHVFlags string `json:",omitempty"`
 
 	// Field # 515
-	ParentCollegeGrantAndScholarshipAidCHVFlags string
+	ParentCollegeGrantAndScholarshipAidCHVFlags string `json:",omitempty"`
 
 	// Field # 516
-	ParentForeignEarnedIncomeExclusionCHVFlags string
+	ParentForeignEarnedIncomeExclusionCHVFlags string `json:",omitempty"`
 
 	// Field # 517
-	ParentChildSupportReceivedCHVFlags string
+	ParentChildSupportReceivedCHVFlags string `json:",omitempty"`
 
 	// Field # 518
-	ParentNetWorthOfCurrentInvestmentsCHVFlags string
+	ParentNetWorthOfCurrentInvestmentsCHVFlags string `json:",omitempty"`
 
 	// Field # 519
-	ParentTotalOfCashSavingsAndCheckingAccountsCHVFlags string
+	ParentTotalOfCashSavingsAndCheckingAccountsCHVFlags string `json:",omitempty"`
 
 	// Field # 520
-	ParentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags string
+	ParentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags string `json:",omitempty"`
 
 	// Field # 521
-	ParentConsentToRetrieveAndDiscloseFTICHVFlags string
+	ParentConsentToRetrieveAndDiscloseFTICHVFlags string `json:",omitempty"`
 
 	// Field # 522
-	ParentSignatureCHVFlags string
+	ParentSignatureCHVFlags string `json:",omitempty"`
 
 	// Field # 523
-	ParentSignatureDateCHVFlags string
+	ParentSignatureDateCHVFlags string `json:",omitempty"`
 
 	// Field # 524
-	ParentSpouseFirstNameCHVFlags string
+	ParentSpouseFirstNameCHVFlags string `json:",omitempty"`
 
 	// Field # 525
-	ParentSpouseMiddleNameCHVFlags string
+	ParentSpouseMiddleNameCHVFlags string `json:",omitempty"`
 
 	// Field # 526
-	ParentSpouseLastNameCHVFlags string
+	ParentSpouseLastNameCHVFlags string `json:",omitempty"`
 
 	// Field # 527
-	ParentSpouseSuffixCHVFlags string
+	ParentSpouseSuffixCHVFlags string `json:",omitempty"`
 
 	// Field # 528
-	ParentSpouseDateOfBirthCHVFlags string
+	ParentSpouseDateOfBirthCHVFlags string `json:",omitempty"`
 
 	// Field # 529
-	ParentSpouseSSNCHVFlags string
+	ParentSpouseSSNCHVFlags string `json:",omitempty"`
 
 	// Field # 530
-	ParentSpouseITINCHVFlags string
+	ParentSpouseITINCHVFlags string `json:",omitempty"`
 
 	// Field # 531
-	ParentSpousePhoneNumberCHVFlags string
+	ParentSpousePhoneNumberCHVFlags string `json:",omitempty"`
 
 	// Field # 532
-	ParentSpouseEmailAddressCHVFlags string
+	ParentSpouseEmailAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 533
-	ParentSpouseStreetAddressCHVFlags string
+	ParentSpouseStreetAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 534
-	ParentSpouseCityCHVFlags string
+	ParentSpouseCityCHVFlags string `json:",omitempty"`
 
 	// Field # 535
-	ParentSpouseStateCHVFlags string
+	ParentSpouseStateCHVFlags string `json:",omitempty"`
 
 	// Field # 536
-	ParentSpouseZipCodeCHVFlags string
+	ParentSpouseZipCodeCHVFlags string `json:",omitempty"`
 
 	// Field # 537
-	ParentSpouseCountryCHVFlags string
+	ParentSpouseCountryCHVFlags string `json:",omitempty"`
 
 	// Field # 538
-	ParentSpouseFiled1040Or1040NRCHVFlags string
+	ParentSpouseFiled1040Or1040NRCHVFlags string `json:",omitempty"`
 
 	// Field # 539
-	ParentSpouseFileNonUSTaxReturnCHVFlags string
+	ParentSpouseFileNonUSTaxReturnCHVFlags string `json:",omitempty"`
 
 	// Field # 540
-	ParentSpouseTaxReturnFilingStatusCHVFlags string
+	ParentSpouseTaxReturnFilingStatusCHVFlags string `json:",omitempty"`
 
 	// Field # 541
-	ParentSpouseIncomeEarnedFromWorkCHVFlags string
+	ParentSpouseIncomeEarnedFromWorkCHVFlags string `json:",omitempty"`
 
 	// Field # 542
-	ParentSpouseTaxExemptInterestIncomeCHVFlags string
+	ParentSpouseTaxExemptInterestIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 543
-	ParentSpouseUntaxedPortionsOfIRADistributionsCHVFlags string
+	ParentSpouseUntaxedPortionsOfIRADistributionsCHVFlags string `json:",omitempty"`
 
 	// Field # 544
-	ParentSpouseIRARolloverCHVFlags string
+	ParentSpouseIRARolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 545
-	ParentSpouseUntaxedPortionsOfPensionsCHVFlags string
+	ParentSpouseUntaxedPortionsOfPensionsCHVFlags string `json:",omitempty"`
 
 	// Field # 546
-	ParentSpousePensionRolloverCHVFlags string
+	ParentSpousePensionRolloverCHVFlags string `json:",omitempty"`
 
 	// Field # 547
-	ParentSpouseAdjustedGrossIncomeCHVFlags string
+	ParentSpouseAdjustedGrossIncomeCHVFlags string `json:",omitempty"`
 
 	// Field # 548
-	ParentSpouseIncomeTaxPaidCHVFlags string
+	ParentSpouseIncomeTaxPaidCHVFlags string `json:",omitempty"`
 
 	// Field # 549
-	ParentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags string
+	ParentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags string `json:",omitempty"`
 
 	// Field # 550
-	ParentSpouseEducationCreditsCHVFlags string
+	ParentSpouseEducationCreditsCHVFlags string `json:",omitempty"`
 
 	// Field # 551
-	ParentSpouseFiledScheduleABDEFHCHVFlags string
+	ParentSpouseFiledScheduleABDEFHCHVFlags string `json:",omitempty"`
 
 	// Field # 552
-	ParentSpouseScheduleCAmountCHVFlags string
+	ParentSpouseScheduleCAmountCHVFlags string `json:",omitempty"`
 
 	// Field # 553
-	ParentSpouseForeignEarnedIncomeExclusionCHVFlags string
+	ParentSpouseForeignEarnedIncomeExclusionCHVFlags string `json:",omitempty"`
 
 	// Field # 554
-	ParentSpouseConsentToRetrieveAndDiscloseFTICHVFlags string
+	ParentSpouseConsentToRetrieveAndDiscloseFTICHVFlags string `json:",omitempty"`
 
 	// Field # 555
-	ParentSpouseSignatureCHVFlags string
+	ParentSpouseSignatureCHVFlags string `json:",omitempty"`
 
 	// Field # 556
-	ParentSpouseSignatureDateCHVFlags string
+	ParentSpouseSignatureDateCHVFlags string `json:",omitempty"`
 
 	// Field # 557
-	DHSPrimaryMatchStatus string
+	DHSPrimaryMatchStatus string `json:",omitempty"`
 
 	// Field # 559
-	DHSCaseNumber string
+	DHSCaseNumber string `json:",omitempty"`
 
 	// Field # 560
-	NSLDSMatchStatus string
+	NSLDSMatchStatus string `json:",omitempty"`
 
 	// Field # 561
-	NSLDSPostscreeningReasonCode string
+	NSLDSPostscreeningReasonCode string `json:",omitempty"`
 
 	// Field # 562
-	StudentSSACitizenshipFlagResults string
+	StudentSSACitizenshipFlagResults string `json:",omitempty"`
 
 	// Field # 563
-	StudentSSAMatchStatus string
+	StudentSSAMatchStatus string `json:",omitempty"`
 
 	// Field # 564
-	StudentSpouseSSAMatchStatus string
+	StudentSpouseSSAMatchStatus string `json:",omitempty"`
 
 	// Field # 565
-	ParentSSAMatchStatus string
+	ParentSSAMatchStatus string `json:",omitempty"`
 
 	// Field # 566
-	ParentSpouseOrPartnerSSAMatchStatus string
+	ParentSpouseOrPartnerSSAMatchStatus string `json:",omitempty"`
 
 	// Field # 567
-	VAMatchFlag string
+	VAMatchFlag string `json:",omitempty"`
 
 	// Field # 568
-	CommentCodes string
+	CommentCodes string `json:",omitempty"`
 
 	// Field # 569
-	DrugAbuseHoldIndicator string
+	DrugAbuseHoldIndicator string `json:",omitempty"`
 
 	// Field # 570
-	GraduateFlag string
+	GraduateFlag string `json:",omitempty"`
 
 	// Field # 571
-	PellGrantEligibilityFlag string
+	PellGrantEligibilityFlag string `json:",omitempty"`
 
 	// Field # 572
-	ReprocessedReasonCode string
+	ReprocessedReasonCode string `json:",omitempty"`
 
 	// Field # 573
-	FPSCFlag string
+	FPSCFlag string `json:",omitempty"`
 
 	// Field # 574
-	FPSCChangeFlag string
+	FPSCChangeFlag string `json:",omitempty"`
 
 	// Field # 575
-	ElectronicFederalSchoolCodeIndicator string
+	ElectronicFederalSchoolCodeIndicator string `json:",omitempty"`
 
 	// Field # 576
-	RejectReasonCodes string
+	RejectReasonCodes string `json:",omitempty"`
 
 	// Field # 577
-	ElectronicTransactionIndicatorFlag string
+	ElectronicTransactionIndicatorFlag string `json:",omitempty"`
 
 	// Field # 578
-	StudentLastNameSSNChangeFlag string
+	StudentLastNameSSNChangeFlag string `json:",omitempty"`
 
 	// Field # 579
-	HighSchoolCode string
+	HighSchoolCode string `json:",omitempty"`
 
 	// Field # 580
-	VerificationSelectionChangeFlag string
+	VerificationSelectionChangeFlag string `json:",omitempty"`
 
 	// Field # 581
-	UseUserProvidedDataOnly string
+	UseUserProvidedDataOnly string `json:",omitempty"`
 
 	// Field # 583
-	NSLDSPellOverpaymentFlag string
+	NSLDSPellOverpaymentFlag string `json:",omitempty"`
 
 	// Field # 584
-	NSLDSPellOverpaymentContact string
+	NSLDSPellOverpaymentContact string `json:",omitempty"`
 
 	// Field # 585
-	NSLDSFSEOGOverpaymentFlag string
+	NSLDSFSEOGOverpaymentFlag string `json:",omitempty"`
 
 	// Field # 586
-	NSLDSFSEOGOverpaymentContact string
+	NSLDSFSEOGOverpaymentContact string `json:",omitempty"`
 
 	// Field # 587
-	NSLDSPerkinsOverpaymentFlag string
+	NSLDSPerkinsOverpaymentFlag string `json:",omitempty"`
 
 	// Field # 588
-	NSLDSPerkinsOverpaymentContact string
+	NSLDSPerkinsOverpaymentContact string `json:",omitempty"`
 
 	// Field # 589
-	NSLDSTEACHGrantOverpaymentFlag string
+	NSLDSTEACHGrantOverpaymentFlag string `json:",omitempty"`
 
 	// Field # 590
-	NSLDSTEACHGrantOverpaymentContact string
+	NSLDSTEACHGrantOverpaymentContact string `json:",omitempty"`
 
 	// Field # 591
-	NSLDSIraqAndAfghanistanServiceGrantOverpaymentFlag string
+	NSLDSIraqAndAfghanistanServiceGrantOverpaymentFlag string `json:",omitempty"`
 
 	// Field # 592
-	NSLDSIraqAndAfghanistanServiceGrantOverpaymentContact string
+	NSLDSIraqAndAfghanistanServiceGrantOverpaymentContact string `json:",omitempty"`
 
 	// Field # 593
-	NSLDSDefaultedLoanFlag string
+	NSLDSDefaultedLoanFlag string `json:",omitempty"`
 
 	// Field # 594
-	NSLDSDischargedLoanFlag string
+	NSLDSDischargedLoanFlag string `json:",omitempty"`
 
 	// Field # 595
-	NSLDSFraudLoanFlag string
+	NSLDSFraudLoanFlag string `json:",omitempty"`
 
 	// Field # 596
-	NSLDSSatisfactoryArrangementsFlag string
+	NSLDSSatisfactoryArrangementsFlag string `json:",omitempty"`
 
 	// Field # 597
-	NSLDSActiveBankruptcyFlag string
+	NSLDSActiveBankruptcyFlag string `json:",omitempty"`
 
 	// Field # 598
-	NSLDSTEACHGrantConvertedToLoanFlag string
+	NSLDSTEACHGrantConvertedToLoanFlag string `json:",omitempty"`
 
 	// Field # 599
-	NSLDSAggregateSubsidizedOutstandingPrincipalBalance string
+	NSLDSAggregateSubsidizedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 600
-	NSLDSAggregateUnsubsidizedOutstandingPrincipalBalance string
+	NSLDSAggregateUnsubsidizedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 601
-	NSLDSAggregateCombinedOutstandingPrincipalBalance string
+	NSLDSAggregateCombinedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 602
-	NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance string
+	NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 603
-	NSLDSAggregateTEACHLoanPrincipalBalance string
+	NSLDSAggregateTEACHLoanPrincipalBalance string `json:",omitempty"`
 
 	// Field # 604
-	NSLDSAggregateSubsidizedPendingDisbursement string
+	NSLDSAggregateSubsidizedPendingDisbursement string `json:",omitempty"`
 
 	// Field # 605
-	NSLDSAggregateUnsubsidizedPendingDisbursement string
+	NSLDSAggregateUnsubsidizedPendingDisbursement string `json:",omitempty"`
 
 	// Field # 606
-	NSLDSAggregateCombinedPendingDisbursement string
+	NSLDSAggregateCombinedPendingDisbursement string `json:",omitempty"`
 
 	// Field # 607
-	NSLDSAggregateSubsidizedTotal string
+	NSLDSAggregateSubsidizedTotal string `json:",omitempty"`
 
 	// Field # 608
-	NSLDSAggregateUnsubsidizedTotal string
+	NSLDSAggregateUnsubsidizedTotal string `json:",omitempty"`
 
 	// Field # 609
-	NSLDSAggregateCombinedTotal string
+	NSLDSAggregateCombinedTotal string `json:",omitempty"`
 
 	// Field # 610
-	NSLDSUnallocatedConsolidatedTotal string
+	NSLDSUnallocatedConsolidatedTotal string `json:",omitempty"`
 
 	// Field # 611
-	NSLDSTEACHLoanTotal string
+	NSLDSTEACHLoanTotal string `json:",omitempty"`
 
 	// Field # 612
-	NSLDSPerkinsTotalDisbursements string
+	NSLDSPerkinsTotalDisbursements string `json:",omitempty"`
 
 	// Field # 613
-	NSLDSPerkinsCurrentYearDisbursementAmount string
+	NSLDSPerkinsCurrentYearDisbursementAmount string `json:",omitempty"`
 
 	// Field # 614
-	NSLDSAggregateTEACHGrantUndergraduateDisbursedTotal string
+	NSLDSAggregateTEACHGrantUndergraduateDisbursedTotal string `json:",omitempty"`
 
 	// Field # 615
-	NSLDSAggregateTEACHGraduateDisbursementAmount string
+	NSLDSAggregateTEACHGraduateDisbursementAmount string `json:",omitempty"`
 
 	// Field # 616
-	NSLDSDefaultedLoanChangeFlag string
+	NSLDSDefaultedLoanChangeFlag string `json:",omitempty"`
 
 	// Field # 617
-	NSLDSFraudLoanChangeFlag string
+	NSLDSFraudLoanChangeFlag string `json:",omitempty"`
 
 	// Field # 618
-	NSLDSDischargedLoanChangeFlag string
+	NSLDSDischargedLoanChangeFlag string `json:",omitempty"`
 
 	// Field # 619
-	NSLDSLoanSatisfactoryRepaymentChangeFlag string
+	NSLDSLoanSatisfactoryRepaymentChangeFlag string `json:",omitempty"`
 
 	// Field # 620
-	NSLDSActiveBankruptcyChangeFlag string
+	NSLDSActiveBankruptcyChangeFlag string `json:",omitempty"`
 
 	// Field # 621
-	NSLDSTEACHGrantToLoanConversionChangeFlag string
+	NSLDSTEACHGrantToLoanConversionChangeFlag string `json:",omitempty"`
 
 	// Field # 622
-	NSLDSOverpaymentsChangeFlag string
+	NSLDSOverpaymentsChangeFlag string `json:",omitempty"`
 
 	// Field # 623
-	NSLDSAggregateLoanChangeFlag string
+	NSLDSAggregateLoanChangeFlag string `json:",omitempty"`
 
 	// Field # 624
-	NSLDSPerkinsLoanChangeFlag string
+	NSLDSPerkinsLoanChangeFlag string `json:",omitempty"`
 
 	// Field # 625
-	NSLDSPellPaymentChangeFlag string
+	NSLDSPellPaymentChangeFlag string `json:",omitempty"`
 
 	// Field # 626
-	NSLDSTEACHGrantChangeFlag string
+	NSLDSTEACHGrantChangeFlag string `json:",omitempty"`
 
 	// Field # 627
-	NSLDSAdditionalPellFlag string
+	NSLDSAdditionalPellFlag string `json:",omitempty"`
 
 	// Field # 628
-	NSLDSAdditionalLoansFlag string
+	NSLDSAdditionalLoansFlag string `json:",omitempty"`
 
 	// Field # 629
-	NSLDSAdditionalTEACHGrantFlag string
+	NSLDSAdditionalTEACHGrantFlag string `json:",omitempty"`
 
 	// Field # 630
-	NSLDSDirectLoanMasterPromNoteFlag string
+	NSLDSDirectLoanMasterPromNoteFlag string `json:",omitempty"`
 
 	// Field # 631
-	NSLDSDirectLoanPLUSMasterPromNoteFlag string
+	NSLDSDirectLoanPLUSMasterPromNoteFlag string `json:",omitempty"`
 
 	// Field # 632
-	NSLDSDirectLoanGraduatePLUSMasterPromNoteFlag string
+	NSLDSDirectLoanGraduatePLUSMasterPromNoteFlag string `json:",omitempty"`
 
 	// Field # 633
-	NSLDSUndergraduateSubsidizedLoanLimitFlag string
+	NSLDSUndergraduateSubsidizedLoanLimitFlag string `json:",omitempty"`
 
 	// Field # 634
-	NSLDSUndergraduateCombinedLoanLimitFlag string
+	NSLDSUndergraduateCombinedLoanLimitFlag string `json:",omitempty"`
 
 	// Field # 635
-	NSLDSGraduateSubsidizedLoanLimitFlag string
+	NSLDSGraduateSubsidizedLoanLimitFlag string `json:",omitempty"`
 
 	// Field # 636
-	NSLDSGraduateCombinedLoanLimitFlag string
+	NSLDSGraduateCombinedLoanLimitFlag string `json:",omitempty"`
 
 	// Field # 637
-	NSLDSLEULimitIndicator string
+	NSLDSLEULimitIndicator string `json:",omitempty"`
 
 	// Field # 638
-	NSLDSPellLifetimeEligibilityUsed string
+	NSLDSPellLifetimeEligibilityUsed string `json:",omitempty"`
 
 	// Field # 639
-	NSLDSSULAFlag string
+	NSLDSSULAFlag string `json:",omitempty"`
 
 	// Field # 640
-	NSLDSSubsidizedLimitEligibilityFlag string
+	NSLDSSubsidizedLimitEligibilityFlag string `json:",omitempty"`
 
 	// Field # 641
-	NSLDSUnusualEnrollmentHistoryFlag string
+	NSLDSUnusualEnrollmentHistoryFlag string `json:",omitempty"`
 
 	// Field # 643
-	NSLDSPellSequenceNumber1 string
+	NSLDSPellSequenceNumber1 string `json:",omitempty"`
 
 	// Field # 644
-	NSLDSPellVerificationFlag1 string
+	NSLDSPellVerificationFlag1 string `json:",omitempty"`
 
 	// Field # 645
-	NSLDSSAI1 string
+	NSLDSSAI1 string `json:",omitempty"`
 
 	// Field # 646
-	NSLDSPellSchoolCode1 string
+	NSLDSPellSchoolCode1 string `json:",omitempty"`
 
 	// Field # 647
-	NSLDSPellTransactionNumber1 string
+	NSLDSPellTransactionNumber1 string `json:",omitempty"`
 
 	// Field # 648
-	NSLDSPellLastDisbursementDate1 time.Time
+	NSLDSPellLastDisbursementDate1 time.Time `json:",omitempty"`
 
 	// Field # 649
-	NSLDSPellScheduledAmount1 string
+	NSLDSPellScheduledAmount1 string `json:",omitempty"`
 
 	// Field # 650
-	NSLDSPellAmountPaidToDate1 time.Time
+	NSLDSPellAmountPaidToDate1 time.Time `json:",omitempty"`
 
 	// Field # 651
-	NSLDSPellPercentEligibilityUsedDecimal1 string
+	NSLDSPellPercentEligibilityUsedDecimal1 string `json:",omitempty"`
 
 	// Field # 652
-	NSLDSPellAwardAmount1 string
+	NSLDSPellAwardAmount1 string `json:",omitempty"`
 
 	// Field # 653
-	NSLDSAdditionalEligibilityIndicator1 string
+	NSLDSAdditionalEligibilityIndicator1 string `json:",omitempty"`
 
 	// Field # 655
-	NSLDSPellSequenceNumber2 string
+	NSLDSPellSequenceNumber2 string `json:",omitempty"`
 
 	// Field # 656
-	NSLDSPellVerificationFlag2 string
+	NSLDSPellVerificationFlag2 string `json:",omitempty"`
 
 	// Field # 657
-	NSLDSSAI2 string
+	NSLDSSAI2 string `json:",omitempty"`
 
 	// Field # 658
-	NSLDSPellSchoolCode2 string
+	NSLDSPellSchoolCode2 string `json:",omitempty"`
 
 	// Field # 659
-	NSLDSPellTransactionNumber2 string
+	NSLDSPellTransactionNumber2 string `json:",omitempty"`
 
 	// Field # 660
-	NSLDSPellLastDisbursementDate2 time.Time
+	NSLDSPellLastDisbursementDate2 time.Time `json:",omitempty"`
 
 	// Field # 661
-	NSLDSPellScheduledAmount2 string
+	NSLDSPellScheduledAmount2 string `json:",omitempty"`
 
 	// Field # 662
-	NSLDSPellAmountPaidToDate2 time.Time
+	NSLDSPellAmountPaidToDate2 time.Time `json:",omitempty"`
 
 	// Field # 663
-	NSLDSPellPercentEligibilityUsedDecimal2 string
+	NSLDSPellPercentEligibilityUsedDecimal2 string `json:",omitempty"`
 
 	// Field # 664
-	NSLDSPellAwardAmount2 string
+	NSLDSPellAwardAmount2 string `json:",omitempty"`
 
 	// Field # 665
-	NSLDSAdditionalEligibilityIndicator2 string
+	NSLDSAdditionalEligibilityIndicator2 string `json:",omitempty"`
 
 	// Field # 667
-	NSLDSPellSequenceNumber3 string
+	NSLDSPellSequenceNumber3 string `json:",omitempty"`
 
 	// Field # 668
-	NSLDSPellVerificationFlag3 string
+	NSLDSPellVerificationFlag3 string `json:",omitempty"`
 
 	// Field # 669
-	NSLDSSAI3 string
+	NSLDSSAI3 string `json:",omitempty"`
 
 	// Field # 670
-	NSLDSPellSchoolCode3 string
+	NSLDSPellSchoolCode3 string `json:",omitempty"`
 
 	// Field # 671
-	NSLDSPellTransactionNumber3 string
+	NSLDSPellTransactionNumber3 string `json:",omitempty"`
 
 	// Field # 672
-	NSLDSPellLastDisbursementDate3 time.Time
+	NSLDSPellLastDisbursementDate3 time.Time `json:",omitempty"`
 
 	// Field # 673
-	NSLDSPellScheduledAmount3 string
+	NSLDSPellScheduledAmount3 string `json:",omitempty"`
 
 	// Field # 674
-	NSLDSPellAmountPaidToDate3 time.Time
+	NSLDSPellAmountPaidToDate3 time.Time `json:",omitempty"`
 
 	// Field # 675
-	NSLDSPellPercentEligibilityUsedDecimal3 string
+	NSLDSPellPercentEligibilityUsedDecimal3 string `json:",omitempty"`
 
 	// Field # 676
-	NSLDSPellAwardAmount3 string
+	NSLDSPellAwardAmount3 string `json:",omitempty"`
 
 	// Field # 677
-	NSLDSAdditionalEligibilityIndicator3 string
+	NSLDSAdditionalEligibilityIndicator3 string `json:",omitempty"`
 
 	// Field # 679
-	NSLDSTEACHGrantSequence1 string
+	NSLDSTEACHGrantSequence1 string `json:",omitempty"`
 
 	// Field # 680
-	NSLDSTEACHGrantSchoolCode1 string
+	NSLDSTEACHGrantSchoolCode1 string `json:",omitempty"`
 
 	// Field # 681
-	NSLDSTEACHGrantTransactionNumber1 string
+	NSLDSTEACHGrantTransactionNumber1 string `json:",omitempty"`
 
 	// Field # 682
-	NSLDSTEACHGrantLastDisbursementDate1 time.Time
+	NSLDSTEACHGrantLastDisbursementDate1 time.Time `json:",omitempty"`
 
 	// Field # 683
-	NSLDSTEACHGrantScheduledAmount1 string
+	NSLDSTEACHGrantScheduledAmount1 string `json:",omitempty"`
 
 	// Field # 684
-	NSLDSTEACHGrantAmountPaidToDate1 time.Time
+	NSLDSTEACHGrantAmountPaidToDate1 time.Time `json:",omitempty"`
 
 	// Field # 685
-	NSLDSTEACHGrantAwardAmount1 string
+	NSLDSTEACHGrantAwardAmount1 string `json:",omitempty"`
 
 	// Field # 686
-	NSLDSTEACHGrantAcademicYearLevel1 string
+	NSLDSTEACHGrantAcademicYearLevel1 string `json:",omitempty"`
 
 	// Field # 687
-	NSLDSTEACHGrantAwardYear1 string
+	NSLDSTEACHGrantAwardYear1 string `json:",omitempty"`
 
 	// Field # 688
-	NSLDSTEACHGrantLoanConversionFlag1 string
+	NSLDSTEACHGrantLoanConversionFlag1 string `json:",omitempty"`
 
 	// Field # 689
-	NSLDSTEACHGrantDischargeCode1 string
+	NSLDSTEACHGrantDischargeCode1 string `json:",omitempty"`
 
 	// Field # 690
-	NSLDSTEACHGrantDischargeAmount1 string
+	NSLDSTEACHGrantDischargeAmount1 string `json:",omitempty"`
 
 	// Field # 691
-	NSLDSTEACHGrantAdjustedDisbursement1 string
+	NSLDSTEACHGrantAdjustedDisbursement1 string `json:",omitempty"`
 
 	// Field # 693
-	NSLDSTEACHGrantSequence2 string
+	NSLDSTEACHGrantSequence2 string `json:",omitempty"`
 
 	// Field # 694
-	NSLDSTEACHGrantSchoolCode2 string
+	NSLDSTEACHGrantSchoolCode2 string `json:",omitempty"`
 
 	// Field # 695
-	NSLDSTEACHGrantTransactionNumber2 string
+	NSLDSTEACHGrantTransactionNumber2 string `json:",omitempty"`
 
 	// Field # 696
-	NSLDSTEACHGrantLastDisbursementDate2 time.Time
+	NSLDSTEACHGrantLastDisbursementDate2 time.Time `json:",omitempty"`
 
 	// Field # 697
-	NSLDSTEACHGrantScheduledAmount2 string
+	NSLDSTEACHGrantScheduledAmount2 string `json:",omitempty"`
 
 	// Field # 698
-	NSLDSTEACHGrantAmountPaidToDate2 time.Time
+	NSLDSTEACHGrantAmountPaidToDate2 time.Time `json:",omitempty"`
 
 	// Field # 699
-	NSLDSTEACHGrantAwardAmount2 string
+	NSLDSTEACHGrantAwardAmount2 string `json:",omitempty"`
 
 	// Field # 700
-	NSLDSTEACHGrantAcademicYearLevel2 string
+	NSLDSTEACHGrantAcademicYearLevel2 string `json:",omitempty"`
 
 	// Field # 701
-	NSLDSTEACHGrantAwardYear2 string
+	NSLDSTEACHGrantAwardYear2 string `json:",omitempty"`
 
 	// Field # 702
-	NSLDSTEACHGrantLoanConversionFlag2 string
+	NSLDSTEACHGrantLoanConversionFlag2 string `json:",omitempty"`
 
 	// Field # 703
-	NSLDSTEACHGrantDischargeCode2 string
+	NSLDSTEACHGrantDischargeCode2 string `json:",omitempty"`
 
 	// Field # 704
-	NSLDSTEACHGrantDischargeAmount2 string
+	NSLDSTEACHGrantDischargeAmount2 string `json:",omitempty"`
 
 	// Field # 705
-	NSLDSTEACHGrantAdjustedDisbursement2 string
+	NSLDSTEACHGrantAdjustedDisbursement2 string `json:",omitempty"`
 
 	// Field # 707
-	NSLDSTEACHGrantSequence3 string
+	NSLDSTEACHGrantSequence3 string `json:",omitempty"`
 
 	// Field # 708
-	NSLDSTEACHGrantSchoolCode3 string
+	NSLDSTEACHGrantSchoolCode3 string `json:",omitempty"`
 
 	// Field # 709
-	NSLDSTEACHGrantTransactionNumber3 string
+	NSLDSTEACHGrantTransactionNumber3 string `json:",omitempty"`
 
 	// Field # 710
-	NSLDSTEACHGrantLastDisbursementDate3 time.Time
+	NSLDSTEACHGrantLastDisbursementDate3 time.Time `json:",omitempty"`
 
 	// Field # 711
-	NSLDSTEACHGrantScheduledAmount3 string
+	NSLDSTEACHGrantScheduledAmount3 string `json:",omitempty"`
 
 	// Field # 712
-	NSLDSTEACHGrantAmountPaidToDate3 time.Time
+	NSLDSTEACHGrantAmountPaidToDate3 time.Time `json:",omitempty"`
 
 	// Field # 713
-	NSLDSTEACHGrantAwardAmount3 string
+	NSLDSTEACHGrantAwardAmount3 string `json:",omitempty"`
 
 	// Field # 714
-	NSLDSTEACHGrantAcademicYearLevel3 string
+	NSLDSTEACHGrantAcademicYearLevel3 string `json:",omitempty"`
 
 	// Field # 715
-	NSLDSTEACHGrantAwardYear3 string
+	NSLDSTEACHGrantAwardYear3 string `json:",omitempty"`
 
 	// Field # 716
-	NSLDSTEACHGrantLoanConversionFlag3 string
+	NSLDSTEACHGrantLoanConversionFlag3 string `json:",omitempty"`
 
 	// Field # 717
-	NSLDSTEACHGrantDischargeCode3 string
+	NSLDSTEACHGrantDischargeCode3 string `json:",omitempty"`
 
 	// Field # 718
-	NSLDSTEACHGrantDischargeAmount3 string
+	NSLDSTEACHGrantDischargeAmount3 string `json:",omitempty"`
 
 	// Field # 719
-	NSLDSTEACHGrantAdjustedDisbursement3 string
+	NSLDSTEACHGrantAdjustedDisbursement3 string `json:",omitempty"`
 
 	// Field # 721
-	NSLDSLoanSequenceNumber1 string
+	NSLDSLoanSequenceNumber1 string `json:",omitempty"`
 
 	// Field # 722
-	NSLDSLoanDefaultedRecentIndicator1 string
+	NSLDSLoanDefaultedRecentIndicator1 string `json:",omitempty"`
 
 	// Field # 723
-	NSLDSLoanChangeFlag1 string
+	NSLDSLoanChangeFlag1 string `json:",omitempty"`
 
 	// Field # 724
-	NSLDSLoanTypeCode1 string
+	NSLDSLoanTypeCode1 string `json:",omitempty"`
 
 	// Field # 725
-	NSLDSLoanNetAmount1 string
+	NSLDSLoanNetAmount1 string `json:",omitempty"`
 
 	// Field # 726
-	NSLDSLoanCurrentStatusCode1 string
+	NSLDSLoanCurrentStatusCode1 string `json:",omitempty"`
 
 	// Field # 727
-	NSLDSLoanCurrentStatusDate1 time.Time
+	NSLDSLoanCurrentStatusDate1 time.Time `json:",omitempty"`
 
 	// Field # 728
-	NSLDSLoanOutstandingPrincipalBalance1 string
+	NSLDSLoanOutstandingPrincipalBalance1 string `json:",omitempty"`
 
 	// Field # 729
-	NSLDSLoanOutstandingPrincipalBalanceDate1 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate1 time.Time `json:",omitempty"`
 
 	// Field # 730
-	NSLDSLoanPeriodBeginDate1 time.Time
+	NSLDSLoanPeriodBeginDate1 time.Time `json:",omitempty"`
 
 	// Field # 731
-	NSLDSLoanPeriodEndDate1 time.Time
+	NSLDSLoanPeriodEndDate1 time.Time `json:",omitempty"`
 
 	// Field # 732
-	NSLDSLoanGuarantyAgencyCode1 string
+	NSLDSLoanGuarantyAgencyCode1 string `json:",omitempty"`
 
 	// Field # 733
-	NSLDSLoanContactType1 string
+	NSLDSLoanContactType1 string `json:",omitempty"`
 
 	// Field # 734
-	NSLDSLoanSchoolCode1 string
+	NSLDSLoanSchoolCode1 string `json:",omitempty"`
 
 	// Field # 735
-	NSLDSLoanContactCode1 string
+	NSLDSLoanContactCode1 string `json:",omitempty"`
 
 	// Field # 736
-	NSLDSLoanGradeLevel1 string
+	NSLDSLoanGradeLevel1 string `json:",omitempty"`
 
 	// Field # 737
-	NSLDSLoanAdditionalUnsubsidizedFlag1 string
+	NSLDSLoanAdditionalUnsubsidizedFlag1 string `json:",omitempty"`
 
 	// Field # 738
-	NSLDSLoanCapitalizedInterestFlag1 string
+	NSLDSLoanCapitalizedInterestFlag1 string `json:",omitempty"`
 
 	// Field # 739
-	NSLDSLoanDisbursementAmount1 string
+	NSLDSLoanDisbursementAmount1 string `json:",omitempty"`
 
 	// Field # 740
-	NSLDSLoanDisbursementDate1 time.Time
+	NSLDSLoanDisbursementDate1 time.Time `json:",omitempty"`
 
 	// Field # 741
-	NSLDSLoanConfirmedLoanSubsidyStatus1 string
+	NSLDSLoanConfirmedLoanSubsidyStatus1 string `json:",omitempty"`
 
 	// Field # 742
-	NSLDSLoanSubsidyStatusDate1 time.Time
+	NSLDSLoanSubsidyStatusDate1 time.Time `json:",omitempty"`
 
 	// Field # 744
-	NSLDSLoanSequenceNumber2 string
+	NSLDSLoanSequenceNumber2 string `json:",omitempty"`
 
 	// Field # 745
-	NSLDSLoanDefaultedRecentIndicator2 string
+	NSLDSLoanDefaultedRecentIndicator2 string `json:",omitempty"`
 
 	// Field # 746
-	NSLDSLoanChangeFlag2 string
+	NSLDSLoanChangeFlag2 string `json:",omitempty"`
 
 	// Field # 747
-	NSLDSLoanTypeCode2 string
+	NSLDSLoanTypeCode2 string `json:",omitempty"`
 
 	// Field # 748
-	NSLDSLoanNetAmount2 string
+	NSLDSLoanNetAmount2 string `json:",omitempty"`
 
 	// Field # 749
-	NSLDSLoanCurrentStatusCode2 string
+	NSLDSLoanCurrentStatusCode2 string `json:",omitempty"`
 
 	// Field # 750
-	NSLDSLoanCurrentStatusDate2 time.Time
+	NSLDSLoanCurrentStatusDate2 time.Time `json:",omitempty"`
 
 	// Field # 751
-	NSLDSLoanOutstandingPrincipalBalance2 string
+	NSLDSLoanOutstandingPrincipalBalance2 string `json:",omitempty"`
 
 	// Field # 752
-	NSLDSLoanOutstandingPrincipalBalanceDate2 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate2 time.Time `json:",omitempty"`
 
 	// Field # 753
-	NSLDSLoanPeriodBeginDate2 time.Time
+	NSLDSLoanPeriodBeginDate2 time.Time `json:",omitempty"`
 
 	// Field # 754
-	NSLDSLoanPeriodEndDate2 time.Time
+	NSLDSLoanPeriodEndDate2 time.Time `json:",omitempty"`
 
 	// Field # 755
-	NSLDSLoanGuarantyAgencyCode2 string
+	NSLDSLoanGuarantyAgencyCode2 string `json:",omitempty"`
 
 	// Field # 756
-	NSLDSLoanContactType2 string
+	NSLDSLoanContactType2 string `json:",omitempty"`
 
 	// Field # 757
-	NSLDSLoanSchoolCode2 string
+	NSLDSLoanSchoolCode2 string `json:",omitempty"`
 
 	// Field # 758
-	NSLDSLoanContactCode2 string
+	NSLDSLoanContactCode2 string `json:",omitempty"`
 
 	// Field # 759
-	NSLDSLoanGradeLevel2 string
+	NSLDSLoanGradeLevel2 string `json:",omitempty"`
 
 	// Field # 760
-	NSLDSLoanAdditionalUnsubsidizedFlag2 string
+	NSLDSLoanAdditionalUnsubsidizedFlag2 string `json:",omitempty"`
 
 	// Field # 761
-	NSLDSLoanCapitalizedInterestFlag2 string
+	NSLDSLoanCapitalizedInterestFlag2 string `json:",omitempty"`
 
 	// Field # 762
-	NSLDSLoanDisbursementAmount2 string
+	NSLDSLoanDisbursementAmount2 string `json:",omitempty"`
 
 	// Field # 763
-	NSLDSLoanDisbursementDate2 time.Time
+	NSLDSLoanDisbursementDate2 time.Time `json:",omitempty"`
 
 	// Field # 764
-	NSLDSLoanConfirmedLoanSubsidyStatus2 string
+	NSLDSLoanConfirmedLoanSubsidyStatus2 string `json:",omitempty"`
 
 	// Field # 765
-	NSLDSLoanSubsidyStatusDate2 time.Time
+	NSLDSLoanSubsidyStatusDate2 time.Time `json:",omitempty"`
 
 	// Field # 767
-	NSLDSLoanSequenceNumber3 string
+	NSLDSLoanSequenceNumber3 string `json:",omitempty"`
 
 	// Field # 768
-	NSLDSLoanDefaultedRecentIndicator3 string
+	NSLDSLoanDefaultedRecentIndicator3 string `json:",omitempty"`
 
 	// Field # 769
-	NSLDSLoanChangeFlag3 string
+	NSLDSLoanChangeFlag3 string `json:",omitempty"`
 
 	// Field # 770
-	NSLDSLoanTypeCode3 string
+	NSLDSLoanTypeCode3 string `json:",omitempty"`
 
 	// Field # 771
-	NSLDSLoanNetAmount3 string
+	NSLDSLoanNetAmount3 string `json:",omitempty"`
 
 	// Field # 772
-	NSLDSLoanCurrentStatusCode3 string
+	NSLDSLoanCurrentStatusCode3 string `json:",omitempty"`
 
 	// Field # 773
-	NSLDSLoanCurrentStatusDate3 time.Time
+	NSLDSLoanCurrentStatusDate3 time.Time `json:",omitempty"`
 
 	// Field # 774
-	NSLDSLoanOutstandingPrincipalBalance3 string
+	NSLDSLoanOutstandingPrincipalBalance3 string `json:",omitempty"`
 
 	// Field # 775
-	NSLDSLoanOutstandingPrincipalBalanceDate3 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate3 time.Time `json:",omitempty"`
 
 	// Field # 776
-	NSLDSLoanPeriodBeginDate3 time.Time
+	NSLDSLoanPeriodBeginDate3 time.Time `json:",omitempty"`
 
 	// Field # 777
-	NSLDSLoanPeriodEndDate3 time.Time
+	NSLDSLoanPeriodEndDate3 time.Time `json:",omitempty"`
 
 	// Field # 778
-	NSLDSLoanGuarantyAgencyCode3 string
+	NSLDSLoanGuarantyAgencyCode3 string `json:",omitempty"`
 
 	// Field # 779
-	NSLDSLoanContactType3 string
+	NSLDSLoanContactType3 string `json:",omitempty"`
 
 	// Field # 780
-	NSLDSLoanSchoolCode3 string
+	NSLDSLoanSchoolCode3 string `json:",omitempty"`
 
 	// Field # 781
-	NSLDSLoanContactCode3 string
+	NSLDSLoanContactCode3 string `json:",omitempty"`
 
 	// Field # 782
-	NSLDSLoanGradeLevel3 string
+	NSLDSLoanGradeLevel3 string `json:",omitempty"`
 
 	// Field # 783
-	NSLDSLoanAdditionalUnsubsidizedFlag3 string
+	NSLDSLoanAdditionalUnsubsidizedFlag3 string `json:",omitempty"`
 
 	// Field # 784
-	NSLDSLoanCapitalizedInterestFlag3 string
+	NSLDSLoanCapitalizedInterestFlag3 string `json:",omitempty"`
 
 	// Field # 785
-	NSLDSLoanDisbursementAmount3 string
+	NSLDSLoanDisbursementAmount3 string `json:",omitempty"`
 
 	// Field # 786
-	NSLDSLoanDisbursementDate3 time.Time
+	NSLDSLoanDisbursementDate3 time.Time `json:",omitempty"`
 
 	// Field # 787
-	NSLDSLoanConfirmedLoanSubsidyStatus3 string
+	NSLDSLoanConfirmedLoanSubsidyStatus3 string `json:",omitempty"`
 
 	// Field # 788
-	NSLDSLoanSubsidyStatusDate3 time.Time
+	NSLDSLoanSubsidyStatusDate3 time.Time `json:",omitempty"`
 
 	// Field # 790
-	NSLDSLoanSequenceNumber4 string
+	NSLDSLoanSequenceNumber4 string `json:",omitempty"`
 
 	// Field # 791
-	NSLDSLoanDefaultedRecentIndicator4 string
+	NSLDSLoanDefaultedRecentIndicator4 string `json:",omitempty"`
 
 	// Field # 792
-	NSLDSLoanChangeFlag4 string
+	NSLDSLoanChangeFlag4 string `json:",omitempty"`
 
 	// Field # 793
-	NSLDSLoanTypeCode4 string
+	NSLDSLoanTypeCode4 string `json:",omitempty"`
 
 	// Field # 794
-	NSLDSLoanNetAmount4 string
+	NSLDSLoanNetAmount4 string `json:",omitempty"`
 
 	// Field # 795
-	NSLDSLoanCurrentStatusCode4 string
+	NSLDSLoanCurrentStatusCode4 string `json:",omitempty"`
 
 	// Field # 796
-	NSLDSLoanCurrentStatusDate4 time.Time
+	NSLDSLoanCurrentStatusDate4 time.Time `json:",omitempty"`
 
 	// Field # 797
-	NSLDSLoanOutstandingPrincipalBalance4 string
+	NSLDSLoanOutstandingPrincipalBalance4 string `json:",omitempty"`
 
 	// Field # 798
-	NSLDSLoanOutstandingPrincipalBalanceDate4 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate4 time.Time `json:",omitempty"`
 
 	// Field # 799
-	NSLDSLoanPeriodBeginDate4 time.Time
+	NSLDSLoanPeriodBeginDate4 time.Time `json:",omitempty"`
 
 	// Field # 800
-	NSLDSLoanPeriodEndDate4 time.Time
+	NSLDSLoanPeriodEndDate4 time.Time `json:",omitempty"`
 
 	// Field # 801
-	NSLDSLoanGuarantyAgencyCode4 string
+	NSLDSLoanGuarantyAgencyCode4 string `json:",omitempty"`
 
 	// Field # 802
-	NSLDSLoanContactType4 string
+	NSLDSLoanContactType4 string `json:",omitempty"`
 
 	// Field # 803
-	NSLDSLoanSchoolCode4 string
+	NSLDSLoanSchoolCode4 string `json:",omitempty"`
 
 	// Field # 804
-	NSLDSLoanContactCode4 string
+	NSLDSLoanContactCode4 string `json:",omitempty"`
 
 	// Field # 805
-	NSLDSLoanGradeLevel4 string
+	NSLDSLoanGradeLevel4 string `json:",omitempty"`
 
 	// Field # 806
-	NSLDSLoanAdditionalUnsubsidizedFlag4 string
+	NSLDSLoanAdditionalUnsubsidizedFlag4 string `json:",omitempty"`
 
 	// Field # 807
-	NSLDSLoanCapitalizedInterestFlag4 string
+	NSLDSLoanCapitalizedInterestFlag4 string `json:",omitempty"`
 
 	// Field # 808
-	NSLDSLoanDisbursementAmount4 string
+	NSLDSLoanDisbursementAmount4 string `json:",omitempty"`
 
 	// Field # 809
-	NSLDSLoanDisbursementDate4 time.Time
+	NSLDSLoanDisbursementDate4 time.Time `json:",omitempty"`
 
 	// Field # 810
-	NSLDSLoanConfirmedLoanSubsidyStatus4 string
+	NSLDSLoanConfirmedLoanSubsidyStatus4 string `json:",omitempty"`
 
 	// Field # 811
-	NSLDSLoanSubsidyStatusDate4 time.Time
+	NSLDSLoanSubsidyStatusDate4 time.Time `json:",omitempty"`
 
 	// Field # 813
-	NSLDSLoanSequenceNumber5 string
+	NSLDSLoanSequenceNumber5 string `json:",omitempty"`
 
 	// Field # 814
-	NSLDSLoanDefaultedRecentIndicator5 string
+	NSLDSLoanDefaultedRecentIndicator5 string `json:",omitempty"`
 
 	// Field # 815
-	NSLDSLoanChangeFlag5 string
+	NSLDSLoanChangeFlag5 string `json:",omitempty"`
 
 	// Field # 816
-	NSLDSLoanTypeCode5 string
+	NSLDSLoanTypeCode5 string `json:",omitempty"`
 
 	// Field # 817
-	NSLDSLoanNetAmount5 string
+	NSLDSLoanNetAmount5 string `json:",omitempty"`
 
 	// Field # 818
-	NSLDSLoanCurrentStatusCode5 string
+	NSLDSLoanCurrentStatusCode5 string `json:",omitempty"`
 
 	// Field # 819
-	NSLDSLoanCurrentStatusDate5 time.Time
+	NSLDSLoanCurrentStatusDate5 time.Time `json:",omitempty"`
 
 	// Field # 820
-	NSLDSLoanOutstandingPrincipalBalance5 string
+	NSLDSLoanOutstandingPrincipalBalance5 string `json:",omitempty"`
 
 	// Field # 821
-	NSLDSLoanOutstandingPrincipalBalanceDate5 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate5 time.Time `json:",omitempty"`
 
 	// Field # 822
-	NSLDSLoanPeriodBeginDate5 time.Time
+	NSLDSLoanPeriodBeginDate5 time.Time `json:",omitempty"`
 
 	// Field # 823
-	NSLDSLoanPeriodEndDate5 time.Time
+	NSLDSLoanPeriodEndDate5 time.Time `json:",omitempty"`
 
 	// Field # 824
-	NSLDSLoanGuarantyAgencyCode5 string
+	NSLDSLoanGuarantyAgencyCode5 string `json:",omitempty"`
 
 	// Field # 825
-	NSLDSLoanContactType5 string
+	NSLDSLoanContactType5 string `json:",omitempty"`
 
 	// Field # 826
-	NSLDSLoanSchoolCode5 string
+	NSLDSLoanSchoolCode5 string `json:",omitempty"`
 
 	// Field # 827
-	NSLDSLoanContactCode5 string
+	NSLDSLoanContactCode5 string `json:",omitempty"`
 
 	// Field # 828
-	NSLDSLoanGradeLevel5 string
+	NSLDSLoanGradeLevel5 string `json:",omitempty"`
 
 	// Field # 829
-	NSLDSLoanAdditionalUnsubsidizedFlag5 string
+	NSLDSLoanAdditionalUnsubsidizedFlag5 string `json:",omitempty"`
 
 	// Field # 830
-	NSLDSLoanCapitalizedInterestFlag5 string
+	NSLDSLoanCapitalizedInterestFlag5 string `json:",omitempty"`
 
 	// Field # 831
-	NSLDSLoanDisbursementAmount5 string
+	NSLDSLoanDisbursementAmount5 string `json:",omitempty"`
 
 	// Field # 832
-	NSLDSLoanDisbursementDate5 time.Time
+	NSLDSLoanDisbursementDate5 time.Time `json:",omitempty"`
 
 	// Field # 833
-	NSLDSLoanConfirmedLoanSubsidyStatus5 string
+	NSLDSLoanConfirmedLoanSubsidyStatus5 string `json:",omitempty"`
 
 	// Field # 834
-	NSLDSLoanSubsidyStatusDate5 time.Time
+	NSLDSLoanSubsidyStatusDate5 time.Time `json:",omitempty"`
 
 	// Field # 836
-	NSLDSLoanSequenceNumber6 string
+	NSLDSLoanSequenceNumber6 string `json:",omitempty"`
 
 	// Field # 837
-	NSLDSLoanDefaultedRecentIndicator6 string
+	NSLDSLoanDefaultedRecentIndicator6 string `json:",omitempty"`
 
 	// Field # 838
-	NSLDSLoanChangeFlag6 string
+	NSLDSLoanChangeFlag6 string `json:",omitempty"`
 
 	// Field # 839
-	NSLDSLoanTypeCode6 string
+	NSLDSLoanTypeCode6 string `json:",omitempty"`
 
 	// Field # 840
-	NSLDSLoanNetAmount6 string
+	NSLDSLoanNetAmount6 string `json:",omitempty"`
 
 	// Field # 841
-	NSLDSLoanCurrentStatusCode6 string
+	NSLDSLoanCurrentStatusCode6 string `json:",omitempty"`
 
 	// Field # 842
-	NSLDSLoanCurrentStatusDate6 time.Time
+	NSLDSLoanCurrentStatusDate6 time.Time `json:",omitempty"`
 
 	// Field # 843
-	NSLDSLoanOutstandingPrincipalBalance6 string
+	NSLDSLoanOutstandingPrincipalBalance6 string `json:",omitempty"`
 
 	// Field # 844
-	NSLDSLoanOutstandingPrincipalBalanceDate6 time.Time
+	NSLDSLoanOutstandingPrincipalBalanceDate6 time.Time `json:",omitempty"`
 
 	// Field # 845
-	NSLDSLoanPeriodBeginDate6 time.Time
+	NSLDSLoanPeriodBeginDate6 time.Time `json:",omitempty"`
 
 	// Field # 846
-	NSLDSLoanPeriodEndDate6 time.Time
+	NSLDSLoanPeriodEndDate6 time.Time `json:",omitempty"`
 
 	// Field # 847
-	NSLDSLoanGuarantyAgencyCode6 string
+	NSLDSLoanGuarantyAgencyCode6 string `json:",omitempty"`
 
 	// Field # 848
-	NSLDSLoanContactType6 string
+	NSLDSLoanContactType6 string `json:",omitempty"`
 
 	// Field # 849
-	NSLDSLoanSchoolCode6 string
+	NSLDSLoanSchoolCode6 string `json:",omitempty"`
 
 	// Field # 850
-	NSLDSLoanContactCode6 string
+	NSLDSLoanContactCode6 string `json:",omitempty"`
 
 	// Field # 851
-	NSLDSLoanGradeLevel6 string
+	NSLDSLoanGradeLevel6 string `json:",omitempty"`
 
 	// Field # 852
-	NSLDSLoanAdditionalUnsubsidizedFlag6 string
+	NSLDSLoanAdditionalUnsubsidizedFlag6 string `json:",omitempty"`
 
 	// Field # 853
-	NSLDSLoanCapitalizedInterestFlag6 string
+	NSLDSLoanCapitalizedInterestFlag6 string `json:",omitempty"`
 
 	// Field # 854
-	NSLDSLoanDisbursementAmount6 string
+	NSLDSLoanDisbursementAmount6 string `json:",omitempty"`
 
 	// Field # 855
-	NSLDSLoanDisbursementDate6 time.Time
+	NSLDSLoanDisbursementDate6 time.Time `json:",omitempty"`
 
 	// Field # 856
-	NSLDSLoanConfirmedLoanSubsidyStatus6 string
+	NSLDSLoanConfirmedLoanSubsidyStatus6 string `json:",omitempty"`
 
 	// Field # 857
-	NSLDSLoanSubsidyStatusDate6 time.Time
+	NSLDSLoanSubsidyStatusDate6 time.Time `json:",omitempty"`
 
 	// Field # 861
-	FTILabelStart string
+	FTILabelStart string `json:",omitempty"`
 
 	// Field # 862
-	StudentFTIMReturnedTaxYear string
+	StudentFTIMReturnedTaxYear string `json:",omitempty"`
 
 	// Field # 863
-	StudentFTIMFilingStatusCode string
+	StudentFTIMFilingStatusCode string `json:",omitempty"`
 
 	// Field # 864
-	StudentFTIMAdjustedGrossIncome string
+	StudentFTIMAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 865
-	StudentFTIMNumberOfExemptions string
+	StudentFTIMNumberOfExemptions string `json:",omitempty"`
 
 	// Field # 866
-	StudentFTIMNumberOfDependents string
+	StudentFTIMNumberOfDependents string `json:",omitempty"`
 
 	// Field # 867
-	StudentFTIMTotalIncomeEarnedAmount string
+	StudentFTIMTotalIncomeEarnedAmount string `json:",omitempty"`
 
 	// Field # 868
-	StudentFTIMIncomeTaxPaid string
+	StudentFTIMIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 869
-	StudentFTIMEducationCredits string
+	StudentFTIMEducationCredits string `json:",omitempty"`
 
 	// Field # 870
-	StudentFTIMUntaxedIRADistributions string
+	StudentFTIMUntaxedIRADistributions string `json:",omitempty"`
 
 	// Field # 871
-	StudentFTIMIRADeductibleAndPayments string
+	StudentFTIMIRADeductibleAndPayments string `json:",omitempty"`
 
 	// Field # 872
-	StudentFTIMTaxExemptInterest string
+	StudentFTIMTaxExemptInterest string `json:",omitempty"`
 
 	// Field # 873
-	StudentFTIMUntaxedPensionsAmount string
+	StudentFTIMUntaxedPensionsAmount string `json:",omitempty"`
 
 	// Field # 874
-	StudentFTIMScheduleCNetProfitLoss string
+	StudentFTIMScheduleCNetProfitLoss string `json:",omitempty"`
 
 	// Field # 875
-	StudentFTIMScheduleAIndicator string
+	StudentFTIMScheduleAIndicator string `json:",omitempty"`
 
 	// Field # 876
-	StudentFTIMScheduleBIndicator string
+	StudentFTIMScheduleBIndicator string `json:",omitempty"`
 
 	// Field # 877
-	StudentFTIMScheduleDIndicator string
+	StudentFTIMScheduleDIndicator string `json:",omitempty"`
 
 	// Field # 878
-	StudentFTIMScheduleEIndicator string
+	StudentFTIMScheduleEIndicator string `json:",omitempty"`
 
 	// Field # 879
-	StudentFTIMScheduleFIndicator string
+	StudentFTIMScheduleFIndicator string `json:",omitempty"`
 
 	// Field # 880
-	StudentFTIMScheduleHIndicator string
+	StudentFTIMScheduleHIndicator string `json:",omitempty"`
 
 	// Field # 881
-	StudentFTIMIRSResponseCode string
+	StudentFTIMIRSResponseCode string `json:",omitempty"`
 
 	// Field # 882
-	StudentFTIMSpouseReturnedTaxYear string
+	StudentFTIMSpouseReturnedTaxYear string `json:",omitempty"`
 
 	// Field # 883
-	StudentFTIMSpouseFilingStatusCode string
+	StudentFTIMSpouseFilingStatusCode string `json:",omitempty"`
 
 	// Field # 884
-	StudentFTIMSpouseAdjustedGrossIncome string
+	StudentFTIMSpouseAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 885
-	StudentFTIMSpouseNumberOfExemptions string
+	StudentFTIMSpouseNumberOfExemptions string `json:",omitempty"`
 
 	// Field # 886
-	StudentFTIMSpouseNumberOfDependents string
+	StudentFTIMSpouseNumberOfDependents string `json:",omitempty"`
 
 	// Field # 887
-	StudentFTIMSpouseTotalIncomeEarnedAmount string
+	StudentFTIMSpouseTotalIncomeEarnedAmount string `json:",omitempty"`
 
 	// Field # 888
-	StudentFTIMSpouseIncomeTaxPaid string
+	StudentFTIMSpouseIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 889
-	StudentFTIMSpouseEducationCredits string
+	StudentFTIMSpouseEducationCredits string `json:",omitempty"`
 
 	// Field # 890
-	StudentFTIMSpouseUntaxedIRADistributions string
+	StudentFTIMSpouseUntaxedIRADistributions string `json:",omitempty"`
 
 	// Field # 891
-	StudentFTIMSpouseIRADeductibleAndPayments string
+	StudentFTIMSpouseIRADeductibleAndPayments string `json:",omitempty"`
 
 	// Field # 892
-	StudentFTIMSpouseTaxExemptInterest string
+	StudentFTIMSpouseTaxExemptInterest string `json:",omitempty"`
 
 	// Field # 893
-	StudentFTIMSpouseUntaxedPensionsAmount string
+	StudentFTIMSpouseUntaxedPensionsAmount string `json:",omitempty"`
 
 	// Field # 894
-	StudentFTIMSpouseScheduleCNetProfitLoss string
+	StudentFTIMSpouseScheduleCNetProfitLoss string `json:",omitempty"`
 
 	// Field # 895
-	StudentFTIMSpouseScheduleAIndicator string
+	StudentFTIMSpouseScheduleAIndicator string `json:",omitempty"`
 
 	// Field # 896
-	StudentFTIMSpouseScheduleBIndicator string
+	StudentFTIMSpouseScheduleBIndicator string `json:",omitempty"`
 
 	// Field # 897
-	StudentFTIMSpouseScheduleDIndicator string
+	StudentFTIMSpouseScheduleDIndicator string `json:",omitempty"`
 
 	// Field # 898
-	StudentFTIMSpouseScheduleEIndicator string
+	StudentFTIMSpouseScheduleEIndicator string `json:",omitempty"`
 
 	// Field # 899
-	StudentFTIMSpouseScheduleFIndicator string
+	StudentFTIMSpouseScheduleFIndicator string `json:",omitempty"`
 
 	// Field # 900
-	StudentFTIMSpouseScheduleHIndicator string
+	StudentFTIMSpouseScheduleHIndicator string `json:",omitempty"`
 
 	// Field # 901
-	StudentFTIMSpouseIRSResponseCode string
+	StudentFTIMSpouseIRSResponseCode string `json:",omitempty"`
 
 	// Field # 902
-	ParentFTIMReturnedTaxYear string
+	ParentFTIMReturnedTaxYear string `json:",omitempty"`
 
 	// Field # 903
-	ParentFTIMFilingStatusCode string
+	ParentFTIMFilingStatusCode string `json:",omitempty"`
 
 	// Field # 904
-	ParentFTIMAdjustedGrossIncome string
+	ParentFTIMAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 905
-	ParentFTIMNumberOfExemptions string
+	ParentFTIMNumberOfExemptions string `json:",omitempty"`
 
 	// Field # 906
-	ParentFTIMNumberOfDependents string
+	ParentFTIMNumberOfDependents string `json:",omitempty"`
 
 	// Field # 907
-	ParentFTIMTotalIncomeEarnedAmount string
+	ParentFTIMTotalIncomeEarnedAmount string `json:",omitempty"`
 
 	// Field # 908
-	ParentFTIMIncomeTaxPaid string
+	ParentFTIMIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 909
-	ParentFTIMEducationCredits string
+	ParentFTIMEducationCredits string `json:",omitempty"`
 
 	// Field # 910
-	ParentFTIMUntaxedIRADistributions string
+	ParentFTIMUntaxedIRADistributions string `json:",omitempty"`
 
 	// Field # 911
-	ParentFTIMIRADeductibleAndPayments string
+	ParentFTIMIRADeductibleAndPayments string `json:",omitempty"`
 
 	// Field # 912
-	ParentFTIMTaxExemptInterest string
+	ParentFTIMTaxExemptInterest string `json:",omitempty"`
 
 	// Field # 913
-	ParentFTIMUntaxedPensionsAmount string
+	ParentFTIMUntaxedPensionsAmount string `json:",omitempty"`
 
 	// Field # 914
-	ParentFTIMScheduleCNetProfitLoss string
+	ParentFTIMScheduleCNetProfitLoss string `json:",omitempty"`
 
 	// Field # 915
-	ParentFTIMScheduleAIndicator string
+	ParentFTIMScheduleAIndicator string `json:",omitempty"`
 
 	// Field # 916
-	ParentFTIMScheduleBIndicator string
+	ParentFTIMScheduleBIndicator string `json:",omitempty"`
 
 	// Field # 917
-	ParentFTIMScheduleDIndicator string
+	ParentFTIMScheduleDIndicator string `json:",omitempty"`
 
 	// Field # 918
-	ParentFTIMScheduleEIndicator string
+	ParentFTIMScheduleEIndicator string `json:",omitempty"`
 
 	// Field # 919
-	ParentFTIMScheduleFIndicator string
+	ParentFTIMScheduleFIndicator string `json:",omitempty"`
 
 	// Field # 920
-	ParentFTIMScheduleHIndicator string
+	ParentFTIMScheduleHIndicator string `json:",omitempty"`
 
 	// Field # 921
-	ParentFTIMIRSResponseCode string
+	ParentFTIMIRSResponseCode string `json:",omitempty"`
 
 	// Field # 922
-	ParentFTIMSpouseReturnedTaxYear string
+	ParentFTIMSpouseReturnedTaxYear string `json:",omitempty"`
 
 	// Field # 923
-	ParentFTIMSpouseFilingStatusCode string
+	ParentFTIMSpouseFilingStatusCode string `json:",omitempty"`
 
 	// Field # 924
-	ParentFTIMSpouseAdjustedGrossIncome string
+	ParentFTIMSpouseAdjustedGrossIncome string `json:",omitempty"`
 
 	// Field # 925
-	ParentFTIMSpouseNumberOfExemptions string
+	ParentFTIMSpouseNumberOfExemptions string `json:",omitempty"`
 
 	// Field # 926
-	ParentFTIMSpouseNumberOfDependents string
+	ParentFTIMSpouseNumberOfDependents string `json:",omitempty"`
 
 	// Field # 927
-	ParentFTIMSpouseTotalIncomeEarnedAmount string
+	ParentFTIMSpouseTotalIncomeEarnedAmount string `json:",omitempty"`
 
 	// Field # 928
-	ParentFTIMSpouseIncomeTaxPaid string
+	ParentFTIMSpouseIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 929
-	ParentFTIMSpouseEducationCredits string
+	ParentFTIMSpouseEducationCredits string `json:",omitempty"`
 
 	// Field # 930
-	ParentFTIMSpouseUntaxedIRADistributions string
+	ParentFTIMSpouseUntaxedIRADistributions string `json:",omitempty"`
 
 	// Field # 931
-	ParentFTIMSpouseIRADeductibleAndPayments string
+	ParentFTIMSpouseIRADeductibleAndPayments string `json:",omitempty"`
 
 	// Field # 932
-	ParentFTIMSpouseTaxExemptInterest string
+	ParentFTIMSpouseTaxExemptInterest string `json:",omitempty"`
 
 	// Field # 933
-	ParentFTIMSpouseUntaxedPensionsAmount string
+	ParentFTIMSpouseUntaxedPensionsAmount string `json:",omitempty"`
 
 	// Field # 934
-	ParentFTIMSpouseScheduleCNetProfitLoss string
+	ParentFTIMSpouseScheduleCNetProfitLoss string `json:",omitempty"`
 
 	// Field # 935
-	ParentFTIMSpouseScheduleAIndicator string
+	ParentFTIMSpouseScheduleAIndicator string `json:",omitempty"`
 
 	// Field # 936
-	ParentFTIMSpouseScheduleBIndicator string
+	ParentFTIMSpouseScheduleBIndicator string `json:",omitempty"`
 
 	// Field # 937
-	ParentFTIMSpouseScheduleDIndicator string
+	ParentFTIMSpouseScheduleDIndicator string `json:",omitempty"`
 
 	// Field # 938
-	ParentFTIMSpouseScheduleEIndicator string
+	ParentFTIMSpouseScheduleEIndicator string `json:",omitempty"`
 
 	// Field # 939
-	ParentFTIMSpouseScheduleFIndicator string
+	ParentFTIMSpouseScheduleFIndicator string `json:",omitempty"`
 
 	// Field # 940
-	ParentFTIMSpouseScheduleHIndicator string
+	ParentFTIMSpouseScheduleHIndicator string `json:",omitempty"`
 
 	// Field # 941
-	ParentFTIMSpouseIRSResponseCode string
+	ParentFTIMSpouseIRSResponseCode string `json:",omitempty"`
 
 	// Field # 942
-	FTILabelEnd string
+	FTILabelEnd string `json:",omitempty"`
 
 	// Field # 944
-	StudentTotalIncome string
+	StudentTotalIncome string `json:",omitempty"`
 
 	// Field # 945
-	ParentTotalIncome string
+	ParentTotalIncome string `json:",omitempty"`
 
 	// Field # 946
-	FISAPTotalIncome string
+	FISAPTotalIncome string `json:",omitempty"`
 }
