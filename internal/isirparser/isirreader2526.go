@@ -14,8 +14,8 @@ import (
 )
 
 // <editor-fold desc="Field Definition Constants">
-const isirDateLayout2526 = "20060102"
-const isirDateShortLayout2526 = "200601"
+const isirDateLayout2526 = "20060102"    // CCYYMMDD
+const isirDateShortLayout2526 = "200601" // CCYYMM
 
 const totalISIRLength2526 int = 7704
 
