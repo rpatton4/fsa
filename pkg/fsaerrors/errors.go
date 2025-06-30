@@ -21,6 +21,7 @@ const (
 	LibraryConfigurationErrorISIRAYUnrecognized
 	AYDeterminationErrorEmptyISIRInputLine
 	LibrarySystemErrorCorrelationIDGeneration
+	LibrarySystemErrorJsonMarshalling
 )
 
 // Error The implementation of an error, specific to the FSA module.  This simply extends the concept of

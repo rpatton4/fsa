@@ -3,7 +3,12 @@
 
 package fsamodels
 
-import "time"
+import (
+	"encoding/json"
+	"github.com/google/uuid"
+	"log/slog"
+	"time"
+)
 
 type ISIRecord struct {
 	// Field # 1
@@ -28,7 +33,7 @@ type ISIRecord struct {
 	ApplicationSource string `json:",omitempty"`
 
 	// Field # 8
-	ApplicationReceiptDate time.Time `json:",omitempty"`
+	ApplicationReceiptDate *time.Time `json:",omitempty"`
 
 	// Field # 9
 	TransactionSource string `json:",omitempty"`
@@ -40,10 +45,10 @@ type ISIRecord struct {
 	TransactionLanguage string `json:",omitempty"`
 
 	// Field # 12
-	TransactionReceiptDate time.Time `json:",omitempty"`
+	TransactionReceiptDate *time.Time `json:",omitempty"`
 
 	// Field # 13
-	TransactionProcessedDate time.Time `json:",omitempty"`
+	TransactionProcessedDate *time.Time `json:",omitempty"`
 
 	// Field # 14
 	TransactionStatus string `json:",omitempty"`
@@ -88,7 +93,7 @@ type ISIRecord struct {
 	StudentSuffix string `json:",omitempty"`
 
 	// Field # 29
-	StudentDateOfBirth time.Time `json:",omitempty"`
+	StudentDateOfBirth *time.Time `json:",omitempty"`
 
 	// Field # 30
 	StudentSSN string `json:",omitempty"`
@@ -196,7 +201,7 @@ type ISIRecord struct {
 	StudentStateOfLegalResidence string `json:",omitempty"`
 
 	// Field # 66
-	StudentLegalResidenceDate time.Time `json:",omitempty"`
+	StudentLegalResidenceDate *time.Time `json:",omitempty"`
 
 	// Field # 67
 	StudentEitherParentAttendCollege string `json:",omitempty"`
@@ -388,7 +393,7 @@ type ISIRecord struct {
 	StudentSignature string `json:",omitempty"`
 
 	// Field # 130
-	StudentSignatureDate time.Time `json:",omitempty"`
+	StudentSignatureDate *time.Time `json:",omitempty"`
 
 	// Field # 132
 	StudentSpouseFirstName string `json:",omitempty"`
@@ -403,7 +408,7 @@ type ISIRecord struct {
 	StudentSpouseSuffix string `json:",omitempty"`
 
 	// Field # 136
-	StudentSpouseDateOfBirth time.Time `json:",omitempty"`
+	StudentSpouseDateOfBirth *time.Time `json:",omitempty"`
 
 	// Field # 137
 	StudentSpouseSSN string `json:",omitempty"`
@@ -487,7 +492,7 @@ type ISIRecord struct {
 	StudentSpouseSignature string `json:",omitempty"`
 
 	// Field # 164
-	StudentSpouseSignatureDate time.Time `json:",omitempty"`
+	StudentSpouseSignatureDate *time.Time `json:",omitempty"`
 
 	// Field # 166
 	ParentFirstName string `json:",omitempty"`
@@ -502,7 +507,7 @@ type ISIRecord struct {
 	ParentSuffix string `json:",omitempty"`
 
 	// Field # 170
-	ParentDateOfBirth time.Time `json:",omitempty"`
+	ParentDateOfBirth *time.Time `json:",omitempty"`
 
 	// Field # 171
 	ParentSSN string `json:",omitempty"`
@@ -538,7 +543,7 @@ type ISIRecord struct {
 	ParentStateOfLegalResidence string `json:",omitempty"`
 
 	// Field # 182
-	ParentLegalResidenceDate time.Time `json:",omitempty"`
+	ParentLegalResidenceDate *time.Time `json:",omitempty"`
 
 	// Field # 183
 	ParentUpdatedFamilySize string `json:",omitempty"`
@@ -652,7 +657,7 @@ type ISIRecord struct {
 	ParentSignature string `json:",omitempty"`
 
 	// Field # 220
-	ParentSignatureDate time.Time `json:",omitempty"`
+	ParentSignatureDate *time.Time `json:",omitempty"`
 
 	// Field # 222
 	ParentSpouseFirstName string `json:",omitempty"`
@@ -667,7 +672,7 @@ type ISIRecord struct {
 	ParentSpouseSuffix string `json:",omitempty"`
 
 	// Field # 226
-	ParentSpouseDateOfBirth time.Time `json:",omitempty"`
+	ParentSpouseDateOfBirth *time.Time `json:",omitempty"`
 
 	// Field # 227
 	ParentSpouseSSN string `json:",omitempty"`
@@ -751,7 +756,7 @@ type ISIRecord struct {
 	ParentSpouseSignature string `json:",omitempty"`
 
 	// Field # 254
-	ParentSpouseSignatureDate time.Time `json:",omitempty"`
+	ParentSpouseSignatureDate *time.Time `json:",omitempty"`
 
 	// Field # 256
 	PreparerFirstName string `json:",omitempty"`
@@ -784,7 +789,7 @@ type ISIRecord struct {
 	PreparerSignature string `json:",omitempty"`
 
 	// Field # 266
-	PreparerSignatureDate time.Time `json:",omitempty"`
+	PreparerSignatureDate *time.Time `json:",omitempty"`
 
 	// Field # 268
 	StudentAffirmationStatus string `json:",omitempty"`
@@ -799,16 +804,16 @@ type ISIRecord struct {
 	ParentSpouseOrPartnerAffirmationStatus string `json:",omitempty"`
 
 	// Field # 272
-	StudentDateConsentGranted time.Time `json:",omitempty"`
+	StudentDateConsentGranted *time.Time `json:",omitempty"`
 
 	// Field # 273
-	StudentSpouseDateConsentGranted time.Time `json:",omitempty"`
+	StudentSpouseDateConsentGranted *time.Time `json:",omitempty"`
 
 	// Field # 274
-	ParentDateConsentGranted time.Time `json:",omitempty"`
+	ParentDateConsentGranted *time.Time `json:",omitempty"`
 
 	// Field # 275
-	ParentSpouseOrPartnerDateConsentGranted time.Time `json:",omitempty"`
+	ParentSpouseOrPartnerDateConsentGranted *time.Time `json:",omitempty"`
 
 	// Field # 276
 	StudentTransunionMatchStatus string `json:",omitempty"`
@@ -1918,13 +1923,13 @@ type ISIRecord struct {
 	NSLDSPellTransactionNumber1 string `json:",omitempty"`
 
 	// Field # 648
-	NSLDSPellLastDisbursementDate1 time.Time `json:",omitempty"`
+	NSLDSPellLastDisbursementDate1 *time.Time `json:",omitempty"`
 
 	// Field # 649
 	NSLDSPellScheduledAmount1 string `json:",omitempty"`
 
 	// Field # 650
-	NSLDSPellAmountPaidToDate1 time.Time `json:",omitempty"`
+	NSLDSPellAmountPaidToDate1 *time.Time `json:",omitempty"`
 
 	// Field # 651
 	NSLDSPellPercentEligibilityUsedDecimal1 string `json:",omitempty"`
@@ -1951,13 +1956,13 @@ type ISIRecord struct {
 	NSLDSPellTransactionNumber2 string `json:",omitempty"`
 
 	// Field # 660
-	NSLDSPellLastDisbursementDate2 time.Time `json:",omitempty"`
+	NSLDSPellLastDisbursementDate2 *time.Time `json:",omitempty"`
 
 	// Field # 661
 	NSLDSPellScheduledAmount2 string `json:",omitempty"`
 
 	// Field # 662
-	NSLDSPellAmountPaidToDate2 time.Time `json:",omitempty"`
+	NSLDSPellAmountPaidToDate2 *time.Time `json:",omitempty"`
 
 	// Field # 663
 	NSLDSPellPercentEligibilityUsedDecimal2 string `json:",omitempty"`
@@ -1984,13 +1989,13 @@ type ISIRecord struct {
 	NSLDSPellTransactionNumber3 string `json:",omitempty"`
 
 	// Field # 672
-	NSLDSPellLastDisbursementDate3 time.Time `json:",omitempty"`
+	NSLDSPellLastDisbursementDate3 *time.Time `json:",omitempty"`
 
 	// Field # 673
 	NSLDSPellScheduledAmount3 string `json:",omitempty"`
 
 	// Field # 674
-	NSLDSPellAmountPaidToDate3 time.Time `json:",omitempty"`
+	NSLDSPellAmountPaidToDate3 *time.Time `json:",omitempty"`
 
 	// Field # 675
 	NSLDSPellPercentEligibilityUsedDecimal3 string `json:",omitempty"`
@@ -2011,13 +2016,13 @@ type ISIRecord struct {
 	NSLDSTEACHGrantTransactionNumber1 string `json:",omitempty"`
 
 	// Field # 682
-	NSLDSTEACHGrantLastDisbursementDate1 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantLastDisbursementDate1 *time.Time `json:",omitempty"`
 
 	// Field # 683
 	NSLDSTEACHGrantScheduledAmount1 string `json:",omitempty"`
 
 	// Field # 684
-	NSLDSTEACHGrantAmountPaidToDate1 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantAmountPaidToDate1 *time.Time `json:",omitempty"`
 
 	// Field # 685
 	NSLDSTEACHGrantAwardAmount1 string `json:",omitempty"`
@@ -2050,13 +2055,13 @@ type ISIRecord struct {
 	NSLDSTEACHGrantTransactionNumber2 string `json:",omitempty"`
 
 	// Field # 696
-	NSLDSTEACHGrantLastDisbursementDate2 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantLastDisbursementDate2 *time.Time `json:",omitempty"`
 
 	// Field # 697
 	NSLDSTEACHGrantScheduledAmount2 string `json:",omitempty"`
 
 	// Field # 698
-	NSLDSTEACHGrantAmountPaidToDate2 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantAmountPaidToDate2 *time.Time `json:",omitempty"`
 
 	// Field # 699
 	NSLDSTEACHGrantAwardAmount2 string `json:",omitempty"`
@@ -2089,13 +2094,13 @@ type ISIRecord struct {
 	NSLDSTEACHGrantTransactionNumber3 string `json:",omitempty"`
 
 	// Field # 710
-	NSLDSTEACHGrantLastDisbursementDate3 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantLastDisbursementDate3 *time.Time `json:",omitempty"`
 
 	// Field # 711
 	NSLDSTEACHGrantScheduledAmount3 string `json:",omitempty"`
 
 	// Field # 712
-	NSLDSTEACHGrantAmountPaidToDate3 time.Time `json:",omitempty"`
+	NSLDSTEACHGrantAmountPaidToDate3 *time.Time `json:",omitempty"`
 
 	// Field # 713
 	NSLDSTEACHGrantAwardAmount3 string `json:",omitempty"`
@@ -2137,19 +2142,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode1 string `json:",omitempty"`
 
 	// Field # 727
-	NSLDSLoanCurrentStatusDate1 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate1 *time.Time `json:",omitempty"`
 
 	// Field # 728
 	NSLDSLoanOutstandingPrincipalBalance1 string `json:",omitempty"`
 
 	// Field # 729
-	NSLDSLoanOutstandingPrincipalBalanceDate1 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate1 *time.Time `json:",omitempty"`
 
 	// Field # 730
-	NSLDSLoanPeriodBeginDate1 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate1 *time.Time `json:",omitempty"`
 
 	// Field # 731
-	NSLDSLoanPeriodEndDate1 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate1 *time.Time `json:",omitempty"`
 
 	// Field # 732
 	NSLDSLoanGuarantyAgencyCode1 string `json:",omitempty"`
@@ -2176,13 +2181,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount1 string `json:",omitempty"`
 
 	// Field # 740
-	NSLDSLoanDisbursementDate1 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate1 *time.Time `json:",omitempty"`
 
 	// Field # 741
 	NSLDSLoanConfirmedLoanSubsidyStatus1 string `json:",omitempty"`
 
 	// Field # 742
-	NSLDSLoanSubsidyStatusDate1 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate1 *time.Time `json:",omitempty"`
 
 	// Field # 744
 	NSLDSLoanSequenceNumber2 string `json:",omitempty"`
@@ -2203,19 +2208,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode2 string `json:",omitempty"`
 
 	// Field # 750
-	NSLDSLoanCurrentStatusDate2 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate2 *time.Time `json:",omitempty"`
 
 	// Field # 751
 	NSLDSLoanOutstandingPrincipalBalance2 string `json:",omitempty"`
 
 	// Field # 752
-	NSLDSLoanOutstandingPrincipalBalanceDate2 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate2 *time.Time `json:",omitempty"`
 
 	// Field # 753
-	NSLDSLoanPeriodBeginDate2 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate2 *time.Time `json:",omitempty"`
 
 	// Field # 754
-	NSLDSLoanPeriodEndDate2 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate2 *time.Time `json:",omitempty"`
 
 	// Field # 755
 	NSLDSLoanGuarantyAgencyCode2 string `json:",omitempty"`
@@ -2242,13 +2247,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount2 string `json:",omitempty"`
 
 	// Field # 763
-	NSLDSLoanDisbursementDate2 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate2 *time.Time `json:",omitempty"`
 
 	// Field # 764
 	NSLDSLoanConfirmedLoanSubsidyStatus2 string `json:",omitempty"`
 
 	// Field # 765
-	NSLDSLoanSubsidyStatusDate2 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate2 *time.Time `json:",omitempty"`
 
 	// Field # 767
 	NSLDSLoanSequenceNumber3 string `json:",omitempty"`
@@ -2269,19 +2274,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode3 string `json:",omitempty"`
 
 	// Field # 773
-	NSLDSLoanCurrentStatusDate3 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate3 *time.Time `json:",omitempty"`
 
 	// Field # 774
 	NSLDSLoanOutstandingPrincipalBalance3 string `json:",omitempty"`
 
 	// Field # 775
-	NSLDSLoanOutstandingPrincipalBalanceDate3 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate3 *time.Time `json:",omitempty"`
 
 	// Field # 776
-	NSLDSLoanPeriodBeginDate3 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate3 *time.Time `json:",omitempty"`
 
 	// Field # 777
-	NSLDSLoanPeriodEndDate3 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate3 *time.Time `json:",omitempty"`
 
 	// Field # 778
 	NSLDSLoanGuarantyAgencyCode3 string `json:",omitempty"`
@@ -2308,13 +2313,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount3 string `json:",omitempty"`
 
 	// Field # 786
-	NSLDSLoanDisbursementDate3 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate3 *time.Time `json:",omitempty"`
 
 	// Field # 787
 	NSLDSLoanConfirmedLoanSubsidyStatus3 string `json:",omitempty"`
 
 	// Field # 788
-	NSLDSLoanSubsidyStatusDate3 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate3 *time.Time `json:",omitempty"`
 
 	// Field # 790
 	NSLDSLoanSequenceNumber4 string `json:",omitempty"`
@@ -2335,19 +2340,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode4 string `json:",omitempty"`
 
 	// Field # 796
-	NSLDSLoanCurrentStatusDate4 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate4 *time.Time `json:",omitempty"`
 
 	// Field # 797
 	NSLDSLoanOutstandingPrincipalBalance4 string `json:",omitempty"`
 
 	// Field # 798
-	NSLDSLoanOutstandingPrincipalBalanceDate4 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate4 *time.Time `json:",omitempty"`
 
 	// Field # 799
-	NSLDSLoanPeriodBeginDate4 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate4 *time.Time `json:",omitempty"`
 
 	// Field # 800
-	NSLDSLoanPeriodEndDate4 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate4 *time.Time `json:",omitempty"`
 
 	// Field # 801
 	NSLDSLoanGuarantyAgencyCode4 string `json:",omitempty"`
@@ -2374,13 +2379,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount4 string `json:",omitempty"`
 
 	// Field # 809
-	NSLDSLoanDisbursementDate4 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate4 *time.Time `json:",omitempty"`
 
 	// Field # 810
 	NSLDSLoanConfirmedLoanSubsidyStatus4 string `json:",omitempty"`
 
 	// Field # 811
-	NSLDSLoanSubsidyStatusDate4 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate4 *time.Time `json:",omitempty"`
 
 	// Field # 813
 	NSLDSLoanSequenceNumber5 string `json:",omitempty"`
@@ -2401,19 +2406,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode5 string `json:",omitempty"`
 
 	// Field # 819
-	NSLDSLoanCurrentStatusDate5 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate5 *time.Time `json:",omitempty"`
 
 	// Field # 820
 	NSLDSLoanOutstandingPrincipalBalance5 string `json:",omitempty"`
 
 	// Field # 821
-	NSLDSLoanOutstandingPrincipalBalanceDate5 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate5 *time.Time `json:",omitempty"`
 
 	// Field # 822
-	NSLDSLoanPeriodBeginDate5 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate5 *time.Time `json:",omitempty"`
 
 	// Field # 823
-	NSLDSLoanPeriodEndDate5 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate5 *time.Time `json:",omitempty"`
 
 	// Field # 824
 	NSLDSLoanGuarantyAgencyCode5 string `json:",omitempty"`
@@ -2440,13 +2445,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount5 string `json:",omitempty"`
 
 	// Field # 832
-	NSLDSLoanDisbursementDate5 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate5 *time.Time `json:",omitempty"`
 
 	// Field # 833
 	NSLDSLoanConfirmedLoanSubsidyStatus5 string `json:",omitempty"`
 
 	// Field # 834
-	NSLDSLoanSubsidyStatusDate5 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate5 *time.Time `json:",omitempty"`
 
 	// Field # 836
 	NSLDSLoanSequenceNumber6 string `json:",omitempty"`
@@ -2467,19 +2472,19 @@ type ISIRecord struct {
 	NSLDSLoanCurrentStatusCode6 string `json:",omitempty"`
 
 	// Field # 842
-	NSLDSLoanCurrentStatusDate6 time.Time `json:",omitempty"`
+	NSLDSLoanCurrentStatusDate6 *time.Time `json:",omitempty"`
 
 	// Field # 843
 	NSLDSLoanOutstandingPrincipalBalance6 string `json:",omitempty"`
 
 	// Field # 844
-	NSLDSLoanOutstandingPrincipalBalanceDate6 time.Time `json:",omitempty"`
+	NSLDSLoanOutstandingPrincipalBalanceDate6 *time.Time `json:",omitempty"`
 
 	// Field # 845
-	NSLDSLoanPeriodBeginDate6 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodBeginDate6 *time.Time `json:",omitempty"`
 
 	// Field # 846
-	NSLDSLoanPeriodEndDate6 time.Time `json:",omitempty"`
+	NSLDSLoanPeriodEndDate6 *time.Time `json:",omitempty"`
 
 	// Field # 847
 	NSLDSLoanGuarantyAgencyCode6 string `json:",omitempty"`
@@ -2506,13 +2511,13 @@ type ISIRecord struct {
 	NSLDSLoanDisbursementAmount6 string `json:",omitempty"`
 
 	// Field # 855
-	NSLDSLoanDisbursementDate6 time.Time `json:",omitempty"`
+	NSLDSLoanDisbursementDate6 *time.Time `json:",omitempty"`
 
 	// Field # 856
 	NSLDSLoanConfirmedLoanSubsidyStatus6 string `json:",omitempty"`
 
 	// Field # 857
-	NSLDSLoanSubsidyStatusDate6 time.Time `json:",omitempty"`
+	NSLDSLoanSubsidyStatusDate6 *time.Time `json:",omitempty"`
 
 	// Field # 861
 	FTILabelStart string `json:",omitempty"`
@@ -2768,4 +2773,16 @@ type ISIRecord struct {
 
 	// Field # 946
 	FISAPTotalIncome string `json:",omitempty"`
+}
+
+// JsonString marshalls the ISIRecord to a string, emitting an error message but returning an empty string if an error occurs.
+// Each field in the struct which has a value will be included in the JSON output with the same exact name,
+// while fields with zero values will be omitted.
+func (r *ISIRecord) JsonString(cid uuid.UUID) string {
+	j, err := json.MarshalIndent(r, "", "    ")
+	if err != nil {
+		slog.Error("error while marshalling ISIRecord to JSON", "errorMessage", err.Error(), "correlationId", cid.String())
+		return ""
+	}
+	return string(j)
 }

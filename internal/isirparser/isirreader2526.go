@@ -3718,1876 +3718,1887 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 		}
 	}
 
-	slog.Info("Parsing record", "FAFSAUUID", strings.TrimSpace(record[fafsaUUIDStartIndex2526-1:(fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]),
-		"TransactionUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
-		"PersonUUID", strings.TrimSpace(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
+	slog.Info("Parsing record", "FAFSAUUID", preprocessString(record[fafsaUUIDStartIndex2526-1:(fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]),
+		"TransactionUUID", preprocessString(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
+		"PersonUUID", preprocessString(record[transactionUUIDStartIndex2526-1:(transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]),
 		"correlationId", cid.String(),
 		"func", "ISIRParser2526.ParseISIR()")
 	// <editor-fold desc="Parsing Fields">
 	r := fsamodels.ISIRecord{
-		YearIndicator: strings.TrimSpace(record[yearIndicatorStartIndex2526-1 : (yearIndicatorStartIndex2526-1)+yearIndicatorLength2526]), // Field # 1
+		YearIndicator: preprocessString(record[yearIndicatorStartIndex2526-1 : (yearIndicatorStartIndex2526-1)+yearIndicatorLength2526]), // Field # 1
 
-		FAFSAUUID: strings.TrimSpace(record[fafsaUUIDStartIndex2526-1 : (fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]), // Field # 2
+		FAFSAUUID: preprocessString(record[fafsaUUIDStartIndex2526-1 : (fafsaUUIDStartIndex2526-1)+fafsaUUIDLength2526]), // Field # 2
 
-		TransactionUUID: strings.TrimSpace(record[transactionUUIDStartIndex2526-1 : (transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]), // Field # 3
+		TransactionUUID: preprocessString(record[transactionUUIDStartIndex2526-1 : (transactionUUIDStartIndex2526-1)+transactionUUIDLength2526]), // Field # 3
 
-		PersonUUID: strings.TrimSpace(record[personUUIDStartIndex2526-1 : (personUUIDStartIndex2526-1)+personUUIDLength2526]), // Field # 4
+		PersonUUID: preprocessString(record[personUUIDStartIndex2526-1 : (personUUIDStartIndex2526-1)+personUUIDLength2526]), // Field # 4
 
-		TransactionNumber: strings.TrimSpace(record[transactionNumberStartIndex2526-1 : (transactionNumberStartIndex2526-1)+transactionNumberLength2526]), // Field # 5
+		TransactionNumber: preprocessString(record[transactionNumberStartIndex2526-1 : (transactionNumberStartIndex2526-1)+transactionNumberLength2526]), // Field # 5
 
-		DependencyModel: strings.TrimSpace(record[dependencyModelStartIndex2526-1 : (dependencyModelStartIndex2526-1)+dependencyModelLength2526]), // Field # 6
+		DependencyModel: preprocessString(record[dependencyModelStartIndex2526-1 : (dependencyModelStartIndex2526-1)+dependencyModelLength2526]), // Field # 6
 
-		ApplicationSource: strings.TrimSpace(record[applicationSourceStartIndex2526-1 : (applicationSourceStartIndex2526-1)+applicationSourceLength2526]), // Field # 7
+		ApplicationSource: preprocessString(record[applicationSourceStartIndex2526-1 : (applicationSourceStartIndex2526-1)+applicationSourceLength2526]), // Field # 7
 
-		ApplicationReceiptDate: parseISIRDate2526(strings.TrimSpace(record[applicationReceiptDateStartIndex2526-1 : (applicationReceiptDateStartIndex2526-1)+applicationReceiptDateLength2526])), // Field # 8
+		ApplicationReceiptDate: parseISIRDate2526(preprocessString(record[applicationReceiptDateStartIndex2526-1 : (applicationReceiptDateStartIndex2526-1)+applicationReceiptDateLength2526])), // Field # 8
 
-		TransactionSource: strings.TrimSpace(record[transactionSourceStartIndex2526-1 : (transactionSourceStartIndex2526-1)+transactionSourceLength2526]), // Field # 9
+		TransactionSource: preprocessString(record[transactionSourceStartIndex2526-1 : (transactionSourceStartIndex2526-1)+transactionSourceLength2526]), // Field # 9
 
-		TransactionType: strings.TrimSpace(record[transactionTypeStartIndex2526-1 : (transactionTypeStartIndex2526-1)+transactionTypeLength2526]), // Field # 10
+		TransactionType: preprocessString(record[transactionTypeStartIndex2526-1 : (transactionTypeStartIndex2526-1)+transactionTypeLength2526]), // Field # 10
 
-		TransactionLanguage: strings.TrimSpace(record[transactionLanguageStartIndex2526-1 : (transactionLanguageStartIndex2526-1)+transactionLanguageLength2526]), // Field # 11
+		TransactionLanguage: preprocessString(record[transactionLanguageStartIndex2526-1 : (transactionLanguageStartIndex2526-1)+transactionLanguageLength2526]), // Field # 11
 
-		TransactionReceiptDate: parseISIRDate2526(strings.TrimSpace(record[transactionReceiptDateStartIndex2526-1 : (transactionReceiptDateStartIndex2526-1)+transactionReceiptDateLength2526])), // Field # 12
+		TransactionReceiptDate: parseISIRDate2526(preprocessString(record[transactionReceiptDateStartIndex2526-1 : (transactionReceiptDateStartIndex2526-1)+transactionReceiptDateLength2526])), // Field # 12
 
-		TransactionProcessedDate: parseISIRDate2526(strings.TrimSpace(record[transactionProcessedDateStartIndex2526-1 : (transactionProcessedDateStartIndex2526-1)+transactionProcessedDateLength2526])), // Field # 13
+		TransactionProcessedDate: parseISIRDate2526(preprocessString(record[transactionProcessedDateStartIndex2526-1 : (transactionProcessedDateStartIndex2526-1)+transactionProcessedDateLength2526])), // Field # 13
 
-		TransactionStatus: strings.TrimSpace(record[transactionStatusStartIndex2526-1 : (transactionStatusStartIndex2526-1)+transactionStatusLength2526]), // Field # 14
+		TransactionStatus: preprocessString(record[transactionStatusStartIndex2526-1 : (transactionStatusStartIndex2526-1)+transactionStatusLength2526]), // Field # 14
 
-		RenewalDataUsed: strings.TrimSpace(record[renewalDataUsedStartIndex2526-1 : (renewalDataUsedStartIndex2526-1)+renewalDataUsedLength2526]), // Field # 15
+		RenewalDataUsed: preprocessString(record[renewalDataUsedStartIndex2526-1 : (renewalDataUsedStartIndex2526-1)+renewalDataUsedLength2526]), // Field # 15
 
-		FPSCorrectionReason: strings.TrimSpace(record[fpsCorrectionReasonStartIndex2526-1 : (fpsCorrectionReasonStartIndex2526-1)+fpsCorrectionReasonLength2526]), // Field # 16
+		FPSCorrectionReason: preprocessString(record[fpsCorrectionReasonStartIndex2526-1 : (fpsCorrectionReasonStartIndex2526-1)+fpsCorrectionReasonLength2526]), // Field # 16
 
-		SAIChangeFlag: strings.TrimSpace(record[saiChangeFlagStartIndex2526-1 : (saiChangeFlagStartIndex2526-1)+saiChangeFlagLength2526]), // Field # 17
+		SAIChangeFlag: preprocessString(record[saiChangeFlagStartIndex2526-1 : (saiChangeFlagStartIndex2526-1)+saiChangeFlagLength2526]), // Field # 17
 
-		SAI: strings.TrimSpace(record[saiStartIndex2526-1 : (saiStartIndex2526-1)+saiLength2526]), // Field # 18
+		SAI: preprocessString(record[saiStartIndex2526-1 : (saiStartIndex2526-1)+saiLength2526]), // Field # 18
 
-		ProvisionalSAI: strings.TrimSpace(record[provisionalSAIStartIndex2526-1 : (provisionalSAIStartIndex2526-1)+provisionalSAILength2526]), // Field # 19
+		ProvisionalSAI: preprocessString(record[provisionalSAIStartIndex2526-1 : (provisionalSAIStartIndex2526-1)+provisionalSAILength2526]), // Field # 19
 
-		SAIFormula: strings.TrimSpace(record[saiFormulaStartIndex2526-1 : (saiFormulaStartIndex2526-1)+saiFormulaLength2526]), // Field # 20
+		SAIFormula: preprocessString(record[saiFormulaStartIndex2526-1 : (saiFormulaStartIndex2526-1)+saiFormulaLength2526]), // Field # 20
 
-		SAIComputationType: strings.TrimSpace(record[saiComputationTypeStartIndex2526-1 : (saiComputationTypeStartIndex2526-1)+saiComputationTypeLength2526]), // Field # 21
+		SAIComputationType: preprocessString(record[saiComputationTypeStartIndex2526-1 : (saiComputationTypeStartIndex2526-1)+saiComputationTypeLength2526]), // Field # 21
 
-		MaxPellIndicator: strings.TrimSpace(record[maxPellIndicatorStartIndex2526-1 : (maxPellIndicatorStartIndex2526-1)+maxPellIndicatorLength2526]), // Field # 22
+		MaxPellIndicator: preprocessString(record[maxPellIndicatorStartIndex2526-1 : (maxPellIndicatorStartIndex2526-1)+maxPellIndicatorLength2526]), // Field # 22
 
-		MinimumPellIndicator: strings.TrimSpace(record[minimumPellIndicatorStartIndex2526-1 : (minimumPellIndicatorStartIndex2526-1)+minimumPellIndicatorLength2526]), // Field # 23
+		MinimumPellIndicator: preprocessString(record[minimumPellIndicatorStartIndex2526-1 : (minimumPellIndicatorStartIndex2526-1)+minimumPellIndicatorLength2526]), // Field # 23
 
-		StudentFirstName: strings.TrimSpace(record[studentFirstNameStartIndex2526-1 : (studentFirstNameStartIndex2526-1)+studentFirstNameLength2526]), // Field # 25
+		StudentFirstName: preprocessString(record[studentFirstNameStartIndex2526-1 : (studentFirstNameStartIndex2526-1)+studentFirstNameLength2526]), // Field # 25
 
-		StudentMiddleName: strings.TrimSpace(record[studentMiddleNameStartIndex2526-1 : (studentMiddleNameStartIndex2526-1)+studentMiddleNameLength2526]), // Field # 26
+		StudentMiddleName: preprocessString(record[studentMiddleNameStartIndex2526-1 : (studentMiddleNameStartIndex2526-1)+studentMiddleNameLength2526]), // Field # 26
 
-		StudentLastName: strings.TrimSpace(record[studentLastNameStartIndex2526-1 : (studentLastNameStartIndex2526-1)+studentLastNameLength2526]), // Field # 27
+		StudentLastName: preprocessString(record[studentLastNameStartIndex2526-1 : (studentLastNameStartIndex2526-1)+studentLastNameLength2526]), // Field # 27
 
-		StudentSuffix: strings.TrimSpace(record[studentSuffixStartIndex2526-1 : (studentSuffixStartIndex2526-1)+studentSuffixLength2526]), // Field # 28
+		StudentSuffix: preprocessString(record[studentSuffixStartIndex2526-1 : (studentSuffixStartIndex2526-1)+studentSuffixLength2526]), // Field # 28
 
-		StudentDateOfBirth: parseISIRDate2526(strings.TrimSpace(record[studentDateOfBirthStartIndex2526-1 : (studentDateOfBirthStartIndex2526-1)+studentDateOfBirthLength2526])), // Field # 29
+		StudentDateOfBirth: parseISIRDate2526(preprocessString(record[studentDateOfBirthStartIndex2526-1 : (studentDateOfBirthStartIndex2526-1)+studentDateOfBirthLength2526])), // Field # 29
 
-		StudentSSN: strings.TrimSpace(record[studentSSNStartIndex2526-1 : (studentSSNStartIndex2526-1)+studentSSNLength2526]), // Field # 30
+		StudentSSN: preprocessString(record[studentSSNStartIndex2526-1 : (studentSSNStartIndex2526-1)+studentSSNLength2526]), // Field # 30
 
-		StudentITIN: strings.TrimSpace(record[studentITINStartIndex2526-1 : (studentITINStartIndex2526-1)+studentITINLength2526]), // Field # 31
+		StudentITIN: preprocessString(record[studentITINStartIndex2526-1 : (studentITINStartIndex2526-1)+studentITINLength2526]), // Field # 31
 
-		StudentPhoneNumber: strings.TrimSpace(record[studentPhoneNumberStartIndex2526-1 : (studentPhoneNumberStartIndex2526-1)+studentPhoneNumberLength2526]), // Field # 32
+		StudentPhoneNumber: preprocessString(record[studentPhoneNumberStartIndex2526-1 : (studentPhoneNumberStartIndex2526-1)+studentPhoneNumberLength2526]), // Field # 32
 
-		StudentEmailAddress: strings.TrimSpace(record[studentEmailAddressStartIndex2526-1 : (studentEmailAddressStartIndex2526-1)+studentEmailAddressLength2526]), // Field # 33
+		StudentEmailAddress: preprocessString(record[studentEmailAddressStartIndex2526-1 : (studentEmailAddressStartIndex2526-1)+studentEmailAddressLength2526]), // Field # 33
 
-		StudentStreetAddress: strings.TrimSpace(record[studentStreetAddressStartIndex2526-1 : (studentStreetAddressStartIndex2526-1)+studentStreetAddressLength2526]), // Field # 34
+		StudentStreetAddress: preprocessString(record[studentStreetAddressStartIndex2526-1 : (studentStreetAddressStartIndex2526-1)+studentStreetAddressLength2526]), // Field # 34
 
-		StudentCity: strings.TrimSpace(record[studentCityStartIndex2526-1 : (studentCityStartIndex2526-1)+studentCityLength2526]), // Field # 35
+		StudentCity: preprocessString(record[studentCityStartIndex2526-1 : (studentCityStartIndex2526-1)+studentCityLength2526]), // Field # 35
 
-		StudentState: strings.TrimSpace(record[studentStateStartIndex2526-1 : (studentStateStartIndex2526-1)+studentStateLength2526]), // Field # 36
+		StudentState: preprocessString(record[studentStateStartIndex2526-1 : (studentStateStartIndex2526-1)+studentStateLength2526]), // Field # 36
 
-		StudentZipCode: strings.TrimSpace(record[studentZipCodeStartIndex2526-1 : (studentZipCodeStartIndex2526-1)+studentZipCodeLength2526]), // Field # 37
+		StudentZipCode: preprocessString(record[studentZipCodeStartIndex2526-1 : (studentZipCodeStartIndex2526-1)+studentZipCodeLength2526]), // Field # 37
 
-		StudentCountry: strings.TrimSpace(record[studentCountryStartIndex2526-1 : (studentCountryStartIndex2526-1)+studentCountryLength2526]), // Field # 38
+		StudentCountry: preprocessString(record[studentCountryStartIndex2526-1 : (studentCountryStartIndex2526-1)+studentCountryLength2526]), // Field # 38
 
-		StudentMaritalStatus: strings.TrimSpace(record[studentMaritalStatusStartIndex2526-1 : (studentMaritalStatusStartIndex2526-1)+studentMaritalStatusLength2526]), // Field # 40
+		StudentMaritalStatus: preprocessString(record[studentMaritalStatusStartIndex2526-1 : (studentMaritalStatusStartIndex2526-1)+studentMaritalStatusLength2526]), // Field # 40
 
-		StudentGradeLevel: strings.TrimSpace(record[studentGradeLevelStartIndex2526-1 : (studentGradeLevelStartIndex2526-1)+studentGradeLevelLength2526]), // Field # 41
+		StudentGradeLevel: preprocessString(record[studentGradeLevelStartIndex2526-1 : (studentGradeLevelStartIndex2526-1)+studentGradeLevelLength2526]), // Field # 41
 
-		StudentFirstBachelorsDegreeBefore2526: strings.TrimSpace(record[studentFirstBachelorsDegreeBefore2526StartIndex2526-1 : (studentFirstBachelorsDegreeBefore2526StartIndex2526-1)+studentFirstBachelorsDegreeBefore2526Length2526]), // Field # 42
+		StudentFirstBachelorsDegreeBefore2526: preprocessString(record[studentFirstBachelorsDegreeBefore2526StartIndex2526-1 : (studentFirstBachelorsDegreeBefore2526StartIndex2526-1)+studentFirstBachelorsDegreeBefore2526Length2526]), // Field # 42
 
-		StudentPursuingTeacherCertification: strings.TrimSpace(record[studentPursuingTeacherCertificationStartIndex2526-1 : (studentPursuingTeacherCertificationStartIndex2526-1)+studentPursuingTeacherCertificationLength2526]), // Field # 43
+		StudentPursuingTeacherCertification: preprocessString(record[studentPursuingTeacherCertificationStartIndex2526-1 : (studentPursuingTeacherCertificationStartIndex2526-1)+studentPursuingTeacherCertificationLength2526]), // Field # 43
 
-		StudentActiveDuty: strings.TrimSpace(record[studentActiveDutyStartIndex2526-1 : (studentActiveDutyStartIndex2526-1)+studentActiveDutyLength2526]), // Field # 44
+		StudentActiveDuty: preprocessString(record[studentActiveDutyStartIndex2526-1 : (studentActiveDutyStartIndex2526-1)+studentActiveDutyLength2526]), // Field # 44
 
-		StudentVeteran: strings.TrimSpace(record[studentVeteranStartIndex2526-1 : (studentVeteranStartIndex2526-1)+studentVeteranLength2526]), // Field # 45
+		StudentVeteran: preprocessString(record[studentVeteranStartIndex2526-1 : (studentVeteranStartIndex2526-1)+studentVeteranLength2526]), // Field # 45
 
-		StudentChildOrOtherDependents: strings.TrimSpace(record[studentChildOrOtherDependentsStartIndex2526-1 : (studentChildOrOtherDependentsStartIndex2526-1)+studentChildOrOtherDependentsLength2526]), // Field # 46
+		StudentChildOrOtherDependents: preprocessString(record[studentChildOrOtherDependentsStartIndex2526-1 : (studentChildOrOtherDependentsStartIndex2526-1)+studentChildOrOtherDependentsLength2526]), // Field # 46
 
-		StudentParentsDeceased: strings.TrimSpace(record[studentParentsDeceasedStartIndex2526-1 : (studentParentsDeceasedStartIndex2526-1)+studentParentsDeceasedLength2526]), // Field # 47
+		StudentParentsDeceased: preprocessString(record[studentParentsDeceasedStartIndex2526-1 : (studentParentsDeceasedStartIndex2526-1)+studentParentsDeceasedLength2526]), // Field # 47
 
-		StudentWardOfCourt: strings.TrimSpace(record[studentWardOfCourtStartIndex2526-1 : (studentWardOfCourtStartIndex2526-1)+studentWardOfCourtLength2526]), // Field # 48
+		StudentWardOfCourt: preprocessString(record[studentWardOfCourtStartIndex2526-1 : (studentWardOfCourtStartIndex2526-1)+studentWardOfCourtLength2526]), // Field # 48
 
-		StudentInFosterCare: strings.TrimSpace(record[studentInFosterCareStartIndex2526-1 : (studentInFosterCareStartIndex2526-1)+studentInFosterCareLength2526]), // Field # 49
+		StudentInFosterCare: preprocessString(record[studentInFosterCareStartIndex2526-1 : (studentInFosterCareStartIndex2526-1)+studentInFosterCareLength2526]), // Field # 49
 
-		StudentEmancipatedMinor: strings.TrimSpace(record[studentEmancipatedMinorStartIndex2526-1 : (studentEmancipatedMinorStartIndex2526-1)+studentEmancipatedMinorLength2526]), // Field # 50
+		StudentEmancipatedMinor: preprocessString(record[studentEmancipatedMinorStartIndex2526-1 : (studentEmancipatedMinorStartIndex2526-1)+studentEmancipatedMinorLength2526]), // Field # 50
 
-		StudentLegalGuardianship: strings.TrimSpace(record[studentLegalGuardianshipStartIndex2526-1 : (studentLegalGuardianshipStartIndex2526-1)+studentLegalGuardianshipLength2526]), // Field # 51
+		StudentLegalGuardianship: preprocessString(record[studentLegalGuardianshipStartIndex2526-1 : (studentLegalGuardianshipStartIndex2526-1)+studentLegalGuardianshipLength2526]), // Field # 51
 
-		StudentPersonalCircumstancesNoneOfTheAbove: strings.TrimSpace(record[studentPersonalCircumstancesNoneOfTheAboveStartIndex2526-1 : (studentPersonalCircumstancesNoneOfTheAboveStartIndex2526-1)+studentPersonalCircumstancesNoneOfTheAboveLength2526]), // Field # 52
+		StudentPersonalCircumstancesNoneOfTheAbove: preprocessString(record[studentPersonalCircumstancesNoneOfTheAboveStartIndex2526-1 : (studentPersonalCircumstancesNoneOfTheAboveStartIndex2526-1)+studentPersonalCircumstancesNoneOfTheAboveLength2526]), // Field # 52
 
-		StudentUnaccompaniedHomelessYouthAndSelfSupporting: strings.TrimSpace(record[studentUnaccompaniedHomelessYouthAndSelfSupportingStartIndex2526-1 : (studentUnaccompaniedHomelessYouthAndSelfSupportingStartIndex2526-1)+studentUnaccompaniedHomelessYouthAndSelfSupportingLength2526]), // Field # 53
+		StudentUnaccompaniedHomelessYouthAndSelfSupporting: preprocessString(record[studentUnaccompaniedHomelessYouthAndSelfSupportingStartIndex2526-1 : (studentUnaccompaniedHomelessYouthAndSelfSupportingStartIndex2526-1)+studentUnaccompaniedHomelessYouthAndSelfSupportingLength2526]), // Field # 53
 
-		StudentUnaccompaniedHomelessGeneral: strings.TrimSpace(record[studentUnaccompaniedHomelessGeneralStartIndex2526-1 : (studentUnaccompaniedHomelessGeneralStartIndex2526-1)+studentUnaccompaniedHomelessGeneralLength2526]), // Field # 54
+		StudentUnaccompaniedHomelessGeneral: preprocessString(record[studentUnaccompaniedHomelessGeneralStartIndex2526-1 : (studentUnaccompaniedHomelessGeneralStartIndex2526-1)+studentUnaccompaniedHomelessGeneralLength2526]), // Field # 54
 
-		StudentUnaccompaniedHomelessHS: strings.TrimSpace(record[studentUnaccompaniedHomelessHSStartIndex2526-1 : (studentUnaccompaniedHomelessHSStartIndex2526-1)+studentUnaccompaniedHomelessHSLength2526]), // Field # 55
+		StudentUnaccompaniedHomelessHS: preprocessString(record[studentUnaccompaniedHomelessHSStartIndex2526-1 : (studentUnaccompaniedHomelessHSStartIndex2526-1)+studentUnaccompaniedHomelessHSLength2526]), // Field # 55
 
-		StudentUnaccompaniedHomelessTRIO: strings.TrimSpace(record[studentUnaccompaniedHomelessTRIOStartIndex2526-1 : (studentUnaccompaniedHomelessTRIOStartIndex2526-1)+studentUnaccompaniedHomelessTRIOLength2526]), // Field # 56
+		StudentUnaccompaniedHomelessTRIO: preprocessString(record[studentUnaccompaniedHomelessTRIOStartIndex2526-1 : (studentUnaccompaniedHomelessTRIOStartIndex2526-1)+studentUnaccompaniedHomelessTRIOLength2526]), // Field # 56
 
-		StudentUnaccompaniedHomelessFAA: strings.TrimSpace(record[studentUnaccompaniedHomelessFAAStartIndex2526-1 : (studentUnaccompaniedHomelessFAAStartIndex2526-1)+studentUnaccompaniedHomelessFAALength2526]), // Field # 57
+		StudentUnaccompaniedHomelessFAA: preprocessString(record[studentUnaccompaniedHomelessFAAStartIndex2526-1 : (studentUnaccompaniedHomelessFAAStartIndex2526-1)+studentUnaccompaniedHomelessFAALength2526]), // Field # 57
 
-		StudentHomelessnessNoneOfTheAbove: strings.TrimSpace(record[studentHomelessnessNoneOfTheAboveStartIndex2526-1 : (studentHomelessnessNoneOfTheAboveStartIndex2526-1)+studentHomelessnessNoneOfTheAboveLength2526]), // Field # 58
+		StudentHomelessnessNoneOfTheAbove: preprocessString(record[studentHomelessnessNoneOfTheAboveStartIndex2526-1 : (studentHomelessnessNoneOfTheAboveStartIndex2526-1)+studentHomelessnessNoneOfTheAboveLength2526]), // Field # 58
 
-		StudentUnusualCircumstance: strings.TrimSpace(record[studentUnusualCircumstanceStartIndex2526-1 : (studentUnusualCircumstanceStartIndex2526-1)+studentUnusualCircumstanceLength2526]), // Field # 59
+		StudentUnusualCircumstance: preprocessString(record[studentUnusualCircumstanceStartIndex2526-1 : (studentUnusualCircumstanceStartIndex2526-1)+studentUnusualCircumstanceLength2526]), // Field # 59
 
-		StudentUnsubOnly: strings.TrimSpace(record[studentUnsubOnlyStartIndex2526-1 : (studentUnsubOnlyStartIndex2526-1)+studentUnsubOnlyLength2526]), // Field # 60
+		StudentUnsubOnly: preprocessString(record[studentUnsubOnlyStartIndex2526-1 : (studentUnsubOnlyStartIndex2526-1)+studentUnsubOnlyLength2526]), // Field # 60
 
-		StudentUpdatedFamilySize: strings.TrimSpace(record[studentUpdatedFamilySizeStartIndex2526-1 : (studentUpdatedFamilySizeStartIndex2526-1)+studentUpdatedFamilySizeLength2526]), // Field # 61
+		StudentUpdatedFamilySize: preprocessString(record[studentUpdatedFamilySizeStartIndex2526-1 : (studentUpdatedFamilySizeStartIndex2526-1)+studentUpdatedFamilySizeLength2526]), // Field # 61
 
-		StudentNumberInCollege: strings.TrimSpace(record[studentNumberInCollegeStartIndex2526-1 : (studentNumberInCollegeStartIndex2526-1)+studentNumberInCollegeLength2526]), // Field # 62
+		StudentNumberInCollege: preprocessString(record[studentNumberInCollegeStartIndex2526-1 : (studentNumberInCollegeStartIndex2526-1)+studentNumberInCollegeLength2526]), // Field # 62
 
-		StudentCitizenshipStatus: strings.TrimSpace(record[studentCitizenshipStatusStartIndex2526-1 : (studentCitizenshipStatusStartIndex2526-1)+studentCitizenshipStatusLength2526]), // Field # 63
+		StudentCitizenshipStatus: preprocessString(record[studentCitizenshipStatusStartIndex2526-1 : (studentCitizenshipStatusStartIndex2526-1)+studentCitizenshipStatusLength2526]), // Field # 63
 
-		StudentANumber: strings.TrimSpace(record[studentANumberStartIndex2526-1 : (studentANumberStartIndex2526-1)+studentANumberLength2526]), // Field # 64
+		StudentANumber: preprocessString(record[studentANumberStartIndex2526-1 : (studentANumberStartIndex2526-1)+studentANumberLength2526]), // Field # 64
 
-		StudentStateOfLegalResidence: strings.TrimSpace(record[studentStateOfLegalResidenceStartIndex2526-1 : (studentStateOfLegalResidenceStartIndex2526-1)+studentStateOfLegalResidenceLength2526]), // Field # 65
+		StudentStateOfLegalResidence: preprocessString(record[studentStateOfLegalResidenceStartIndex2526-1 : (studentStateOfLegalResidenceStartIndex2526-1)+studentStateOfLegalResidenceLength2526]), // Field # 65
 
-		StudentLegalResidenceDate: parseISIRDateShort2526(strings.TrimSpace(record[studentLegalResidenceDateStartIndex2526-1 : (studentLegalResidenceDateStartIndex2526-1)+studentLegalResidenceDateLength2526])), // Field # 66
+		StudentLegalResidenceDate: parseISIRDateShort2526(preprocessString(record[studentLegalResidenceDateStartIndex2526-1 : (studentLegalResidenceDateStartIndex2526-1)+studentLegalResidenceDateLength2526])), // Field # 66
 
-		StudentEitherParentAttendCollege: strings.TrimSpace(record[studentEitherParentAttendCollegeStartIndex2526-1 : (studentEitherParentAttendCollegeStartIndex2526-1)+studentEitherParentAttendCollegeLength2526]), // Field # 67
+		StudentEitherParentAttendCollege: preprocessString(record[studentEitherParentAttendCollegeStartIndex2526-1 : (studentEitherParentAttendCollegeStartIndex2526-1)+studentEitherParentAttendCollegeLength2526]), // Field # 67
 
-		StudentParentKilledInTheLineOfDuty: strings.TrimSpace(record[studentParentKilledInTheLineOfDutyStartIndex2526-1 : (studentParentKilledInTheLineOfDutyStartIndex2526-1)+studentParentKilledInTheLineOfDutyLength2526]), // Field # 68
+		StudentParentKilledInTheLineOfDuty: preprocessString(record[studentParentKilledInTheLineOfDutyStartIndex2526-1 : (studentParentKilledInTheLineOfDutyStartIndex2526-1)+studentParentKilledInTheLineOfDutyLength2526]), // Field # 68
 
-		StudentHighSchoolCompletionStatus: strings.TrimSpace(record[studentHighSchoolCompletionStatusStartIndex2526-1 : (studentHighSchoolCompletionStatusStartIndex2526-1)+studentHighSchoolCompletionStatusLength2526]), // Field # 69
+		StudentHighSchoolCompletionStatus: preprocessString(record[studentHighSchoolCompletionStatusStartIndex2526-1 : (studentHighSchoolCompletionStatusStartIndex2526-1)+studentHighSchoolCompletionStatusLength2526]), // Field # 69
 
-		StudentHighSchoolName: strings.TrimSpace(record[studentHighSchoolNameStartIndex2526-1 : (studentHighSchoolNameStartIndex2526-1)+studentHighSchoolNameLength2526]), // Field # 70
+		StudentHighSchoolName: preprocessString(record[studentHighSchoolNameStartIndex2526-1 : (studentHighSchoolNameStartIndex2526-1)+studentHighSchoolNameLength2526]), // Field # 70
 
-		StudentHighSchoolCity: strings.TrimSpace(record[studentHighSchoolCityStartIndex2526-1 : (studentHighSchoolCityStartIndex2526-1)+studentHighSchoolCityLength2526]), // Field # 71
+		StudentHighSchoolCity: preprocessString(record[studentHighSchoolCityStartIndex2526-1 : (studentHighSchoolCityStartIndex2526-1)+studentHighSchoolCityLength2526]), // Field # 71
 
-		StudentHighSchoolState: strings.TrimSpace(record[studentHighSchoolStateStartIndex2526-1 : (studentHighSchoolStateStartIndex2526-1)+studentHighSchoolStateLength2526]), // Field # 72
+		StudentHighSchoolState: preprocessString(record[studentHighSchoolStateStartIndex2526-1 : (studentHighSchoolStateStartIndex2526-1)+studentHighSchoolStateLength2526]), // Field # 72
 
-		StudentHighSchoolEquivalentDiplomaName: strings.TrimSpace(record[studentHighSchoolEquivalentDiplomaNameStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaNameStartIndex2526-1)+studentHighSchoolEquivalentDiplomaNameLength2526]), // Field # 73
+		StudentHighSchoolEquivalentDiplomaName: preprocessString(record[studentHighSchoolEquivalentDiplomaNameStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaNameStartIndex2526-1)+studentHighSchoolEquivalentDiplomaNameLength2526]), // Field # 73
 
-		StudentHighSchoolEquivalentDiplomaState: strings.TrimSpace(record[studentHighSchoolEquivalentDiplomaStateStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaStateStartIndex2526-1)+studentHighSchoolEquivalentDiplomaStateLength2526]), // Field # 74
+		StudentHighSchoolEquivalentDiplomaState: preprocessString(record[studentHighSchoolEquivalentDiplomaStateStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaStateStartIndex2526-1)+studentHighSchoolEquivalentDiplomaStateLength2526]), // Field # 74
 
-		StudentManuallyEnteredReceivedEITC: strings.TrimSpace(record[studentManuallyEnteredReceivedEITCStartIndex2526-1 : (studentManuallyEnteredReceivedEITCStartIndex2526-1)+studentManuallyEnteredReceivedEITCLength2526]), // Field # 75
+		StudentManuallyEnteredReceivedEITC: preprocessString(record[studentManuallyEnteredReceivedEITCStartIndex2526-1 : (studentManuallyEnteredReceivedEITCStartIndex2526-1)+studentManuallyEnteredReceivedEITCLength2526]), // Field # 75
 
-		StudentManuallyEnteredReceivedFederalHousingAssistance: strings.TrimSpace(record[studentManuallyEnteredReceivedFederalHousingAssistanceStartIndex2526-1 : (studentManuallyEnteredReceivedFederalHousingAssistanceStartIndex2526-1)+studentManuallyEnteredReceivedFederalHousingAssistanceLength2526]), // Field # 76
+		StudentManuallyEnteredReceivedFederalHousingAssistance: preprocessString(record[studentManuallyEnteredReceivedFederalHousingAssistanceStartIndex2526-1 : (studentManuallyEnteredReceivedFederalHousingAssistanceStartIndex2526-1)+studentManuallyEnteredReceivedFederalHousingAssistanceLength2526]), // Field # 76
 
-		StudentManuallyEnteredReceivedFreeReducedPriceLunch: strings.TrimSpace(record[studentManuallyEnteredReceivedFreeReducedPriceLunchStartIndex2526-1 : (studentManuallyEnteredReceivedFreeReducedPriceLunchStartIndex2526-1)+studentManuallyEnteredReceivedFreeReducedPriceLunchLength2526]), // Field # 77
+		StudentManuallyEnteredReceivedFreeReducedPriceLunch: preprocessString(record[studentManuallyEnteredReceivedFreeReducedPriceLunchStartIndex2526-1 : (studentManuallyEnteredReceivedFreeReducedPriceLunchStartIndex2526-1)+studentManuallyEnteredReceivedFreeReducedPriceLunchLength2526]), // Field # 77
 
-		StudentManuallyEnteredReceivedMedicaid: strings.TrimSpace(record[studentManuallyEnteredReceivedMedicaidStartIndex2526-1 : (studentManuallyEnteredReceivedMedicaidStartIndex2526-1)+studentManuallyEnteredReceivedMedicaidLength2526]), // Field # 78
+		StudentManuallyEnteredReceivedMedicaid: preprocessString(record[studentManuallyEnteredReceivedMedicaidStartIndex2526-1 : (studentManuallyEnteredReceivedMedicaidStartIndex2526-1)+studentManuallyEnteredReceivedMedicaidLength2526]), // Field # 78
 
-		StudentManuallyEnteredReceivedRefundableCreditFor36BHealthPlan: strings.TrimSpace(record[studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1 : (studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1)+studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanLength2526]), // Field # 79
+		StudentManuallyEnteredReceivedRefundableCreditFor36BHealthPlan: preprocessString(record[studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1 : (studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1)+studentManuallyEnteredReceivedRefundableCreditFor36BHealthPlanLength2526]), // Field # 79
 
-		StudentManuallyEnteredReceivedSNAP: strings.TrimSpace(record[studentManuallyEnteredReceivedSNAPStartIndex2526-1 : (studentManuallyEnteredReceivedSNAPStartIndex2526-1)+studentManuallyEnteredReceivedSNAPLength2526]), // Field # 80
+		StudentManuallyEnteredReceivedSNAP: preprocessString(record[studentManuallyEnteredReceivedSNAPStartIndex2526-1 : (studentManuallyEnteredReceivedSNAPStartIndex2526-1)+studentManuallyEnteredReceivedSNAPLength2526]), // Field # 80
 
-		StudentManuallyEnteredReceivedSupplementalSecurityIncome: strings.TrimSpace(record[studentManuallyEnteredReceivedSupplementalSecurityIncomeStartIndex2526-1 : (studentManuallyEnteredReceivedSupplementalSecurityIncomeStartIndex2526-1)+studentManuallyEnteredReceivedSupplementalSecurityIncomeLength2526]), // Field # 81
+		StudentManuallyEnteredReceivedSupplementalSecurityIncome: preprocessString(record[studentManuallyEnteredReceivedSupplementalSecurityIncomeStartIndex2526-1 : (studentManuallyEnteredReceivedSupplementalSecurityIncomeStartIndex2526-1)+studentManuallyEnteredReceivedSupplementalSecurityIncomeLength2526]), // Field # 81
 
-		StudentManuallyEnteredReceivedTANF: strings.TrimSpace(record[studentManuallyEnteredReceivedTANFStartIndex2526-1 : (studentManuallyEnteredReceivedTANFStartIndex2526-1)+studentManuallyEnteredReceivedTANFLength2526]), // Field # 82
+		StudentManuallyEnteredReceivedTANF: preprocessString(record[studentManuallyEnteredReceivedTANFStartIndex2526-1 : (studentManuallyEnteredReceivedTANFStartIndex2526-1)+studentManuallyEnteredReceivedTANFLength2526]), // Field # 82
 
-		StudentManuallyEnteredReceivedWIC: strings.TrimSpace(record[studentManuallyEnteredReceivedWICStartIndex2526-1 : (studentManuallyEnteredReceivedWICStartIndex2526-1)+studentManuallyEnteredReceivedWICLength2526]), // Field # 83
+		StudentManuallyEnteredReceivedWIC: preprocessString(record[studentManuallyEnteredReceivedWICStartIndex2526-1 : (studentManuallyEnteredReceivedWICStartIndex2526-1)+studentManuallyEnteredReceivedWICLength2526]), // Field # 83
 
-		StudentManuallyEnteredFederalBenefitsNoneOfTheAbove: strings.TrimSpace(record[studentManuallyEnteredFederalBenefitsNoneOfTheAboveStartIndex2526-1 : (studentManuallyEnteredFederalBenefitsNoneOfTheAboveStartIndex2526-1)+studentManuallyEnteredFederalBenefitsNoneOfTheAboveLength2526]), // Field # 84
+		StudentManuallyEnteredFederalBenefitsNoneOfTheAbove: preprocessString(record[studentManuallyEnteredFederalBenefitsNoneOfTheAboveStartIndex2526-1 : (studentManuallyEnteredFederalBenefitsNoneOfTheAboveStartIndex2526-1)+studentManuallyEnteredFederalBenefitsNoneOfTheAboveLength2526]), // Field # 84
 
-		StudentManuallyEnteredFiled1040Or1040NR: strings.TrimSpace(record[studentManuallyEnteredFiled1040Or1040NRStartIndex2526-1 : (studentManuallyEnteredFiled1040Or1040NRStartIndex2526-1)+studentManuallyEnteredFiled1040Or1040NRLength2526]), // Field # 85
+		StudentManuallyEnteredFiled1040Or1040NR: preprocessString(record[studentManuallyEnteredFiled1040Or1040NRStartIndex2526-1 : (studentManuallyEnteredFiled1040Or1040NRStartIndex2526-1)+studentManuallyEnteredFiled1040Or1040NRLength2526]), // Field # 85
 
-		StudentManuallyEnteredFiledNonUSTaxReturn: strings.TrimSpace(record[studentManuallyEnteredFiledNonUSTaxReturnStartIndex2526-1 : (studentManuallyEnteredFiledNonUSTaxReturnStartIndex2526-1)+studentManuallyEnteredFiledNonUSTaxReturnLength2526]), // Field # 86
+		StudentManuallyEnteredFiledNonUSTaxReturn: preprocessString(record[studentManuallyEnteredFiledNonUSTaxReturnStartIndex2526-1 : (studentManuallyEnteredFiledNonUSTaxReturnStartIndex2526-1)+studentManuallyEnteredFiledNonUSTaxReturnLength2526]), // Field # 86
 
-		StudentManuallyEnteredFiledJointReturnWithCurrentSpouse: strings.TrimSpace(record[studentManuallyEnteredFiledJointReturnWithCurrentSpouseStartIndex2526-1 : (studentManuallyEnteredFiledJointReturnWithCurrentSpouseStartIndex2526-1)+studentManuallyEnteredFiledJointReturnWithCurrentSpouseLength2526]), // Field # 87
+		StudentManuallyEnteredFiledJointReturnWithCurrentSpouse: preprocessString(record[studentManuallyEnteredFiledJointReturnWithCurrentSpouseStartIndex2526-1 : (studentManuallyEnteredFiledJointReturnWithCurrentSpouseStartIndex2526-1)+studentManuallyEnteredFiledJointReturnWithCurrentSpouseLength2526]), // Field # 87
 
-		StudentManuallyEnteredTaxReturnFilingStatus: strings.TrimSpace(record[studentManuallyEnteredTaxReturnFilingStatusStartIndex2526-1 : (studentManuallyEnteredTaxReturnFilingStatusStartIndex2526-1)+studentManuallyEnteredTaxReturnFilingStatusLength2526]), // Field # 88
+		StudentManuallyEnteredTaxReturnFilingStatus: preprocessString(record[studentManuallyEnteredTaxReturnFilingStatusStartIndex2526-1 : (studentManuallyEnteredTaxReturnFilingStatusStartIndex2526-1)+studentManuallyEnteredTaxReturnFilingStatusLength2526]), // Field # 88
 
-		StudentManuallyEnteredIncomeEarnedFromWork: strings.TrimSpace(record[studentManuallyEnteredIncomeEarnedFromWorkStartIndex2526-1 : (studentManuallyEnteredIncomeEarnedFromWorkStartIndex2526-1)+studentManuallyEnteredIncomeEarnedFromWorkLength2526]), // Field # 89
+		StudentManuallyEnteredIncomeEarnedFromWork: preprocessString(record[studentManuallyEnteredIncomeEarnedFromWorkStartIndex2526-1 : (studentManuallyEnteredIncomeEarnedFromWorkStartIndex2526-1)+studentManuallyEnteredIncomeEarnedFromWorkLength2526]), // Field # 89
 
-		StudentManuallyEnteredTaxExemptInterestIncome: strings.TrimSpace(record[studentManuallyEnteredTaxExemptInterestIncomeStartIndex2526-1 : (studentManuallyEnteredTaxExemptInterestIncomeStartIndex2526-1)+studentManuallyEnteredTaxExemptInterestIncomeLength2526]), // Field # 90
+		StudentManuallyEnteredTaxExemptInterestIncome: preprocessString(record[studentManuallyEnteredTaxExemptInterestIncomeStartIndex2526-1 : (studentManuallyEnteredTaxExemptInterestIncomeStartIndex2526-1)+studentManuallyEnteredTaxExemptInterestIncomeLength2526]), // Field # 90
 
-		StudentManuallyEnteredUntaxedPortionsOfIRADistributions: strings.TrimSpace(record[studentManuallyEnteredUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (studentManuallyEnteredUntaxedPortionsOfIRADistributionsStartIndex2526-1)+studentManuallyEnteredUntaxedPortionsOfIRADistributionsLength2526]), // Field # 91
+		StudentManuallyEnteredUntaxedPortionsOfIRADistributions: preprocessString(record[studentManuallyEnteredUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (studentManuallyEnteredUntaxedPortionsOfIRADistributionsStartIndex2526-1)+studentManuallyEnteredUntaxedPortionsOfIRADistributionsLength2526]), // Field # 91
 
-		StudentManuallyEnteredIRARollover: strings.TrimSpace(record[studentManuallyEnteredIRARolloverStartIndex2526-1 : (studentManuallyEnteredIRARolloverStartIndex2526-1)+studentManuallyEnteredIRARolloverLength2526]), // Field # 92
+		StudentManuallyEnteredIRARollover: preprocessString(record[studentManuallyEnteredIRARolloverStartIndex2526-1 : (studentManuallyEnteredIRARolloverStartIndex2526-1)+studentManuallyEnteredIRARolloverLength2526]), // Field # 92
 
-		StudentManuallyEnteredUntaxedPortionsOfPensions: strings.TrimSpace(record[studentManuallyEnteredUntaxedPortionsOfPensionsStartIndex2526-1 : (studentManuallyEnteredUntaxedPortionsOfPensionsStartIndex2526-1)+studentManuallyEnteredUntaxedPortionsOfPensionsLength2526]), // Field # 93
+		StudentManuallyEnteredUntaxedPortionsOfPensions: preprocessString(record[studentManuallyEnteredUntaxedPortionsOfPensionsStartIndex2526-1 : (studentManuallyEnteredUntaxedPortionsOfPensionsStartIndex2526-1)+studentManuallyEnteredUntaxedPortionsOfPensionsLength2526]), // Field # 93
 
-		StudentManuallyEnteredPensionRollover: strings.TrimSpace(record[studentManuallyEnteredPensionRolloverStartIndex2526-1 : (studentManuallyEnteredPensionRolloverStartIndex2526-1)+studentManuallyEnteredPensionRolloverLength2526]), // Field # 94
+		StudentManuallyEnteredPensionRollover: preprocessString(record[studentManuallyEnteredPensionRolloverStartIndex2526-1 : (studentManuallyEnteredPensionRolloverStartIndex2526-1)+studentManuallyEnteredPensionRolloverLength2526]), // Field # 94
 
-		StudentManuallyEnteredAdjustedGrossIncome: strings.TrimSpace(record[studentManuallyEnteredAdjustedGrossIncomeStartIndex2526-1 : (studentManuallyEnteredAdjustedGrossIncomeStartIndex2526-1)+studentManuallyEnteredAdjustedGrossIncomeLength2526]), // Field # 95
+		StudentManuallyEnteredAdjustedGrossIncome: preprocessString(record[studentManuallyEnteredAdjustedGrossIncomeStartIndex2526-1 : (studentManuallyEnteredAdjustedGrossIncomeStartIndex2526-1)+studentManuallyEnteredAdjustedGrossIncomeLength2526]), // Field # 95
 
-		StudentManuallyEnteredIncomeTaxPaid: strings.TrimSpace(record[studentManuallyEnteredIncomeTaxPaidStartIndex2526-1 : (studentManuallyEnteredIncomeTaxPaidStartIndex2526-1)+studentManuallyEnteredIncomeTaxPaidLength2526]), // Field # 96
+		StudentManuallyEnteredIncomeTaxPaid: preprocessString(record[studentManuallyEnteredIncomeTaxPaidStartIndex2526-1 : (studentManuallyEnteredIncomeTaxPaidStartIndex2526-1)+studentManuallyEnteredIncomeTaxPaidLength2526]), // Field # 96
 
-		StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear: strings.TrimSpace(record[studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 97
+		StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear: preprocessString(record[studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 97
 
-		StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther: strings.TrimSpace(record[studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 98
+		StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther: preprocessString(record[studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 98
 
-		StudentManuallyEnteredEducationCredits: strings.TrimSpace(record[studentManuallyEnteredEducationCreditsStartIndex2526-1 : (studentManuallyEnteredEducationCreditsStartIndex2526-1)+studentManuallyEnteredEducationCreditsLength2526]), // Field # 99
+		StudentManuallyEnteredEducationCredits: preprocessString(record[studentManuallyEnteredEducationCreditsStartIndex2526-1 : (studentManuallyEnteredEducationCreditsStartIndex2526-1)+studentManuallyEnteredEducationCreditsLength2526]), // Field # 99
 
-		StudentManuallyEnteredFiledScheduleABDEFH: strings.TrimSpace(record[studentManuallyEnteredFiledScheduleABDEFHStartIndex2526-1 : (studentManuallyEnteredFiledScheduleABDEFHStartIndex2526-1)+studentManuallyEnteredFiledScheduleABDEFHLength2526]), // Field # 100
+		StudentManuallyEnteredFiledScheduleABDEFH: preprocessString(record[studentManuallyEnteredFiledScheduleABDEFHStartIndex2526-1 : (studentManuallyEnteredFiledScheduleABDEFHStartIndex2526-1)+studentManuallyEnteredFiledScheduleABDEFHLength2526]), // Field # 100
 
-		StudentManuallyEnteredScheduleCAmount: strings.TrimSpace(record[studentManuallyEnteredScheduleCAmountStartIndex2526-1 : (studentManuallyEnteredScheduleCAmountStartIndex2526-1)+studentManuallyEnteredScheduleCAmountLength2526]), // Field # 101
+		StudentManuallyEnteredScheduleCAmount: preprocessString(record[studentManuallyEnteredScheduleCAmountStartIndex2526-1 : (studentManuallyEnteredScheduleCAmountStartIndex2526-1)+studentManuallyEnteredScheduleCAmountLength2526]), // Field # 101
 
-		StudentManuallyEnteredCollegeGrantAndScholarshipAid: strings.TrimSpace(record[studentManuallyEnteredCollegeGrantAndScholarshipAidStartIndex2526-1 : (studentManuallyEnteredCollegeGrantAndScholarshipAidStartIndex2526-1)+studentManuallyEnteredCollegeGrantAndScholarshipAidLength2526]), // Field # 102
+		StudentManuallyEnteredCollegeGrantAndScholarshipAid: preprocessString(record[studentManuallyEnteredCollegeGrantAndScholarshipAidStartIndex2526-1 : (studentManuallyEnteredCollegeGrantAndScholarshipAidStartIndex2526-1)+studentManuallyEnteredCollegeGrantAndScholarshipAidLength2526]), // Field # 102
 
-		StudentManuallyEnteredForeignEarnedIncomeExclusion: strings.TrimSpace(record[studentManuallyEnteredForeignEarnedIncomeExclusionStartIndex2526-1 : (studentManuallyEnteredForeignEarnedIncomeExclusionStartIndex2526-1)+studentManuallyEnteredForeignEarnedIncomeExclusionLength2526]), // Field # 103
+		StudentManuallyEnteredForeignEarnedIncomeExclusion: preprocessString(record[studentManuallyEnteredForeignEarnedIncomeExclusionStartIndex2526-1 : (studentManuallyEnteredForeignEarnedIncomeExclusionStartIndex2526-1)+studentManuallyEnteredForeignEarnedIncomeExclusionLength2526]), // Field # 103
 
-		StudentManuallyEnteredChildSupportReceived: strings.TrimSpace(record[studentManuallyEnteredChildSupportReceivedStartIndex2526-1 : (studentManuallyEnteredChildSupportReceivedStartIndex2526-1)+studentManuallyEnteredChildSupportReceivedLength2526]), // Field # 104
+		StudentManuallyEnteredChildSupportReceived: preprocessString(record[studentManuallyEnteredChildSupportReceivedStartIndex2526-1 : (studentManuallyEnteredChildSupportReceivedStartIndex2526-1)+studentManuallyEnteredChildSupportReceivedLength2526]), // Field # 104
 
-		StudentManuallyEnteredTotalOfCashSavingsAndCheckingAccounts: strings.TrimSpace(record[studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1 : (studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1)+studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsLength2526]), // Field # 105
+		StudentManuallyEnteredTotalOfCashSavingsAndCheckingAccounts: preprocessString(record[studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1 : (studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1)+studentManuallyEnteredTotalOfCashSavingsAndCheckingAccountsLength2526]), // Field # 105
 
-		StudentManuallyEnteredNetWorthOfCurrentInvestments: strings.TrimSpace(record[studentManuallyEnteredNetWorthOfCurrentInvestmentsStartIndex2526-1 : (studentManuallyEnteredNetWorthOfCurrentInvestmentsStartIndex2526-1)+studentManuallyEnteredNetWorthOfCurrentInvestmentsLength2526]), // Field # 106
+		StudentManuallyEnteredNetWorthOfCurrentInvestments: preprocessString(record[studentManuallyEnteredNetWorthOfCurrentInvestmentsStartIndex2526-1 : (studentManuallyEnteredNetWorthOfCurrentInvestmentsStartIndex2526-1)+studentManuallyEnteredNetWorthOfCurrentInvestmentsLength2526]), // Field # 106
 
-		StudentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarms: strings.TrimSpace(record[studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1 : (studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1)+studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsLength2526]), // Field # 107
+		StudentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarms: preprocessString(record[studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1 : (studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1)+studentManuallyEnteredNetWorthOfBusinessesAndInvestmentFarmsLength2526]), // Field # 107
 
-		StudentCollege1: strings.TrimSpace(record[studentCollege1StartIndex2526-1 : (studentCollege1StartIndex2526-1)+studentCollege1Length2526]), // Field # 108
+		StudentCollege1: preprocessString(record[studentCollege1StartIndex2526-1 : (studentCollege1StartIndex2526-1)+studentCollege1Length2526]), // Field # 108
 
-		StudentCollege2: strings.TrimSpace(record[studentCollege2StartIndex2526-1 : (studentCollege2StartIndex2526-1)+studentCollege2Length2526]), // Field # 109
+		StudentCollege2: preprocessString(record[studentCollege2StartIndex2526-1 : (studentCollege2StartIndex2526-1)+studentCollege2Length2526]), // Field # 109
 
-		StudentCollege3: strings.TrimSpace(record[studentCollege3StartIndex2526-1 : (studentCollege3StartIndex2526-1)+studentCollege3Length2526]), // Field # 110
+		StudentCollege3: preprocessString(record[studentCollege3StartIndex2526-1 : (studentCollege3StartIndex2526-1)+studentCollege3Length2526]), // Field # 110
 
-		StudentCollege4: strings.TrimSpace(record[studentCollege4StartIndex2526-1 : (studentCollege4StartIndex2526-1)+studentCollege4Length2526]), // Field # 111
+		StudentCollege4: preprocessString(record[studentCollege4StartIndex2526-1 : (studentCollege4StartIndex2526-1)+studentCollege4Length2526]), // Field # 111
 
-		StudentCollege5: strings.TrimSpace(record[studentCollege5StartIndex2526-1 : (studentCollege5StartIndex2526-1)+studentCollege5Length2526]), // Field # 112
+		StudentCollege5: preprocessString(record[studentCollege5StartIndex2526-1 : (studentCollege5StartIndex2526-1)+studentCollege5Length2526]), // Field # 112
 
-		StudentCollege6: strings.TrimSpace(record[studentCollege6StartIndex2526-1 : (studentCollege6StartIndex2526-1)+studentCollege6Length2526]), // Field # 113
+		StudentCollege6: preprocessString(record[studentCollege6StartIndex2526-1 : (studentCollege6StartIndex2526-1)+studentCollege6Length2526]), // Field # 113
 
-		StudentCollege7: strings.TrimSpace(record[studentCollege7StartIndex2526-1 : (studentCollege7StartIndex2526-1)+studentCollege7Length2526]), // Field # 114
+		StudentCollege7: preprocessString(record[studentCollege7StartIndex2526-1 : (studentCollege7StartIndex2526-1)+studentCollege7Length2526]), // Field # 114
 
-		StudentCollege8: strings.TrimSpace(record[studentCollege8StartIndex2526-1 : (studentCollege8StartIndex2526-1)+studentCollege8Length2526]), // Field # 115
+		StudentCollege8: preprocessString(record[studentCollege8StartIndex2526-1 : (studentCollege8StartIndex2526-1)+studentCollege8Length2526]), // Field # 115
 
-		StudentCollege9: strings.TrimSpace(record[studentCollege9StartIndex2526-1 : (studentCollege9StartIndex2526-1)+studentCollege9Length2526]), // Field # 116
+		StudentCollege9: preprocessString(record[studentCollege9StartIndex2526-1 : (studentCollege9StartIndex2526-1)+studentCollege9Length2526]), // Field # 116
 
-		StudentCollege10: strings.TrimSpace(record[studentCollege10StartIndex2526-1 : (studentCollege10StartIndex2526-1)+studentCollege10Length2526]), // Field # 117
+		StudentCollege10: preprocessString(record[studentCollege10StartIndex2526-1 : (studentCollege10StartIndex2526-1)+studentCollege10Length2526]), // Field # 117
 
-		StudentCollege11: strings.TrimSpace(record[studentCollege11StartIndex2526-1 : (studentCollege11StartIndex2526-1)+studentCollege11Length2526]), // Field # 118
+		StudentCollege11: preprocessString(record[studentCollege11StartIndex2526-1 : (studentCollege11StartIndex2526-1)+studentCollege11Length2526]), // Field # 118
 
-		StudentCollege12: strings.TrimSpace(record[studentCollege12StartIndex2526-1 : (studentCollege12StartIndex2526-1)+studentCollege12Length2526]), // Field # 119
+		StudentCollege12: preprocessString(record[studentCollege12StartIndex2526-1 : (studentCollege12StartIndex2526-1)+studentCollege12Length2526]), // Field # 119
 
-		StudentCollege13: strings.TrimSpace(record[studentCollege13StartIndex2526-1 : (studentCollege13StartIndex2526-1)+studentCollege13Length2526]), // Field # 120
+		StudentCollege13: preprocessString(record[studentCollege13StartIndex2526-1 : (studentCollege13StartIndex2526-1)+studentCollege13Length2526]), // Field # 120
 
-		StudentCollege14: strings.TrimSpace(record[studentCollege14StartIndex2526-1 : (studentCollege14StartIndex2526-1)+studentCollege14Length2526]), // Field # 121
+		StudentCollege14: preprocessString(record[studentCollege14StartIndex2526-1 : (studentCollege14StartIndex2526-1)+studentCollege14Length2526]), // Field # 121
 
-		StudentCollege15: strings.TrimSpace(record[studentCollege15StartIndex2526-1 : (studentCollege15StartIndex2526-1)+studentCollege15Length2526]), // Field # 122
+		StudentCollege15: preprocessString(record[studentCollege15StartIndex2526-1 : (studentCollege15StartIndex2526-1)+studentCollege15Length2526]), // Field # 122
 
-		StudentCollege16: strings.TrimSpace(record[studentCollege16StartIndex2526-1 : (studentCollege16StartIndex2526-1)+studentCollege16Length2526]), // Field # 123
+		StudentCollege16: preprocessString(record[studentCollege16StartIndex2526-1 : (studentCollege16StartIndex2526-1)+studentCollege16Length2526]), // Field # 123
 
-		StudentCollege17: strings.TrimSpace(record[studentCollege17StartIndex2526-1 : (studentCollege17StartIndex2526-1)+studentCollege17Length2526]), // Field # 124
+		StudentCollege17: preprocessString(record[studentCollege17StartIndex2526-1 : (studentCollege17StartIndex2526-1)+studentCollege17Length2526]), // Field # 124
 
-		StudentCollege18: strings.TrimSpace(record[studentCollege18StartIndex2526-1 : (studentCollege18StartIndex2526-1)+studentCollege18Length2526]), // Field # 125
+		StudentCollege18: preprocessString(record[studentCollege18StartIndex2526-1 : (studentCollege18StartIndex2526-1)+studentCollege18Length2526]), // Field # 125
 
-		StudentCollege19: strings.TrimSpace(record[studentCollege19StartIndex2526-1 : (studentCollege19StartIndex2526-1)+studentCollege19Length2526]), // Field # 126
+		StudentCollege19: preprocessString(record[studentCollege19StartIndex2526-1 : (studentCollege19StartIndex2526-1)+studentCollege19Length2526]), // Field # 126
 
-		StudentCollege20: strings.TrimSpace(record[studentCollege20StartIndex2526-1 : (studentCollege20StartIndex2526-1)+studentCollege20Length2526]), // Field # 127
+		StudentCollege20: preprocessString(record[studentCollege20StartIndex2526-1 : (studentCollege20StartIndex2526-1)+studentCollege20Length2526]), // Field # 127
 
-		StudentConsentToRetrieveAndDiscloseFTI: strings.TrimSpace(record[studentConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (studentConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+studentConsentToRetrieveAndDiscloseFTILength2526]), // Field # 128
+		StudentConsentToRetrieveAndDiscloseFTI: preprocessString(record[studentConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (studentConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+studentConsentToRetrieveAndDiscloseFTILength2526]), // Field # 128
 
-		StudentSignature: strings.TrimSpace(record[studentSignatureStartIndex2526-1 : (studentSignatureStartIndex2526-1)+studentSignatureLength2526]), // Field # 129
+		StudentSignature: preprocessString(record[studentSignatureStartIndex2526-1 : (studentSignatureStartIndex2526-1)+studentSignatureLength2526]), // Field # 129
 
-		StudentSignatureDate: parseISIRDate2526(strings.TrimSpace(record[studentSignatureDateStartIndex2526-1 : (studentSignatureDateStartIndex2526-1)+studentSignatureDateLength2526])), // Field # 130
+		StudentSignatureDate: parseISIRDate2526(preprocessString(record[studentSignatureDateStartIndex2526-1 : (studentSignatureDateStartIndex2526-1)+studentSignatureDateLength2526])), // Field # 130
 
-		StudentSpouseFirstName: strings.TrimSpace(record[studentSpouseFirstNameStartIndex2526-1 : (studentSpouseFirstNameStartIndex2526-1)+studentSpouseFirstNameLength2526]), // Field # 132
+		StudentSpouseFirstName: preprocessString(record[studentSpouseFirstNameStartIndex2526-1 : (studentSpouseFirstNameStartIndex2526-1)+studentSpouseFirstNameLength2526]), // Field # 132
 
-		StudentSpouseMiddleName: strings.TrimSpace(record[studentSpouseMiddleNameStartIndex2526-1 : (studentSpouseMiddleNameStartIndex2526-1)+studentSpouseMiddleNameLength2526]), // Field # 133
+		StudentSpouseMiddleName: preprocessString(record[studentSpouseMiddleNameStartIndex2526-1 : (studentSpouseMiddleNameStartIndex2526-1)+studentSpouseMiddleNameLength2526]), // Field # 133
 
-		StudentSpouseLastName: strings.TrimSpace(record[studentSpouseLastNameStartIndex2526-1 : (studentSpouseLastNameStartIndex2526-1)+studentSpouseLastNameLength2526]), // Field # 134
+		StudentSpouseLastName: preprocessString(record[studentSpouseLastNameStartIndex2526-1 : (studentSpouseLastNameStartIndex2526-1)+studentSpouseLastNameLength2526]), // Field # 134
 
-		StudentSpouseSuffix: strings.TrimSpace(record[studentSpouseSuffixStartIndex2526-1 : (studentSpouseSuffixStartIndex2526-1)+studentSpouseSuffixLength2526]), // Field # 135
+		StudentSpouseSuffix: preprocessString(record[studentSpouseSuffixStartIndex2526-1 : (studentSpouseSuffixStartIndex2526-1)+studentSpouseSuffixLength2526]), // Field # 135
 
-		StudentSpouseDateOfBirth: parseISIRDate2526(strings.TrimSpace(record[studentSpouseDateOfBirthStartIndex2526-1 : (studentSpouseDateOfBirthStartIndex2526-1)+studentSpouseDateOfBirthLength2526])), // Field # 136
+		StudentSpouseDateOfBirth: parseISIRDate2526(preprocessString(record[studentSpouseDateOfBirthStartIndex2526-1 : (studentSpouseDateOfBirthStartIndex2526-1)+studentSpouseDateOfBirthLength2526])), // Field # 136
 
-		StudentSpouseSSN: strings.TrimSpace(record[studentSpouseSSNStartIndex2526-1 : (studentSpouseSSNStartIndex2526-1)+studentSpouseSSNLength2526]), // Field # 137
+		StudentSpouseSSN: preprocessString(record[studentSpouseSSNStartIndex2526-1 : (studentSpouseSSNStartIndex2526-1)+studentSpouseSSNLength2526]), // Field # 137
 
-		StudentSpouseITIN: strings.TrimSpace(record[studentSpouseITINStartIndex2526-1 : (studentSpouseITINStartIndex2526-1)+studentSpouseITINLength2526]), // Field # 138
+		StudentSpouseITIN: preprocessString(record[studentSpouseITINStartIndex2526-1 : (studentSpouseITINStartIndex2526-1)+studentSpouseITINLength2526]), // Field # 138
 
-		StudentSpousePhoneNumber: strings.TrimSpace(record[studentSpousePhoneNumberStartIndex2526-1 : (studentSpousePhoneNumberStartIndex2526-1)+studentSpousePhoneNumberLength2526]), // Field # 139
+		StudentSpousePhoneNumber: preprocessString(record[studentSpousePhoneNumberStartIndex2526-1 : (studentSpousePhoneNumberStartIndex2526-1)+studentSpousePhoneNumberLength2526]), // Field # 139
 
-		StudentSpouseEmailAddress: strings.TrimSpace(record[studentSpouseEmailAddressStartIndex2526-1 : (studentSpouseEmailAddressStartIndex2526-1)+studentSpouseEmailAddressLength2526]), // Field # 140
+		StudentSpouseEmailAddress: preprocessString(record[studentSpouseEmailAddressStartIndex2526-1 : (studentSpouseEmailAddressStartIndex2526-1)+studentSpouseEmailAddressLength2526]), // Field # 140
 
-		StudentSpouseStreetAddress: strings.TrimSpace(record[studentSpouseStreetAddressStartIndex2526-1 : (studentSpouseStreetAddressStartIndex2526-1)+studentSpouseStreetAddressLength2526]), // Field # 141
+		StudentSpouseStreetAddress: preprocessString(record[studentSpouseStreetAddressStartIndex2526-1 : (studentSpouseStreetAddressStartIndex2526-1)+studentSpouseStreetAddressLength2526]), // Field # 141
 
-		StudentSpouseCity: strings.TrimSpace(record[studentSpouseCityStartIndex2526-1 : (studentSpouseCityStartIndex2526-1)+studentSpouseCityLength2526]), // Field # 142
+		StudentSpouseCity: preprocessString(record[studentSpouseCityStartIndex2526-1 : (studentSpouseCityStartIndex2526-1)+studentSpouseCityLength2526]), // Field # 142
 
-		StudentSpouseState: strings.TrimSpace(record[studentSpouseStateStartIndex2526-1 : (studentSpouseStateStartIndex2526-1)+studentSpouseStateLength2526]), // Field # 143
+		StudentSpouseState: preprocessString(record[studentSpouseStateStartIndex2526-1 : (studentSpouseStateStartIndex2526-1)+studentSpouseStateLength2526]), // Field # 143
 
-		StudentSpouseZipCode: strings.TrimSpace(record[studentSpouseZipCodeStartIndex2526-1 : (studentSpouseZipCodeStartIndex2526-1)+studentSpouseZipCodeLength2526]), // Field # 144
+		StudentSpouseZipCode: preprocessString(record[studentSpouseZipCodeStartIndex2526-1 : (studentSpouseZipCodeStartIndex2526-1)+studentSpouseZipCodeLength2526]), // Field # 144
 
-		StudentSpouseCountry: strings.TrimSpace(record[studentSpouseCountryStartIndex2526-1 : (studentSpouseCountryStartIndex2526-1)+studentSpouseCountryLength2526]), // Field # 145
+		StudentSpouseCountry: preprocessString(record[studentSpouseCountryStartIndex2526-1 : (studentSpouseCountryStartIndex2526-1)+studentSpouseCountryLength2526]), // Field # 145
 
-		StudentSpouseFiled1040Or1040NR: strings.TrimSpace(record[studentSpouseFiled1040Or1040NRStartIndex2526-1 : (studentSpouseFiled1040Or1040NRStartIndex2526-1)+studentSpouseFiled1040Or1040NRLength2526]), // Field # 146
+		StudentSpouseFiled1040Or1040NR: preprocessString(record[studentSpouseFiled1040Or1040NRStartIndex2526-1 : (studentSpouseFiled1040Or1040NRStartIndex2526-1)+studentSpouseFiled1040Or1040NRLength2526]), // Field # 146
 
-		StudentSpouseFiledNonUSTaxReturn: strings.TrimSpace(record[studentSpouseFiledNonUSTaxReturnStartIndex2526-1 : (studentSpouseFiledNonUSTaxReturnStartIndex2526-1)+studentSpouseFiledNonUSTaxReturnLength2526]), // Field # 147
+		StudentSpouseFiledNonUSTaxReturn: preprocessString(record[studentSpouseFiledNonUSTaxReturnStartIndex2526-1 : (studentSpouseFiledNonUSTaxReturnStartIndex2526-1)+studentSpouseFiledNonUSTaxReturnLength2526]), // Field # 147
 
-		StudentSpouseTaxReturnFilingStatus: strings.TrimSpace(record[studentSpouseTaxReturnFilingStatusStartIndex2526-1 : (studentSpouseTaxReturnFilingStatusStartIndex2526-1)+studentSpouseTaxReturnFilingStatusLength2526]), // Field # 148
+		StudentSpouseTaxReturnFilingStatus: preprocessString(record[studentSpouseTaxReturnFilingStatusStartIndex2526-1 : (studentSpouseTaxReturnFilingStatusStartIndex2526-1)+studentSpouseTaxReturnFilingStatusLength2526]), // Field # 148
 
-		StudentSpouseIncomeEarnedFromWork: strings.TrimSpace(record[studentSpouseIncomeEarnedFromWorkStartIndex2526-1 : (studentSpouseIncomeEarnedFromWorkStartIndex2526-1)+studentSpouseIncomeEarnedFromWorkLength2526]), // Field # 149
+		StudentSpouseIncomeEarnedFromWork: preprocessString(record[studentSpouseIncomeEarnedFromWorkStartIndex2526-1 : (studentSpouseIncomeEarnedFromWorkStartIndex2526-1)+studentSpouseIncomeEarnedFromWorkLength2526]), // Field # 149
 
-		StudentSpouseTaxExemptInterestIncome: strings.TrimSpace(record[studentSpouseTaxExemptInterestIncomeStartIndex2526-1 : (studentSpouseTaxExemptInterestIncomeStartIndex2526-1)+studentSpouseTaxExemptInterestIncomeLength2526]), // Field # 150
+		StudentSpouseTaxExemptInterestIncome: preprocessString(record[studentSpouseTaxExemptInterestIncomeStartIndex2526-1 : (studentSpouseTaxExemptInterestIncomeStartIndex2526-1)+studentSpouseTaxExemptInterestIncomeLength2526]), // Field # 150
 
-		StudentSpouseUntaxedPortionsOfIRADistributions: strings.TrimSpace(record[studentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1)+studentSpouseUntaxedPortionsOfIRADistributionsLength2526]), // Field # 151
+		StudentSpouseUntaxedPortionsOfIRADistributions: preprocessString(record[studentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1)+studentSpouseUntaxedPortionsOfIRADistributionsLength2526]), // Field # 151
 
-		StudentSpouseIRARollover: strings.TrimSpace(record[studentSpouseIRARolloverStartIndex2526-1 : (studentSpouseIRARolloverStartIndex2526-1)+studentSpouseIRARolloverLength2526]), // Field # 152
+		StudentSpouseIRARollover: preprocessString(record[studentSpouseIRARolloverStartIndex2526-1 : (studentSpouseIRARolloverStartIndex2526-1)+studentSpouseIRARolloverLength2526]), // Field # 152
 
-		StudentSpouseUntaxedPortionsOfPensions: strings.TrimSpace(record[studentSpouseUntaxedPortionsOfPensionsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfPensionsStartIndex2526-1)+studentSpouseUntaxedPortionsOfPensionsLength2526]), // Field # 153
+		StudentSpouseUntaxedPortionsOfPensions: preprocessString(record[studentSpouseUntaxedPortionsOfPensionsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfPensionsStartIndex2526-1)+studentSpouseUntaxedPortionsOfPensionsLength2526]), // Field # 153
 
-		StudentSpousePensionRollover: strings.TrimSpace(record[studentSpousePensionRolloverStartIndex2526-1 : (studentSpousePensionRolloverStartIndex2526-1)+studentSpousePensionRolloverLength2526]), // Field # 154
+		StudentSpousePensionRollover: preprocessString(record[studentSpousePensionRolloverStartIndex2526-1 : (studentSpousePensionRolloverStartIndex2526-1)+studentSpousePensionRolloverLength2526]), // Field # 154
 
-		StudentSpouseAdjustedGrossIncome: strings.TrimSpace(record[studentSpouseAdjustedGrossIncomeStartIndex2526-1 : (studentSpouseAdjustedGrossIncomeStartIndex2526-1)+studentSpouseAdjustedGrossIncomeLength2526]), // Field # 155
+		StudentSpouseAdjustedGrossIncome: preprocessString(record[studentSpouseAdjustedGrossIncomeStartIndex2526-1 : (studentSpouseAdjustedGrossIncomeStartIndex2526-1)+studentSpouseAdjustedGrossIncomeLength2526]), // Field # 155
 
-		StudentSpouseIncomeTaxPaid: strings.TrimSpace(record[studentSpouseIncomeTaxPaidStartIndex2526-1 : (studentSpouseIncomeTaxPaidStartIndex2526-1)+studentSpouseIncomeTaxPaidLength2526]), // Field # 156
+		StudentSpouseIncomeTaxPaid: preprocessString(record[studentSpouseIncomeTaxPaidStartIndex2526-1 : (studentSpouseIncomeTaxPaidStartIndex2526-1)+studentSpouseIncomeTaxPaidLength2526]), // Field # 156
 
-		StudentSpouseDeductiblePaymentsToIRAKeoghOther: strings.TrimSpace(record[studentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (studentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+studentSpouseDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 157
+		StudentSpouseDeductiblePaymentsToIRAKeoghOther: preprocessString(record[studentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (studentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+studentSpouseDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 157
 
-		StudentSpouseEducationCredits: strings.TrimSpace(record[studentSpouseEducationCreditsStartIndex2526-1 : (studentSpouseEducationCreditsStartIndex2526-1)+studentSpouseEducationCreditsLength2526]), // Field # 158
+		StudentSpouseEducationCredits: preprocessString(record[studentSpouseEducationCreditsStartIndex2526-1 : (studentSpouseEducationCreditsStartIndex2526-1)+studentSpouseEducationCreditsLength2526]), // Field # 158
 
-		StudentSpouseFiledScheduleABDEFH: strings.TrimSpace(record[studentSpouseFiledScheduleABDEFHStartIndex2526-1 : (studentSpouseFiledScheduleABDEFHStartIndex2526-1)+studentSpouseFiledScheduleABDEFHLength2526]), // Field # 159
+		StudentSpouseFiledScheduleABDEFH: preprocessString(record[studentSpouseFiledScheduleABDEFHStartIndex2526-1 : (studentSpouseFiledScheduleABDEFHStartIndex2526-1)+studentSpouseFiledScheduleABDEFHLength2526]), // Field # 159
 
-		StudentSpouseScheduleCAmount: strings.TrimSpace(record[studentSpouseScheduleCAmountStartIndex2526-1 : (studentSpouseScheduleCAmountStartIndex2526-1)+studentSpouseScheduleCAmountLength2526]), // Field # 160
+		StudentSpouseScheduleCAmount: preprocessString(record[studentSpouseScheduleCAmountStartIndex2526-1 : (studentSpouseScheduleCAmountStartIndex2526-1)+studentSpouseScheduleCAmountLength2526]), // Field # 160
 
-		StudentSpouseForeignEarnedIncomeExclusion: strings.TrimSpace(record[studentSpouseForeignEarnedIncomeExclusionStartIndex2526-1 : (studentSpouseForeignEarnedIncomeExclusionStartIndex2526-1)+studentSpouseForeignEarnedIncomeExclusionLength2526]), // Field # 161
+		StudentSpouseForeignEarnedIncomeExclusion: preprocessString(record[studentSpouseForeignEarnedIncomeExclusionStartIndex2526-1 : (studentSpouseForeignEarnedIncomeExclusionStartIndex2526-1)+studentSpouseForeignEarnedIncomeExclusionLength2526]), // Field # 161
 
-		StudentSpouseConsentToRetrieveAndDiscloseFTI: strings.TrimSpace(record[studentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (studentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+studentSpouseConsentToRetrieveAndDiscloseFTILength2526]), // Field # 162
+		StudentSpouseConsentToRetrieveAndDiscloseFTI: preprocessString(record[studentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (studentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+studentSpouseConsentToRetrieveAndDiscloseFTILength2526]), // Field # 162
 
-		StudentSpouseSignature: strings.TrimSpace(record[studentSpouseSignatureStartIndex2526-1 : (studentSpouseSignatureStartIndex2526-1)+studentSpouseSignatureLength2526]), // Field # 163
+		StudentSpouseSignature: preprocessString(record[studentSpouseSignatureStartIndex2526-1 : (studentSpouseSignatureStartIndex2526-1)+studentSpouseSignatureLength2526]), // Field # 163
 
-		StudentSpouseSignatureDate: parseISIRDate2526(strings.TrimSpace(record[studentSpouseSignatureDateStartIndex2526-1 : (studentSpouseSignatureDateStartIndex2526-1)+studentSpouseSignatureDateLength2526])), // Field # 164
+		StudentSpouseSignatureDate: parseISIRDate2526(preprocessString(record[studentSpouseSignatureDateStartIndex2526-1 : (studentSpouseSignatureDateStartIndex2526-1)+studentSpouseSignatureDateLength2526])), // Field # 164
 
-		ParentFirstName: strings.TrimSpace(record[parentFirstNameStartIndex2526-1 : (parentFirstNameStartIndex2526-1)+parentFirstNameLength2526]), // Field # 166
+		ParentFirstName: preprocessString(record[parentFirstNameStartIndex2526-1 : (parentFirstNameStartIndex2526-1)+parentFirstNameLength2526]), // Field # 166
 
-		ParentMiddleName: strings.TrimSpace(record[parentMiddleNameStartIndex2526-1 : (parentMiddleNameStartIndex2526-1)+parentMiddleNameLength2526]), // Field # 167
+		ParentMiddleName: preprocessString(record[parentMiddleNameStartIndex2526-1 : (parentMiddleNameStartIndex2526-1)+parentMiddleNameLength2526]), // Field # 167
 
-		ParentLastName: strings.TrimSpace(record[parentLastNameStartIndex2526-1 : (parentLastNameStartIndex2526-1)+parentLastNameLength2526]), // Field # 168
+		ParentLastName: preprocessString(record[parentLastNameStartIndex2526-1 : (parentLastNameStartIndex2526-1)+parentLastNameLength2526]), // Field # 168
 
-		ParentSuffix: strings.TrimSpace(record[parentSuffixStartIndex2526-1 : (parentSuffixStartIndex2526-1)+parentSuffixLength2526]), // Field # 169
+		ParentSuffix: preprocessString(record[parentSuffixStartIndex2526-1 : (parentSuffixStartIndex2526-1)+parentSuffixLength2526]), // Field # 169
 
-		ParentDateOfBirth: parseISIRDate2526(strings.TrimSpace(record[parentDateOfBirthStartIndex2526-1 : (parentDateOfBirthStartIndex2526-1)+parentDateOfBirthLength2526])), // Field # 170
+		ParentDateOfBirth: parseISIRDate2526(preprocessString(record[parentDateOfBirthStartIndex2526-1 : (parentDateOfBirthStartIndex2526-1)+parentDateOfBirthLength2526])), // Field # 170
 
-		ParentSSN: strings.TrimSpace(record[parentSSNStartIndex2526-1 : (parentSSNStartIndex2526-1)+parentSSNLength2526]), // Field # 171
+		ParentSSN: preprocessString(record[parentSSNStartIndex2526-1 : (parentSSNStartIndex2526-1)+parentSSNLength2526]), // Field # 171
 
-		ParentITIN: strings.TrimSpace(record[parentITINStartIndex2526-1 : (parentITINStartIndex2526-1)+parentITINLength2526]), // Field # 172
+		ParentITIN: preprocessString(record[parentITINStartIndex2526-1 : (parentITINStartIndex2526-1)+parentITINLength2526]), // Field # 172
 
-		ParentPhoneNumber: strings.TrimSpace(record[parentPhoneNumberStartIndex2526-1 : (parentPhoneNumberStartIndex2526-1)+parentPhoneNumberLength2526]), // Field # 173
+		ParentPhoneNumber: preprocessString(record[parentPhoneNumberStartIndex2526-1 : (parentPhoneNumberStartIndex2526-1)+parentPhoneNumberLength2526]), // Field # 173
 
-		ParentEmailAddress: strings.TrimSpace(record[parentEmailAddressStartIndex2526-1 : (parentEmailAddressStartIndex2526-1)+parentEmailAddressLength2526]), // Field # 174
+		ParentEmailAddress: preprocessString(record[parentEmailAddressStartIndex2526-1 : (parentEmailAddressStartIndex2526-1)+parentEmailAddressLength2526]), // Field # 174
 
-		ParentStreetAddress: strings.TrimSpace(record[parentStreetAddressStartIndex2526-1 : (parentStreetAddressStartIndex2526-1)+parentStreetAddressLength2526]), // Field # 175
+		ParentStreetAddress: preprocessString(record[parentStreetAddressStartIndex2526-1 : (parentStreetAddressStartIndex2526-1)+parentStreetAddressLength2526]), // Field # 175
 
-		ParentCity: strings.TrimSpace(record[parentCityStartIndex2526-1 : (parentCityStartIndex2526-1)+parentCityLength2526]), // Field # 176
+		ParentCity: preprocessString(record[parentCityStartIndex2526-1 : (parentCityStartIndex2526-1)+parentCityLength2526]), // Field # 176
 
-		ParentState: strings.TrimSpace(record[parentStateStartIndex2526-1 : (parentStateStartIndex2526-1)+parentStateLength2526]), // Field # 177
+		ParentState: preprocessString(record[parentStateStartIndex2526-1 : (parentStateStartIndex2526-1)+parentStateLength2526]), // Field # 177
 
-		ParentZipCode: strings.TrimSpace(record[parentZipCodeStartIndex2526-1 : (parentZipCodeStartIndex2526-1)+parentZipCodeLength2526]), // Field # 178
+		ParentZipCode: preprocessString(record[parentZipCodeStartIndex2526-1 : (parentZipCodeStartIndex2526-1)+parentZipCodeLength2526]), // Field # 178
 
-		ParentCountry: strings.TrimSpace(record[parentCountryStartIndex2526-1 : (parentCountryStartIndex2526-1)+parentCountryLength2526]), // Field # 179
+		ParentCountry: preprocessString(record[parentCountryStartIndex2526-1 : (parentCountryStartIndex2526-1)+parentCountryLength2526]), // Field # 179
 
-		ParentMaritalStatus: strings.TrimSpace(record[parentMaritalStatusStartIndex2526-1 : (parentMaritalStatusStartIndex2526-1)+parentMaritalStatusLength2526]), // Field # 180
+		ParentMaritalStatus: preprocessString(record[parentMaritalStatusStartIndex2526-1 : (parentMaritalStatusStartIndex2526-1)+parentMaritalStatusLength2526]), // Field # 180
 
-		ParentStateOfLegalResidence: strings.TrimSpace(record[parentStateOfLegalResidenceStartIndex2526-1 : (parentStateOfLegalResidenceStartIndex2526-1)+parentStateOfLegalResidenceLength2526]), // Field # 181
+		ParentStateOfLegalResidence: preprocessString(record[parentStateOfLegalResidenceStartIndex2526-1 : (parentStateOfLegalResidenceStartIndex2526-1)+parentStateOfLegalResidenceLength2526]), // Field # 181
 
-		ParentLegalResidenceDate: parseISIRDateShort2526(strings.TrimSpace(record[parentLegalResidenceDateStartIndex2526-1 : (parentLegalResidenceDateStartIndex2526-1)+parentLegalResidenceDateLength2526])), // Field # 182
+		ParentLegalResidenceDate: parseISIRDateShort2526(preprocessString(record[parentLegalResidenceDateStartIndex2526-1 : (parentLegalResidenceDateStartIndex2526-1)+parentLegalResidenceDateLength2526])), // Field # 182
 
-		ParentUpdatedFamilySize: strings.TrimSpace(record[parentUpdatedFamilySizeStartIndex2526-1 : (parentUpdatedFamilySizeStartIndex2526-1)+parentUpdatedFamilySizeLength2526]), // Field # 183
+		ParentUpdatedFamilySize: preprocessString(record[parentUpdatedFamilySizeStartIndex2526-1 : (parentUpdatedFamilySizeStartIndex2526-1)+parentUpdatedFamilySizeLength2526]), // Field # 183
 
-		ParentNumberInCollege: strings.TrimSpace(record[parentNumberInCollegeStartIndex2526-1 : (parentNumberInCollegeStartIndex2526-1)+parentNumberInCollegeLength2526]), // Field # 184
+		ParentNumberInCollege: preprocessString(record[parentNumberInCollegeStartIndex2526-1 : (parentNumberInCollegeStartIndex2526-1)+parentNumberInCollegeLength2526]), // Field # 184
 
-		ParentReceivedEITC: strings.TrimSpace(record[parentReceivedEITCStartIndex2526-1 : (parentReceivedEITCStartIndex2526-1)+parentReceivedEITCLength2526]), // Field # 185
+		ParentReceivedEITC: preprocessString(record[parentReceivedEITCStartIndex2526-1 : (parentReceivedEITCStartIndex2526-1)+parentReceivedEITCLength2526]), // Field # 185
 
-		ParentReceivedFederalHousingAssistance: strings.TrimSpace(record[parentReceivedFederalHousingAssistanceStartIndex2526-1 : (parentReceivedFederalHousingAssistanceStartIndex2526-1)+parentReceivedFederalHousingAssistanceLength2526]), // Field # 186
+		ParentReceivedFederalHousingAssistance: preprocessString(record[parentReceivedFederalHousingAssistanceStartIndex2526-1 : (parentReceivedFederalHousingAssistanceStartIndex2526-1)+parentReceivedFederalHousingAssistanceLength2526]), // Field # 186
 
-		ParentReceivedFreeReducedPriceLunch: strings.TrimSpace(record[parentReceivedFreeReducedPriceLunchStartIndex2526-1 : (parentReceivedFreeReducedPriceLunchStartIndex2526-1)+parentReceivedFreeReducedPriceLunchLength2526]), // Field # 187
+		ParentReceivedFreeReducedPriceLunch: preprocessString(record[parentReceivedFreeReducedPriceLunchStartIndex2526-1 : (parentReceivedFreeReducedPriceLunchStartIndex2526-1)+parentReceivedFreeReducedPriceLunchLength2526]), // Field # 187
 
-		ParentReceivedMedicaid: strings.TrimSpace(record[parentReceivedMedicaidStartIndex2526-1 : (parentReceivedMedicaidStartIndex2526-1)+parentReceivedMedicaidLength2526]), // Field # 188
+		ParentReceivedMedicaid: preprocessString(record[parentReceivedMedicaidStartIndex2526-1 : (parentReceivedMedicaidStartIndex2526-1)+parentReceivedMedicaidLength2526]), // Field # 188
 
-		ParentReceivedRefundableCreditFor36BHealthPlan: strings.TrimSpace(record[parentReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1 : (parentReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1)+parentReceivedRefundableCreditFor36BHealthPlanLength2526]), // Field # 189
+		ParentReceivedRefundableCreditFor36BHealthPlan: preprocessString(record[parentReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1 : (parentReceivedRefundableCreditFor36BHealthPlanStartIndex2526-1)+parentReceivedRefundableCreditFor36BHealthPlanLength2526]), // Field # 189
 
-		ParentReceivedSNAP: strings.TrimSpace(record[parentReceivedSNAPStartIndex2526-1 : (parentReceivedSNAPStartIndex2526-1)+parentReceivedSNAPLength2526]), // Field # 190
+		ParentReceivedSNAP: preprocessString(record[parentReceivedSNAPStartIndex2526-1 : (parentReceivedSNAPStartIndex2526-1)+parentReceivedSNAPLength2526]), // Field # 190
 
-		ParentReceivedSupplementalSecurityIncome: strings.TrimSpace(record[parentReceivedSupplementalSecurityIncomeStartIndex2526-1 : (parentReceivedSupplementalSecurityIncomeStartIndex2526-1)+parentReceivedSupplementalSecurityIncomeLength2526]), // Field # 191
+		ParentReceivedSupplementalSecurityIncome: preprocessString(record[parentReceivedSupplementalSecurityIncomeStartIndex2526-1 : (parentReceivedSupplementalSecurityIncomeStartIndex2526-1)+parentReceivedSupplementalSecurityIncomeLength2526]), // Field # 191
 
-		ParentReceivedTANF: strings.TrimSpace(record[parentReceivedTANFStartIndex2526-1 : (parentReceivedTANFStartIndex2526-1)+parentReceivedTANFLength2526]), // Field # 192
+		ParentReceivedTANF: preprocessString(record[parentReceivedTANFStartIndex2526-1 : (parentReceivedTANFStartIndex2526-1)+parentReceivedTANFLength2526]), // Field # 192
 
-		ParentReceivedWIC: strings.TrimSpace(record[parentReceivedWICStartIndex2526-1 : (parentReceivedWICStartIndex2526-1)+parentReceivedWICLength2526]), // Field # 193
+		ParentReceivedWIC: preprocessString(record[parentReceivedWICStartIndex2526-1 : (parentReceivedWICStartIndex2526-1)+parentReceivedWICLength2526]), // Field # 193
 
-		ParentFederalBenefitsNoneOfTheAbove: strings.TrimSpace(record[parentFederalBenefitsNoneOfTheAboveStartIndex2526-1 : (parentFederalBenefitsNoneOfTheAboveStartIndex2526-1)+parentFederalBenefitsNoneOfTheAboveLength2526]), // Field # 194
+		ParentFederalBenefitsNoneOfTheAbove: preprocessString(record[parentFederalBenefitsNoneOfTheAboveStartIndex2526-1 : (parentFederalBenefitsNoneOfTheAboveStartIndex2526-1)+parentFederalBenefitsNoneOfTheAboveLength2526]), // Field # 194
 
-		ParentFiled1040Or1040NR: strings.TrimSpace(record[parentFiled1040Or1040NRStartIndex2526-1 : (parentFiled1040Or1040NRStartIndex2526-1)+parentFiled1040Or1040NRLength2526]), // Field # 195
+		ParentFiled1040Or1040NR: preprocessString(record[parentFiled1040Or1040NRStartIndex2526-1 : (parentFiled1040Or1040NRStartIndex2526-1)+parentFiled1040Or1040NRLength2526]), // Field # 195
 
-		ParentFileNonUSTaxReturn: strings.TrimSpace(record[parentFileNonUSTaxReturnStartIndex2526-1 : (parentFileNonUSTaxReturnStartIndex2526-1)+parentFileNonUSTaxReturnLength2526]), // Field # 196
+		ParentFileNonUSTaxReturn: preprocessString(record[parentFileNonUSTaxReturnStartIndex2526-1 : (parentFileNonUSTaxReturnStartIndex2526-1)+parentFileNonUSTaxReturnLength2526]), // Field # 196
 
-		ParentFiledJointReturnWithCurrentSpouse: strings.TrimSpace(record[parentFiledJointReturnWithCurrentSpouseStartIndex2526-1 : (parentFiledJointReturnWithCurrentSpouseStartIndex2526-1)+parentFiledJointReturnWithCurrentSpouseLength2526]), // Field # 197
+		ParentFiledJointReturnWithCurrentSpouse: preprocessString(record[parentFiledJointReturnWithCurrentSpouseStartIndex2526-1 : (parentFiledJointReturnWithCurrentSpouseStartIndex2526-1)+parentFiledJointReturnWithCurrentSpouseLength2526]), // Field # 197
 
-		ParentTaxReturnFilingStatus: strings.TrimSpace(record[parentTaxReturnFilingStatusStartIndex2526-1 : (parentTaxReturnFilingStatusStartIndex2526-1)+parentTaxReturnFilingStatusLength2526]), // Field # 198
+		ParentTaxReturnFilingStatus: preprocessString(record[parentTaxReturnFilingStatusStartIndex2526-1 : (parentTaxReturnFilingStatusStartIndex2526-1)+parentTaxReturnFilingStatusLength2526]), // Field # 198
 
-		ParentIncomeEarnedFromWork: strings.TrimSpace(record[parentIncomeEarnedFromWorkStartIndex2526-1 : (parentIncomeEarnedFromWorkStartIndex2526-1)+parentIncomeEarnedFromWorkLength2526]), // Field # 199
+		ParentIncomeEarnedFromWork: preprocessString(record[parentIncomeEarnedFromWorkStartIndex2526-1 : (parentIncomeEarnedFromWorkStartIndex2526-1)+parentIncomeEarnedFromWorkLength2526]), // Field # 199
 
-		ParentTaxExemptInterestIncome: strings.TrimSpace(record[parentTaxExemptInterestIncomeStartIndex2526-1 : (parentTaxExemptInterestIncomeStartIndex2526-1)+parentTaxExemptInterestIncomeLength2526]), // Field # 200
+		ParentTaxExemptInterestIncome: preprocessString(record[parentTaxExemptInterestIncomeStartIndex2526-1 : (parentTaxExemptInterestIncomeStartIndex2526-1)+parentTaxExemptInterestIncomeLength2526]), // Field # 200
 
-		ParentUntaxedPortionsOfIRADistributions: strings.TrimSpace(record[parentUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (parentUntaxedPortionsOfIRADistributionsStartIndex2526-1)+parentUntaxedPortionsOfIRADistributionsLength2526]), // Field # 201
+		ParentUntaxedPortionsOfIRADistributions: preprocessString(record[parentUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (parentUntaxedPortionsOfIRADistributionsStartIndex2526-1)+parentUntaxedPortionsOfIRADistributionsLength2526]), // Field # 201
 
-		ParentIRARollover: strings.TrimSpace(record[parentIRARolloverStartIndex2526-1 : (parentIRARolloverStartIndex2526-1)+parentIRARolloverLength2526]), // Field # 202
+		ParentIRARollover: preprocessString(record[parentIRARolloverStartIndex2526-1 : (parentIRARolloverStartIndex2526-1)+parentIRARolloverLength2526]), // Field # 202
 
-		ParentUntaxedPortionsOfPensions: strings.TrimSpace(record[parentUntaxedPortionsOfPensionsStartIndex2526-1 : (parentUntaxedPortionsOfPensionsStartIndex2526-1)+parentUntaxedPortionsOfPensionsLength2526]), // Field # 203
+		ParentUntaxedPortionsOfPensions: preprocessString(record[parentUntaxedPortionsOfPensionsStartIndex2526-1 : (parentUntaxedPortionsOfPensionsStartIndex2526-1)+parentUntaxedPortionsOfPensionsLength2526]), // Field # 203
 
-		ParentPensionRollover: strings.TrimSpace(record[parentPensionRolloverStartIndex2526-1 : (parentPensionRolloverStartIndex2526-1)+parentPensionRolloverLength2526]), // Field # 204
+		ParentPensionRollover: preprocessString(record[parentPensionRolloverStartIndex2526-1 : (parentPensionRolloverStartIndex2526-1)+parentPensionRolloverLength2526]), // Field # 204
 
-		ParentAdjustedGrossIncome: strings.TrimSpace(record[parentAdjustedGrossIncomeStartIndex2526-1 : (parentAdjustedGrossIncomeStartIndex2526-1)+parentAdjustedGrossIncomeLength2526]), // Field # 205
+		ParentAdjustedGrossIncome: preprocessString(record[parentAdjustedGrossIncomeStartIndex2526-1 : (parentAdjustedGrossIncomeStartIndex2526-1)+parentAdjustedGrossIncomeLength2526]), // Field # 205
 
-		ParentIncomeTaxPaid: strings.TrimSpace(record[parentIncomeTaxPaidStartIndex2526-1 : (parentIncomeTaxPaidStartIndex2526-1)+parentIncomeTaxPaidLength2526]), // Field # 206
+		ParentIncomeTaxPaid: preprocessString(record[parentIncomeTaxPaidStartIndex2526-1 : (parentIncomeTaxPaidStartIndex2526-1)+parentIncomeTaxPaidLength2526]), // Field # 206
 
-		ParentEarnedIncomeTaxCreditReceivedDuringTaxYear: strings.TrimSpace(record[parentEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (parentEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+parentEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 207
+		ParentEarnedIncomeTaxCreditReceivedDuringTaxYear: preprocessString(record[parentEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (parentEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+parentEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 207
 
-		ParentDeductiblePaymentsToIRAKeoghOther: strings.TrimSpace(record[parentDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (parentDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+parentDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 208
+		ParentDeductiblePaymentsToIRAKeoghOther: preprocessString(record[parentDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (parentDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+parentDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 208
 
-		ParentEducationCredits: strings.TrimSpace(record[parentEducationCreditsStartIndex2526-1 : (parentEducationCreditsStartIndex2526-1)+parentEducationCreditsLength2526]), // Field # 209
+		ParentEducationCredits: preprocessString(record[parentEducationCreditsStartIndex2526-1 : (parentEducationCreditsStartIndex2526-1)+parentEducationCreditsLength2526]), // Field # 209
 
-		ParentFiledScheduleABDEFH: strings.TrimSpace(record[parentFiledScheduleABDEFHStartIndex2526-1 : (parentFiledScheduleABDEFHStartIndex2526-1)+parentFiledScheduleABDEFHLength2526]), // Field # 210
+		ParentFiledScheduleABDEFH: preprocessString(record[parentFiledScheduleABDEFHStartIndex2526-1 : (parentFiledScheduleABDEFHStartIndex2526-1)+parentFiledScheduleABDEFHLength2526]), // Field # 210
 
-		ParentScheduleCAmount: strings.TrimSpace(record[parentScheduleCAmountStartIndex2526-1 : (parentScheduleCAmountStartIndex2526-1)+parentScheduleCAmountLength2526]), // Field # 211
+		ParentScheduleCAmount: preprocessString(record[parentScheduleCAmountStartIndex2526-1 : (parentScheduleCAmountStartIndex2526-1)+parentScheduleCAmountLength2526]), // Field # 211
 
-		ParentCollegeGrantAndScholarshipAid: strings.TrimSpace(record[parentCollegeGrantAndScholarshipAidStartIndex2526-1 : (parentCollegeGrantAndScholarshipAidStartIndex2526-1)+parentCollegeGrantAndScholarshipAidLength2526]), // Field # 212
+		ParentCollegeGrantAndScholarshipAid: preprocessString(record[parentCollegeGrantAndScholarshipAidStartIndex2526-1 : (parentCollegeGrantAndScholarshipAidStartIndex2526-1)+parentCollegeGrantAndScholarshipAidLength2526]), // Field # 212
 
-		ParentForeignEarnedIncomeExclusion: strings.TrimSpace(record[parentForeignEarnedIncomeExclusionStartIndex2526-1 : (parentForeignEarnedIncomeExclusionStartIndex2526-1)+parentForeignEarnedIncomeExclusionLength2526]), // Field # 213
+		ParentForeignEarnedIncomeExclusion: preprocessString(record[parentForeignEarnedIncomeExclusionStartIndex2526-1 : (parentForeignEarnedIncomeExclusionStartIndex2526-1)+parentForeignEarnedIncomeExclusionLength2526]), // Field # 213
 
-		ParentChildSupportReceived: strings.TrimSpace(record[parentChildSupportReceivedStartIndex2526-1 : (parentChildSupportReceivedStartIndex2526-1)+parentChildSupportReceivedLength2526]), // Field # 214
+		ParentChildSupportReceived: preprocessString(record[parentChildSupportReceivedStartIndex2526-1 : (parentChildSupportReceivedStartIndex2526-1)+parentChildSupportReceivedLength2526]), // Field # 214
 
-		ParentTotalOfCashSavingsAndCheckingAccounts: strings.TrimSpace(record[parentTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1 : (parentTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1)+parentTotalOfCashSavingsAndCheckingAccountsLength2526]), // Field # 215
+		ParentTotalOfCashSavingsAndCheckingAccounts: preprocessString(record[parentTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1 : (parentTotalOfCashSavingsAndCheckingAccountsStartIndex2526-1)+parentTotalOfCashSavingsAndCheckingAccountsLength2526]), // Field # 215
 
-		ParentNetWorthOfCurrentInvestments: strings.TrimSpace(record[parentNetWorthOfCurrentInvestmentsStartIndex2526-1 : (parentNetWorthOfCurrentInvestmentsStartIndex2526-1)+parentNetWorthOfCurrentInvestmentsLength2526]), // Field # 216
+		ParentNetWorthOfCurrentInvestments: preprocessString(record[parentNetWorthOfCurrentInvestmentsStartIndex2526-1 : (parentNetWorthOfCurrentInvestmentsStartIndex2526-1)+parentNetWorthOfCurrentInvestmentsLength2526]), // Field # 216
 
-		ParentNetWorthOfBusinessesAndInvestmentFarms: strings.TrimSpace(record[parentNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1 : (parentNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1)+parentNetWorthOfBusinessesAndInvestmentFarmsLength2526]), // Field # 217
+		ParentNetWorthOfBusinessesAndInvestmentFarms: preprocessString(record[parentNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1 : (parentNetWorthOfBusinessesAndInvestmentFarmsStartIndex2526-1)+parentNetWorthOfBusinessesAndInvestmentFarmsLength2526]), // Field # 217
 
-		ParentConsentToRetrieveAndDiscloseFTI: strings.TrimSpace(record[parentConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (parentConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+parentConsentToRetrieveAndDiscloseFTILength2526]), // Field # 218
+		ParentConsentToRetrieveAndDiscloseFTI: preprocessString(record[parentConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (parentConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+parentConsentToRetrieveAndDiscloseFTILength2526]), // Field # 218
 
-		ParentSignature: strings.TrimSpace(record[parentSignatureStartIndex2526-1 : (parentSignatureStartIndex2526-1)+parentSignatureLength2526]), // Field # 219
+		ParentSignature: preprocessString(record[parentSignatureStartIndex2526-1 : (parentSignatureStartIndex2526-1)+parentSignatureLength2526]), // Field # 219
 
-		ParentSignatureDate: parseISIRDate2526(strings.TrimSpace(record[parentSignatureDateStartIndex2526-1 : (parentSignatureDateStartIndex2526-1)+parentSignatureDateLength2526])), // Field # 220
+		ParentSignatureDate: parseISIRDate2526(preprocessString(record[parentSignatureDateStartIndex2526-1 : (parentSignatureDateStartIndex2526-1)+parentSignatureDateLength2526])), // Field # 220
 
-		ParentSpouseFirstName: strings.TrimSpace(record[parentSpouseFirstNameStartIndex2526-1 : (parentSpouseFirstNameStartIndex2526-1)+parentSpouseFirstNameLength2526]), // Field # 222
+		ParentSpouseFirstName: preprocessString(record[parentSpouseFirstNameStartIndex2526-1 : (parentSpouseFirstNameStartIndex2526-1)+parentSpouseFirstNameLength2526]), // Field # 222
 
-		ParentSpouseMiddleName: strings.TrimSpace(record[parentSpouseMiddleNameStartIndex2526-1 : (parentSpouseMiddleNameStartIndex2526-1)+parentSpouseMiddleNameLength2526]), // Field # 223
+		ParentSpouseMiddleName: preprocessString(record[parentSpouseMiddleNameStartIndex2526-1 : (parentSpouseMiddleNameStartIndex2526-1)+parentSpouseMiddleNameLength2526]), // Field # 223
 
-		ParentSpouseLastName: strings.TrimSpace(record[parentSpouseLastNameStartIndex2526-1 : (parentSpouseLastNameStartIndex2526-1)+parentSpouseLastNameLength2526]), // Field # 224
+		ParentSpouseLastName: preprocessString(record[parentSpouseLastNameStartIndex2526-1 : (parentSpouseLastNameStartIndex2526-1)+parentSpouseLastNameLength2526]), // Field # 224
 
-		ParentSpouseSuffix: strings.TrimSpace(record[parentSpouseSuffixStartIndex2526-1 : (parentSpouseSuffixStartIndex2526-1)+parentSpouseSuffixLength2526]), // Field # 225
+		ParentSpouseSuffix: preprocessString(record[parentSpouseSuffixStartIndex2526-1 : (parentSpouseSuffixStartIndex2526-1)+parentSpouseSuffixLength2526]), // Field # 225
 
-		ParentSpouseDateOfBirth: parseISIRDate2526(strings.TrimSpace(record[parentSpouseDateOfBirthStartIndex2526-1 : (parentSpouseDateOfBirthStartIndex2526-1)+parentSpouseDateOfBirthLength2526])), // Field # 226
+		ParentSpouseDateOfBirth: parseISIRDate2526(preprocessString(record[parentSpouseDateOfBirthStartIndex2526-1 : (parentSpouseDateOfBirthStartIndex2526-1)+parentSpouseDateOfBirthLength2526])), // Field # 226
 
-		ParentSpouseSSN: strings.TrimSpace(record[parentSpouseSSNStartIndex2526-1 : (parentSpouseSSNStartIndex2526-1)+parentSpouseSSNLength2526]), // Field # 227
+		ParentSpouseSSN: preprocessString(record[parentSpouseSSNStartIndex2526-1 : (parentSpouseSSNStartIndex2526-1)+parentSpouseSSNLength2526]), // Field # 227
 
-		ParentSpouseITIN: strings.TrimSpace(record[parentSpouseITINStartIndex2526-1 : (parentSpouseITINStartIndex2526-1)+parentSpouseITINLength2526]), // Field # 228
+		ParentSpouseITIN: preprocessString(record[parentSpouseITINStartIndex2526-1 : (parentSpouseITINStartIndex2526-1)+parentSpouseITINLength2526]), // Field # 228
 
-		ParentSpousePhoneNumber: strings.TrimSpace(record[parentSpousePhoneNumberStartIndex2526-1 : (parentSpousePhoneNumberStartIndex2526-1)+parentSpousePhoneNumberLength2526]), // Field # 229
+		ParentSpousePhoneNumber: preprocessString(record[parentSpousePhoneNumberStartIndex2526-1 : (parentSpousePhoneNumberStartIndex2526-1)+parentSpousePhoneNumberLength2526]), // Field # 229
 
-		ParentSpouseEmailAddress: strings.TrimSpace(record[parentSpouseEmailAddressStartIndex2526-1 : (parentSpouseEmailAddressStartIndex2526-1)+parentSpouseEmailAddressLength2526]), // Field # 230
+		ParentSpouseEmailAddress: preprocessString(record[parentSpouseEmailAddressStartIndex2526-1 : (parentSpouseEmailAddressStartIndex2526-1)+parentSpouseEmailAddressLength2526]), // Field # 230
 
-		ParentSpouseStreetAddress: strings.TrimSpace(record[parentSpouseStreetAddressStartIndex2526-1 : (parentSpouseStreetAddressStartIndex2526-1)+parentSpouseStreetAddressLength2526]), // Field # 231
+		ParentSpouseStreetAddress: preprocessString(record[parentSpouseStreetAddressStartIndex2526-1 : (parentSpouseStreetAddressStartIndex2526-1)+parentSpouseStreetAddressLength2526]), // Field # 231
 
-		ParentSpouseCity: strings.TrimSpace(record[parentSpouseCityStartIndex2526-1 : (parentSpouseCityStartIndex2526-1)+parentSpouseCityLength2526]), // Field # 232
+		ParentSpouseCity: preprocessString(record[parentSpouseCityStartIndex2526-1 : (parentSpouseCityStartIndex2526-1)+parentSpouseCityLength2526]), // Field # 232
 
-		ParentSpouseState: strings.TrimSpace(record[parentSpouseStateStartIndex2526-1 : (parentSpouseStateStartIndex2526-1)+parentSpouseStateLength2526]), // Field # 233
+		ParentSpouseState: preprocessString(record[parentSpouseStateStartIndex2526-1 : (parentSpouseStateStartIndex2526-1)+parentSpouseStateLength2526]), // Field # 233
 
-		ParentSpouseZipCode: strings.TrimSpace(record[parentSpouseZipCodeStartIndex2526-1 : (parentSpouseZipCodeStartIndex2526-1)+parentSpouseZipCodeLength2526]), // Field # 234
+		ParentSpouseZipCode: preprocessString(record[parentSpouseZipCodeStartIndex2526-1 : (parentSpouseZipCodeStartIndex2526-1)+parentSpouseZipCodeLength2526]), // Field # 234
 
-		ParentSpouseCountry: strings.TrimSpace(record[parentSpouseCountryStartIndex2526-1 : (parentSpouseCountryStartIndex2526-1)+parentSpouseCountryLength2526]), // Field # 235
+		ParentSpouseCountry: preprocessString(record[parentSpouseCountryStartIndex2526-1 : (parentSpouseCountryStartIndex2526-1)+parentSpouseCountryLength2526]), // Field # 235
 
-		ParentSpouseFiled1040Or1040NR: strings.TrimSpace(record[parentSpouseFiled1040Or1040NRStartIndex2526-1 : (parentSpouseFiled1040Or1040NRStartIndex2526-1)+parentSpouseFiled1040Or1040NRLength2526]), // Field # 236
+		ParentSpouseFiled1040Or1040NR: preprocessString(record[parentSpouseFiled1040Or1040NRStartIndex2526-1 : (parentSpouseFiled1040Or1040NRStartIndex2526-1)+parentSpouseFiled1040Or1040NRLength2526]), // Field # 236
 
-		ParentSpouseFileNonUSTaxReturn: strings.TrimSpace(record[parentSpouseFileNonUSTaxReturnStartIndex2526-1 : (parentSpouseFileNonUSTaxReturnStartIndex2526-1)+parentSpouseFileNonUSTaxReturnLength2526]), // Field # 237
+		ParentSpouseFileNonUSTaxReturn: preprocessString(record[parentSpouseFileNonUSTaxReturnStartIndex2526-1 : (parentSpouseFileNonUSTaxReturnStartIndex2526-1)+parentSpouseFileNonUSTaxReturnLength2526]), // Field # 237
 
-		ParentSpouseTaxReturnFilingStatus: strings.TrimSpace(record[parentSpouseTaxReturnFilingStatusStartIndex2526-1 : (parentSpouseTaxReturnFilingStatusStartIndex2526-1)+parentSpouseTaxReturnFilingStatusLength2526]), // Field # 238
+		ParentSpouseTaxReturnFilingStatus: preprocessString(record[parentSpouseTaxReturnFilingStatusStartIndex2526-1 : (parentSpouseTaxReturnFilingStatusStartIndex2526-1)+parentSpouseTaxReturnFilingStatusLength2526]), // Field # 238
 
-		ParentSpouseIncomeEarnedFromWork: strings.TrimSpace(record[parentSpouseIncomeEarnedFromWorkStartIndex2526-1 : (parentSpouseIncomeEarnedFromWorkStartIndex2526-1)+parentSpouseIncomeEarnedFromWorkLength2526]), // Field # 239
+		ParentSpouseIncomeEarnedFromWork: preprocessString(record[parentSpouseIncomeEarnedFromWorkStartIndex2526-1 : (parentSpouseIncomeEarnedFromWorkStartIndex2526-1)+parentSpouseIncomeEarnedFromWorkLength2526]), // Field # 239
 
-		ParentSpouseTaxExemptInterestIncome: strings.TrimSpace(record[parentSpouseTaxExemptInterestIncomeStartIndex2526-1 : (parentSpouseTaxExemptInterestIncomeStartIndex2526-1)+parentSpouseTaxExemptInterestIncomeLength2526]), // Field # 240
+		ParentSpouseTaxExemptInterestIncome: preprocessString(record[parentSpouseTaxExemptInterestIncomeStartIndex2526-1 : (parentSpouseTaxExemptInterestIncomeStartIndex2526-1)+parentSpouseTaxExemptInterestIncomeLength2526]), // Field # 240
 
-		ParentSpouseUntaxedPortionsOfIRADistributions: strings.TrimSpace(record[parentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1)+parentSpouseUntaxedPortionsOfIRADistributionsLength2526]), // Field # 241
+		ParentSpouseUntaxedPortionsOfIRADistributions: preprocessString(record[parentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfIRADistributionsStartIndex2526-1)+parentSpouseUntaxedPortionsOfIRADistributionsLength2526]), // Field # 241
 
-		ParentSpouseIRARollover: strings.TrimSpace(record[parentSpouseIRARolloverStartIndex2526-1 : (parentSpouseIRARolloverStartIndex2526-1)+parentSpouseIRARolloverLength2526]), // Field # 242
+		ParentSpouseIRARollover: preprocessString(record[parentSpouseIRARolloverStartIndex2526-1 : (parentSpouseIRARolloverStartIndex2526-1)+parentSpouseIRARolloverLength2526]), // Field # 242
 
-		ParentSpouseUntaxedPortionsOfPensions: strings.TrimSpace(record[parentSpouseUntaxedPortionsOfPensionsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfPensionsStartIndex2526-1)+parentSpouseUntaxedPortionsOfPensionsLength2526]), // Field # 243
+		ParentSpouseUntaxedPortionsOfPensions: preprocessString(record[parentSpouseUntaxedPortionsOfPensionsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfPensionsStartIndex2526-1)+parentSpouseUntaxedPortionsOfPensionsLength2526]), // Field # 243
 
-		ParentSpousePensionRollover: strings.TrimSpace(record[parentSpousePensionRolloverStartIndex2526-1 : (parentSpousePensionRolloverStartIndex2526-1)+parentSpousePensionRolloverLength2526]), // Field # 244
+		ParentSpousePensionRollover: preprocessString(record[parentSpousePensionRolloverStartIndex2526-1 : (parentSpousePensionRolloverStartIndex2526-1)+parentSpousePensionRolloverLength2526]), // Field # 244
 
-		ParentSpouseAdjustedGrossIncome: strings.TrimSpace(record[parentSpouseAdjustedGrossIncomeStartIndex2526-1 : (parentSpouseAdjustedGrossIncomeStartIndex2526-1)+parentSpouseAdjustedGrossIncomeLength2526]), // Field # 245
+		ParentSpouseAdjustedGrossIncome: preprocessString(record[parentSpouseAdjustedGrossIncomeStartIndex2526-1 : (parentSpouseAdjustedGrossIncomeStartIndex2526-1)+parentSpouseAdjustedGrossIncomeLength2526]), // Field # 245
 
-		ParentSpouseIncomeTaxPaid: strings.TrimSpace(record[parentSpouseIncomeTaxPaidStartIndex2526-1 : (parentSpouseIncomeTaxPaidStartIndex2526-1)+parentSpouseIncomeTaxPaidLength2526]), // Field # 246
+		ParentSpouseIncomeTaxPaid: preprocessString(record[parentSpouseIncomeTaxPaidStartIndex2526-1 : (parentSpouseIncomeTaxPaidStartIndex2526-1)+parentSpouseIncomeTaxPaidLength2526]), // Field # 246
 
-		ParentSpouseDeductiblePaymentsToIRAKeoghOther: strings.TrimSpace(record[parentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (parentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+parentSpouseDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 247
+		ParentSpouseDeductiblePaymentsToIRAKeoghOther: preprocessString(record[parentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (parentSpouseDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+parentSpouseDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 247
 
-		ParentSpouseEducationCredits: strings.TrimSpace(record[parentSpouseEducationCreditsStartIndex2526-1 : (parentSpouseEducationCreditsStartIndex2526-1)+parentSpouseEducationCreditsLength2526]), // Field # 248
+		ParentSpouseEducationCredits: preprocessString(record[parentSpouseEducationCreditsStartIndex2526-1 : (parentSpouseEducationCreditsStartIndex2526-1)+parentSpouseEducationCreditsLength2526]), // Field # 248
 
-		ParentSpouseFiledScheduleABDEFH: strings.TrimSpace(record[parentSpouseFiledScheduleABDEFHStartIndex2526-1 : (parentSpouseFiledScheduleABDEFHStartIndex2526-1)+parentSpouseFiledScheduleABDEFHLength2526]), // Field # 249
+		ParentSpouseFiledScheduleABDEFH: preprocessString(record[parentSpouseFiledScheduleABDEFHStartIndex2526-1 : (parentSpouseFiledScheduleABDEFHStartIndex2526-1)+parentSpouseFiledScheduleABDEFHLength2526]), // Field # 249
 
-		ParentSpouseScheduleCAmount: strings.TrimSpace(record[parentSpouseScheduleCAmountStartIndex2526-1 : (parentSpouseScheduleCAmountStartIndex2526-1)+parentSpouseScheduleCAmountLength2526]), // Field # 250
+		ParentSpouseScheduleCAmount: preprocessString(record[parentSpouseScheduleCAmountStartIndex2526-1 : (parentSpouseScheduleCAmountStartIndex2526-1)+parentSpouseScheduleCAmountLength2526]), // Field # 250
 
-		ParentSpouseForeignEarnedIncomeExclusion: strings.TrimSpace(record[parentSpouseForeignEarnedIncomeExclusionStartIndex2526-1 : (parentSpouseForeignEarnedIncomeExclusionStartIndex2526-1)+parentSpouseForeignEarnedIncomeExclusionLength2526]), // Field # 251
+		ParentSpouseForeignEarnedIncomeExclusion: preprocessString(record[parentSpouseForeignEarnedIncomeExclusionStartIndex2526-1 : (parentSpouseForeignEarnedIncomeExclusionStartIndex2526-1)+parentSpouseForeignEarnedIncomeExclusionLength2526]), // Field # 251
 
-		ParentSpouseConsentToRetrieveAndDiscloseFTI: strings.TrimSpace(record[parentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (parentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+parentSpouseConsentToRetrieveAndDiscloseFTILength2526]), // Field # 252
+		ParentSpouseConsentToRetrieveAndDiscloseFTI: preprocessString(record[parentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1 : (parentSpouseConsentToRetrieveAndDiscloseFTIStartIndex2526-1)+parentSpouseConsentToRetrieveAndDiscloseFTILength2526]), // Field # 252
 
-		ParentSpouseSignature: strings.TrimSpace(record[parentSpouseSignatureStartIndex2526-1 : (parentSpouseSignatureStartIndex2526-1)+parentSpouseSignatureLength2526]), // Field # 253
+		ParentSpouseSignature: preprocessString(record[parentSpouseSignatureStartIndex2526-1 : (parentSpouseSignatureStartIndex2526-1)+parentSpouseSignatureLength2526]), // Field # 253
 
-		ParentSpouseSignatureDate: parseISIRDate2526(strings.TrimSpace(record[parentSpouseSignatureDateStartIndex2526-1 : (parentSpouseSignatureDateStartIndex2526-1)+parentSpouseSignatureDateLength2526])), // Field # 254
+		ParentSpouseSignatureDate: parseISIRDate2526(preprocessString(record[parentSpouseSignatureDateStartIndex2526-1 : (parentSpouseSignatureDateStartIndex2526-1)+parentSpouseSignatureDateLength2526])), // Field # 254
 
-		PreparerFirstName: strings.TrimSpace(record[preparerFirstNameStartIndex2526-1 : (preparerFirstNameStartIndex2526-1)+preparerFirstNameLength2526]), // Field # 256
+		PreparerFirstName: preprocessString(record[preparerFirstNameStartIndex2526-1 : (preparerFirstNameStartIndex2526-1)+preparerFirstNameLength2526]), // Field # 256
 
-		PreparerLastName: strings.TrimSpace(record[preparerLastNameStartIndex2526-1 : (preparerLastNameStartIndex2526-1)+preparerLastNameLength2526]), // Field # 257
+		PreparerLastName: preprocessString(record[preparerLastNameStartIndex2526-1 : (preparerLastNameStartIndex2526-1)+preparerLastNameLength2526]), // Field # 257
 
-		PreparerSSN: strings.TrimSpace(record[preparerSSNStartIndex2526-1 : (preparerSSNStartIndex2526-1)+preparerSSNLength2526]), // Field # 258
+		PreparerSSN: preprocessString(record[preparerSSNStartIndex2526-1 : (preparerSSNStartIndex2526-1)+preparerSSNLength2526]), // Field # 258
 
-		PreparerEIN: strings.TrimSpace(record[preparerEINStartIndex2526-1 : (preparerEINStartIndex2526-1)+preparerEINLength2526]), // Field # 259
+		PreparerEIN: preprocessString(record[preparerEINStartIndex2526-1 : (preparerEINStartIndex2526-1)+preparerEINLength2526]), // Field # 259
 
-		PreparerAffiliation: strings.TrimSpace(record[preparerAffiliationStartIndex2526-1 : (preparerAffiliationStartIndex2526-1)+preparerAffiliationLength2526]), // Field # 260
+		PreparerAffiliation: preprocessString(record[preparerAffiliationStartIndex2526-1 : (preparerAffiliationStartIndex2526-1)+preparerAffiliationLength2526]), // Field # 260
 
-		PreparerStreetAddress: strings.TrimSpace(record[preparerStreetAddressStartIndex2526-1 : (preparerStreetAddressStartIndex2526-1)+preparerStreetAddressLength2526]), // Field # 261
+		PreparerStreetAddress: preprocessString(record[preparerStreetAddressStartIndex2526-1 : (preparerStreetAddressStartIndex2526-1)+preparerStreetAddressLength2526]), // Field # 261
 
-		PreparerCity: strings.TrimSpace(record[preparerCityStartIndex2526-1 : (preparerCityStartIndex2526-1)+preparerCityLength2526]), // Field # 262
+		PreparerCity: preprocessString(record[preparerCityStartIndex2526-1 : (preparerCityStartIndex2526-1)+preparerCityLength2526]), // Field # 262
 
-		PreparerState: strings.TrimSpace(record[preparerStateStartIndex2526-1 : (preparerStateStartIndex2526-1)+preparerStateLength2526]), // Field # 263
+		PreparerState: preprocessString(record[preparerStateStartIndex2526-1 : (preparerStateStartIndex2526-1)+preparerStateLength2526]), // Field # 263
 
-		PreparerZipCode: strings.TrimSpace(record[preparerZipCodeStartIndex2526-1 : (preparerZipCodeStartIndex2526-1)+preparerZipCodeLength2526]), // Field # 264
+		PreparerZipCode: preprocessString(record[preparerZipCodeStartIndex2526-1 : (preparerZipCodeStartIndex2526-1)+preparerZipCodeLength2526]), // Field # 264
 
-		PreparerSignature: strings.TrimSpace(record[preparerSignatureStartIndex2526-1 : (preparerSignatureStartIndex2526-1)+preparerSignatureLength2526]), // Field # 265
+		PreparerSignature: preprocessString(record[preparerSignatureStartIndex2526-1 : (preparerSignatureStartIndex2526-1)+preparerSignatureLength2526]), // Field # 265
 
-		PreparerSignatureDate: parseISIRDate2526(strings.TrimSpace(record[preparerSignatureDateStartIndex2526-1 : (preparerSignatureDateStartIndex2526-1)+preparerSignatureDateLength2526])), // Field # 266
+		PreparerSignatureDate: parseISIRDate2526(preprocessString(record[preparerSignatureDateStartIndex2526-1 : (preparerSignatureDateStartIndex2526-1)+preparerSignatureDateLength2526])), // Field # 266
 
-		StudentAffirmationStatus: strings.TrimSpace(record[studentAffirmationStatusStartIndex2526-1 : (studentAffirmationStatusStartIndex2526-1)+studentAffirmationStatusLength2526]), // Field # 268
+		StudentAffirmationStatus: preprocessString(record[studentAffirmationStatusStartIndex2526-1 : (studentAffirmationStatusStartIndex2526-1)+studentAffirmationStatusLength2526]), // Field # 268
 
-		StudentSpouseAffirmationStatus: strings.TrimSpace(record[studentSpouseAffirmationStatusStartIndex2526-1 : (studentSpouseAffirmationStatusStartIndex2526-1)+studentSpouseAffirmationStatusLength2526]), // Field # 269
+		StudentSpouseAffirmationStatus: preprocessString(record[studentSpouseAffirmationStatusStartIndex2526-1 : (studentSpouseAffirmationStatusStartIndex2526-1)+studentSpouseAffirmationStatusLength2526]), // Field # 269
 
-		ParentAffirmationStatus: strings.TrimSpace(record[parentAffirmationStatusStartIndex2526-1 : (parentAffirmationStatusStartIndex2526-1)+parentAffirmationStatusLength2526]), // Field # 270
+		ParentAffirmationStatus: preprocessString(record[parentAffirmationStatusStartIndex2526-1 : (parentAffirmationStatusStartIndex2526-1)+parentAffirmationStatusLength2526]), // Field # 270
 
-		ParentSpouseOrPartnerAffirmationStatus: strings.TrimSpace(record[parentSpouseOrPartnerAffirmationStatusStartIndex2526-1 : (parentSpouseOrPartnerAffirmationStatusStartIndex2526-1)+parentSpouseOrPartnerAffirmationStatusLength2526]), // Field # 271
+		ParentSpouseOrPartnerAffirmationStatus: preprocessString(record[parentSpouseOrPartnerAffirmationStatusStartIndex2526-1 : (parentSpouseOrPartnerAffirmationStatusStartIndex2526-1)+parentSpouseOrPartnerAffirmationStatusLength2526]), // Field # 271
 
-		StudentDateConsentGranted: parseISIRDate2526(strings.TrimSpace(record[studentDateConsentGrantedStartIndex2526-1 : (studentDateConsentGrantedStartIndex2526-1)+studentDateConsentGrantedLength2526])), // Field # 272
+		StudentDateConsentGranted: parseISIRDate2526(preprocessString(record[studentDateConsentGrantedStartIndex2526-1 : (studentDateConsentGrantedStartIndex2526-1)+studentDateConsentGrantedLength2526])), // Field # 272
 
-		StudentSpouseDateConsentGranted: parseISIRDate2526(strings.TrimSpace(record[studentSpouseDateConsentGrantedStartIndex2526-1 : (studentSpouseDateConsentGrantedStartIndex2526-1)+studentSpouseDateConsentGrantedLength2526])), // Field # 273
+		StudentSpouseDateConsentGranted: parseISIRDate2526(preprocessString(record[studentSpouseDateConsentGrantedStartIndex2526-1 : (studentSpouseDateConsentGrantedStartIndex2526-1)+studentSpouseDateConsentGrantedLength2526])), // Field # 273
 
-		ParentDateConsentGranted: parseISIRDate2526(strings.TrimSpace(record[parentDateConsentGrantedStartIndex2526-1 : (parentDateConsentGrantedStartIndex2526-1)+parentDateConsentGrantedLength2526])), // Field # 274
+		ParentDateConsentGranted: parseISIRDate2526(preprocessString(record[parentDateConsentGrantedStartIndex2526-1 : (parentDateConsentGrantedStartIndex2526-1)+parentDateConsentGrantedLength2526])), // Field # 274
 
-		ParentSpouseOrPartnerDateConsentGranted: parseISIRDate2526(strings.TrimSpace(record[parentSpouseOrPartnerDateConsentGrantedStartIndex2526-1 : (parentSpouseOrPartnerDateConsentGrantedStartIndex2526-1)+parentSpouseOrPartnerDateConsentGrantedLength2526])), // Field # 275
+		ParentSpouseOrPartnerDateConsentGranted: parseISIRDate2526(preprocessString(record[parentSpouseOrPartnerDateConsentGrantedStartIndex2526-1 : (parentSpouseOrPartnerDateConsentGrantedStartIndex2526-1)+parentSpouseOrPartnerDateConsentGrantedLength2526])), // Field # 275
 
-		StudentTransunionMatchStatus: strings.TrimSpace(record[studentTransunionMatchStatusStartIndex2526-1 : (studentTransunionMatchStatusStartIndex2526-1)+studentTransunionMatchStatusLength2526]), // Field # 276
+		StudentTransunionMatchStatus: preprocessString(record[studentTransunionMatchStatusStartIndex2526-1 : (studentTransunionMatchStatusStartIndex2526-1)+studentTransunionMatchStatusLength2526]), // Field # 276
 
-		StudentSpouseTransunionMatchStatus: strings.TrimSpace(record[studentSpouseTransunionMatchStatusStartIndex2526-1 : (studentSpouseTransunionMatchStatusStartIndex2526-1)+studentSpouseTransunionMatchStatusLength2526]), // Field # 277
+		StudentSpouseTransunionMatchStatus: preprocessString(record[studentSpouseTransunionMatchStatusStartIndex2526-1 : (studentSpouseTransunionMatchStatusStartIndex2526-1)+studentSpouseTransunionMatchStatusLength2526]), // Field # 277
 
-		StudentParentTransunionMatchStatus: strings.TrimSpace(record[studentParentTransunionMatchStatusStartIndex2526-1 : (studentParentTransunionMatchStatusStartIndex2526-1)+studentParentTransunionMatchStatusLength2526]), // Field # 278
+		StudentParentTransunionMatchStatus: preprocessString(record[studentParentTransunionMatchStatusStartIndex2526-1 : (studentParentTransunionMatchStatusStartIndex2526-1)+studentParentTransunionMatchStatusLength2526]), // Field # 278
 
-		StudentParentSpouseTransunionMatchStatus: strings.TrimSpace(record[studentParentSpouseTransunionMatchStatusStartIndex2526-1 : (studentParentSpouseTransunionMatchStatusStartIndex2526-1)+studentParentSpouseTransunionMatchStatusLength2526]), // Field # 279
+		StudentParentSpouseTransunionMatchStatus: preprocessString(record[studentParentSpouseTransunionMatchStatusStartIndex2526-1 : (studentParentSpouseTransunionMatchStatusStartIndex2526-1)+studentParentSpouseTransunionMatchStatusLength2526]), // Field # 279
 
-		CorrectionAppliedAgainstTransactionNumber: strings.TrimSpace(record[correctionAppliedAgainstTransactionNumberStartIndex2526-1 : (correctionAppliedAgainstTransactionNumberStartIndex2526-1)+correctionAppliedAgainstTransactionNumberLength2526]), // Field # 280
+		CorrectionAppliedAgainstTransactionNumber: preprocessString(record[correctionAppliedAgainstTransactionNumberStartIndex2526-1 : (correctionAppliedAgainstTransactionNumberStartIndex2526-1)+correctionAppliedAgainstTransactionNumberLength2526]), // Field # 280
 
-		ProfessionalJudgement: strings.TrimSpace(record[professionalJudgementStartIndex2526-1 : (professionalJudgementStartIndex2526-1)+professionalJudgementLength2526]), // Field # 281
+		ProfessionalJudgement: preprocessString(record[professionalJudgementStartIndex2526-1 : (professionalJudgementStartIndex2526-1)+professionalJudgementLength2526]), // Field # 281
 
-		DependencyOverrideIndicator: strings.TrimSpace(record[dependencyOverrideIndicatorStartIndex2526-1 : (dependencyOverrideIndicatorStartIndex2526-1)+dependencyOverrideIndicatorLength2526]), // Field # 282
+		DependencyOverrideIndicator: preprocessString(record[dependencyOverrideIndicatorStartIndex2526-1 : (dependencyOverrideIndicatorStartIndex2526-1)+dependencyOverrideIndicatorLength2526]), // Field # 282
 
-		FAAFederalSchoolCode: strings.TrimSpace(record[fAAFederalSchoolCodeStartIndex2526-1 : (fAAFederalSchoolCodeStartIndex2526-1)+fAAFederalSchoolCodeLength2526]), // Field # 283
+		FAAFederalSchoolCode: preprocessString(record[fAAFederalSchoolCodeStartIndex2526-1 : (fAAFederalSchoolCodeStartIndex2526-1)+fAAFederalSchoolCodeLength2526]), // Field # 283
 
-		FAASignature: strings.TrimSpace(record[fAASignatureStartIndex2526-1 : (fAASignatureStartIndex2526-1)+fAASignatureLength2526]), // Field # 284
+		FAASignature: preprocessString(record[fAASignatureStartIndex2526-1 : (fAASignatureStartIndex2526-1)+fAASignatureLength2526]), // Field # 284
 
-		IASGIndicator: strings.TrimSpace(record[iASGIndicatorStartIndex2526-1 : (iASGIndicatorStartIndex2526-1)+iASGIndicatorLength2526]), // Field # 285
+		IASGIndicator: preprocessString(record[iASGIndicatorStartIndex2526-1 : (iASGIndicatorStartIndex2526-1)+iASGIndicatorLength2526]), // Field # 285
 
-		ChildrenOfFallenHeroesIndicator: strings.TrimSpace(record[childrenOfFallenHeroesIndicatorStartIndex2526-1 : (childrenOfFallenHeroesIndicatorStartIndex2526-1)+childrenOfFallenHeroesIndicatorLength2526]), // Field # 286
+		ChildrenOfFallenHeroesIndicator: preprocessString(record[childrenOfFallenHeroesIndicatorStartIndex2526-1 : (childrenOfFallenHeroesIndicatorStartIndex2526-1)+childrenOfFallenHeroesIndicatorLength2526]), // Field # 286
 
-		ElectronicTransactionIndicatorDestinationNumber: strings.TrimSpace(record[electronicTransactionIndicatorDestinationNumberStartIndex2526-1 : (electronicTransactionIndicatorDestinationNumberStartIndex2526-1)+electronicTransactionIndicatorDestinationNumberLength2526]), // Field # 287
+		ElectronicTransactionIndicatorDestinationNumber: preprocessString(record[electronicTransactionIndicatorDestinationNumberStartIndex2526-1 : (electronicTransactionIndicatorDestinationNumberStartIndex2526-1)+electronicTransactionIndicatorDestinationNumberLength2526]), // Field # 287
 
-		StudentSignatureSource: strings.TrimSpace(record[studentSignatureSourceStartIndex2526-1 : (studentSignatureSourceStartIndex2526-1)+studentSignatureSourceLength2526]), // Field # 288
+		StudentSignatureSource: preprocessString(record[studentSignatureSourceStartIndex2526-1 : (studentSignatureSourceStartIndex2526-1)+studentSignatureSourceLength2526]), // Field # 288
 
-		StudentSpouseSignatureSource: strings.TrimSpace(record[studentSpouseSignatureSourceStartIndex2526-1 : (studentSpouseSignatureSourceStartIndex2526-1)+studentSpouseSignatureSourceLength2526]), // Field # 289
+		StudentSpouseSignatureSource: preprocessString(record[studentSpouseSignatureSourceStartIndex2526-1 : (studentSpouseSignatureSourceStartIndex2526-1)+studentSpouseSignatureSourceLength2526]), // Field # 289
 
-		ParentSignatureSource: strings.TrimSpace(record[parentSignatureSourceStartIndex2526-1 : (parentSignatureSourceStartIndex2526-1)+parentSignatureSourceLength2526]), // Field # 290
+		ParentSignatureSource: preprocessString(record[parentSignatureSourceStartIndex2526-1 : (parentSignatureSourceStartIndex2526-1)+parentSignatureSourceLength2526]), // Field # 290
 
-		ParentSpouseOrPartnerSignatureSource: strings.TrimSpace(record[parentSpouseOrPartnerSignatureSourceStartIndex2526-1 : (parentSpouseOrPartnerSignatureSourceStartIndex2526-1)+parentSpouseOrPartnerSignatureSourceLength2526]), // Field # 291
+		ParentSpouseOrPartnerSignatureSource: preprocessString(record[parentSpouseOrPartnerSignatureSourceStartIndex2526-1 : (parentSpouseOrPartnerSignatureSourceStartIndex2526-1)+parentSpouseOrPartnerSignatureSourceLength2526]), // Field # 291
 
-		SpecialHandlingIndicator: strings.TrimSpace(record[specialHandlingIndicatorStartIndex2526-1 : (specialHandlingIndicatorStartIndex2526-1)+specialHandlingIndicatorLength2526]), // Field # 292
+		SpecialHandlingIndicator: preprocessString(record[specialHandlingIndicatorStartIndex2526-1 : (specialHandlingIndicatorStartIndex2526-1)+specialHandlingIndicatorLength2526]), // Field # 292
 
-		AddressOnlyChangeFlag: strings.TrimSpace(record[addressOnlyChangeFlagStartIndex2526-1 : (addressOnlyChangeFlagStartIndex2526-1)+addressOnlyChangeFlagLength2526]), // Field # 293
+		AddressOnlyChangeFlag: preprocessString(record[addressOnlyChangeFlagStartIndex2526-1 : (addressOnlyChangeFlagStartIndex2526-1)+addressOnlyChangeFlagLength2526]), // Field # 293
 
-		FPSPushedISIRFlag: strings.TrimSpace(record[fpsPushedISIRFlagStartIndex2526-1 : (fpsPushedISIRFlagStartIndex2526-1)+fpsPushedISIRFlagLength2526]), // Field # 294
+		FPSPushedISIRFlag: preprocessString(record[fpsPushedISIRFlagStartIndex2526-1 : (fpsPushedISIRFlagStartIndex2526-1)+fpsPushedISIRFlagLength2526]), // Field # 294
 
-		RejectStatusChangeFlag: strings.TrimSpace(record[rejectStatusChangeFlagStartIndex2526-1 : (rejectStatusChangeFlagStartIndex2526-1)+rejectStatusChangeFlagLength2526]), // Field # 295
+		RejectStatusChangeFlag: preprocessString(record[rejectStatusChangeFlagStartIndex2526-1 : (rejectStatusChangeFlagStartIndex2526-1)+rejectStatusChangeFlagLength2526]), // Field # 295
 
-		VerificationTrackingFlag: strings.TrimSpace(record[verificationTrackingFlagStartIndex2526-1 : (verificationTrackingFlagStartIndex2526-1)+verificationTrackingFlagLength2526]), // Field # 296
+		VerificationTrackingFlag: preprocessString(record[verificationTrackingFlagStartIndex2526-1 : (verificationTrackingFlagStartIndex2526-1)+verificationTrackingFlagLength2526]), // Field # 296
 
-		StudentSelectedForVerification: strings.TrimSpace(record[studentSelectedForVerificationStartIndex2526-1 : (studentSelectedForVerificationStartIndex2526-1)+studentSelectedForVerificationLength2526]), // Field # 297
+		StudentSelectedForVerification: preprocessString(record[studentSelectedForVerificationStartIndex2526-1 : (studentSelectedForVerificationStartIndex2526-1)+studentSelectedForVerificationLength2526]), // Field # 297
 
-		IncarceratedApplicantFlag: strings.TrimSpace(record[incarceratedApplicantFlagStartIndex2526-1 : (incarceratedApplicantFlagStartIndex2526-1)+incarceratedApplicantFlagLength2526]), // Field # 298
+		IncarceratedApplicantFlag: preprocessString(record[incarceratedApplicantFlagStartIndex2526-1 : (incarceratedApplicantFlagStartIndex2526-1)+incarceratedApplicantFlagLength2526]), // Field # 298
 
-		NSLDSTransactionNumber: strings.TrimSpace(record[nsldsTransactionNumberStartIndex2526-1 : (nsldsTransactionNumberStartIndex2526-1)+nsldsTransactionNumberLength2526]), // Field # 299
+		NSLDSTransactionNumber: preprocessString(record[nsldsTransactionNumberStartIndex2526-1 : (nsldsTransactionNumberStartIndex2526-1)+nsldsTransactionNumberLength2526]), // Field # 299
 
-		NSLDSDatabaseResultsFlag: strings.TrimSpace(record[nsldsDatabaseResultsFlagStartIndex2526-1 : (nsldsDatabaseResultsFlagStartIndex2526-1)+nsldsDatabaseResultsFlagLength2526]), // Field # 300
+		NSLDSDatabaseResultsFlag: preprocessString(record[nsldsDatabaseResultsFlagStartIndex2526-1 : (nsldsDatabaseResultsFlagStartIndex2526-1)+nsldsDatabaseResultsFlagLength2526]), // Field # 300
 
-		HighSchoolFlag: strings.TrimSpace(record[highSchoolFlagStartIndex2526-1 : (highSchoolFlagStartIndex2526-1)+highSchoolFlagLength2526]), // Field # 301
+		HighSchoolFlag: preprocessString(record[highSchoolFlagStartIndex2526-1 : (highSchoolFlagStartIndex2526-1)+highSchoolFlagLength2526]), // Field # 301
 
-		StudentTotalFederalWorkStudyEarnings: strings.TrimSpace(record[studentTotalFederalWorkStudyEarningsStartIndex2526-1 : (studentTotalFederalWorkStudyEarningsStartIndex2526-1)+studentTotalFederalWorkStudyEarningsLength2526]), // Field # 302
+		StudentTotalFederalWorkStudyEarnings: preprocessString(record[studentTotalFederalWorkStudyEarningsStartIndex2526-1 : (studentTotalFederalWorkStudyEarningsStartIndex2526-1)+studentTotalFederalWorkStudyEarningsLength2526]), // Field # 302
 
-		StudentSpouseTotalFederalWorkStudyEarnings: strings.TrimSpace(record[studentSpouseTotalFederalWorkStudyEarningsStartIndex2526-1 : (studentSpouseTotalFederalWorkStudyEarningsStartIndex2526-1)+studentSpouseTotalFederalWorkStudyEarningsLength2526]), // Field # 303
+		StudentSpouseTotalFederalWorkStudyEarnings: preprocessString(record[studentSpouseTotalFederalWorkStudyEarningsStartIndex2526-1 : (studentSpouseTotalFederalWorkStudyEarningsStartIndex2526-1)+studentSpouseTotalFederalWorkStudyEarningsLength2526]), // Field # 303
 
-		ParentTotalFederalWorkStudyEarnings: strings.TrimSpace(record[parentTotalFederalWorkStudyEarningsStartIndex2526-1 : (parentTotalFederalWorkStudyEarningsStartIndex2526-1)+parentTotalFederalWorkStudyEarningsLength2526]), // Field # 304
+		ParentTotalFederalWorkStudyEarnings: preprocessString(record[parentTotalFederalWorkStudyEarningsStartIndex2526-1 : (parentTotalFederalWorkStudyEarningsStartIndex2526-1)+parentTotalFederalWorkStudyEarningsLength2526]), // Field # 304
 
-		ParentSpouseOrPartnerTotalFederalWorkStudyEarnings: strings.TrimSpace(record[parentSpouseOrPartnerTotalFederalWorkStudyEarningsStartIndex2526-1 : (parentSpouseOrPartnerTotalFederalWorkStudyEarningsStartIndex2526-1)+parentSpouseOrPartnerTotalFederalWorkStudyEarningsLength2526]), // Field # 305
+		ParentSpouseOrPartnerTotalFederalWorkStudyEarnings: preprocessString(record[parentSpouseOrPartnerTotalFederalWorkStudyEarningsStartIndex2526-1 : (parentSpouseOrPartnerTotalFederalWorkStudyEarningsStartIndex2526-1)+parentSpouseOrPartnerTotalFederalWorkStudyEarningsLength2526]), // Field # 305
 
-		TotalParentAllowancesAgainstIncome: strings.TrimSpace(record[totalParentAllowancesAgainstIncomeStartIndex2526-1 : (totalParentAllowancesAgainstIncomeStartIndex2526-1)+totalParentAllowancesAgainstIncomeLength2526]), // Field # 306
+		TotalParentAllowancesAgainstIncome: preprocessString(record[totalParentAllowancesAgainstIncomeStartIndex2526-1 : (totalParentAllowancesAgainstIncomeStartIndex2526-1)+totalParentAllowancesAgainstIncomeLength2526]), // Field # 306
 
-		ParentPayrollTaxAllowance: strings.TrimSpace(record[parentPayrollTaxAllowanceStartIndex2526-1 : (parentPayrollTaxAllowanceStartIndex2526-1)+parentPayrollTaxAllowanceLength2526]), // Field # 307
+		ParentPayrollTaxAllowance: preprocessString(record[parentPayrollTaxAllowanceStartIndex2526-1 : (parentPayrollTaxAllowanceStartIndex2526-1)+parentPayrollTaxAllowanceLength2526]), // Field # 307
 
-		ParentIncomeProtectionAllowance: strings.TrimSpace(record[parentIncomeProtectionAllowanceStartIndex2526-1 : (parentIncomeProtectionAllowanceStartIndex2526-1)+parentIncomeProtectionAllowanceLength2526]), // Field # 308
+		ParentIncomeProtectionAllowance: preprocessString(record[parentIncomeProtectionAllowanceStartIndex2526-1 : (parentIncomeProtectionAllowanceStartIndex2526-1)+parentIncomeProtectionAllowanceLength2526]), // Field # 308
 
-		ParentEmploymentExpenseAllowance: strings.TrimSpace(record[parentEmploymentExpenseAllowanceStartIndex2526-1 : (parentEmploymentExpenseAllowanceStartIndex2526-1)+parentEmploymentExpenseAllowanceLength2526]), // Field # 309
+		ParentEmploymentExpenseAllowance: preprocessString(record[parentEmploymentExpenseAllowanceStartIndex2526-1 : (parentEmploymentExpenseAllowanceStartIndex2526-1)+parentEmploymentExpenseAllowanceLength2526]), // Field # 309
 
-		ParentAvailableIncome: strings.TrimSpace(record[parentAvailableIncomeStartIndex2526-1 : (parentAvailableIncomeStartIndex2526-1)+parentAvailableIncomeLength2526]), // Field # 310
+		ParentAvailableIncome: preprocessString(record[parentAvailableIncomeStartIndex2526-1 : (parentAvailableIncomeStartIndex2526-1)+parentAvailableIncomeLength2526]), // Field # 310
 
-		ParentAdjustedAvailableIncome: strings.TrimSpace(record[parentAdjustedAvailableIncomeStartIndex2526-1 : (parentAdjustedAvailableIncomeStartIndex2526-1)+parentAdjustedAvailableIncomeLength2526]), // Field # 311
+		ParentAdjustedAvailableIncome: preprocessString(record[parentAdjustedAvailableIncomeStartIndex2526-1 : (parentAdjustedAvailableIncomeStartIndex2526-1)+parentAdjustedAvailableIncomeLength2526]), // Field # 311
 
-		ParentContribution: strings.TrimSpace(record[parentContributionStartIndex2526-1 : (parentContributionStartIndex2526-1)+parentContributionLength2526]), // Field # 312
+		ParentContribution: preprocessString(record[parentContributionStartIndex2526-1 : (parentContributionStartIndex2526-1)+parentContributionLength2526]), // Field # 312
 
-		StudentPayrollTaxAllowance: strings.TrimSpace(record[studentPayrollTaxAllowanceStartIndex2526-1 : (studentPayrollTaxAllowanceStartIndex2526-1)+studentPayrollTaxAllowanceLength2526]), // Field # 313
+		StudentPayrollTaxAllowance: preprocessString(record[studentPayrollTaxAllowanceStartIndex2526-1 : (studentPayrollTaxAllowanceStartIndex2526-1)+studentPayrollTaxAllowanceLength2526]), // Field # 313
 
-		StudentIncomeProtectionAllowance: strings.TrimSpace(record[studentIncomeProtectionAllowanceStartIndex2526-1 : (studentIncomeProtectionAllowanceStartIndex2526-1)+studentIncomeProtectionAllowanceLength2526]), // Field # 314
+		StudentIncomeProtectionAllowance: preprocessString(record[studentIncomeProtectionAllowanceStartIndex2526-1 : (studentIncomeProtectionAllowanceStartIndex2526-1)+studentIncomeProtectionAllowanceLength2526]), // Field # 314
 
-		StudentAllowanceForParentsNegativeAdjustedAvailableIncome: strings.TrimSpace(record[studentAllowanceForParentsNegativeAdjustedAvailableIncomeStartIndex2526-1 : (studentAllowanceForParentsNegativeAdjustedAvailableIncomeStartIndex2526-1)+studentAllowanceForParentsNegativeAdjustedAvailableIncomeLength2526]), // Field # 315
+		StudentAllowanceForParentsNegativeAdjustedAvailableIncome: preprocessString(record[studentAllowanceForParentsNegativeAdjustedAvailableIncomeStartIndex2526-1 : (studentAllowanceForParentsNegativeAdjustedAvailableIncomeStartIndex2526-1)+studentAllowanceForParentsNegativeAdjustedAvailableIncomeLength2526]), // Field # 315
 
-		StudentEmploymentExpenseAllowance: strings.TrimSpace(record[studentEmploymentExpenseAllowanceStartIndex2526-1 : (studentEmploymentExpenseAllowanceStartIndex2526-1)+studentEmploymentExpenseAllowanceLength2526]), // Field # 316
+		StudentEmploymentExpenseAllowance: preprocessString(record[studentEmploymentExpenseAllowanceStartIndex2526-1 : (studentEmploymentExpenseAllowanceStartIndex2526-1)+studentEmploymentExpenseAllowanceLength2526]), // Field # 316
 
-		TotalStudentAllowancesAgainstIncome: strings.TrimSpace(record[totalStudentAllowancesAgainstIncomeStartIndex2526-1 : (totalStudentAllowancesAgainstIncomeStartIndex2526-1)+totalStudentAllowancesAgainstIncomeLength2526]), // Field # 317
+		TotalStudentAllowancesAgainstIncome: preprocessString(record[totalStudentAllowancesAgainstIncomeStartIndex2526-1 : (totalStudentAllowancesAgainstIncomeStartIndex2526-1)+totalStudentAllowancesAgainstIncomeLength2526]), // Field # 317
 
-		StudentAvailableIncome: strings.TrimSpace(record[studentAvailableIncomeStartIndex2526-1 : (studentAvailableIncomeStartIndex2526-1)+studentAvailableIncomeLength2526]), // Field # 318
+		StudentAvailableIncome: preprocessString(record[studentAvailableIncomeStartIndex2526-1 : (studentAvailableIncomeStartIndex2526-1)+studentAvailableIncomeLength2526]), // Field # 318
 
-		StudentContributionFromIncome: strings.TrimSpace(record[studentContributionFromIncomeStartIndex2526-1 : (studentContributionFromIncomeStartIndex2526-1)+studentContributionFromIncomeLength2526]), // Field # 319
+		StudentContributionFromIncome: preprocessString(record[studentContributionFromIncomeStartIndex2526-1 : (studentContributionFromIncomeStartIndex2526-1)+studentContributionFromIncomeLength2526]), // Field # 319
 
-		StudentAdjustedAvailableIncome: strings.TrimSpace(record[studentAdjustedAvailableIncomeStartIndex2526-1 : (studentAdjustedAvailableIncomeStartIndex2526-1)+studentAdjustedAvailableIncomeLength2526]), // Field # 320
+		StudentAdjustedAvailableIncome: preprocessString(record[studentAdjustedAvailableIncomeStartIndex2526-1 : (studentAdjustedAvailableIncomeStartIndex2526-1)+studentAdjustedAvailableIncomeLength2526]), // Field # 320
 
-		TotalStudentContributionFromSAAI: strings.TrimSpace(record[totalStudentContributionFromSAAIStartIndex2526-1 : (totalStudentContributionFromSAAIStartIndex2526-1)+totalStudentContributionFromSAAILength2526]), // Field # 321
+		TotalStudentContributionFromSAAI: preprocessString(record[totalStudentContributionFromSAAIStartIndex2526-1 : (totalStudentContributionFromSAAIStartIndex2526-1)+totalStudentContributionFromSAAILength2526]), // Field # 321
 
-		ParentDiscretionaryNetWorth: strings.TrimSpace(record[parentDiscretionaryNetWorthStartIndex2526-1 : (parentDiscretionaryNetWorthStartIndex2526-1)+parentDiscretionaryNetWorthLength2526]), // Field # 322
+		ParentDiscretionaryNetWorth: preprocessString(record[parentDiscretionaryNetWorthStartIndex2526-1 : (parentDiscretionaryNetWorthStartIndex2526-1)+parentDiscretionaryNetWorthLength2526]), // Field # 322
 
-		ParentNetWorth: strings.TrimSpace(record[parentNetWorthStartIndex2526-1 : (parentNetWorthStartIndex2526-1)+parentNetWorthLength2526]), // Field # 323
+		ParentNetWorth: preprocessString(record[parentNetWorthStartIndex2526-1 : (parentNetWorthStartIndex2526-1)+parentNetWorthLength2526]), // Field # 323
 
-		ParentAssetProtectionAllowance: strings.TrimSpace(record[parentAssetProtectionAllowanceStartIndex2526-1 : (parentAssetProtectionAllowanceStartIndex2526-1)+parentAssetProtectionAllowanceLength2526]), // Field # 324
+		ParentAssetProtectionAllowance: preprocessString(record[parentAssetProtectionAllowanceStartIndex2526-1 : (parentAssetProtectionAllowanceStartIndex2526-1)+parentAssetProtectionAllowanceLength2526]), // Field # 324
 
-		ParentContributionFromAssets: strings.TrimSpace(record[parentContributionFromAssetsStartIndex2526-1 : (parentContributionFromAssetsStartIndex2526-1)+parentContributionFromAssetsLength2526]), // Field # 325
+		ParentContributionFromAssets: preprocessString(record[parentContributionFromAssetsStartIndex2526-1 : (parentContributionFromAssetsStartIndex2526-1)+parentContributionFromAssetsLength2526]), // Field # 325
 
-		StudentNetWorth: strings.TrimSpace(record[studentNetWorthStartIndex2526-1 : (studentNetWorthStartIndex2526-1)+studentNetWorthLength2526]), // Field # 326
+		StudentNetWorth: preprocessString(record[studentNetWorthStartIndex2526-1 : (studentNetWorthStartIndex2526-1)+studentNetWorthLength2526]), // Field # 326
 
-		StudentAssetProtectionAllowance: strings.TrimSpace(record[studentAssetProtectionAllowanceStartIndex2526-1 : (studentAssetProtectionAllowanceStartIndex2526-1)+studentAssetProtectionAllowanceLength2526]), // Field # 327
+		StudentAssetProtectionAllowance: preprocessString(record[studentAssetProtectionAllowanceStartIndex2526-1 : (studentAssetProtectionAllowanceStartIndex2526-1)+studentAssetProtectionAllowanceLength2526]), // Field # 327
 
-		StudentContributionFromAssets: strings.TrimSpace(record[studentContributionFromAssetsStartIndex2526-1 : (studentContributionFromAssetsStartIndex2526-1)+studentContributionFromAssetsLength2526]), // Field # 328
+		StudentContributionFromAssets: preprocessString(record[studentContributionFromAssetsStartIndex2526-1 : (studentContributionFromAssetsStartIndex2526-1)+studentContributionFromAssetsLength2526]), // Field # 328
 
-		AssumedStudentFamilySize: strings.TrimSpace(record[assumedStudentFamilySizeStartIndex2526-1 : (assumedStudentFamilySizeStartIndex2526-1)+assumedStudentFamilySizeLength2526]), // Field # 329
+		AssumedStudentFamilySize: preprocessString(record[assumedStudentFamilySizeStartIndex2526-1 : (assumedStudentFamilySizeStartIndex2526-1)+assumedStudentFamilySizeLength2526]), // Field # 329
 
-		AssumedParentFamilySize: strings.TrimSpace(record[assumedParentFamilySizeStartIndex2526-1 : (assumedParentFamilySizeStartIndex2526-1)+assumedParentFamilySizeLength2526]), // Field # 330
+		AssumedParentFamilySize: preprocessString(record[assumedParentFamilySizeStartIndex2526-1 : (assumedParentFamilySizeStartIndex2526-1)+assumedParentFamilySizeLength2526]), // Field # 330
 
-		StudentFirstNameCHVFlags: strings.TrimSpace(record[studentFirstNameCHVFlagsStartIndex2526-1 : (studentFirstNameCHVFlagsStartIndex2526-1)+studentFirstNameCHVFlagsLength2526]), // Field # 331
+		StudentFirstNameCHVFlags: preprocessString(record[studentFirstNameCHVFlagsStartIndex2526-1 : (studentFirstNameCHVFlagsStartIndex2526-1)+studentFirstNameCHVFlagsLength2526]), // Field # 331
 
-		StudentMiddleNameCHVFlags: strings.TrimSpace(record[studentMiddleNameCHVFlagsStartIndex2526-1 : (studentMiddleNameCHVFlagsStartIndex2526-1)+studentMiddleNameCHVFlagsLength2526]), // Field # 332
+		StudentMiddleNameCHVFlags: preprocessString(record[studentMiddleNameCHVFlagsStartIndex2526-1 : (studentMiddleNameCHVFlagsStartIndex2526-1)+studentMiddleNameCHVFlagsLength2526]), // Field # 332
 
-		StudentLastNameCHVFLags: strings.TrimSpace(record[studentLastNameCHVFLagsStartIndex2526-1 : (studentLastNameCHVFLagsStartIndex2526-1)+studentLastNameCHVFLagsLength2526]), // Field # 333
+		StudentLastNameCHVFLags: preprocessString(record[studentLastNameCHVFLagsStartIndex2526-1 : (studentLastNameCHVFLagsStartIndex2526-1)+studentLastNameCHVFLagsLength2526]), // Field # 333
 
-		StudentSuffixCHVFLags: strings.TrimSpace(record[studentSuffixCHVFLagsStartIndex2526-1 : (studentSuffixCHVFLagsStartIndex2526-1)+studentSuffixCHVFLagsLength2526]), // Field # 334
+		StudentSuffixCHVFLags: preprocessString(record[studentSuffixCHVFLagsStartIndex2526-1 : (studentSuffixCHVFLagsStartIndex2526-1)+studentSuffixCHVFLagsLength2526]), // Field # 334
 
-		StudentDateOfBirthCHVFLags: strings.TrimSpace(record[studentDateOfBirthCHVFLagsStartIndex2526-1 : (studentDateOfBirthCHVFLagsStartIndex2526-1)+studentDateOfBirthCHVFLagsLength2526]), // Field # 335
+		StudentDateOfBirthCHVFLags: preprocessString(record[studentDateOfBirthCHVFLagsStartIndex2526-1 : (studentDateOfBirthCHVFLagsStartIndex2526-1)+studentDateOfBirthCHVFLagsLength2526]), // Field # 335
 
-		StudentSSNCHVFlags: strings.TrimSpace(record[studentSSNCHVFlagsStartIndex2526-1 : (studentSSNCHVFlagsStartIndex2526-1)+studentSSNCHVFlagsLength2526]), // Field # 336
+		StudentSSNCHVFlags: preprocessString(record[studentSSNCHVFlagsStartIndex2526-1 : (studentSSNCHVFlagsStartIndex2526-1)+studentSSNCHVFlagsLength2526]), // Field # 336
 
-		StudentITINCHVFLags: strings.TrimSpace(record[studentITINCHVFLagsStartIndex2526-1 : (studentITINCHVFLagsStartIndex2526-1)+studentITINCHVFLagsLength2526]), // Field # 337
+		StudentITINCHVFLags: preprocessString(record[studentITINCHVFLagsStartIndex2526-1 : (studentITINCHVFLagsStartIndex2526-1)+studentITINCHVFLagsLength2526]), // Field # 337
 
-		StudentPhoneNumberCHVFlags: strings.TrimSpace(record[studentPhoneNumberCHVFlagsStartIndex2526-1 : (studentPhoneNumberCHVFlagsStartIndex2526-1)+studentPhoneNumberCHVFlagsLength2526]), // Field # 338
+		StudentPhoneNumberCHVFlags: preprocessString(record[studentPhoneNumberCHVFlagsStartIndex2526-1 : (studentPhoneNumberCHVFlagsStartIndex2526-1)+studentPhoneNumberCHVFlagsLength2526]), // Field # 338
 
-		StudentEmailAddressCHVFlags: strings.TrimSpace(record[studentEmailAddressCHVFlagsStartIndex2526-1 : (studentEmailAddressCHVFlagsStartIndex2526-1)+studentEmailAddressCHVFlagsLength2526]), // Field # 339
+		StudentEmailAddressCHVFlags: preprocessString(record[studentEmailAddressCHVFlagsStartIndex2526-1 : (studentEmailAddressCHVFlagsStartIndex2526-1)+studentEmailAddressCHVFlagsLength2526]), // Field # 339
 
-		StudentStreetAddressCHVFlags: strings.TrimSpace(record[studentStreetAddressCHVFlagsStartIndex2526-1 : (studentStreetAddressCHVFlagsStartIndex2526-1)+studentStreetAddressCHVFlagsLength2526]), // Field # 340
+		StudentStreetAddressCHVFlags: preprocessString(record[studentStreetAddressCHVFlagsStartIndex2526-1 : (studentStreetAddressCHVFlagsStartIndex2526-1)+studentStreetAddressCHVFlagsLength2526]), // Field # 340
 
-		StudentCityCHVFLags: strings.TrimSpace(record[studentCityCHVFLagsStartIndex2526-1 : (studentCityCHVFLagsStartIndex2526-1)+studentCityCHVFLagsLength2526]), // Field # 341
+		StudentCityCHVFLags: preprocessString(record[studentCityCHVFLagsStartIndex2526-1 : (studentCityCHVFLagsStartIndex2526-1)+studentCityCHVFLagsLength2526]), // Field # 341
 
-		StudentStateCHVFlags: strings.TrimSpace(record[studentStateCHVFlagsStartIndex2526-1 : (studentStateCHVFlagsStartIndex2526-1)+studentStateCHVFlagsLength2526]), // Field # 342
+		StudentStateCHVFlags: preprocessString(record[studentStateCHVFlagsStartIndex2526-1 : (studentStateCHVFlagsStartIndex2526-1)+studentStateCHVFlagsLength2526]), // Field # 342
 
-		StudentZipCodeCHVFlags: strings.TrimSpace(record[studentZipCodeCHVFlagsStartIndex2526-1 : (studentZipCodeCHVFlagsStartIndex2526-1)+studentZipCodeCHVFlagsLength2526]), // Field # 343
+		StudentZipCodeCHVFlags: preprocessString(record[studentZipCodeCHVFlagsStartIndex2526-1 : (studentZipCodeCHVFlagsStartIndex2526-1)+studentZipCodeCHVFlagsLength2526]), // Field # 343
 
-		StudentCountryCHVFlags: strings.TrimSpace(record[studentCountryCHVFlagsStartIndex2526-1 : (studentCountryCHVFlagsStartIndex2526-1)+studentCountryCHVFlagsLength2526]), // Field # 344
+		StudentCountryCHVFlags: preprocessString(record[studentCountryCHVFlagsStartIndex2526-1 : (studentCountryCHVFlagsStartIndex2526-1)+studentCountryCHVFlagsLength2526]), // Field # 344
 
-		StudentMaritalStatusCHVFlags: strings.TrimSpace(record[studentMaritalStatusCHVFlagsStartIndex2526-1 : (studentMaritalStatusCHVFlagsStartIndex2526-1)+studentMaritalStatusCHVFlagsLength2526]), // Field # 345
+		StudentMaritalStatusCHVFlags: preprocessString(record[studentMaritalStatusCHVFlagsStartIndex2526-1 : (studentMaritalStatusCHVFlagsStartIndex2526-1)+studentMaritalStatusCHVFlagsLength2526]), // Field # 345
 
-		StudentGradeLevelInCollegeCHVFlags: strings.TrimSpace(record[studentGradeLevelInCollegeCHVFlagsStartIndex2526-1 : (studentGradeLevelInCollegeCHVFlagsStartIndex2526-1)+studentGradeLevelInCollegeCHVFlagsLength2526]), // Field # 346
+		StudentGradeLevelInCollegeCHVFlags: preprocessString(record[studentGradeLevelInCollegeCHVFlagsStartIndex2526-1 : (studentGradeLevelInCollegeCHVFlagsStartIndex2526-1)+studentGradeLevelInCollegeCHVFlagsLength2526]), // Field # 346
 
-		StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags: strings.TrimSpace(record[studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1 : (studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1)+studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsLength2526]), // Field # 347
+		StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags: preprocessString(record[studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1 : (studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1)+studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsLength2526]), // Field # 347
 
-		StudentPursuingTeacherCertificationCHVFlags: strings.TrimSpace(record[studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1 : (studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1)+studentPursuingTeacherCertificationCHVFlagsLength2526]), // Field # 348
+		StudentPursuingTeacherCertificationCHVFlags: preprocessString(record[studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1 : (studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1)+studentPursuingTeacherCertificationCHVFlagsLength2526]), // Field # 348
 
-		StudentActiveDutyCHVFlags: strings.TrimSpace(record[studentActiveDutyCHVFlagsStartIndex2526-1 : (studentActiveDutyCHVFlagsStartIndex2526-1)+studentActiveDutyCHVFlagsLength2526]), // Field # 349
+		StudentActiveDutyCHVFlags: preprocessString(record[studentActiveDutyCHVFlagsStartIndex2526-1 : (studentActiveDutyCHVFlagsStartIndex2526-1)+studentActiveDutyCHVFlagsLength2526]), // Field # 349
 
-		StudentVeteranCHVFlags: strings.TrimSpace(record[studentVeteranCHVFlagsStartIndex2526-1 : (studentVeteranCHVFlagsStartIndex2526-1)+studentVeteranCHVFlagsLength2526]), // Field # 350
+		StudentVeteranCHVFlags: preprocessString(record[studentVeteranCHVFlagsStartIndex2526-1 : (studentVeteranCHVFlagsStartIndex2526-1)+studentVeteranCHVFlagsLength2526]), // Field # 350
 
-		StudentChildOrOtherDependentsCHVFlags: strings.TrimSpace(record[studentChildOrOtherDependentsCHVFlagsStartIndex2526-1 : (studentChildOrOtherDependentsCHVFlagsStartIndex2526-1)+studentChildOrOtherDependentsCHVFlagsLength2526]), // Field # 351
+		StudentChildOrOtherDependentsCHVFlags: preprocessString(record[studentChildOrOtherDependentsCHVFlagsStartIndex2526-1 : (studentChildOrOtherDependentsCHVFlagsStartIndex2526-1)+studentChildOrOtherDependentsCHVFlagsLength2526]), // Field # 351
 
-		StudentParentsDeceasedCHVFlags: strings.TrimSpace(record[studentParentsDeceasedCHVFlagsStartIndex2526-1 : (studentParentsDeceasedCHVFlagsStartIndex2526-1)+studentParentsDeceasedCHVFlagsLength2526]), // Field # 352
+		StudentParentsDeceasedCHVFlags: preprocessString(record[studentParentsDeceasedCHVFlagsStartIndex2526-1 : (studentParentsDeceasedCHVFlagsStartIndex2526-1)+studentParentsDeceasedCHVFlagsLength2526]), // Field # 352
 
-		StudentWardOfCourtCHVFlags: strings.TrimSpace(record[studentWardOfCourtCHVFlagsStartIndex2526-1 : (studentWardOfCourtCHVFlagsStartIndex2526-1)+studentWardOfCourtCHVFlagsLength2526]), // Field # 353
+		StudentWardOfCourtCHVFlags: preprocessString(record[studentWardOfCourtCHVFlagsStartIndex2526-1 : (studentWardOfCourtCHVFlagsStartIndex2526-1)+studentWardOfCourtCHVFlagsLength2526]), // Field # 353
 
-		StudentInFosterCareCHVFlags: strings.TrimSpace(record[studentInFosterCareCHVFlagsStartIndex2526-1 : (studentInFosterCareCHVFlagsStartIndex2526-1)+studentInFosterCareCHVFlagsLength2526]), // Field # 354
+		StudentInFosterCareCHVFlags: preprocessString(record[studentInFosterCareCHVFlagsStartIndex2526-1 : (studentInFosterCareCHVFlagsStartIndex2526-1)+studentInFosterCareCHVFlagsLength2526]), // Field # 354
 
-		StudentEmancipatedMinorCHVFlags: strings.TrimSpace(record[studentEmancipatedMinorCHVFlagsStartIndex2526-1 : (studentEmancipatedMinorCHVFlagsStartIndex2526-1)+studentEmancipatedMinorCHVFlagsLength2526]), // Field # 355
+		StudentEmancipatedMinorCHVFlags: preprocessString(record[studentEmancipatedMinorCHVFlagsStartIndex2526-1 : (studentEmancipatedMinorCHVFlagsStartIndex2526-1)+studentEmancipatedMinorCHVFlagsLength2526]), // Field # 355
 
-		StudentLegalGuardianshipCHVFlags: strings.TrimSpace(record[studentLegalGuardianshipCHVFlagsStartIndex2526-1 : (studentLegalGuardianshipCHVFlagsStartIndex2526-1)+studentLegalGuardianshipCHVFlagsLength2526]), // Field # 356
+		StudentLegalGuardianshipCHVFlags: preprocessString(record[studentLegalGuardianshipCHVFlagsStartIndex2526-1 : (studentLegalGuardianshipCHVFlagsStartIndex2526-1)+studentLegalGuardianshipCHVFlagsLength2526]), // Field # 356
 
-		StudentPersonalCircumstancesNoneOfTheAboveCHVFlags: strings.TrimSpace(record[studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentPersonalCircumstancesNoneOfTheAboveCHVFlagsLength2526]), // Field # 357
+		StudentPersonalCircumstancesNoneOfTheAboveCHVFlags: preprocessString(record[studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentPersonalCircumstancesNoneOfTheAboveCHVFlagsLength2526]), // Field # 357
 
-		StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags: strings.TrimSpace(record[studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1 : (studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1)+studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsLength2526]), // Field # 358
+		StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags: preprocessString(record[studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1 : (studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1)+studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsLength2526]), // Field # 358
 
-		StudentUnaccompaniedAndHomelessGeneralCHVFlags: strings.TrimSpace(record[studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessGeneralCHVFlagsLength2526]), // Field # 359
+		StudentUnaccompaniedAndHomelessGeneralCHVFlags: preprocessString(record[studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessGeneralCHVFlagsLength2526]), // Field # 359
 
-		StudentUnaccompaniedAndHomelessHSCHVFlags: strings.TrimSpace(record[studentUnaccompaniedAndHomelessHSCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessHSCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessHSCHVFlagsLength2526]), // Field # 360
+		StudentUnaccompaniedAndHomelessHSCHVFlags: preprocessString(record[studentUnaccompaniedAndHomelessHSCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessHSCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessHSCHVFlagsLength2526]), // Field # 360
 
-		StudentUnaccompaniedAndHomelessTRIOCHVFlags: strings.TrimSpace(record[studentUnaccompaniedAndHomelessTRIOCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessTRIOCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessTRIOCHVFlagsLength2526]), // Field # 361
+		StudentUnaccompaniedAndHomelessTRIOCHVFlags: preprocessString(record[studentUnaccompaniedAndHomelessTRIOCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessTRIOCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessTRIOCHVFlagsLength2526]), // Field # 361
 
-		StudentUnaccompaniedAndHomelessFAACHVFlags: strings.TrimSpace(record[studentUnaccompaniedAndHomelessFAACHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessFAACHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessFAACHVFlagsLength2526]), // Field # 362
+		StudentUnaccompaniedAndHomelessFAACHVFlags: preprocessString(record[studentUnaccompaniedAndHomelessFAACHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessFAACHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessFAACHVFlagsLength2526]), // Field # 362
 
-		StudentHomelessnessNoneOfTheAboveCHVFlags: strings.TrimSpace(record[studentHomelessnessNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentHomelessnessNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentHomelessnessNoneOfTheAboveCHVFlagsLength2526]), // Field # 363
+		StudentHomelessnessNoneOfTheAboveCHVFlags: preprocessString(record[studentHomelessnessNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentHomelessnessNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentHomelessnessNoneOfTheAboveCHVFlagsLength2526]), // Field # 363
 
-		StudentHasUnusualCircumstanceCHVFlags: strings.TrimSpace(record[studentHasUnusualCircumstanceCHVFlagsStartIndex2526-1 : (studentHasUnusualCircumstanceCHVFlagsStartIndex2526-1)+studentHasUnusualCircumstanceCHVFlagsLength2526]), // Field # 364
+		StudentHasUnusualCircumstanceCHVFlags: preprocessString(record[studentHasUnusualCircumstanceCHVFlagsStartIndex2526-1 : (studentHasUnusualCircumstanceCHVFlagsStartIndex2526-1)+studentHasUnusualCircumstanceCHVFlagsLength2526]), // Field # 364
 
-		StudentUnsubOnlyCHVFlags: strings.TrimSpace(record[studentUnsubOnlyCHVFlagsStartIndex2526-1 : (studentUnsubOnlyCHVFlagsStartIndex2526-1)+studentUnsubOnlyCHVFlagsLength2526]), // Field # 365
+		StudentUnsubOnlyCHVFlags: preprocessString(record[studentUnsubOnlyCHVFlagsStartIndex2526-1 : (studentUnsubOnlyCHVFlagsStartIndex2526-1)+studentUnsubOnlyCHVFlagsLength2526]), // Field # 365
 
-		StudentUpdatedFamilySizeCHVFlags: strings.TrimSpace(record[studentUpdatedFamilySizeCHVFlagsStartIndex2526-1 : (studentUpdatedFamilySizeCHVFlagsStartIndex2526-1)+studentUpdatedFamilySizeCHVFlagsLength2526]), // Field # 366
+		StudentUpdatedFamilySizeCHVFlags: preprocessString(record[studentUpdatedFamilySizeCHVFlagsStartIndex2526-1 : (studentUpdatedFamilySizeCHVFlagsStartIndex2526-1)+studentUpdatedFamilySizeCHVFlagsLength2526]), // Field # 366
 
-		StudentNumberInCollegeCorrectionCHVFlags: strings.TrimSpace(record[studentNumberInCollegeCorrectionCHVFlagsStartIndex2526-1 : (studentNumberInCollegeCorrectionCHVFlagsStartIndex2526-1)+studentNumberInCollegeCorrectionCHVFlagsLength2526]), // Field # 367
+		StudentNumberInCollegeCorrectionCHVFlags: preprocessString(record[studentNumberInCollegeCorrectionCHVFlagsStartIndex2526-1 : (studentNumberInCollegeCorrectionCHVFlagsStartIndex2526-1)+studentNumberInCollegeCorrectionCHVFlagsLength2526]), // Field # 367
 
-		StudentCitizenshipStatusCorrectionCHVFlags: strings.TrimSpace(record[studentCitizenshipStatusCorrectionCHVFlagsStartIndex2526-1 : (studentCitizenshipStatusCorrectionCHVFlagsStartIndex2526-1)+studentCitizenshipStatusCorrectionCHVFlagsLength2526]), // Field # 368
+		StudentCitizenshipStatusCorrectionCHVFlags: preprocessString(record[studentCitizenshipStatusCorrectionCHVFlagsStartIndex2526-1 : (studentCitizenshipStatusCorrectionCHVFlagsStartIndex2526-1)+studentCitizenshipStatusCorrectionCHVFlagsLength2526]), // Field # 368
 
-		StudentANumberCHVFlags: strings.TrimSpace(record[studentANumberCHVFlagsStartIndex2526-1 : (studentANumberCHVFlagsStartIndex2526-1)+studentANumberCHVFlagsLength2526]), // Field # 369
+		StudentANumberCHVFlags: preprocessString(record[studentANumberCHVFlagsStartIndex2526-1 : (studentANumberCHVFlagsStartIndex2526-1)+studentANumberCHVFlagsLength2526]), // Field # 369
 
-		StudentStateOfLegalResidenceCHVFlags: strings.TrimSpace(record[studentStateOfLegalResidenceCHVFlagsStartIndex2526-1 : (studentStateOfLegalResidenceCHVFlagsStartIndex2526-1)+studentStateOfLegalResidenceCHVFlagsLength2526]), // Field # 370
+		StudentStateOfLegalResidenceCHVFlags: preprocessString(record[studentStateOfLegalResidenceCHVFlagsStartIndex2526-1 : (studentStateOfLegalResidenceCHVFlagsStartIndex2526-1)+studentStateOfLegalResidenceCHVFlagsLength2526]), // Field # 370
 
-		StudentLegalResidenceDateCHVFlags: strings.TrimSpace(record[studentLegalResidenceDateCHVFlagsStartIndex2526-1 : (studentLegalResidenceDateCHVFlagsStartIndex2526-1)+studentLegalResidenceDateCHVFlagsLength2526]), // Field # 371
+		StudentLegalResidenceDateCHVFlags: preprocessString(record[studentLegalResidenceDateCHVFlagsStartIndex2526-1 : (studentLegalResidenceDateCHVFlagsStartIndex2526-1)+studentLegalResidenceDateCHVFlagsLength2526]), // Field # 371
 
-		StudentEitherParentAttendCollegeCHVFlags: strings.TrimSpace(record[studentEitherParentAttendCollegeCHVFlagsStartIndex2526-1 : (studentEitherParentAttendCollegeCHVFlagsStartIndex2526-1)+studentEitherParentAttendCollegeCHVFlagsLength2526]), // Field # 372
+		StudentEitherParentAttendCollegeCHVFlags: preprocessString(record[studentEitherParentAttendCollegeCHVFlagsStartIndex2526-1 : (studentEitherParentAttendCollegeCHVFlagsStartIndex2526-1)+studentEitherParentAttendCollegeCHVFlagsLength2526]), // Field # 372
 
-		StudentParentKilledInTheLineOfDutyCHVFlags: strings.TrimSpace(record[studentParentKilledInTheLineOfDutyCHVFlagsStartIndex2526-1 : (studentParentKilledInTheLineOfDutyCHVFlagsStartIndex2526-1)+studentParentKilledInTheLineOfDutyCHVFlagsLength2526]), // Field # 373
+		StudentParentKilledInTheLineOfDutyCHVFlags: preprocessString(record[studentParentKilledInTheLineOfDutyCHVFlagsStartIndex2526-1 : (studentParentKilledInTheLineOfDutyCHVFlagsStartIndex2526-1)+studentParentKilledInTheLineOfDutyCHVFlagsLength2526]), // Field # 373
 
-		StudentHighSchoolCompletionStatusCHVFlags: strings.TrimSpace(record[studentHighSchoolCompletionStatusCHVFlagsStartIndex2526-1 : (studentHighSchoolCompletionStatusCHVFlagsStartIndex2526-1)+studentHighSchoolCompletionStatusCHVFlagsLength2526]), // Field # 374
+		StudentHighSchoolCompletionStatusCHVFlags: preprocessString(record[studentHighSchoolCompletionStatusCHVFlagsStartIndex2526-1 : (studentHighSchoolCompletionStatusCHVFlagsStartIndex2526-1)+studentHighSchoolCompletionStatusCHVFlagsLength2526]), // Field # 374
 
-		StudentHighSchoolNameCHVFlags: strings.TrimSpace(record[studentHighSchoolNameCHVFlagsStartIndex2526-1 : (studentHighSchoolNameCHVFlagsStartIndex2526-1)+studentHighSchoolNameCHVFlagsLength2526]), // Field # 375
+		StudentHighSchoolNameCHVFlags: preprocessString(record[studentHighSchoolNameCHVFlagsStartIndex2526-1 : (studentHighSchoolNameCHVFlagsStartIndex2526-1)+studentHighSchoolNameCHVFlagsLength2526]), // Field # 375
 
-		StudentHighSchoolCityCHVFlags: strings.TrimSpace(record[studentHighSchoolCityCHVFlagsStartIndex2526-1 : (studentHighSchoolCityCHVFlagsStartIndex2526-1)+studentHighSchoolCityCHVFlagsLength2526]), // Field # 376
+		StudentHighSchoolCityCHVFlags: preprocessString(record[studentHighSchoolCityCHVFlagsStartIndex2526-1 : (studentHighSchoolCityCHVFlagsStartIndex2526-1)+studentHighSchoolCityCHVFlagsLength2526]), // Field # 376
 
-		StudentHighSchoolStateCHVFlags: strings.TrimSpace(record[studentHighSchoolStateCHVFlagsStartIndex2526-1 : (studentHighSchoolStateCHVFlagsStartIndex2526-1)+studentHighSchoolStateCHVFlagsLength2526]), // Field # 377
+		StudentHighSchoolStateCHVFlags: preprocessString(record[studentHighSchoolStateCHVFlagsStartIndex2526-1 : (studentHighSchoolStateCHVFlagsStartIndex2526-1)+studentHighSchoolStateCHVFlagsLength2526]), // Field # 377
 
-		StudentHighSchoolEquivalentDiplomaNameCHVFlags: strings.TrimSpace(record[studentHighSchoolEquivalentDiplomaNameCHVFlagsStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaNameCHVFlagsStartIndex2526-1)+studentHighSchoolEquivalentDiplomaNameCHVFlagsLength2526]), // Field # 378
+		StudentHighSchoolEquivalentDiplomaNameCHVFlags: preprocessString(record[studentHighSchoolEquivalentDiplomaNameCHVFlagsStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaNameCHVFlagsStartIndex2526-1)+studentHighSchoolEquivalentDiplomaNameCHVFlagsLength2526]), // Field # 378
 
-		StudentHighSchoolEquivalentDiplomaStateCHVFlags: strings.TrimSpace(record[studentHighSchoolEquivalentDiplomaStateCHVFlagsStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaStateCHVFlagsStartIndex2526-1)+studentHighSchoolEquivalentDiplomaStateCHVFlagsLength2526]), // Field # 379
+		StudentHighSchoolEquivalentDiplomaStateCHVFlags: preprocessString(record[studentHighSchoolEquivalentDiplomaStateCHVFlagsStartIndex2526-1 : (studentHighSchoolEquivalentDiplomaStateCHVFlagsStartIndex2526-1)+studentHighSchoolEquivalentDiplomaStateCHVFlagsLength2526]), // Field # 379
 
-		StudentReceivedEITCCHVFlags: strings.TrimSpace(record[studentReceivedEITCCHVFlagsStartIndex2526-1 : (studentReceivedEITCCHVFlagsStartIndex2526-1)+studentReceivedEITCCHVFlagsLength2526]), // Field # 380
+		StudentReceivedEITCCHVFlags: preprocessString(record[studentReceivedEITCCHVFlagsStartIndex2526-1 : (studentReceivedEITCCHVFlagsStartIndex2526-1)+studentReceivedEITCCHVFlagsLength2526]), // Field # 380
 
-		StudentReceivedFederalHousingAssistanceCHVFlags: strings.TrimSpace(record[studentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1 : (studentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1)+studentReceivedFederalHousingAssistanceCHVFlagsLength2526]), // Field # 381
+		StudentReceivedFederalHousingAssistanceCHVFlags: preprocessString(record[studentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1 : (studentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1)+studentReceivedFederalHousingAssistanceCHVFlagsLength2526]), // Field # 381
 
-		StudentReceivedFreeReducedPriceLunchCHVFlags: strings.TrimSpace(record[studentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1 : (studentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1)+studentReceivedFreeReducedPriceLunchCHVFlagsLength2526]), // Field # 382
+		StudentReceivedFreeReducedPriceLunchCHVFlags: preprocessString(record[studentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1 : (studentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1)+studentReceivedFreeReducedPriceLunchCHVFlagsLength2526]), // Field # 382
 
-		StudentReceivedMedicaidCHVFlags: strings.TrimSpace(record[studentReceivedMedicaidCHVFlagsStartIndex2526-1 : (studentReceivedMedicaidCHVFlagsStartIndex2526-1)+studentReceivedMedicaidCHVFlagsLength2526]), // Field # 383
+		StudentReceivedMedicaidCHVFlags: preprocessString(record[studentReceivedMedicaidCHVFlagsStartIndex2526-1 : (studentReceivedMedicaidCHVFlagsStartIndex2526-1)+studentReceivedMedicaidCHVFlagsLength2526]), // Field # 383
 
-		StudentReceivedRefundableCreditFor36BHealthPlanCHVFlags: strings.TrimSpace(record[studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1 : (studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1)+studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsLength2526]), // Field # 384
+		StudentReceivedRefundableCreditFor36BHealthPlanCHVFlags: preprocessString(record[studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1 : (studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1)+studentReceivedRefundableCreditFor36BHealthPlanCHVFlagsLength2526]), // Field # 384
 
-		StudentReceivedSNAPCHVFlags: strings.TrimSpace(record[studentReceivedSNAPCHVFlagsStartIndex2526-1 : (studentReceivedSNAPCHVFlagsStartIndex2526-1)+studentReceivedSNAPCHVFlagsLength2526]), // Field # 385
+		StudentReceivedSNAPCHVFlags: preprocessString(record[studentReceivedSNAPCHVFlagsStartIndex2526-1 : (studentReceivedSNAPCHVFlagsStartIndex2526-1)+studentReceivedSNAPCHVFlagsLength2526]), // Field # 385
 
-		StudentReceivedSupplementalSecurityIncomeCHVFlags: strings.TrimSpace(record[studentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1 : (studentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1)+studentReceivedSupplementalSecurityIncomeCHVFlagsLength2526]), // Field # 386
+		StudentReceivedSupplementalSecurityIncomeCHVFlags: preprocessString(record[studentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1 : (studentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1)+studentReceivedSupplementalSecurityIncomeCHVFlagsLength2526]), // Field # 386
 
-		StudentReceivedTANFCHVFlags: strings.TrimSpace(record[studentReceivedTANFCHVFlagsStartIndex2526-1 : (studentReceivedTANFCHVFlagsStartIndex2526-1)+studentReceivedTANFCHVFlagsLength2526]), // Field # 387
+		StudentReceivedTANFCHVFlags: preprocessString(record[studentReceivedTANFCHVFlagsStartIndex2526-1 : (studentReceivedTANFCHVFlagsStartIndex2526-1)+studentReceivedTANFCHVFlagsLength2526]), // Field # 387
 
-		StudentReceivedWICCHVFlags: strings.TrimSpace(record[studentReceivedWICCHVFlagsStartIndex2526-1 : (studentReceivedWICCHVFlagsStartIndex2526-1)+studentReceivedWICCHVFlagsLength2526]), // Field # 388
+		StudentReceivedWICCHVFlags: preprocessString(record[studentReceivedWICCHVFlagsStartIndex2526-1 : (studentReceivedWICCHVFlagsStartIndex2526-1)+studentReceivedWICCHVFlagsLength2526]), // Field # 388
 
-		StudentFederalBenefitsNoneOfTheAboveCHVFlags: strings.TrimSpace(record[studentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentFederalBenefitsNoneOfTheAboveCHVFlagsLength2526]), // Field # 389
+		StudentFederalBenefitsNoneOfTheAboveCHVFlags: preprocessString(record[studentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentFederalBenefitsNoneOfTheAboveCHVFlagsLength2526]), // Field # 389
 
-		StudentFiled1040Or1040NRCHVFlags: strings.TrimSpace(record[studentFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (studentFiled1040Or1040NRCHVFlagsStartIndex2526-1)+studentFiled1040Or1040NRCHVFlagsLength2526]), // Field # 390
+		StudentFiled1040Or1040NRCHVFlags: preprocessString(record[studentFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (studentFiled1040Or1040NRCHVFlagsStartIndex2526-1)+studentFiled1040Or1040NRCHVFlagsLength2526]), // Field # 390
 
-		StudentFiledNonUSTaxReturnCHVFlags: strings.TrimSpace(record[studentFiledNonUSTaxReturnCHVFlagsStartIndex2526-1 : (studentFiledNonUSTaxReturnCHVFlagsStartIndex2526-1)+studentFiledNonUSTaxReturnCHVFlagsLength2526]), // Field # 391
+		StudentFiledNonUSTaxReturnCHVFlags: preprocessString(record[studentFiledNonUSTaxReturnCHVFlagsStartIndex2526-1 : (studentFiledNonUSTaxReturnCHVFlagsStartIndex2526-1)+studentFiledNonUSTaxReturnCHVFlagsLength2526]), // Field # 391
 
-		StudentFiledJointReturnWithCurrentSpouseCHVFlags: strings.TrimSpace(record[studentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1 : (studentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1)+studentFiledJointReturnWithCurrentSpouseCHVFlagsLength2526]), // Field # 392
+		StudentFiledJointReturnWithCurrentSpouseCHVFlags: preprocessString(record[studentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1 : (studentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1)+studentFiledJointReturnWithCurrentSpouseCHVFlagsLength2526]), // Field # 392
 
-		StudentTaxReturnFilingStatusCHVFlags: strings.TrimSpace(record[studentTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (studentTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+studentTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 393
+		StudentTaxReturnFilingStatusCHVFlags: preprocessString(record[studentTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (studentTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+studentTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 393
 
-		StudentIncomeEarnedFromWorkCorrectionCHVFlags: strings.TrimSpace(record[studentIncomeEarnedFromWorkCorrectionCHVFlagsStartIndex2526-1 : (studentIncomeEarnedFromWorkCorrectionCHVFlagsStartIndex2526-1)+studentIncomeEarnedFromWorkCorrectionCHVFlagsLength2526]), // Field # 394
+		StudentIncomeEarnedFromWorkCorrectionCHVFlags: preprocessString(record[studentIncomeEarnedFromWorkCorrectionCHVFlagsStartIndex2526-1 : (studentIncomeEarnedFromWorkCorrectionCHVFlagsStartIndex2526-1)+studentIncomeEarnedFromWorkCorrectionCHVFlagsLength2526]), // Field # 394
 
-		StudentTaxExemptInterestIncomeCHVFlags: strings.TrimSpace(record[studentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (studentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+studentTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 395
+		StudentTaxExemptInterestIncomeCHVFlags: preprocessString(record[studentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (studentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+studentTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 395
 
-		StudentUntaxedPortionsOfIRADistributionsCHVFlags: strings.TrimSpace(record[studentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (studentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+studentUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 396
+		StudentUntaxedPortionsOfIRADistributionsCHVFlags: preprocessString(record[studentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (studentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+studentUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 396
 
-		StudentIRARolloverCHVFlags: strings.TrimSpace(record[studentIRARolloverCHVFlagsStartIndex2526-1 : (studentIRARolloverCHVFlagsStartIndex2526-1)+studentIRARolloverCHVFlagsLength2526]), // Field # 397
+		StudentIRARolloverCHVFlags: preprocessString(record[studentIRARolloverCHVFlagsStartIndex2526-1 : (studentIRARolloverCHVFlagsStartIndex2526-1)+studentIRARolloverCHVFlagsLength2526]), // Field # 397
 
-		StudentUntaxedPortionsOfPensionsCHVFlags: strings.TrimSpace(record[studentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (studentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+studentUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 398
+		StudentUntaxedPortionsOfPensionsCHVFlags: preprocessString(record[studentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (studentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+studentUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 398
 
-		StudentPensionRolloverCHVFlags: strings.TrimSpace(record[studentPensionRolloverCHVFlagsStartIndex2526-1 : (studentPensionRolloverCHVFlagsStartIndex2526-1)+studentPensionRolloverCHVFlagsLength2526]), // Field # 399
+		StudentPensionRolloverCHVFlags: preprocessString(record[studentPensionRolloverCHVFlagsStartIndex2526-1 : (studentPensionRolloverCHVFlagsStartIndex2526-1)+studentPensionRolloverCHVFlagsLength2526]), // Field # 399
 
-		StudentAdjustedGrossIncomeCHVFlags: strings.TrimSpace(record[studentAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (studentAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+studentAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 400
+		StudentAdjustedGrossIncomeCHVFlags: preprocessString(record[studentAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (studentAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+studentAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 400
 
-		StudentIncomeTaxPaidCHVFlags: strings.TrimSpace(record[studentIncomeTaxPaidCHVFlagsStartIndex2526-1 : (studentIncomeTaxPaidCHVFlagsStartIndex2526-1)+studentIncomeTaxPaidCHVFlagsLength2526]), // Field # 401
+		StudentIncomeTaxPaidCHVFlags: preprocessString(record[studentIncomeTaxPaidCHVFlagsStartIndex2526-1 : (studentIncomeTaxPaidCHVFlagsStartIndex2526-1)+studentIncomeTaxPaidCHVFlagsLength2526]), // Field # 401
 
-		StudentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags: strings.TrimSpace(record[studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1 : (studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1)+studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsLength2526]), // Field # 402
+		StudentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags: preprocessString(record[studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1 : (studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1)+studentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsLength2526]), // Field # 402
 
-		StudentDeductiblePaymentsToIRAKeoghOtherCHVFlags: strings.TrimSpace(record[studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 403
+		StudentDeductiblePaymentsToIRAKeoghOtherCHVFlags: preprocessString(record[studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+studentDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 403
 
-		StudentEducationCreditsCHVFlags: strings.TrimSpace(record[studentEducationCreditsCHVFlagsStartIndex2526-1 : (studentEducationCreditsCHVFlagsStartIndex2526-1)+studentEducationCreditsCHVFlagsLength2526]), // Field # 404
+		StudentEducationCreditsCHVFlags: preprocessString(record[studentEducationCreditsCHVFlagsStartIndex2526-1 : (studentEducationCreditsCHVFlagsStartIndex2526-1)+studentEducationCreditsCHVFlagsLength2526]), // Field # 404
 
-		StudentFiledScheduleABDEFHCHVFlags: strings.TrimSpace(record[studentFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (studentFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+studentFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 405
+		StudentFiledScheduleABDEFHCHVFlags: preprocessString(record[studentFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (studentFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+studentFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 405
 
-		StudentScheduleCAmountCHVFlags: strings.TrimSpace(record[studentScheduleCAmountCHVFlagsStartIndex2526-1 : (studentScheduleCAmountCHVFlagsStartIndex2526-1)+studentScheduleCAmountCHVFlagsLength2526]), // Field # 406
+		StudentScheduleCAmountCHVFlags: preprocessString(record[studentScheduleCAmountCHVFlagsStartIndex2526-1 : (studentScheduleCAmountCHVFlagsStartIndex2526-1)+studentScheduleCAmountCHVFlagsLength2526]), // Field # 406
 
-		StudentCollegeGrantAndScholarshipAidCHVFlags: strings.TrimSpace(record[studentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1 : (studentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1)+studentCollegeGrantAndScholarshipAidCHVFlagsLength2526]), // Field # 407
+		StudentCollegeGrantAndScholarshipAidCHVFlags: preprocessString(record[studentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1 : (studentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1)+studentCollegeGrantAndScholarshipAidCHVFlagsLength2526]), // Field # 407
 
-		StudentForeignEarnedIncomeExclusionCHVFlags: strings.TrimSpace(record[studentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (studentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+studentForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 408
+		StudentForeignEarnedIncomeExclusionCHVFlags: preprocessString(record[studentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (studentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+studentForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 408
 
-		StudentChildSupportReceivedCHVFlags: strings.TrimSpace(record[studentChildSupportReceivedCHVFlagsStartIndex2526-1 : (studentChildSupportReceivedCHVFlagsStartIndex2526-1)+studentChildSupportReceivedCHVFlagsLength2526]), // Field # 409
+		StudentChildSupportReceivedCHVFlags: preprocessString(record[studentChildSupportReceivedCHVFlagsStartIndex2526-1 : (studentChildSupportReceivedCHVFlagsStartIndex2526-1)+studentChildSupportReceivedCHVFlagsLength2526]), // Field # 409
 
-		StudentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags: strings.TrimSpace(record[studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1 : (studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1)+studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsLength2526]), // Field # 410
+		StudentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags: preprocessString(record[studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1 : (studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1)+studentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsLength2526]), // Field # 410
 
-		StudentNetWorthOfCurrentInvestmentsCHVFlags: strings.TrimSpace(record[studentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1 : (studentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1)+studentNetWorthOfCurrentInvestmentsCHVFlagsLength2526]), // Field # 411
+		StudentNetWorthOfCurrentInvestmentsCHVFlags: preprocessString(record[studentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1 : (studentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1)+studentNetWorthOfCurrentInvestmentsCHVFlagsLength2526]), // Field # 411
 
-		StudentTotalOfCashSavingsAndCheckingCHVFlags: strings.TrimSpace(record[studentTotalOfCashSavingsAndCheckingCHVFlagsStartIndex2526-1 : (studentTotalOfCashSavingsAndCheckingCHVFlagsStartIndex2526-1)+studentTotalOfCashSavingsAndCheckingCHVFlagsLength2526]), // Field # 412
+		StudentTotalOfCashSavingsAndCheckingCHVFlags: preprocessString(record[studentTotalOfCashSavingsAndCheckingCHVFlagsStartIndex2526-1 : (studentTotalOfCashSavingsAndCheckingCHVFlagsStartIndex2526-1)+studentTotalOfCashSavingsAndCheckingCHVFlagsLength2526]), // Field # 412
 
-		StudentCollege1CHVFlags: strings.TrimSpace(record[studentCollege1CHVFlagsStartIndex2526-1 : (studentCollege1CHVFlagsStartIndex2526-1)+studentCollege1CHVFlagsLength2526]), // Field # 413
+		StudentCollege1CHVFlags: preprocessString(record[studentCollege1CHVFlagsStartIndex2526-1 : (studentCollege1CHVFlagsStartIndex2526-1)+studentCollege1CHVFlagsLength2526]), // Field # 413
 
-		StudentCollege2CHVFlags: strings.TrimSpace(record[studentCollege2CHVFlagsStartIndex2526-1 : (studentCollege2CHVFlagsStartIndex2526-1)+studentCollege2CHVFlagsLength2526]), // Field # 414
+		StudentCollege2CHVFlags: preprocessString(record[studentCollege2CHVFlagsStartIndex2526-1 : (studentCollege2CHVFlagsStartIndex2526-1)+studentCollege2CHVFlagsLength2526]), // Field # 414
 
-		StudentCollege3CHVFlags: strings.TrimSpace(record[studentCollege3CHVFlagsStartIndex2526-1 : (studentCollege3CHVFlagsStartIndex2526-1)+studentCollege3CHVFlagsLength2526]), // Field # 415
+		StudentCollege3CHVFlags: preprocessString(record[studentCollege3CHVFlagsStartIndex2526-1 : (studentCollege3CHVFlagsStartIndex2526-1)+studentCollege3CHVFlagsLength2526]), // Field # 415
 
-		StudentCollege4CHVFlags: strings.TrimSpace(record[studentCollege4CHVFlagsStartIndex2526-1 : (studentCollege4CHVFlagsStartIndex2526-1)+studentCollege4CHVFlagsLength2526]), // Field # 416
+		StudentCollege4CHVFlags: preprocessString(record[studentCollege4CHVFlagsStartIndex2526-1 : (studentCollege4CHVFlagsStartIndex2526-1)+studentCollege4CHVFlagsLength2526]), // Field # 416
 
-		StudentCollege5CHVFlags: strings.TrimSpace(record[studentCollege5CHVFlagsStartIndex2526-1 : (studentCollege5CHVFlagsStartIndex2526-1)+studentCollege5CHVFlagsLength2526]), // Field # 417
+		StudentCollege5CHVFlags: preprocessString(record[studentCollege5CHVFlagsStartIndex2526-1 : (studentCollege5CHVFlagsStartIndex2526-1)+studentCollege5CHVFlagsLength2526]), // Field # 417
 
-		StudentCollege6CHVFlags: strings.TrimSpace(record[studentCollege6CHVFlagsStartIndex2526-1 : (studentCollege6CHVFlagsStartIndex2526-1)+studentCollege6CHVFlagsLength2526]), // Field # 418
+		StudentCollege6CHVFlags: preprocessString(record[studentCollege6CHVFlagsStartIndex2526-1 : (studentCollege6CHVFlagsStartIndex2526-1)+studentCollege6CHVFlagsLength2526]), // Field # 418
 
-		StudentCollege7CHVFlags: strings.TrimSpace(record[studentCollege7CHVFlagsStartIndex2526-1 : (studentCollege7CHVFlagsStartIndex2526-1)+studentCollege7CHVFlagsLength2526]), // Field # 419
+		StudentCollege7CHVFlags: preprocessString(record[studentCollege7CHVFlagsStartIndex2526-1 : (studentCollege7CHVFlagsStartIndex2526-1)+studentCollege7CHVFlagsLength2526]), // Field # 419
 
-		StudentCollege8CHVFlags: strings.TrimSpace(record[studentCollege8CHVFlagsStartIndex2526-1 : (studentCollege8CHVFlagsStartIndex2526-1)+studentCollege8CHVFlagsLength2526]), // Field # 420
+		StudentCollege8CHVFlags: preprocessString(record[studentCollege8CHVFlagsStartIndex2526-1 : (studentCollege8CHVFlagsStartIndex2526-1)+studentCollege8CHVFlagsLength2526]), // Field # 420
 
-		StudentCollege9CHVFlags: strings.TrimSpace(record[studentCollege9CHVFlagsStartIndex2526-1 : (studentCollege9CHVFlagsStartIndex2526-1)+studentCollege9CHVFlagsLength2526]), // Field # 421
+		StudentCollege9CHVFlags: preprocessString(record[studentCollege9CHVFlagsStartIndex2526-1 : (studentCollege9CHVFlagsStartIndex2526-1)+studentCollege9CHVFlagsLength2526]), // Field # 421
 
-		StudentCollege10CHVFlags: strings.TrimSpace(record[studentCollege10CHVFlagsStartIndex2526-1 : (studentCollege10CHVFlagsStartIndex2526-1)+studentCollege10CHVFlagsLength2526]), // Field # 422
+		StudentCollege10CHVFlags: preprocessString(record[studentCollege10CHVFlagsStartIndex2526-1 : (studentCollege10CHVFlagsStartIndex2526-1)+studentCollege10CHVFlagsLength2526]), // Field # 422
 
-		StudentCollege11CHVFlags: strings.TrimSpace(record[studentCollege11CHVFlagsStartIndex2526-1 : (studentCollege11CHVFlagsStartIndex2526-1)+studentCollege11CHVFlagsLength2526]), // Field # 423
+		StudentCollege11CHVFlags: preprocessString(record[studentCollege11CHVFlagsStartIndex2526-1 : (studentCollege11CHVFlagsStartIndex2526-1)+studentCollege11CHVFlagsLength2526]), // Field # 423
 
-		StudentCollege12CHVFlags: strings.TrimSpace(record[studentCollege12CHVFlagsStartIndex2526-1 : (studentCollege12CHVFlagsStartIndex2526-1)+studentCollege12CHVFlagsLength2526]), // Field # 424
+		StudentCollege12CHVFlags: preprocessString(record[studentCollege12CHVFlagsStartIndex2526-1 : (studentCollege12CHVFlagsStartIndex2526-1)+studentCollege12CHVFlagsLength2526]), // Field # 424
 
-		StudentCollege13CHVFlags: strings.TrimSpace(record[studentCollege13CHVFlagsStartIndex2526-1 : (studentCollege13CHVFlagsStartIndex2526-1)+studentCollege13CHVFlagsLength2526]), // Field # 425
+		StudentCollege13CHVFlags: preprocessString(record[studentCollege13CHVFlagsStartIndex2526-1 : (studentCollege13CHVFlagsStartIndex2526-1)+studentCollege13CHVFlagsLength2526]), // Field # 425
 
-		StudentCollege14CHVFlags: strings.TrimSpace(record[studentCollege14CHVFlagsStartIndex2526-1 : (studentCollege14CHVFlagsStartIndex2526-1)+studentCollege14CHVFlagsLength2526]), // Field # 426
+		StudentCollege14CHVFlags: preprocessString(record[studentCollege14CHVFlagsStartIndex2526-1 : (studentCollege14CHVFlagsStartIndex2526-1)+studentCollege14CHVFlagsLength2526]), // Field # 426
 
-		StudentCollege15CHVFlags: strings.TrimSpace(record[studentCollege15CHVFlagsStartIndex2526-1 : (studentCollege15CHVFlagsStartIndex2526-1)+studentCollege15CHVFlagsLength2526]), // Field # 427
+		StudentCollege15CHVFlags: preprocessString(record[studentCollege15CHVFlagsStartIndex2526-1 : (studentCollege15CHVFlagsStartIndex2526-1)+studentCollege15CHVFlagsLength2526]), // Field # 427
 
-		StudentCollege16CHVFlags: strings.TrimSpace(record[studentCollege16CHVFlagsStartIndex2526-1 : (studentCollege16CHVFlagsStartIndex2526-1)+studentCollege16CHVFlagsLength2526]), // Field # 428
+		StudentCollege16CHVFlags: preprocessString(record[studentCollege16CHVFlagsStartIndex2526-1 : (studentCollege16CHVFlagsStartIndex2526-1)+studentCollege16CHVFlagsLength2526]), // Field # 428
 
-		StudentCollege17CHVFlags: strings.TrimSpace(record[studentCollege17CHVFlagsStartIndex2526-1 : (studentCollege17CHVFlagsStartIndex2526-1)+studentCollege17CHVFlagsLength2526]), // Field # 429
+		StudentCollege17CHVFlags: preprocessString(record[studentCollege17CHVFlagsStartIndex2526-1 : (studentCollege17CHVFlagsStartIndex2526-1)+studentCollege17CHVFlagsLength2526]), // Field # 429
 
-		StudentCollege18CHVFlags: strings.TrimSpace(record[studentCollege18CHVFlagsStartIndex2526-1 : (studentCollege18CHVFlagsStartIndex2526-1)+studentCollege18CHVFlagsLength2526]), // Field # 430
+		StudentCollege18CHVFlags: preprocessString(record[studentCollege18CHVFlagsStartIndex2526-1 : (studentCollege18CHVFlagsStartIndex2526-1)+studentCollege18CHVFlagsLength2526]), // Field # 430
 
-		StudentCollege19CHVFlags: strings.TrimSpace(record[studentCollege19CHVFlagsStartIndex2526-1 : (studentCollege19CHVFlagsStartIndex2526-1)+studentCollege19CHVFlagsLength2526]), // Field # 431
+		StudentCollege19CHVFlags: preprocessString(record[studentCollege19CHVFlagsStartIndex2526-1 : (studentCollege19CHVFlagsStartIndex2526-1)+studentCollege19CHVFlagsLength2526]), // Field # 431
 
-		StudentCollege20CHVFlags: strings.TrimSpace(record[studentCollege20CHVFlagsStartIndex2526-1 : (studentCollege20CHVFlagsStartIndex2526-1)+studentCollege20CHVFlagsLength2526]), // Field # 432
+		StudentCollege20CHVFlags: preprocessString(record[studentCollege20CHVFlagsStartIndex2526-1 : (studentCollege20CHVFlagsStartIndex2526-1)+studentCollege20CHVFlagsLength2526]), // Field # 432
 
-		StudentConsentToRetrieveAndDiscloseFTICHVFlags: strings.TrimSpace(record[studentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (studentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+studentConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 433
+		StudentConsentToRetrieveAndDiscloseFTICHVFlags: preprocessString(record[studentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (studentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+studentConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 433
 
-		StudentSignatureCHVFlags: strings.TrimSpace(record[studentSignatureCHVFlagsStartIndex2526-1 : (studentSignatureCHVFlagsStartIndex2526-1)+studentSignatureCHVFlagsLength2526]), // Field # 434
+		StudentSignatureCHVFlags: preprocessString(record[studentSignatureCHVFlagsStartIndex2526-1 : (studentSignatureCHVFlagsStartIndex2526-1)+studentSignatureCHVFlagsLength2526]), // Field # 434
 
-		StudentSignatureDateCHVFlags: strings.TrimSpace(record[studentSignatureDateCHVFlagsStartIndex2526-1 : (studentSignatureDateCHVFlagsStartIndex2526-1)+studentSignatureDateCHVFlagsLength2526]), // Field # 435
+		StudentSignatureDateCHVFlags: preprocessString(record[studentSignatureDateCHVFlagsStartIndex2526-1 : (studentSignatureDateCHVFlagsStartIndex2526-1)+studentSignatureDateCHVFlagsLength2526]), // Field # 435
 
-		StudentSpouseFirstNameCHVFlags: strings.TrimSpace(record[studentSpouseFirstNameCHVFlagsStartIndex2526-1 : (studentSpouseFirstNameCHVFlagsStartIndex2526-1)+studentSpouseFirstNameCHVFlagsLength2526]), // Field # 436
+		StudentSpouseFirstNameCHVFlags: preprocessString(record[studentSpouseFirstNameCHVFlagsStartIndex2526-1 : (studentSpouseFirstNameCHVFlagsStartIndex2526-1)+studentSpouseFirstNameCHVFlagsLength2526]), // Field # 436
 
-		StudentSpouseMiddleNameCHVFlags: strings.TrimSpace(record[studentSpouseMiddleNameCHVFlagsStartIndex2526-1 : (studentSpouseMiddleNameCHVFlagsStartIndex2526-1)+studentSpouseMiddleNameCHVFlagsLength2526]), // Field # 437
+		StudentSpouseMiddleNameCHVFlags: preprocessString(record[studentSpouseMiddleNameCHVFlagsStartIndex2526-1 : (studentSpouseMiddleNameCHVFlagsStartIndex2526-1)+studentSpouseMiddleNameCHVFlagsLength2526]), // Field # 437
 
-		StudentSpouseLastNameCHVFlags: strings.TrimSpace(record[studentSpouseLastNameCHVFlagsStartIndex2526-1 : (studentSpouseLastNameCHVFlagsStartIndex2526-1)+studentSpouseLastNameCHVFlagsLength2526]), // Field # 438
+		StudentSpouseLastNameCHVFlags: preprocessString(record[studentSpouseLastNameCHVFlagsStartIndex2526-1 : (studentSpouseLastNameCHVFlagsStartIndex2526-1)+studentSpouseLastNameCHVFlagsLength2526]), // Field # 438
 
-		StudentSpouseSuffixCHVFlags: strings.TrimSpace(record[studentSpouseSuffixCHVFlagsStartIndex2526-1 : (studentSpouseSuffixCHVFlagsStartIndex2526-1)+studentSpouseSuffixCHVFlagsLength2526]), // Field # 439
+		StudentSpouseSuffixCHVFlags: preprocessString(record[studentSpouseSuffixCHVFlagsStartIndex2526-1 : (studentSpouseSuffixCHVFlagsStartIndex2526-1)+studentSpouseSuffixCHVFlagsLength2526]), // Field # 439
 
-		StudentSpouseDateOfBirthCHVFlags: strings.TrimSpace(record[studentSpouseDateOfBirthCHVFlagsStartIndex2526-1 : (studentSpouseDateOfBirthCHVFlagsStartIndex2526-1)+studentSpouseDateOfBirthCHVFlagsLength2526]), // Field # 440
+		StudentSpouseDateOfBirthCHVFlags: preprocessString(record[studentSpouseDateOfBirthCHVFlagsStartIndex2526-1 : (studentSpouseDateOfBirthCHVFlagsStartIndex2526-1)+studentSpouseDateOfBirthCHVFlagsLength2526]), // Field # 440
 
-		StudentSpouseSSNCHVFlags: strings.TrimSpace(record[studentSpouseSSNCHVFlagsStartIndex2526-1 : (studentSpouseSSNCHVFlagsStartIndex2526-1)+studentSpouseSSNCHVFlagsLength2526]), // Field # 441
+		StudentSpouseSSNCHVFlags: preprocessString(record[studentSpouseSSNCHVFlagsStartIndex2526-1 : (studentSpouseSSNCHVFlagsStartIndex2526-1)+studentSpouseSSNCHVFlagsLength2526]), // Field # 441
 
-		StudentSpouseITINCHVFlags: strings.TrimSpace(record[studentSpouseITINCHVFlagsStartIndex2526-1 : (studentSpouseITINCHVFlagsStartIndex2526-1)+studentSpouseITINCHVFlagsLength2526]), // Field # 442
+		StudentSpouseITINCHVFlags: preprocessString(record[studentSpouseITINCHVFlagsStartIndex2526-1 : (studentSpouseITINCHVFlagsStartIndex2526-1)+studentSpouseITINCHVFlagsLength2526]), // Field # 442
 
-		StudentSpousePhoneNumberCHVFlags: strings.TrimSpace(record[studentSpousePhoneNumberCHVFlagsStartIndex2526-1 : (studentSpousePhoneNumberCHVFlagsStartIndex2526-1)+studentSpousePhoneNumberCHVFlagsLength2526]), // Field # 443
+		StudentSpousePhoneNumberCHVFlags: preprocessString(record[studentSpousePhoneNumberCHVFlagsStartIndex2526-1 : (studentSpousePhoneNumberCHVFlagsStartIndex2526-1)+studentSpousePhoneNumberCHVFlagsLength2526]), // Field # 443
 
-		StudentSpouseEmailAddressCHVFlags: strings.TrimSpace(record[studentSpouseEmailAddressCHVFlagsStartIndex2526-1 : (studentSpouseEmailAddressCHVFlagsStartIndex2526-1)+studentSpouseEmailAddressCHVFlagsLength2526]), // Field # 444
+		StudentSpouseEmailAddressCHVFlags: preprocessString(record[studentSpouseEmailAddressCHVFlagsStartIndex2526-1 : (studentSpouseEmailAddressCHVFlagsStartIndex2526-1)+studentSpouseEmailAddressCHVFlagsLength2526]), // Field # 444
 
-		StudentSpouseStreetAddressCHVFlags: strings.TrimSpace(record[studentSpouseStreetAddressCHVFlagsStartIndex2526-1 : (studentSpouseStreetAddressCHVFlagsStartIndex2526-1)+studentSpouseStreetAddressCHVFlagsLength2526]), // Field # 445
+		StudentSpouseStreetAddressCHVFlags: preprocessString(record[studentSpouseStreetAddressCHVFlagsStartIndex2526-1 : (studentSpouseStreetAddressCHVFlagsStartIndex2526-1)+studentSpouseStreetAddressCHVFlagsLength2526]), // Field # 445
 
-		StudentSpouseCityCHVFlags: strings.TrimSpace(record[studentSpouseCityCHVFlagsStartIndex2526-1 : (studentSpouseCityCHVFlagsStartIndex2526-1)+studentSpouseCityCHVFlagsLength2526]), // Field # 446
+		StudentSpouseCityCHVFlags: preprocessString(record[studentSpouseCityCHVFlagsStartIndex2526-1 : (studentSpouseCityCHVFlagsStartIndex2526-1)+studentSpouseCityCHVFlagsLength2526]), // Field # 446
 
-		StudentSpouseStateCHVFlags: strings.TrimSpace(record[studentSpouseStateCHVFlagsStartIndex2526-1 : (studentSpouseStateCHVFlagsStartIndex2526-1)+studentSpouseStateCHVFlagsLength2526]), // Field # 447
+		StudentSpouseStateCHVFlags: preprocessString(record[studentSpouseStateCHVFlagsStartIndex2526-1 : (studentSpouseStateCHVFlagsStartIndex2526-1)+studentSpouseStateCHVFlagsLength2526]), // Field # 447
 
-		StudentSpouseZipCodeCHVFlags: strings.TrimSpace(record[studentSpouseZipCodeCHVFlagsStartIndex2526-1 : (studentSpouseZipCodeCHVFlagsStartIndex2526-1)+studentSpouseZipCodeCHVFlagsLength2526]), // Field # 448
+		StudentSpouseZipCodeCHVFlags: preprocessString(record[studentSpouseZipCodeCHVFlagsStartIndex2526-1 : (studentSpouseZipCodeCHVFlagsStartIndex2526-1)+studentSpouseZipCodeCHVFlagsLength2526]), // Field # 448
 
-		StudentSpouseCountryCHVFlags: strings.TrimSpace(record[studentSpouseCountryCHVFlagsStartIndex2526-1 : (studentSpouseCountryCHVFlagsStartIndex2526-1)+studentSpouseCountryCHVFlagsLength2526]), // Field # 449
+		StudentSpouseCountryCHVFlags: preprocessString(record[studentSpouseCountryCHVFlagsStartIndex2526-1 : (studentSpouseCountryCHVFlagsStartIndex2526-1)+studentSpouseCountryCHVFlagsLength2526]), // Field # 449
 
-		StudentSpouseFiled1040Or1040NRCHVFlags: strings.TrimSpace(record[studentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (studentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1)+studentSpouseFiled1040Or1040NRCHVFlagsLength2526]), // Field # 450
+		StudentSpouseFiled1040Or1040NRCHVFlags: preprocessString(record[studentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (studentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1)+studentSpouseFiled1040Or1040NRCHVFlagsLength2526]), // Field # 450
 
-		StudentSpouseFiledNonUSTaxReturnCHVFlags: strings.TrimSpace(record[studentSpouseFiledNonUSTaxReturnCHVFlagsStartIndex2526-1 : (studentSpouseFiledNonUSTaxReturnCHVFlagsStartIndex2526-1)+studentSpouseFiledNonUSTaxReturnCHVFlagsLength2526]), // Field # 451
+		StudentSpouseFiledNonUSTaxReturnCHVFlags: preprocessString(record[studentSpouseFiledNonUSTaxReturnCHVFlagsStartIndex2526-1 : (studentSpouseFiledNonUSTaxReturnCHVFlagsStartIndex2526-1)+studentSpouseFiledNonUSTaxReturnCHVFlagsLength2526]), // Field # 451
 
-		StudentSpouseTaxReturnFilingStatusCHVFlags: strings.TrimSpace(record[studentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (studentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+studentSpouseTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 452
+		StudentSpouseTaxReturnFilingStatusCHVFlags: preprocessString(record[studentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (studentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+studentSpouseTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 452
 
-		StudentSpouseIncomeEarnedFromWorkCHVFlags: strings.TrimSpace(record[studentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (studentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+studentSpouseIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 453
+		StudentSpouseIncomeEarnedFromWorkCHVFlags: preprocessString(record[studentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (studentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+studentSpouseIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 453
 
-		StudentSpouseTaxExemptInterestIncomeCHVFlags: strings.TrimSpace(record[studentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (studentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+studentSpouseTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 454
+		StudentSpouseTaxExemptInterestIncomeCHVFlags: preprocessString(record[studentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (studentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+studentSpouseTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 454
 
-		StudentSpouseUntaxedPortionsOfIRADistributionsCHVFlags: strings.TrimSpace(record[studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 455
+		StudentSpouseUntaxedPortionsOfIRADistributionsCHVFlags: preprocessString(record[studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+studentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 455
 
-		StudentSpouseIRARolloverCHVFlags: strings.TrimSpace(record[studentSpouseIRARolloverCHVFlagsStartIndex2526-1 : (studentSpouseIRARolloverCHVFlagsStartIndex2526-1)+studentSpouseIRARolloverCHVFlagsLength2526]), // Field # 456
+		StudentSpouseIRARolloverCHVFlags: preprocessString(record[studentSpouseIRARolloverCHVFlagsStartIndex2526-1 : (studentSpouseIRARolloverCHVFlagsStartIndex2526-1)+studentSpouseIRARolloverCHVFlagsLength2526]), // Field # 456
 
-		StudentSpouseUntaxedPortionsOfPensionsCHVFlags: strings.TrimSpace(record[studentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+studentSpouseUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 457
+		StudentSpouseUntaxedPortionsOfPensionsCHVFlags: preprocessString(record[studentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (studentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+studentSpouseUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 457
 
-		StudentSpousePensionRolloverCHVFlags: strings.TrimSpace(record[studentSpousePensionRolloverCHVFlagsStartIndex2526-1 : (studentSpousePensionRolloverCHVFlagsStartIndex2526-1)+studentSpousePensionRolloverCHVFlagsLength2526]), // Field # 458
+		StudentSpousePensionRolloverCHVFlags: preprocessString(record[studentSpousePensionRolloverCHVFlagsStartIndex2526-1 : (studentSpousePensionRolloverCHVFlagsStartIndex2526-1)+studentSpousePensionRolloverCHVFlagsLength2526]), // Field # 458
 
-		StudentSpouseAdjustedGrossIncomeCHVFlags: strings.TrimSpace(record[studentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (studentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+studentSpouseAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 459
+		StudentSpouseAdjustedGrossIncomeCHVFlags: preprocessString(record[studentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (studentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+studentSpouseAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 459
 
-		StudentSpouseIncomeTaxPaidCHVFlags: strings.TrimSpace(record[studentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1 : (studentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1)+studentSpouseIncomeTaxPaidCHVFlagsLength2526]), // Field # 460
+		StudentSpouseIncomeTaxPaidCHVFlags: preprocessString(record[studentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1 : (studentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1)+studentSpouseIncomeTaxPaidCHVFlagsLength2526]), // Field # 460
 
-		StudentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags: strings.TrimSpace(record[studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 461
+		StudentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags: preprocessString(record[studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+studentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 461
 
-		StudentSpouseEducationCreditsCHVFlags: strings.TrimSpace(record[studentSpouseEducationCreditsCHVFlagsStartIndex2526-1 : (studentSpouseEducationCreditsCHVFlagsStartIndex2526-1)+studentSpouseEducationCreditsCHVFlagsLength2526]), // Field # 462
+		StudentSpouseEducationCreditsCHVFlags: preprocessString(record[studentSpouseEducationCreditsCHVFlagsStartIndex2526-1 : (studentSpouseEducationCreditsCHVFlagsStartIndex2526-1)+studentSpouseEducationCreditsCHVFlagsLength2526]), // Field # 462
 
-		StudentSpouseFiledScheduleABDEFHCHVFlags: strings.TrimSpace(record[studentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (studentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+studentSpouseFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 463
+		StudentSpouseFiledScheduleABDEFHCHVFlags: preprocessString(record[studentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (studentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+studentSpouseFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 463
 
-		StudentSpouseScheduleCAmountCHVFlags: strings.TrimSpace(record[studentSpouseScheduleCAmountCHVFlagsStartIndex2526-1 : (studentSpouseScheduleCAmountCHVFlagsStartIndex2526-1)+studentSpouseScheduleCAmountCHVFlagsLength2526]), // Field # 464
+		StudentSpouseScheduleCAmountCHVFlags: preprocessString(record[studentSpouseScheduleCAmountCHVFlagsStartIndex2526-1 : (studentSpouseScheduleCAmountCHVFlagsStartIndex2526-1)+studentSpouseScheduleCAmountCHVFlagsLength2526]), // Field # 464
 
-		StudentSpouseForeignEarnedIncomeExclusionCHVFlags: strings.TrimSpace(record[studentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (studentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+studentSpouseForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 465
+		StudentSpouseForeignEarnedIncomeExclusionCHVFlags: preprocessString(record[studentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (studentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+studentSpouseForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 465
 
-		StudentSpouseConsentToRetrieveAndDiscloseFTICHVFlags: strings.TrimSpace(record[studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 466
+		StudentSpouseConsentToRetrieveAndDiscloseFTICHVFlags: preprocessString(record[studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+studentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 466
 
-		StudentSpouseSignatureCHVFlags: strings.TrimSpace(record[studentSpouseSignatureCHVFlagsStartIndex2526-1 : (studentSpouseSignatureCHVFlagsStartIndex2526-1)+studentSpouseSignatureCHVFlagsLength2526]), // Field # 467
+		StudentSpouseSignatureCHVFlags: preprocessString(record[studentSpouseSignatureCHVFlagsStartIndex2526-1 : (studentSpouseSignatureCHVFlagsStartIndex2526-1)+studentSpouseSignatureCHVFlagsLength2526]), // Field # 467
 
-		StudentSpouseSignatureDateCHVFlags: strings.TrimSpace(record[studentSpouseSignatureDateCHVFlagsStartIndex2526-1 : (studentSpouseSignatureDateCHVFlagsStartIndex2526-1)+studentSpouseSignatureDateCHVFlagsLength2526]), // Field # 468
+		StudentSpouseSignatureDateCHVFlags: preprocessString(record[studentSpouseSignatureDateCHVFlagsStartIndex2526-1 : (studentSpouseSignatureDateCHVFlagsStartIndex2526-1)+studentSpouseSignatureDateCHVFlagsLength2526]), // Field # 468
 
-		ParentFirstNameCHVFlags: strings.TrimSpace(record[parentFirstNameCHVFlagsStartIndex2526-1 : (parentFirstNameCHVFlagsStartIndex2526-1)+parentFirstNameCHVFlagsLength2526]), // Field # 469
+		ParentFirstNameCHVFlags: preprocessString(record[parentFirstNameCHVFlagsStartIndex2526-1 : (parentFirstNameCHVFlagsStartIndex2526-1)+parentFirstNameCHVFlagsLength2526]), // Field # 469
 
-		ParentMiddleNameCHVFlags: strings.TrimSpace(record[parentMiddleNameCHVFlagsStartIndex2526-1 : (parentMiddleNameCHVFlagsStartIndex2526-1)+parentMiddleNameCHVFlagsLength2526]), // Field # 470
+		ParentMiddleNameCHVFlags: preprocessString(record[parentMiddleNameCHVFlagsStartIndex2526-1 : (parentMiddleNameCHVFlagsStartIndex2526-1)+parentMiddleNameCHVFlagsLength2526]), // Field # 470
 
-		ParentLastNameCHVFlags: strings.TrimSpace(record[parentLastNameCHVFlagsStartIndex2526-1 : (parentLastNameCHVFlagsStartIndex2526-1)+parentLastNameCHVFlagsLength2526]), // Field # 471
+		ParentLastNameCHVFlags: preprocessString(record[parentLastNameCHVFlagsStartIndex2526-1 : (parentLastNameCHVFlagsStartIndex2526-1)+parentLastNameCHVFlagsLength2526]), // Field # 471
 
-		ParentSuffixCHVFlags: strings.TrimSpace(record[parentSuffixCHVFlagsStartIndex2526-1 : (parentSuffixCHVFlagsStartIndex2526-1)+parentSuffixCHVFlagsLength2526]), // Field # 472
+		ParentSuffixCHVFlags: preprocessString(record[parentSuffixCHVFlagsStartIndex2526-1 : (parentSuffixCHVFlagsStartIndex2526-1)+parentSuffixCHVFlagsLength2526]), // Field # 472
 
-		ParentDateOfBirthCHVFlags: strings.TrimSpace(record[parentDateOfBirthCHVFlagsStartIndex2526-1 : (parentDateOfBirthCHVFlagsStartIndex2526-1)+parentDateOfBirthCHVFlagsLength2526]), // Field # 473
+		ParentDateOfBirthCHVFlags: preprocessString(record[parentDateOfBirthCHVFlagsStartIndex2526-1 : (parentDateOfBirthCHVFlagsStartIndex2526-1)+parentDateOfBirthCHVFlagsLength2526]), // Field # 473
 
-		ParentSSNCHVFlags: strings.TrimSpace(record[parentSSNCHVFlagsStartIndex2526-1 : (parentSSNCHVFlagsStartIndex2526-1)+parentSSNCHVFlagsLength2526]), // Field # 474
+		ParentSSNCHVFlags: preprocessString(record[parentSSNCHVFlagsStartIndex2526-1 : (parentSSNCHVFlagsStartIndex2526-1)+parentSSNCHVFlagsLength2526]), // Field # 474
 
-		ParentITINCHVFlags: strings.TrimSpace(record[parentITINCHVFlagsStartIndex2526-1 : (parentITINCHVFlagsStartIndex2526-1)+parentITINCHVFlagsLength2526]), // Field # 475
+		ParentITINCHVFlags: preprocessString(record[parentITINCHVFlagsStartIndex2526-1 : (parentITINCHVFlagsStartIndex2526-1)+parentITINCHVFlagsLength2526]), // Field # 475
 
-		ParentPhoneNumberCHVFlags: strings.TrimSpace(record[parentPhoneNumberCHVFlagsStartIndex2526-1 : (parentPhoneNumberCHVFlagsStartIndex2526-1)+parentPhoneNumberCHVFlagsLength2526]), // Field # 476
+		ParentPhoneNumberCHVFlags: preprocessString(record[parentPhoneNumberCHVFlagsStartIndex2526-1 : (parentPhoneNumberCHVFlagsStartIndex2526-1)+parentPhoneNumberCHVFlagsLength2526]), // Field # 476
 
-		ParentEmailAddressCHVFlags: strings.TrimSpace(record[parentEmailAddressCHVFlagsStartIndex2526-1 : (parentEmailAddressCHVFlagsStartIndex2526-1)+parentEmailAddressCHVFlagsLength2526]), // Field # 477
+		ParentEmailAddressCHVFlags: preprocessString(record[parentEmailAddressCHVFlagsStartIndex2526-1 : (parentEmailAddressCHVFlagsStartIndex2526-1)+parentEmailAddressCHVFlagsLength2526]), // Field # 477
 
-		ParentStreetAddressCHVFlags: strings.TrimSpace(record[parentStreetAddressCHVFlagsStartIndex2526-1 : (parentStreetAddressCHVFlagsStartIndex2526-1)+parentStreetAddressCHVFlagsLength2526]), // Field # 478
+		ParentStreetAddressCHVFlags: preprocessString(record[parentStreetAddressCHVFlagsStartIndex2526-1 : (parentStreetAddressCHVFlagsStartIndex2526-1)+parentStreetAddressCHVFlagsLength2526]), // Field # 478
 
-		ParentCityCHVFlags: strings.TrimSpace(record[parentCityCHVFlagsStartIndex2526-1 : (parentCityCHVFlagsStartIndex2526-1)+parentCityCHVFlagsLength2526]), // Field # 479
+		ParentCityCHVFlags: preprocessString(record[parentCityCHVFlagsStartIndex2526-1 : (parentCityCHVFlagsStartIndex2526-1)+parentCityCHVFlagsLength2526]), // Field # 479
 
-		ParentStateCHVFlags: strings.TrimSpace(record[parentStateCHVFlagsStartIndex2526-1 : (parentStateCHVFlagsStartIndex2526-1)+parentStateCHVFlagsLength2526]), // Field # 480
+		ParentStateCHVFlags: preprocessString(record[parentStateCHVFlagsStartIndex2526-1 : (parentStateCHVFlagsStartIndex2526-1)+parentStateCHVFlagsLength2526]), // Field # 480
 
-		ParentZipCodeCHVFlags: strings.TrimSpace(record[parentZipCodeCHVFlagsStartIndex2526-1 : (parentZipCodeCHVFlagsStartIndex2526-1)+parentZipCodeCHVFlagsLength2526]), // Field # 481
+		ParentZipCodeCHVFlags: preprocessString(record[parentZipCodeCHVFlagsStartIndex2526-1 : (parentZipCodeCHVFlagsStartIndex2526-1)+parentZipCodeCHVFlagsLength2526]), // Field # 481
 
-		ParentCountryCHVFlags: strings.TrimSpace(record[parentCountryCHVFlagsStartIndex2526-1 : (parentCountryCHVFlagsStartIndex2526-1)+parentCountryCHVFlagsLength2526]), // Field # 482
+		ParentCountryCHVFlags: preprocessString(record[parentCountryCHVFlagsStartIndex2526-1 : (parentCountryCHVFlagsStartIndex2526-1)+parentCountryCHVFlagsLength2526]), // Field # 482
 
-		ParentMaritalStatusCHVFlags: strings.TrimSpace(record[parentMaritalStatusCHVFlagsStartIndex2526-1 : (parentMaritalStatusCHVFlagsStartIndex2526-1)+parentMaritalStatusCHVFlagsLength2526]), // Field # 483
+		ParentMaritalStatusCHVFlags: preprocessString(record[parentMaritalStatusCHVFlagsStartIndex2526-1 : (parentMaritalStatusCHVFlagsStartIndex2526-1)+parentMaritalStatusCHVFlagsLength2526]), // Field # 483
 
-		ParentStateOfLegalResidenceCHVFlags: strings.TrimSpace(record[parentStateOfLegalResidenceCHVFlagsStartIndex2526-1 : (parentStateOfLegalResidenceCHVFlagsStartIndex2526-1)+parentStateOfLegalResidenceCHVFlagsLength2526]), // Field # 484
+		ParentStateOfLegalResidenceCHVFlags: preprocessString(record[parentStateOfLegalResidenceCHVFlagsStartIndex2526-1 : (parentStateOfLegalResidenceCHVFlagsStartIndex2526-1)+parentStateOfLegalResidenceCHVFlagsLength2526]), // Field # 484
 
-		ParentLegalResidenceDateCHVFlags: strings.TrimSpace(record[parentLegalResidenceDateCHVFlagsStartIndex2526-1 : (parentLegalResidenceDateCHVFlagsStartIndex2526-1)+parentLegalResidenceDateCHVFlagsLength2526]), // Field # 485
+		ParentLegalResidenceDateCHVFlags: preprocessString(record[parentLegalResidenceDateCHVFlagsStartIndex2526-1 : (parentLegalResidenceDateCHVFlagsStartIndex2526-1)+parentLegalResidenceDateCHVFlagsLength2526]), // Field # 485
 
-		ParentUpdatedFamilySizeCHVFlags: strings.TrimSpace(record[parentUpdatedFamilySizeCHVFlagsStartIndex2526-1 : (parentUpdatedFamilySizeCHVFlagsStartIndex2526-1)+parentUpdatedFamilySizeCHVFlagsLength2526]), // Field # 486
+		ParentUpdatedFamilySizeCHVFlags: preprocessString(record[parentUpdatedFamilySizeCHVFlagsStartIndex2526-1 : (parentUpdatedFamilySizeCHVFlagsStartIndex2526-1)+parentUpdatedFamilySizeCHVFlagsLength2526]), // Field # 486
 
-		ParentNumberInCollegeCHVFlags: strings.TrimSpace(record[parentNumberInCollegeCHVFlagsStartIndex2526-1 : (parentNumberInCollegeCHVFlagsStartIndex2526-1)+parentNumberInCollegeCHVFlagsLength2526]), // Field # 487
+		ParentNumberInCollegeCHVFlags: preprocessString(record[parentNumberInCollegeCHVFlagsStartIndex2526-1 : (parentNumberInCollegeCHVFlagsStartIndex2526-1)+parentNumberInCollegeCHVFlagsLength2526]), // Field # 487
 
-		ParentReceivedEITCCHVFlags: strings.TrimSpace(record[parentReceivedEITCCHVFlagsStartIndex2526-1 : (parentReceivedEITCCHVFlagsStartIndex2526-1)+parentReceivedEITCCHVFlagsLength2526]), // Field # 488
+		ParentReceivedEITCCHVFlags: preprocessString(record[parentReceivedEITCCHVFlagsStartIndex2526-1 : (parentReceivedEITCCHVFlagsStartIndex2526-1)+parentReceivedEITCCHVFlagsLength2526]), // Field # 488
 
-		ParentReceivedFederalHousingAssistanceCHVFlags: strings.TrimSpace(record[parentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1 : (parentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1)+parentReceivedFederalHousingAssistanceCHVFlagsLength2526]), // Field # 489
+		ParentReceivedFederalHousingAssistanceCHVFlags: preprocessString(record[parentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1 : (parentReceivedFederalHousingAssistanceCHVFlagsStartIndex2526-1)+parentReceivedFederalHousingAssistanceCHVFlagsLength2526]), // Field # 489
 
-		ParentReceivedFreeReducedPriceLunchCHVFlags: strings.TrimSpace(record[parentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1 : (parentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1)+parentReceivedFreeReducedPriceLunchCHVFlagsLength2526]), // Field # 490
+		ParentReceivedFreeReducedPriceLunchCHVFlags: preprocessString(record[parentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1 : (parentReceivedFreeReducedPriceLunchCHVFlagsStartIndex2526-1)+parentReceivedFreeReducedPriceLunchCHVFlagsLength2526]), // Field # 490
 
-		ParentReceivedMedicaidCHVFlags: strings.TrimSpace(record[parentReceivedMedicaidCHVFlagsStartIndex2526-1 : (parentReceivedMedicaidCHVFlagsStartIndex2526-1)+parentReceivedMedicaidCHVFlagsLength2526]), // Field # 491
+		ParentReceivedMedicaidCHVFlags: preprocessString(record[parentReceivedMedicaidCHVFlagsStartIndex2526-1 : (parentReceivedMedicaidCHVFlagsStartIndex2526-1)+parentReceivedMedicaidCHVFlagsLength2526]), // Field # 491
 
-		ParentReceivedRefundableCreditFor36BHealthPlanCHVFlags: strings.TrimSpace(record[parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1 : (parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1)+parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsLength2526]), // Field # 492
+		ParentReceivedRefundableCreditFor36BHealthPlanCHVFlags: preprocessString(record[parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1 : (parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsStartIndex2526-1)+parentReceivedRefundableCreditFor36BHealthPlanCHVFlagsLength2526]), // Field # 492
 
-		ParentReceivedSNAPCHVFlags: strings.TrimSpace(record[parentReceivedSNAPCHVFlagsStartIndex2526-1 : (parentReceivedSNAPCHVFlagsStartIndex2526-1)+parentReceivedSNAPCHVFlagsLength2526]), // Field # 493
+		ParentReceivedSNAPCHVFlags: preprocessString(record[parentReceivedSNAPCHVFlagsStartIndex2526-1 : (parentReceivedSNAPCHVFlagsStartIndex2526-1)+parentReceivedSNAPCHVFlagsLength2526]), // Field # 493
 
-		ParentReceivedSupplementalSecurityIncomeCHVFlags: strings.TrimSpace(record[parentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1 : (parentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1)+parentReceivedSupplementalSecurityIncomeCHVFlagsLength2526]), // Field # 494
+		ParentReceivedSupplementalSecurityIncomeCHVFlags: preprocessString(record[parentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1 : (parentReceivedSupplementalSecurityIncomeCHVFlagsStartIndex2526-1)+parentReceivedSupplementalSecurityIncomeCHVFlagsLength2526]), // Field # 494
 
-		ParentReceivedTANFCHVFlags: strings.TrimSpace(record[parentReceivedTANFCHVFlagsStartIndex2526-1 : (parentReceivedTANFCHVFlagsStartIndex2526-1)+parentReceivedTANFCHVFlagsLength2526]), // Field # 495
+		ParentReceivedTANFCHVFlags: preprocessString(record[parentReceivedTANFCHVFlagsStartIndex2526-1 : (parentReceivedTANFCHVFlagsStartIndex2526-1)+parentReceivedTANFCHVFlagsLength2526]), // Field # 495
 
-		ParentReceivedWICCHVFlags: strings.TrimSpace(record[parentReceivedWICCHVFlagsStartIndex2526-1 : (parentReceivedWICCHVFlagsStartIndex2526-1)+parentReceivedWICCHVFlagsLength2526]), // Field # 496
+		ParentReceivedWICCHVFlags: preprocessString(record[parentReceivedWICCHVFlagsStartIndex2526-1 : (parentReceivedWICCHVFlagsStartIndex2526-1)+parentReceivedWICCHVFlagsLength2526]), // Field # 496
 
-		ParentFederalBenefitsNoneOfTheAboveCHVFlags: strings.TrimSpace(record[parentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1 : (parentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1)+parentFederalBenefitsNoneOfTheAboveCHVFlagsLength2526]), // Field # 497
+		ParentFederalBenefitsNoneOfTheAboveCHVFlags: preprocessString(record[parentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1 : (parentFederalBenefitsNoneOfTheAboveCHVFlagsStartIndex2526-1)+parentFederalBenefitsNoneOfTheAboveCHVFlagsLength2526]), // Field # 497
 
-		ParentFiled1040Or1040NRCHVFlags: strings.TrimSpace(record[parentFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (parentFiled1040Or1040NRCHVFlagsStartIndex2526-1)+parentFiled1040Or1040NRCHVFlagsLength2526]), // Field # 498
+		ParentFiled1040Or1040NRCHVFlags: preprocessString(record[parentFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (parentFiled1040Or1040NRCHVFlagsStartIndex2526-1)+parentFiled1040Or1040NRCHVFlagsLength2526]), // Field # 498
 
-		ParentFileNonUSTaxReturnCHVFlags: strings.TrimSpace(record[parentFileNonUSTaxReturnCHVFlagsStartIndex2526-1 : (parentFileNonUSTaxReturnCHVFlagsStartIndex2526-1)+parentFileNonUSTaxReturnCHVFlagsLength2526]), // Field # 499
+		ParentFileNonUSTaxReturnCHVFlags: preprocessString(record[parentFileNonUSTaxReturnCHVFlagsStartIndex2526-1 : (parentFileNonUSTaxReturnCHVFlagsStartIndex2526-1)+parentFileNonUSTaxReturnCHVFlagsLength2526]), // Field # 499
 
-		ParentFiledJointReturnWithCurrentSpouseCHVFlags: strings.TrimSpace(record[parentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1 : (parentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1)+parentFiledJointReturnWithCurrentSpouseCHVFlagsLength2526]), // Field # 500
+		ParentFiledJointReturnWithCurrentSpouseCHVFlags: preprocessString(record[parentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1 : (parentFiledJointReturnWithCurrentSpouseCHVFlagsStartIndex2526-1)+parentFiledJointReturnWithCurrentSpouseCHVFlagsLength2526]), // Field # 500
 
-		ParentTaxReturnFilingStatusCHVFlags: strings.TrimSpace(record[parentTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (parentTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+parentTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 501
+		ParentTaxReturnFilingStatusCHVFlags: preprocessString(record[parentTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (parentTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+parentTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 501
 
-		ParentIncomeEarnedFromWorkCHVFlags: strings.TrimSpace(record[parentIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (parentIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+parentIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 502
+		ParentIncomeEarnedFromWorkCHVFlags: preprocessString(record[parentIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (parentIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+parentIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 502
 
-		ParentTaxExemptInterestIncomeCHVFlags: strings.TrimSpace(record[parentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (parentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+parentTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 503
+		ParentTaxExemptInterestIncomeCHVFlags: preprocessString(record[parentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (parentTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+parentTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 503
 
-		ParentUntaxedPortionsOfIRADistributionsCHVFlags: strings.TrimSpace(record[parentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (parentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+parentUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 504
+		ParentUntaxedPortionsOfIRADistributionsCHVFlags: preprocessString(record[parentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (parentUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+parentUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 504
 
-		ParentIRARolloverCHVFlags: strings.TrimSpace(record[parentIRARolloverCHVFlagsStartIndex2526-1 : (parentIRARolloverCHVFlagsStartIndex2526-1)+parentIRARolloverCHVFlagsLength2526]), // Field # 505
+		ParentIRARolloverCHVFlags: preprocessString(record[parentIRARolloverCHVFlagsStartIndex2526-1 : (parentIRARolloverCHVFlagsStartIndex2526-1)+parentIRARolloverCHVFlagsLength2526]), // Field # 505
 
-		ParentUntaxedPortionsOfPensionsCHVFlags: strings.TrimSpace(record[parentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (parentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+parentUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 506
+		ParentUntaxedPortionsOfPensionsCHVFlags: preprocessString(record[parentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (parentUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+parentUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 506
 
-		ParentPensionRolloverCHVFlags: strings.TrimSpace(record[parentPensionRolloverCHVFlagsStartIndex2526-1 : (parentPensionRolloverCHVFlagsStartIndex2526-1)+parentPensionRolloverCHVFlagsLength2526]), // Field # 507
+		ParentPensionRolloverCHVFlags: preprocessString(record[parentPensionRolloverCHVFlagsStartIndex2526-1 : (parentPensionRolloverCHVFlagsStartIndex2526-1)+parentPensionRolloverCHVFlagsLength2526]), // Field # 507
 
-		ParentAdjustedGrossIncomeCHVFlags: strings.TrimSpace(record[parentAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (parentAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+parentAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 508
+		ParentAdjustedGrossIncomeCHVFlags: preprocessString(record[parentAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (parentAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+parentAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 508
 
-		ParentIncomeTaxPaidCHVFlags: strings.TrimSpace(record[parentIncomeTaxPaidCHVFlagsStartIndex2526-1 : (parentIncomeTaxPaidCHVFlagsStartIndex2526-1)+parentIncomeTaxPaidCHVFlagsLength2526]), // Field # 509
+		ParentIncomeTaxPaidCHVFlags: preprocessString(record[parentIncomeTaxPaidCHVFlagsStartIndex2526-1 : (parentIncomeTaxPaidCHVFlagsStartIndex2526-1)+parentIncomeTaxPaidCHVFlagsLength2526]), // Field # 509
 
-		ParentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags: strings.TrimSpace(record[parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1 : (parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1)+parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsLength2526]), // Field # 510
+		ParentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlags: preprocessString(record[parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1 : (parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsStartIndex2526-1)+parentEarnedIncomeTaxCreditReceivedDuringTaxYearCHVFlagsLength2526]), // Field # 510
 
-		ParentDeductiblePaymentsToIRAKeoghOtherCHVFlags: strings.TrimSpace(record[parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 511
+		ParentDeductiblePaymentsToIRAKeoghOtherCHVFlags: preprocessString(record[parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+parentDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 511
 
-		ParentEducationCreditsCHVFlags: strings.TrimSpace(record[parentEducationCreditsCHVFlagsStartIndex2526-1 : (parentEducationCreditsCHVFlagsStartIndex2526-1)+parentEducationCreditsCHVFlagsLength2526]), // Field # 512
+		ParentEducationCreditsCHVFlags: preprocessString(record[parentEducationCreditsCHVFlagsStartIndex2526-1 : (parentEducationCreditsCHVFlagsStartIndex2526-1)+parentEducationCreditsCHVFlagsLength2526]), // Field # 512
 
-		ParentFiledScheduleABDEFHCHVFlags: strings.TrimSpace(record[parentFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (parentFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+parentFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 513
+		ParentFiledScheduleABDEFHCHVFlags: preprocessString(record[parentFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (parentFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+parentFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 513
 
-		ParentScheduleCAmountCHVFlags: strings.TrimSpace(record[parentScheduleCAmountCHVFlagsStartIndex2526-1 : (parentScheduleCAmountCHVFlagsStartIndex2526-1)+parentScheduleCAmountCHVFlagsLength2526]), // Field # 514
+		ParentScheduleCAmountCHVFlags: preprocessString(record[parentScheduleCAmountCHVFlagsStartIndex2526-1 : (parentScheduleCAmountCHVFlagsStartIndex2526-1)+parentScheduleCAmountCHVFlagsLength2526]), // Field # 514
 
-		ParentCollegeGrantAndScholarshipAidCHVFlags: strings.TrimSpace(record[parentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1 : (parentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1)+parentCollegeGrantAndScholarshipAidCHVFlagsLength2526]), // Field # 515
+		ParentCollegeGrantAndScholarshipAidCHVFlags: preprocessString(record[parentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1 : (parentCollegeGrantAndScholarshipAidCHVFlagsStartIndex2526-1)+parentCollegeGrantAndScholarshipAidCHVFlagsLength2526]), // Field # 515
 
-		ParentForeignEarnedIncomeExclusionCHVFlags: strings.TrimSpace(record[parentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (parentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+parentForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 516
+		ParentForeignEarnedIncomeExclusionCHVFlags: preprocessString(record[parentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (parentForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+parentForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 516
 
-		ParentChildSupportReceivedCHVFlags: strings.TrimSpace(record[parentChildSupportReceivedCHVFlagsStartIndex2526-1 : (parentChildSupportReceivedCHVFlagsStartIndex2526-1)+parentChildSupportReceivedCHVFlagsLength2526]), // Field # 517
+		ParentChildSupportReceivedCHVFlags: preprocessString(record[parentChildSupportReceivedCHVFlagsStartIndex2526-1 : (parentChildSupportReceivedCHVFlagsStartIndex2526-1)+parentChildSupportReceivedCHVFlagsLength2526]), // Field # 517
 
-		ParentNetWorthOfCurrentInvestmentsCHVFlags: strings.TrimSpace(record[parentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1 : (parentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1)+parentNetWorthOfCurrentInvestmentsCHVFlagsLength2526]), // Field # 518
+		ParentNetWorthOfCurrentInvestmentsCHVFlags: preprocessString(record[parentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1 : (parentNetWorthOfCurrentInvestmentsCHVFlagsStartIndex2526-1)+parentNetWorthOfCurrentInvestmentsCHVFlagsLength2526]), // Field # 518
 
-		ParentTotalOfCashSavingsAndCheckingAccountsCHVFlags: strings.TrimSpace(record[parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsStartIndex2526-1 : (parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsStartIndex2526-1)+parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsLength2526]), // Field # 519
+		ParentTotalOfCashSavingsAndCheckingAccountsCHVFlags: preprocessString(record[parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsStartIndex2526-1 : (parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsStartIndex2526-1)+parentTotalOfCashSavingsAndCheckingAccountsCHVFlagsLength2526]), // Field # 519
 
-		ParentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags: strings.TrimSpace(record[parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1 : (parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1)+parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsLength2526]), // Field # 520
+		ParentNetWorthOfBusinessesAndInvestmentFarmsCHVFlags: preprocessString(record[parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1 : (parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsStartIndex2526-1)+parentNetWorthOfBusinessesAndInvestmentFarmsCHVFlagsLength2526]), // Field # 520
 
-		ParentConsentToRetrieveAndDiscloseFTICHVFlags: strings.TrimSpace(record[parentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (parentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+parentConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 521
+		ParentConsentToRetrieveAndDiscloseFTICHVFlags: preprocessString(record[parentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (parentConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+parentConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 521
 
-		ParentSignatureCHVFlags: strings.TrimSpace(record[parentSignatureCHVFlagsStartIndex2526-1 : (parentSignatureCHVFlagsStartIndex2526-1)+parentSignatureCHVFlagsLength2526]), // Field # 522
+		ParentSignatureCHVFlags: preprocessString(record[parentSignatureCHVFlagsStartIndex2526-1 : (parentSignatureCHVFlagsStartIndex2526-1)+parentSignatureCHVFlagsLength2526]), // Field # 522
 
-		ParentSignatureDateCHVFlags: strings.TrimSpace(record[parentSignatureDateCHVFlagsStartIndex2526-1 : (parentSignatureDateCHVFlagsStartIndex2526-1)+parentSignatureDateCHVFlagsLength2526]), // Field # 523
+		ParentSignatureDateCHVFlags: preprocessString(record[parentSignatureDateCHVFlagsStartIndex2526-1 : (parentSignatureDateCHVFlagsStartIndex2526-1)+parentSignatureDateCHVFlagsLength2526]), // Field # 523
 
-		ParentSpouseFirstNameCHVFlags: strings.TrimSpace(record[parentSpouseFirstNameCHVFlagsStartIndex2526-1 : (parentSpouseFirstNameCHVFlagsStartIndex2526-1)+parentSpouseFirstNameCHVFlagsLength2526]), // Field # 524
+		ParentSpouseFirstNameCHVFlags: preprocessString(record[parentSpouseFirstNameCHVFlagsStartIndex2526-1 : (parentSpouseFirstNameCHVFlagsStartIndex2526-1)+parentSpouseFirstNameCHVFlagsLength2526]), // Field # 524
 
-		ParentSpouseMiddleNameCHVFlags: strings.TrimSpace(record[parentSpouseMiddleNameCHVFlagsStartIndex2526-1 : (parentSpouseMiddleNameCHVFlagsStartIndex2526-1)+parentSpouseMiddleNameCHVFlagsLength2526]), // Field # 525
+		ParentSpouseMiddleNameCHVFlags: preprocessString(record[parentSpouseMiddleNameCHVFlagsStartIndex2526-1 : (parentSpouseMiddleNameCHVFlagsStartIndex2526-1)+parentSpouseMiddleNameCHVFlagsLength2526]), // Field # 525
 
-		ParentSpouseLastNameCHVFlags: strings.TrimSpace(record[parentSpouseLastNameCHVFlagsStartIndex2526-1 : (parentSpouseLastNameCHVFlagsStartIndex2526-1)+parentSpouseLastNameCHVFlagsLength2526]), // Field # 526
+		ParentSpouseLastNameCHVFlags: preprocessString(record[parentSpouseLastNameCHVFlagsStartIndex2526-1 : (parentSpouseLastNameCHVFlagsStartIndex2526-1)+parentSpouseLastNameCHVFlagsLength2526]), // Field # 526
 
-		ParentSpouseSuffixCHVFlags: strings.TrimSpace(record[parentSpouseSuffixCHVFlagsStartIndex2526-1 : (parentSpouseSuffixCHVFlagsStartIndex2526-1)+parentSpouseSuffixCHVFlagsLength2526]), // Field # 527
+		ParentSpouseSuffixCHVFlags: preprocessString(record[parentSpouseSuffixCHVFlagsStartIndex2526-1 : (parentSpouseSuffixCHVFlagsStartIndex2526-1)+parentSpouseSuffixCHVFlagsLength2526]), // Field # 527
 
-		ParentSpouseDateOfBirthCHVFlags: strings.TrimSpace(record[parentSpouseDateOfBirthCHVFlagsStartIndex2526-1 : (parentSpouseDateOfBirthCHVFlagsStartIndex2526-1)+parentSpouseDateOfBirthCHVFlagsLength2526]), // Field # 528
+		ParentSpouseDateOfBirthCHVFlags: preprocessString(record[parentSpouseDateOfBirthCHVFlagsStartIndex2526-1 : (parentSpouseDateOfBirthCHVFlagsStartIndex2526-1)+parentSpouseDateOfBirthCHVFlagsLength2526]), // Field # 528
 
-		ParentSpouseSSNCHVFlags: strings.TrimSpace(record[parentSpouseSSNCHVFlagsStartIndex2526-1 : (parentSpouseSSNCHVFlagsStartIndex2526-1)+parentSpouseSSNCHVFlagsLength2526]), // Field # 529
+		ParentSpouseSSNCHVFlags: preprocessString(record[parentSpouseSSNCHVFlagsStartIndex2526-1 : (parentSpouseSSNCHVFlagsStartIndex2526-1)+parentSpouseSSNCHVFlagsLength2526]), // Field # 529
 
-		ParentSpouseITINCHVFlags: strings.TrimSpace(record[parentSpouseITINCHVFlagsStartIndex2526-1 : (parentSpouseITINCHVFlagsStartIndex2526-1)+parentSpouseITINCHVFlagsLength2526]), // Field # 530
+		ParentSpouseITINCHVFlags: preprocessString(record[parentSpouseITINCHVFlagsStartIndex2526-1 : (parentSpouseITINCHVFlagsStartIndex2526-1)+parentSpouseITINCHVFlagsLength2526]), // Field # 530
 
-		ParentSpousePhoneNumberCHVFlags: strings.TrimSpace(record[parentSpousePhoneNumberCHVFlagsStartIndex2526-1 : (parentSpousePhoneNumberCHVFlagsStartIndex2526-1)+parentSpousePhoneNumberCHVFlagsLength2526]), // Field # 531
+		ParentSpousePhoneNumberCHVFlags: preprocessString(record[parentSpousePhoneNumberCHVFlagsStartIndex2526-1 : (parentSpousePhoneNumberCHVFlagsStartIndex2526-1)+parentSpousePhoneNumberCHVFlagsLength2526]), // Field # 531
 
-		ParentSpouseEmailAddressCHVFlags: strings.TrimSpace(record[parentSpouseEmailAddressCHVFlagsStartIndex2526-1 : (parentSpouseEmailAddressCHVFlagsStartIndex2526-1)+parentSpouseEmailAddressCHVFlagsLength2526]), // Field # 532
+		ParentSpouseEmailAddressCHVFlags: preprocessString(record[parentSpouseEmailAddressCHVFlagsStartIndex2526-1 : (parentSpouseEmailAddressCHVFlagsStartIndex2526-1)+parentSpouseEmailAddressCHVFlagsLength2526]), // Field # 532
 
-		ParentSpouseStreetAddressCHVFlags: strings.TrimSpace(record[parentSpouseStreetAddressCHVFlagsStartIndex2526-1 : (parentSpouseStreetAddressCHVFlagsStartIndex2526-1)+parentSpouseStreetAddressCHVFlagsLength2526]), // Field # 533
+		ParentSpouseStreetAddressCHVFlags: preprocessString(record[parentSpouseStreetAddressCHVFlagsStartIndex2526-1 : (parentSpouseStreetAddressCHVFlagsStartIndex2526-1)+parentSpouseStreetAddressCHVFlagsLength2526]), // Field # 533
 
-		ParentSpouseCityCHVFlags: strings.TrimSpace(record[parentSpouseCityCHVFlagsStartIndex2526-1 : (parentSpouseCityCHVFlagsStartIndex2526-1)+parentSpouseCityCHVFlagsLength2526]), // Field # 534
+		ParentSpouseCityCHVFlags: preprocessString(record[parentSpouseCityCHVFlagsStartIndex2526-1 : (parentSpouseCityCHVFlagsStartIndex2526-1)+parentSpouseCityCHVFlagsLength2526]), // Field # 534
 
-		ParentSpouseStateCHVFlags: strings.TrimSpace(record[parentSpouseStateCHVFlagsStartIndex2526-1 : (parentSpouseStateCHVFlagsStartIndex2526-1)+parentSpouseStateCHVFlagsLength2526]), // Field # 535
+		ParentSpouseStateCHVFlags: preprocessString(record[parentSpouseStateCHVFlagsStartIndex2526-1 : (parentSpouseStateCHVFlagsStartIndex2526-1)+parentSpouseStateCHVFlagsLength2526]), // Field # 535
 
-		ParentSpouseZipCodeCHVFlags: strings.TrimSpace(record[parentSpouseZipCodeCHVFlagsStartIndex2526-1 : (parentSpouseZipCodeCHVFlagsStartIndex2526-1)+parentSpouseZipCodeCHVFlagsLength2526]), // Field # 536
+		ParentSpouseZipCodeCHVFlags: preprocessString(record[parentSpouseZipCodeCHVFlagsStartIndex2526-1 : (parentSpouseZipCodeCHVFlagsStartIndex2526-1)+parentSpouseZipCodeCHVFlagsLength2526]), // Field # 536
 
-		ParentSpouseCountryCHVFlags: strings.TrimSpace(record[parentSpouseCountryCHVFlagsStartIndex2526-1 : (parentSpouseCountryCHVFlagsStartIndex2526-1)+parentSpouseCountryCHVFlagsLength2526]), // Field # 537
+		ParentSpouseCountryCHVFlags: preprocessString(record[parentSpouseCountryCHVFlagsStartIndex2526-1 : (parentSpouseCountryCHVFlagsStartIndex2526-1)+parentSpouseCountryCHVFlagsLength2526]), // Field # 537
 
-		ParentSpouseFiled1040Or1040NRCHVFlags: strings.TrimSpace(record[parentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (parentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1)+parentSpouseFiled1040Or1040NRCHVFlagsLength2526]), // Field # 538
+		ParentSpouseFiled1040Or1040NRCHVFlags: preprocessString(record[parentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1 : (parentSpouseFiled1040Or1040NRCHVFlagsStartIndex2526-1)+parentSpouseFiled1040Or1040NRCHVFlagsLength2526]), // Field # 538
 
-		ParentSpouseFileNonUSTaxReturnCHVFlags: strings.TrimSpace(record[parentSpouseFileNonUSTaxReturnCHVFlagsStartIndex2526-1 : (parentSpouseFileNonUSTaxReturnCHVFlagsStartIndex2526-1)+parentSpouseFileNonUSTaxReturnCHVFlagsLength2526]), // Field # 539
+		ParentSpouseFileNonUSTaxReturnCHVFlags: preprocessString(record[parentSpouseFileNonUSTaxReturnCHVFlagsStartIndex2526-1 : (parentSpouseFileNonUSTaxReturnCHVFlagsStartIndex2526-1)+parentSpouseFileNonUSTaxReturnCHVFlagsLength2526]), // Field # 539
 
-		ParentSpouseTaxReturnFilingStatusCHVFlags: strings.TrimSpace(record[parentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (parentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+parentSpouseTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 540
+		ParentSpouseTaxReturnFilingStatusCHVFlags: preprocessString(record[parentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1 : (parentSpouseTaxReturnFilingStatusCHVFlagsStartIndex2526-1)+parentSpouseTaxReturnFilingStatusCHVFlagsLength2526]), // Field # 540
 
-		ParentSpouseIncomeEarnedFromWorkCHVFlags: strings.TrimSpace(record[parentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (parentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+parentSpouseIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 541
+		ParentSpouseIncomeEarnedFromWorkCHVFlags: preprocessString(record[parentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1 : (parentSpouseIncomeEarnedFromWorkCHVFlagsStartIndex2526-1)+parentSpouseIncomeEarnedFromWorkCHVFlagsLength2526]), // Field # 541
 
-		ParentSpouseTaxExemptInterestIncomeCHVFlags: strings.TrimSpace(record[parentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (parentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+parentSpouseTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 542
+		ParentSpouseTaxExemptInterestIncomeCHVFlags: preprocessString(record[parentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1 : (parentSpouseTaxExemptInterestIncomeCHVFlagsStartIndex2526-1)+parentSpouseTaxExemptInterestIncomeCHVFlagsLength2526]), // Field # 542
 
-		ParentSpouseUntaxedPortionsOfIRADistributionsCHVFlags: strings.TrimSpace(record[parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 543
+		ParentSpouseUntaxedPortionsOfIRADistributionsCHVFlags: preprocessString(record[parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsStartIndex2526-1)+parentSpouseUntaxedPortionsOfIRADistributionsCHVFlagsLength2526]), // Field # 543
 
-		ParentSpouseIRARolloverCHVFlags: strings.TrimSpace(record[parentSpouseIRARolloverCHVFlagsStartIndex2526-1 : (parentSpouseIRARolloverCHVFlagsStartIndex2526-1)+parentSpouseIRARolloverCHVFlagsLength2526]), // Field # 544
+		ParentSpouseIRARolloverCHVFlags: preprocessString(record[parentSpouseIRARolloverCHVFlagsStartIndex2526-1 : (parentSpouseIRARolloverCHVFlagsStartIndex2526-1)+parentSpouseIRARolloverCHVFlagsLength2526]), // Field # 544
 
-		ParentSpouseUntaxedPortionsOfPensionsCHVFlags: strings.TrimSpace(record[parentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+parentSpouseUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 545
+		ParentSpouseUntaxedPortionsOfPensionsCHVFlags: preprocessString(record[parentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1 : (parentSpouseUntaxedPortionsOfPensionsCHVFlagsStartIndex2526-1)+parentSpouseUntaxedPortionsOfPensionsCHVFlagsLength2526]), // Field # 545
 
-		ParentSpousePensionRolloverCHVFlags: strings.TrimSpace(record[parentSpousePensionRolloverCHVFlagsStartIndex2526-1 : (parentSpousePensionRolloverCHVFlagsStartIndex2526-1)+parentSpousePensionRolloverCHVFlagsLength2526]), // Field # 546
+		ParentSpousePensionRolloverCHVFlags: preprocessString(record[parentSpousePensionRolloverCHVFlagsStartIndex2526-1 : (parentSpousePensionRolloverCHVFlagsStartIndex2526-1)+parentSpousePensionRolloverCHVFlagsLength2526]), // Field # 546
 
-		ParentSpouseAdjustedGrossIncomeCHVFlags: strings.TrimSpace(record[parentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (parentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+parentSpouseAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 547
+		ParentSpouseAdjustedGrossIncomeCHVFlags: preprocessString(record[parentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1 : (parentSpouseAdjustedGrossIncomeCHVFlagsStartIndex2526-1)+parentSpouseAdjustedGrossIncomeCHVFlagsLength2526]), // Field # 547
 
-		ParentSpouseIncomeTaxPaidCHVFlags: strings.TrimSpace(record[parentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1 : (parentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1)+parentSpouseIncomeTaxPaidCHVFlagsLength2526]), // Field # 548
+		ParentSpouseIncomeTaxPaidCHVFlags: preprocessString(record[parentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1 : (parentSpouseIncomeTaxPaidCHVFlagsStartIndex2526-1)+parentSpouseIncomeTaxPaidCHVFlagsLength2526]), // Field # 548
 
-		ParentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags: strings.TrimSpace(record[parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 549
+		ParentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlags: preprocessString(record[parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1 : (parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsStartIndex2526-1)+parentSpouseDeductiblePaymentsToIRAKeoghOtherCHVFlagsLength2526]), // Field # 549
 
-		ParentSpouseEducationCreditsCHVFlags: strings.TrimSpace(record[parentSpouseEducationCreditsCHVFlagsStartIndex2526-1 : (parentSpouseEducationCreditsCHVFlagsStartIndex2526-1)+parentSpouseEducationCreditsCHVFlagsLength2526]), // Field # 550
+		ParentSpouseEducationCreditsCHVFlags: preprocessString(record[parentSpouseEducationCreditsCHVFlagsStartIndex2526-1 : (parentSpouseEducationCreditsCHVFlagsStartIndex2526-1)+parentSpouseEducationCreditsCHVFlagsLength2526]), // Field # 550
 
-		ParentSpouseFiledScheduleABDEFHCHVFlags: strings.TrimSpace(record[parentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (parentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+parentSpouseFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 551
+		ParentSpouseFiledScheduleABDEFHCHVFlags: preprocessString(record[parentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1 : (parentSpouseFiledScheduleABDEFHCHVFlagsStartIndex2526-1)+parentSpouseFiledScheduleABDEFHCHVFlagsLength2526]), // Field # 551
 
-		ParentSpouseScheduleCAmountCHVFlags: strings.TrimSpace(record[parentSpouseScheduleCAmountCHVFlagsStartIndex2526-1 : (parentSpouseScheduleCAmountCHVFlagsStartIndex2526-1)+parentSpouseScheduleCAmountCHVFlagsLength2526]), // Field # 552
+		ParentSpouseScheduleCAmountCHVFlags: preprocessString(record[parentSpouseScheduleCAmountCHVFlagsStartIndex2526-1 : (parentSpouseScheduleCAmountCHVFlagsStartIndex2526-1)+parentSpouseScheduleCAmountCHVFlagsLength2526]), // Field # 552
 
-		ParentSpouseForeignEarnedIncomeExclusionCHVFlags: strings.TrimSpace(record[parentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (parentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+parentSpouseForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 553
+		ParentSpouseForeignEarnedIncomeExclusionCHVFlags: preprocessString(record[parentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1 : (parentSpouseForeignEarnedIncomeExclusionCHVFlagsStartIndex2526-1)+parentSpouseForeignEarnedIncomeExclusionCHVFlagsLength2526]), // Field # 553
 
-		ParentSpouseConsentToRetrieveAndDiscloseFTICHVFlags: strings.TrimSpace(record[parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 554
+		ParentSpouseConsentToRetrieveAndDiscloseFTICHVFlags: preprocessString(record[parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1 : (parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsStartIndex2526-1)+parentSpouseConsentToRetrieveAndDiscloseFTICHVFlagsLength2526]), // Field # 554
 
-		ParentSpouseSignatureCHVFlags: strings.TrimSpace(record[parentSpouseSignatureCHVFlagsStartIndex2526-1 : (parentSpouseSignatureCHVFlagsStartIndex2526-1)+parentSpouseSignatureCHVFlagsLength2526]), // Field # 555
+		ParentSpouseSignatureCHVFlags: preprocessString(record[parentSpouseSignatureCHVFlagsStartIndex2526-1 : (parentSpouseSignatureCHVFlagsStartIndex2526-1)+parentSpouseSignatureCHVFlagsLength2526]), // Field # 555
 
-		ParentSpouseSignatureDateCHVFlags: strings.TrimSpace(record[parentSpouseSignatureDateCHVFlagsStartIndex2526-1 : (parentSpouseSignatureDateCHVFlagsStartIndex2526-1)+parentSpouseSignatureDateCHVFlagsLength2526]), // Field # 556
+		ParentSpouseSignatureDateCHVFlags: preprocessString(record[parentSpouseSignatureDateCHVFlagsStartIndex2526-1 : (parentSpouseSignatureDateCHVFlagsStartIndex2526-1)+parentSpouseSignatureDateCHVFlagsLength2526]), // Field # 556
 
-		DHSPrimaryMatchStatus: strings.TrimSpace(record[dHSPrimaryMatchStatusStartIndex2526-1 : (dHSPrimaryMatchStatusStartIndex2526-1)+dHSPrimaryMatchStatusLength2526]), // Field # 557
+		DHSPrimaryMatchStatus: preprocessString(record[dHSPrimaryMatchStatusStartIndex2526-1 : (dHSPrimaryMatchStatusStartIndex2526-1)+dHSPrimaryMatchStatusLength2526]), // Field # 557
 
-		DHSCaseNumber: strings.TrimSpace(record[dHSCaseNumberStartIndex2526-1 : (dHSCaseNumberStartIndex2526-1)+dHSCaseNumberLength2526]), // Field # 559
+		DHSCaseNumber: preprocessString(record[dHSCaseNumberStartIndex2526-1 : (dHSCaseNumberStartIndex2526-1)+dHSCaseNumberLength2526]), // Field # 559
 
-		NSLDSMatchStatus: strings.TrimSpace(record[nsldsMatchStatusStartIndex2526-1 : (nsldsMatchStatusStartIndex2526-1)+nsldsMatchStatusLength2526]), // Field # 560
+		NSLDSMatchStatus: preprocessString(record[nsldsMatchStatusStartIndex2526-1 : (nsldsMatchStatusStartIndex2526-1)+nsldsMatchStatusLength2526]), // Field # 560
 
-		NSLDSPostscreeningReasonCode: strings.TrimSpace(record[nsldsPostscreeningReasonCodeStartIndex2526-1 : (nsldsPostscreeningReasonCodeStartIndex2526-1)+nsldsPostscreeningReasonCodeLength2526]), // Field # 561
+		NSLDSPostscreeningReasonCode: preprocessString(record[nsldsPostscreeningReasonCodeStartIndex2526-1 : (nsldsPostscreeningReasonCodeStartIndex2526-1)+nsldsPostscreeningReasonCodeLength2526]), // Field # 561
 
-		StudentSSACitizenshipFlagResults: strings.TrimSpace(record[studentSSACitizenshipFlagResultsStartIndex2526-1 : (studentSSACitizenshipFlagResultsStartIndex2526-1)+studentSSACitizenshipFlagResultsLength2526]), // Field # 562
+		StudentSSACitizenshipFlagResults: preprocessString(record[studentSSACitizenshipFlagResultsStartIndex2526-1 : (studentSSACitizenshipFlagResultsStartIndex2526-1)+studentSSACitizenshipFlagResultsLength2526]), // Field # 562
 
-		StudentSSAMatchStatus: strings.TrimSpace(record[studentSSAMatchStatusStartIndex2526-1 : (studentSSAMatchStatusStartIndex2526-1)+studentSSAMatchStatusLength2526]), // Field # 563
+		StudentSSAMatchStatus: preprocessString(record[studentSSAMatchStatusStartIndex2526-1 : (studentSSAMatchStatusStartIndex2526-1)+studentSSAMatchStatusLength2526]), // Field # 563
 
-		StudentSpouseSSAMatchStatus: strings.TrimSpace(record[studentSpouseSSAMatchStatusStartIndex2526-1 : (studentSpouseSSAMatchStatusStartIndex2526-1)+studentSpouseSSAMatchStatusLength2526]), // Field # 564
+		StudentSpouseSSAMatchStatus: preprocessString(record[studentSpouseSSAMatchStatusStartIndex2526-1 : (studentSpouseSSAMatchStatusStartIndex2526-1)+studentSpouseSSAMatchStatusLength2526]), // Field # 564
 
-		ParentSSAMatchStatus: strings.TrimSpace(record[parentSSAMatchStatusStartIndex2526-1 : (parentSSAMatchStatusStartIndex2526-1)+parentSSAMatchStatusLength2526]), // Field # 565
+		ParentSSAMatchStatus: preprocessString(record[parentSSAMatchStatusStartIndex2526-1 : (parentSSAMatchStatusStartIndex2526-1)+parentSSAMatchStatusLength2526]), // Field # 565
 
-		ParentSpouseOrPartnerSSAMatchStatus: strings.TrimSpace(record[parentSpouseOrPartnerSSAMatchStatusStartIndex2526-1 : (parentSpouseOrPartnerSSAMatchStatusStartIndex2526-1)+parentSpouseOrPartnerSSAMatchStatusLength2526]), // Field # 566
+		ParentSpouseOrPartnerSSAMatchStatus: preprocessString(record[parentSpouseOrPartnerSSAMatchStatusStartIndex2526-1 : (parentSpouseOrPartnerSSAMatchStatusStartIndex2526-1)+parentSpouseOrPartnerSSAMatchStatusLength2526]), // Field # 566
 
-		VAMatchFlag: strings.TrimSpace(record[vAMatchFlagStartIndex2526-1 : (vAMatchFlagStartIndex2526-1)+vAMatchFlagLength2526]), // Field # 567
+		VAMatchFlag: preprocessString(record[vAMatchFlagStartIndex2526-1 : (vAMatchFlagStartIndex2526-1)+vAMatchFlagLength2526]), // Field # 567
 
-		CommentCodes: strings.TrimSpace(record[commentCodesStartIndex2526-1 : (commentCodesStartIndex2526-1)+commentCodesLength2526]), // Field # 568
+		CommentCodes: preprocessString(record[commentCodesStartIndex2526-1 : (commentCodesStartIndex2526-1)+commentCodesLength2526]), // Field # 568
 
-		DrugAbuseHoldIndicator: strings.TrimSpace(record[drugAbuseHoldIndicatorStartIndex2526-1 : (drugAbuseHoldIndicatorStartIndex2526-1)+drugAbuseHoldIndicatorLength2526]), // Field # 569
+		DrugAbuseHoldIndicator: preprocessString(record[drugAbuseHoldIndicatorStartIndex2526-1 : (drugAbuseHoldIndicatorStartIndex2526-1)+drugAbuseHoldIndicatorLength2526]), // Field # 569
 
-		GraduateFlag: strings.TrimSpace(record[graduateFlagStartIndex2526-1 : (graduateFlagStartIndex2526-1)+graduateFlagLength2526]), // Field # 570
+		GraduateFlag: preprocessString(record[graduateFlagStartIndex2526-1 : (graduateFlagStartIndex2526-1)+graduateFlagLength2526]), // Field # 570
 
-		PellGrantEligibilityFlag: strings.TrimSpace(record[pellGrantEligibilityFlagStartIndex2526-1 : (pellGrantEligibilityFlagStartIndex2526-1)+pellGrantEligibilityFlagLength2526]), // Field # 571
+		PellGrantEligibilityFlag: preprocessString(record[pellGrantEligibilityFlagStartIndex2526-1 : (pellGrantEligibilityFlagStartIndex2526-1)+pellGrantEligibilityFlagLength2526]), // Field # 571
 
-		ReprocessedReasonCode: strings.TrimSpace(record[reprocessedReasonCodeStartIndex2526-1 : (reprocessedReasonCodeStartIndex2526-1)+reprocessedReasonCodeLength2526]), // Field # 572
+		ReprocessedReasonCode: preprocessString(record[reprocessedReasonCodeStartIndex2526-1 : (reprocessedReasonCodeStartIndex2526-1)+reprocessedReasonCodeLength2526]), // Field # 572
 
-		FPSCFlag: strings.TrimSpace(record[fpsCFlagStartIndex2526-1 : (fpsCFlagStartIndex2526-1)+fpsCFlagLength2526]), // Field # 573
+		FPSCFlag: preprocessString(record[fpsCFlagStartIndex2526-1 : (fpsCFlagStartIndex2526-1)+fpsCFlagLength2526]), // Field # 573
 
-		FPSCChangeFlag: strings.TrimSpace(record[fpsCChangeFlagStartIndex2526-1 : (fpsCChangeFlagStartIndex2526-1)+fpsCChangeFlagLength2526]), // Field # 574
+		FPSCChangeFlag: preprocessString(record[fpsCChangeFlagStartIndex2526-1 : (fpsCChangeFlagStartIndex2526-1)+fpsCChangeFlagLength2526]), // Field # 574
 
-		ElectronicFederalSchoolCodeIndicator: strings.TrimSpace(record[electronicFederalSchoolCodeIndicatorStartIndex2526-1 : (electronicFederalSchoolCodeIndicatorStartIndex2526-1)+electronicFederalSchoolCodeIndicatorLength2526]), // Field # 575
+		ElectronicFederalSchoolCodeIndicator: preprocessString(record[electronicFederalSchoolCodeIndicatorStartIndex2526-1 : (electronicFederalSchoolCodeIndicatorStartIndex2526-1)+electronicFederalSchoolCodeIndicatorLength2526]), // Field # 575
 
-		RejectReasonCodes: strings.TrimSpace(record[rejectReasonCodesStartIndex2526-1 : (rejectReasonCodesStartIndex2526-1)+rejectReasonCodesLength2526]), // Field # 576
+		RejectReasonCodes: preprocessString(record[rejectReasonCodesStartIndex2526-1 : (rejectReasonCodesStartIndex2526-1)+rejectReasonCodesLength2526]), // Field # 576
 
-		ElectronicTransactionIndicatorFlag: strings.TrimSpace(record[electronicTransactionIndicatorFlagStartIndex2526-1 : (electronicTransactionIndicatorFlagStartIndex2526-1)+electronicTransactionIndicatorFlagLength2526]), // Field # 577
+		ElectronicTransactionIndicatorFlag: preprocessString(record[electronicTransactionIndicatorFlagStartIndex2526-1 : (electronicTransactionIndicatorFlagStartIndex2526-1)+electronicTransactionIndicatorFlagLength2526]), // Field # 577
 
-		StudentLastNameSSNChangeFlag: strings.TrimSpace(record[studentLastNameSSNChangeFlagStartIndex2526-1 : (studentLastNameSSNChangeFlagStartIndex2526-1)+studentLastNameSSNChangeFlagLength2526]), // Field # 578
+		StudentLastNameSSNChangeFlag: preprocessString(record[studentLastNameSSNChangeFlagStartIndex2526-1 : (studentLastNameSSNChangeFlagStartIndex2526-1)+studentLastNameSSNChangeFlagLength2526]), // Field # 578
 
-		HighSchoolCode: strings.TrimSpace(record[highSchoolCodeStartIndex2526-1 : (highSchoolCodeStartIndex2526-1)+highSchoolCodeLength2526]), // Field # 579
+		HighSchoolCode: preprocessString(record[highSchoolCodeStartIndex2526-1 : (highSchoolCodeStartIndex2526-1)+highSchoolCodeLength2526]), // Field # 579
 
-		VerificationSelectionChangeFlag: strings.TrimSpace(record[verificationSelectionChangeFlagStartIndex2526-1 : (verificationSelectionChangeFlagStartIndex2526-1)+verificationSelectionChangeFlagLength2526]), // Field # 580
+		VerificationSelectionChangeFlag: preprocessString(record[verificationSelectionChangeFlagStartIndex2526-1 : (verificationSelectionChangeFlagStartIndex2526-1)+verificationSelectionChangeFlagLength2526]), // Field # 580
 
-		UseUserProvidedDataOnly: strings.TrimSpace(record[useUserProvidedDataOnlyStartIndex2526-1 : (useUserProvidedDataOnlyStartIndex2526-1)+useUserProvidedDataOnlyLength2526]), // Field # 581
+		UseUserProvidedDataOnly: preprocessString(record[useUserProvidedDataOnlyStartIndex2526-1 : (useUserProvidedDataOnlyStartIndex2526-1)+useUserProvidedDataOnlyLength2526]), // Field # 581
 
-		NSLDSPellOverpaymentFlag: strings.TrimSpace(record[nsldsPellOverpaymentFlagStartIndex2526-1 : (nsldsPellOverpaymentFlagStartIndex2526-1)+nsldsPellOverpaymentFlagLength2526]), // Field # 583
+		NSLDSPellOverpaymentFlag: preprocessString(record[nsldsPellOverpaymentFlagStartIndex2526-1 : (nsldsPellOverpaymentFlagStartIndex2526-1)+nsldsPellOverpaymentFlagLength2526]), // Field # 583
 
-		NSLDSPellOverpaymentContact: strings.TrimSpace(record[nsldsPellOverpaymentContactStartIndex2526-1 : (nsldsPellOverpaymentContactStartIndex2526-1)+nsldsPellOverpaymentContactLength2526]), // Field # 584
+		NSLDSPellOverpaymentContact: preprocessString(record[nsldsPellOverpaymentContactStartIndex2526-1 : (nsldsPellOverpaymentContactStartIndex2526-1)+nsldsPellOverpaymentContactLength2526]), // Field # 584
 
-		NSLDSFSEOGOverpaymentFlag: strings.TrimSpace(record[nsldsFSEOGOverpaymentFlagStartIndex2526-1 : (nsldsFSEOGOverpaymentFlagStartIndex2526-1)+nsldsFSEOGOverpaymentFlagLength2526]), // Field # 585
+		NSLDSFSEOGOverpaymentFlag: preprocessString(record[nsldsFSEOGOverpaymentFlagStartIndex2526-1 : (nsldsFSEOGOverpaymentFlagStartIndex2526-1)+nsldsFSEOGOverpaymentFlagLength2526]), // Field # 585
 
-		NSLDSFSEOGOverpaymentContact: strings.TrimSpace(record[nsldsFSEOGOverpaymentContactStartIndex2526-1 : (nsldsFSEOGOverpaymentContactStartIndex2526-1)+nsldsFSEOGOverpaymentContactLength2526]), // Field # 586
+		NSLDSFSEOGOverpaymentContact: preprocessString(record[nsldsFSEOGOverpaymentContactStartIndex2526-1 : (nsldsFSEOGOverpaymentContactStartIndex2526-1)+nsldsFSEOGOverpaymentContactLength2526]), // Field # 586
 
-		NSLDSPerkinsOverpaymentFlag: strings.TrimSpace(record[nsldsPerkinsOverpaymentFlagStartIndex2526-1 : (nsldsPerkinsOverpaymentFlagStartIndex2526-1)+nsldsPerkinsOverpaymentFlagLength2526]), // Field # 587
+		NSLDSPerkinsOverpaymentFlag: preprocessString(record[nsldsPerkinsOverpaymentFlagStartIndex2526-1 : (nsldsPerkinsOverpaymentFlagStartIndex2526-1)+nsldsPerkinsOverpaymentFlagLength2526]), // Field # 587
 
-		NSLDSPerkinsOverpaymentContact: strings.TrimSpace(record[nsldsPerkinsOverpaymentContactStartIndex2526-1 : (nsldsPerkinsOverpaymentContactStartIndex2526-1)+nsldsPerkinsOverpaymentContactLength2526]), // Field # 588
+		NSLDSPerkinsOverpaymentContact: preprocessString(record[nsldsPerkinsOverpaymentContactStartIndex2526-1 : (nsldsPerkinsOverpaymentContactStartIndex2526-1)+nsldsPerkinsOverpaymentContactLength2526]), // Field # 588
 
-		NSLDSTEACHGrantOverpaymentFlag: strings.TrimSpace(record[nsldsTEACHGrantOverpaymentFlagStartIndex2526-1 : (nsldsTEACHGrantOverpaymentFlagStartIndex2526-1)+nsldsTEACHGrantOverpaymentFlagLength2526]), // Field # 589
+		NSLDSTEACHGrantOverpaymentFlag: preprocessString(record[nsldsTEACHGrantOverpaymentFlagStartIndex2526-1 : (nsldsTEACHGrantOverpaymentFlagStartIndex2526-1)+nsldsTEACHGrantOverpaymentFlagLength2526]), // Field # 589
 
-		NSLDSTEACHGrantOverpaymentContact: strings.TrimSpace(record[nsldsTEACHGrantOverpaymentContactStartIndex2526-1 : (nsldsTEACHGrantOverpaymentContactStartIndex2526-1)+nsldsTEACHGrantOverpaymentContactLength2526]), // Field # 590
+		NSLDSTEACHGrantOverpaymentContact: preprocessString(record[nsldsTEACHGrantOverpaymentContactStartIndex2526-1 : (nsldsTEACHGrantOverpaymentContactStartIndex2526-1)+nsldsTEACHGrantOverpaymentContactLength2526]), // Field # 590
 
-		NSLDSIraqAndAfghanistanServiceGrantOverpaymentFlag: strings.TrimSpace(record[nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagStartIndex2526-1 : (nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagStartIndex2526-1)+nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagLength2526]), // Field # 591
+		NSLDSIraqAndAfghanistanServiceGrantOverpaymentFlag: preprocessString(record[nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagStartIndex2526-1 : (nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagStartIndex2526-1)+nsldsIraqAndAfghanistanServiceGrantOverpaymentFlagLength2526]), // Field # 591
 
-		NSLDSIraqAndAfghanistanServiceGrantOverpaymentContact: strings.TrimSpace(record[nsldsIraqAndAfghanistanServiceGrantOverpaymentContactStartIndex2526-1 : (nsldsIraqAndAfghanistanServiceGrantOverpaymentContactStartIndex2526-1)+nsldsIraqAndAfghanistanServiceGrantOverpaymentContactLength2526]), // Field # 592
+		NSLDSIraqAndAfghanistanServiceGrantOverpaymentContact: preprocessString(record[nsldsIraqAndAfghanistanServiceGrantOverpaymentContactStartIndex2526-1 : (nsldsIraqAndAfghanistanServiceGrantOverpaymentContactStartIndex2526-1)+nsldsIraqAndAfghanistanServiceGrantOverpaymentContactLength2526]), // Field # 592
 
-		NSLDSDefaultedLoanFlag: strings.TrimSpace(record[nsldsDefaultedLoanFlagStartIndex2526-1 : (nsldsDefaultedLoanFlagStartIndex2526-1)+nsldsDefaultedLoanFlagLength2526]), // Field # 593
+		NSLDSDefaultedLoanFlag: preprocessString(record[nsldsDefaultedLoanFlagStartIndex2526-1 : (nsldsDefaultedLoanFlagStartIndex2526-1)+nsldsDefaultedLoanFlagLength2526]), // Field # 593
 
-		NSLDSDischargedLoanFlag: strings.TrimSpace(record[nsldsDischargedLoanFlagStartIndex2526-1 : (nsldsDischargedLoanFlagStartIndex2526-1)+nsldsDischargedLoanFlagLength2526]), // Field # 594
+		NSLDSDischargedLoanFlag: preprocessString(record[nsldsDischargedLoanFlagStartIndex2526-1 : (nsldsDischargedLoanFlagStartIndex2526-1)+nsldsDischargedLoanFlagLength2526]), // Field # 594
 
-		NSLDSFraudLoanFlag: strings.TrimSpace(record[nsldsFraudLoanFlagStartIndex2526-1 : (nsldsFraudLoanFlagStartIndex2526-1)+nsldsFraudLoanFlagLength2526]), // Field # 595
+		NSLDSFraudLoanFlag: preprocessString(record[nsldsFraudLoanFlagStartIndex2526-1 : (nsldsFraudLoanFlagStartIndex2526-1)+nsldsFraudLoanFlagLength2526]), // Field # 595
 
-		NSLDSSatisfactoryArrangementsFlag: strings.TrimSpace(record[nsldsSatisfactoryArrangementsFlagStartIndex2526-1 : (nsldsSatisfactoryArrangementsFlagStartIndex2526-1)+nsldsSatisfactoryArrangementsFlagLength2526]), // Field # 596
+		NSLDSSatisfactoryArrangementsFlag: preprocessString(record[nsldsSatisfactoryArrangementsFlagStartIndex2526-1 : (nsldsSatisfactoryArrangementsFlagStartIndex2526-1)+nsldsSatisfactoryArrangementsFlagLength2526]), // Field # 596
 
-		NSLDSActiveBankruptcyFlag: strings.TrimSpace(record[nsldsActiveBankruptcyFlagStartIndex2526-1 : (nsldsActiveBankruptcyFlagStartIndex2526-1)+nsldsActiveBankruptcyFlagLength2526]), // Field # 597
+		NSLDSActiveBankruptcyFlag: preprocessString(record[nsldsActiveBankruptcyFlagStartIndex2526-1 : (nsldsActiveBankruptcyFlagStartIndex2526-1)+nsldsActiveBankruptcyFlagLength2526]), // Field # 597
 
-		NSLDSTEACHGrantConvertedToLoanFlag: strings.TrimSpace(record[nsldsTEACHGrantConvertedToLoanFlagStartIndex2526-1 : (nsldsTEACHGrantConvertedToLoanFlagStartIndex2526-1)+nsldsTEACHGrantConvertedToLoanFlagLength2526]), // Field # 598
+		NSLDSTEACHGrantConvertedToLoanFlag: preprocessString(record[nsldsTEACHGrantConvertedToLoanFlagStartIndex2526-1 : (nsldsTEACHGrantConvertedToLoanFlagStartIndex2526-1)+nsldsTEACHGrantConvertedToLoanFlagLength2526]), // Field # 598
 
-		NSLDSAggregateSubsidizedOutstandingPrincipalBalance: strings.TrimSpace(record[nsldsAggregateSubsidizedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateSubsidizedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateSubsidizedOutstandingPrincipalBalanceLength2526]), // Field # 599
+		NSLDSAggregateSubsidizedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateSubsidizedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateSubsidizedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateSubsidizedOutstandingPrincipalBalanceLength2526]), // Field # 599
 
-		NSLDSAggregateUnsubsidizedOutstandingPrincipalBalance: strings.TrimSpace(record[nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceLength2526]), // Field # 600
+		NSLDSAggregateUnsubsidizedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnsubsidizedOutstandingPrincipalBalanceLength2526]), // Field # 600
 
-		NSLDSAggregateCombinedOutstandingPrincipalBalance: strings.TrimSpace(record[nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateCombinedOutstandingPrincipalBalanceLength2526]), // Field # 601
+		NSLDSAggregateCombinedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateCombinedOutstandingPrincipalBalanceLength2526]), // Field # 601
 
-		NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance: strings.TrimSpace(record[nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceLength2526]), // Field # 602
+		NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceLength2526]), // Field # 602
 
-		NSLDSAggregateTEACHLoanPrincipalBalance: strings.TrimSpace(record[nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1 : (nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1)+nsldsAggregateTEACHLoanPrincipalBalanceLength2526]), // Field # 603
+		NSLDSAggregateTEACHLoanPrincipalBalance: preprocessString(record[nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1 : (nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1)+nsldsAggregateTEACHLoanPrincipalBalanceLength2526]), // Field # 603
 
-		NSLDSAggregateSubsidizedPendingDisbursement: strings.TrimSpace(record[nsldsAggregateSubsidizedPendingDisbursementStartIndex2526-1 : (nsldsAggregateSubsidizedPendingDisbursementStartIndex2526-1)+nsldsAggregateSubsidizedPendingDisbursementLength2526]), // Field # 604
+		NSLDSAggregateSubsidizedPendingDisbursement: preprocessString(record[nsldsAggregateSubsidizedPendingDisbursementStartIndex2526-1 : (nsldsAggregateSubsidizedPendingDisbursementStartIndex2526-1)+nsldsAggregateSubsidizedPendingDisbursementLength2526]), // Field # 604
 
-		NSLDSAggregateUnsubsidizedPendingDisbursement: strings.TrimSpace(record[nsldsAggregateUnsubsidizedPendingDisbursementStartIndex2526-1 : (nsldsAggregateUnsubsidizedPendingDisbursementStartIndex2526-1)+nsldsAggregateUnsubsidizedPendingDisbursementLength2526]), // Field # 605
+		NSLDSAggregateUnsubsidizedPendingDisbursement: preprocessString(record[nsldsAggregateUnsubsidizedPendingDisbursementStartIndex2526-1 : (nsldsAggregateUnsubsidizedPendingDisbursementStartIndex2526-1)+nsldsAggregateUnsubsidizedPendingDisbursementLength2526]), // Field # 605
 
-		NSLDSAggregateCombinedPendingDisbursement: strings.TrimSpace(record[nsldsAggregateCombinedPendingDisbursementStartIndex2526-1 : (nsldsAggregateCombinedPendingDisbursementStartIndex2526-1)+nsldsAggregateCombinedPendingDisbursementLength2526]), // Field # 606
+		NSLDSAggregateCombinedPendingDisbursement: preprocessString(record[nsldsAggregateCombinedPendingDisbursementStartIndex2526-1 : (nsldsAggregateCombinedPendingDisbursementStartIndex2526-1)+nsldsAggregateCombinedPendingDisbursementLength2526]), // Field # 606
 
-		NSLDSAggregateSubsidizedTotal: strings.TrimSpace(record[nsldsAggregateSubsidizedTotalStartIndex2526-1 : (nsldsAggregateSubsidizedTotalStartIndex2526-1)+nsldsAggregateSubsidizedTotalLength2526]), // Field # 607
+		NSLDSAggregateSubsidizedTotal: preprocessString(record[nsldsAggregateSubsidizedTotalStartIndex2526-1 : (nsldsAggregateSubsidizedTotalStartIndex2526-1)+nsldsAggregateSubsidizedTotalLength2526]), // Field # 607
 
-		NSLDSAggregateUnsubsidizedTotal: strings.TrimSpace(record[nsldsAggregateUnsubsidizedTotalStartIndex2526-1 : (nsldsAggregateUnsubsidizedTotalStartIndex2526-1)+nsldsAggregateUnsubsidizedTotalLength2526]), // Field # 608
+		NSLDSAggregateUnsubsidizedTotal: preprocessString(record[nsldsAggregateUnsubsidizedTotalStartIndex2526-1 : (nsldsAggregateUnsubsidizedTotalStartIndex2526-1)+nsldsAggregateUnsubsidizedTotalLength2526]), // Field # 608
 
-		NSLDSAggregateCombinedTotal: strings.TrimSpace(record[nsldsAggregateCombinedTotalStartIndex2526-1 : (nsldsAggregateCombinedTotalStartIndex2526-1)+nsldsAggregateCombinedTotalLength2526]), // Field # 609
+		NSLDSAggregateCombinedTotal: preprocessString(record[nsldsAggregateCombinedTotalStartIndex2526-1 : (nsldsAggregateCombinedTotalStartIndex2526-1)+nsldsAggregateCombinedTotalLength2526]), // Field # 609
 
-		NSLDSUnallocatedConsolidatedTotal: strings.TrimSpace(record[nsldsUnallocatedConsolidatedTotalStartIndex2526-1 : (nsldsUnallocatedConsolidatedTotalStartIndex2526-1)+nsldsUnallocatedConsolidatedTotalLength2526]), // Field # 610
+		NSLDSUnallocatedConsolidatedTotal: preprocessString(record[nsldsUnallocatedConsolidatedTotalStartIndex2526-1 : (nsldsUnallocatedConsolidatedTotalStartIndex2526-1)+nsldsUnallocatedConsolidatedTotalLength2526]), // Field # 610
 
-		NSLDSTEACHLoanTotal: strings.TrimSpace(record[nsldsTEACHLoanTotalStartIndex2526-1 : (nsldsTEACHLoanTotalStartIndex2526-1)+nsldsTEACHLoanTotalLength2526]), // Field # 611
+		NSLDSTEACHLoanTotal: preprocessString(record[nsldsTEACHLoanTotalStartIndex2526-1 : (nsldsTEACHLoanTotalStartIndex2526-1)+nsldsTEACHLoanTotalLength2526]), // Field # 611
 
-		NSLDSPerkinsTotalDisbursements: strings.TrimSpace(record[nsldsPerkinsTotalDisbursementsStartIndex2526-1 : (nsldsPerkinsTotalDisbursementsStartIndex2526-1)+nsldsPerkinsTotalDisbursementsLength2526]), // Field # 612
+		NSLDSPerkinsTotalDisbursements: preprocessString(record[nsldsPerkinsTotalDisbursementsStartIndex2526-1 : (nsldsPerkinsTotalDisbursementsStartIndex2526-1)+nsldsPerkinsTotalDisbursementsLength2526]), // Field # 612
 
-		NSLDSPerkinsCurrentYearDisbursementAmount: strings.TrimSpace(record[nsldsPerkinsCurrentYearDisbursementAmountStartIndex2526-1 : (nsldsPerkinsCurrentYearDisbursementAmountStartIndex2526-1)+nsldsPerkinsCurrentYearDisbursementAmountLength2526]), // Field # 613
+		NSLDSPerkinsCurrentYearDisbursementAmount: preprocessString(record[nsldsPerkinsCurrentYearDisbursementAmountStartIndex2526-1 : (nsldsPerkinsCurrentYearDisbursementAmountStartIndex2526-1)+nsldsPerkinsCurrentYearDisbursementAmountLength2526]), // Field # 613
 
-		NSLDSAggregateTEACHGrantUndergraduateDisbursedTotal: strings.TrimSpace(record[nsldsAggregateTEACHGrantUndergraduateDisbursedTotalStartIndex2526-1 : (nsldsAggregateTEACHGrantUndergraduateDisbursedTotalStartIndex2526-1)+nsldsAggregateTEACHGrantUndergraduateDisbursedTotalLength2526]), // Field # 614
+		NSLDSAggregateTEACHGrantUndergraduateDisbursedTotal: preprocessString(record[nsldsAggregateTEACHGrantUndergraduateDisbursedTotalStartIndex2526-1 : (nsldsAggregateTEACHGrantUndergraduateDisbursedTotalStartIndex2526-1)+nsldsAggregateTEACHGrantUndergraduateDisbursedTotalLength2526]), // Field # 614
 
-		NSLDSAggregateTEACHGraduateDisbursementAmount: strings.TrimSpace(record[nsldsAggregateTEACHGraduateDisbursementAmountStartIndex2526-1 : (nsldsAggregateTEACHGraduateDisbursementAmountStartIndex2526-1)+nsldsAggregateTEACHGraduateDisbursementAmountLength2526]), // Field # 615
+		NSLDSAggregateTEACHGraduateDisbursementAmount: preprocessString(record[nsldsAggregateTEACHGraduateDisbursementAmountStartIndex2526-1 : (nsldsAggregateTEACHGraduateDisbursementAmountStartIndex2526-1)+nsldsAggregateTEACHGraduateDisbursementAmountLength2526]), // Field # 615
 
-		NSLDSDefaultedLoanChangeFlag: strings.TrimSpace(record[nsldsDefaultedLoanChangeFlagStartIndex2526-1 : (nsldsDefaultedLoanChangeFlagStartIndex2526-1)+nsldsDefaultedLoanChangeFlagLength2526]), // Field # 616
+		NSLDSDefaultedLoanChangeFlag: preprocessString(record[nsldsDefaultedLoanChangeFlagStartIndex2526-1 : (nsldsDefaultedLoanChangeFlagStartIndex2526-1)+nsldsDefaultedLoanChangeFlagLength2526]), // Field # 616
 
-		NSLDSFraudLoanChangeFlag: strings.TrimSpace(record[nsldsFraudLoanChangeFlagStartIndex2526-1 : (nsldsFraudLoanChangeFlagStartIndex2526-1)+nsldsFraudLoanChangeFlagLength2526]), // Field # 617
+		NSLDSFraudLoanChangeFlag: preprocessString(record[nsldsFraudLoanChangeFlagStartIndex2526-1 : (nsldsFraudLoanChangeFlagStartIndex2526-1)+nsldsFraudLoanChangeFlagLength2526]), // Field # 617
 
-		NSLDSDischargedLoanChangeFlag: strings.TrimSpace(record[nsldsDischargedLoanChangeFlagStartIndex2526-1 : (nsldsDischargedLoanChangeFlagStartIndex2526-1)+nsldsDischargedLoanChangeFlagLength2526]), // Field # 618
+		NSLDSDischargedLoanChangeFlag: preprocessString(record[nsldsDischargedLoanChangeFlagStartIndex2526-1 : (nsldsDischargedLoanChangeFlagStartIndex2526-1)+nsldsDischargedLoanChangeFlagLength2526]), // Field # 618
 
-		NSLDSLoanSatisfactoryRepaymentChangeFlag: strings.TrimSpace(record[nsldsLoanSatisfactoryRepaymentChangeFlagStartIndex2526-1 : (nsldsLoanSatisfactoryRepaymentChangeFlagStartIndex2526-1)+nsldsLoanSatisfactoryRepaymentChangeFlagLength2526]), // Field # 619
+		NSLDSLoanSatisfactoryRepaymentChangeFlag: preprocessString(record[nsldsLoanSatisfactoryRepaymentChangeFlagStartIndex2526-1 : (nsldsLoanSatisfactoryRepaymentChangeFlagStartIndex2526-1)+nsldsLoanSatisfactoryRepaymentChangeFlagLength2526]), // Field # 619
 
-		NSLDSActiveBankruptcyChangeFlag: strings.TrimSpace(record[nsldsActiveBankruptcyChangeFlagStartIndex2526-1 : (nsldsActiveBankruptcyChangeFlagStartIndex2526-1)+nsldsActiveBankruptcyChangeFlagLength2526]), // Field # 620
+		NSLDSActiveBankruptcyChangeFlag: preprocessString(record[nsldsActiveBankruptcyChangeFlagStartIndex2526-1 : (nsldsActiveBankruptcyChangeFlagStartIndex2526-1)+nsldsActiveBankruptcyChangeFlagLength2526]), // Field # 620
 
-		NSLDSTEACHGrantToLoanConversionChangeFlag: strings.TrimSpace(record[nsldsTEACHGrantToLoanConversionChangeFlagStartIndex2526-1 : (nsldsTEACHGrantToLoanConversionChangeFlagStartIndex2526-1)+nsldsTEACHGrantToLoanConversionChangeFlagLength2526]), // Field # 621
+		NSLDSTEACHGrantToLoanConversionChangeFlag: preprocessString(record[nsldsTEACHGrantToLoanConversionChangeFlagStartIndex2526-1 : (nsldsTEACHGrantToLoanConversionChangeFlagStartIndex2526-1)+nsldsTEACHGrantToLoanConversionChangeFlagLength2526]), // Field # 621
 
-		NSLDSOverpaymentsChangeFlag: strings.TrimSpace(record[nsldsOverpaymentsChangeFlagStartIndex2526-1 : (nsldsOverpaymentsChangeFlagStartIndex2526-1)+nsldsOverpaymentsChangeFlagLength2526]), // Field # 622
+		NSLDSOverpaymentsChangeFlag: preprocessString(record[nsldsOverpaymentsChangeFlagStartIndex2526-1 : (nsldsOverpaymentsChangeFlagStartIndex2526-1)+nsldsOverpaymentsChangeFlagLength2526]), // Field # 622
 
-		NSLDSAggregateLoanChangeFlag: strings.TrimSpace(record[nsldsAggregateLoanChangeFlagStartIndex2526-1 : (nsldsAggregateLoanChangeFlagStartIndex2526-1)+nsldsAggregateLoanChangeFlagLength2526]), // Field # 623
+		NSLDSAggregateLoanChangeFlag: preprocessString(record[nsldsAggregateLoanChangeFlagStartIndex2526-1 : (nsldsAggregateLoanChangeFlagStartIndex2526-1)+nsldsAggregateLoanChangeFlagLength2526]), // Field # 623
 
-		NSLDSPerkinsLoanChangeFlag: strings.TrimSpace(record[nsldsPerkinsLoanChangeFlagStartIndex2526-1 : (nsldsPerkinsLoanChangeFlagStartIndex2526-1)+nsldsPerkinsLoanChangeFlagLength2526]), // Field # 624
+		NSLDSPerkinsLoanChangeFlag: preprocessString(record[nsldsPerkinsLoanChangeFlagStartIndex2526-1 : (nsldsPerkinsLoanChangeFlagStartIndex2526-1)+nsldsPerkinsLoanChangeFlagLength2526]), // Field # 624
 
-		NSLDSPellPaymentChangeFlag: strings.TrimSpace(record[nsldsPellPaymentChangeFlagStartIndex2526-1 : (nsldsPellPaymentChangeFlagStartIndex2526-1)+nsldsPellPaymentChangeFlagLength2526]), // Field # 625
+		NSLDSPellPaymentChangeFlag: preprocessString(record[nsldsPellPaymentChangeFlagStartIndex2526-1 : (nsldsPellPaymentChangeFlagStartIndex2526-1)+nsldsPellPaymentChangeFlagLength2526]), // Field # 625
 
-		NSLDSTEACHGrantChangeFlag: strings.TrimSpace(record[nsldsTEACHGrantChangeFlagStartIndex2526-1 : (nsldsTEACHGrantChangeFlagStartIndex2526-1)+nsldsTEACHGrantChangeFlagLength2526]), // Field # 626
+		NSLDSTEACHGrantChangeFlag: preprocessString(record[nsldsTEACHGrantChangeFlagStartIndex2526-1 : (nsldsTEACHGrantChangeFlagStartIndex2526-1)+nsldsTEACHGrantChangeFlagLength2526]), // Field # 626
 
-		NSLDSAdditionalPellFlag: strings.TrimSpace(record[nsldsAdditionalPellFlagStartIndex2526-1 : (nsldsAdditionalPellFlagStartIndex2526-1)+nsldsAdditionalPellFlagLength2526]), // Field # 627
+		NSLDSAdditionalPellFlag: preprocessString(record[nsldsAdditionalPellFlagStartIndex2526-1 : (nsldsAdditionalPellFlagStartIndex2526-1)+nsldsAdditionalPellFlagLength2526]), // Field # 627
 
-		NSLDSAdditionalLoansFlag: strings.TrimSpace(record[nsldsAdditionalLoansFlagStartIndex2526-1 : (nsldsAdditionalLoansFlagStartIndex2526-1)+nsldsAdditionalLoansFlagLength2526]), // Field # 628
+		NSLDSAdditionalLoansFlag: preprocessString(record[nsldsAdditionalLoansFlagStartIndex2526-1 : (nsldsAdditionalLoansFlagStartIndex2526-1)+nsldsAdditionalLoansFlagLength2526]), // Field # 628
 
-		NSLDSAdditionalTEACHGrantFlag: strings.TrimSpace(record[nsldsAdditionalTEACHGrantFlagStartIndex2526-1 : (nsldsAdditionalTEACHGrantFlagStartIndex2526-1)+nsldsAdditionalTEACHGrantFlagLength2526]), // Field # 629
+		NSLDSAdditionalTEACHGrantFlag: preprocessString(record[nsldsAdditionalTEACHGrantFlagStartIndex2526-1 : (nsldsAdditionalTEACHGrantFlagStartIndex2526-1)+nsldsAdditionalTEACHGrantFlagLength2526]), // Field # 629
 
-		NSLDSDirectLoanMasterPromNoteFlag: strings.TrimSpace(record[nsldsDirectLoanMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanMasterPromNoteFlagLength2526]), // Field # 630
+		NSLDSDirectLoanMasterPromNoteFlag: preprocessString(record[nsldsDirectLoanMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanMasterPromNoteFlagLength2526]), // Field # 630
 
-		NSLDSDirectLoanPLUSMasterPromNoteFlag: strings.TrimSpace(record[nsldsDirectLoanPLUSMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanPLUSMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanPLUSMasterPromNoteFlagLength2526]), // Field # 631
+		NSLDSDirectLoanPLUSMasterPromNoteFlag: preprocessString(record[nsldsDirectLoanPLUSMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanPLUSMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanPLUSMasterPromNoteFlagLength2526]), // Field # 631
 
-		NSLDSDirectLoanGraduatePLUSMasterPromNoteFlag: strings.TrimSpace(record[nsldsDirectLoanGraduatePLUSMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanGraduatePLUSMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanGraduatePLUSMasterPromNoteFlagLength2526]), // Field # 632
+		NSLDSDirectLoanGraduatePLUSMasterPromNoteFlag: preprocessString(record[nsldsDirectLoanGraduatePLUSMasterPromNoteFlagStartIndex2526-1 : (nsldsDirectLoanGraduatePLUSMasterPromNoteFlagStartIndex2526-1)+nsldsDirectLoanGraduatePLUSMasterPromNoteFlagLength2526]), // Field # 632
 
-		NSLDSUndergraduateSubsidizedLoanLimitFlag: strings.TrimSpace(record[nsldsUndergraduateSubsidizedLoanLimitFlagStartIndex2526-1 : (nsldsUndergraduateSubsidizedLoanLimitFlagStartIndex2526-1)+nsldsUndergraduateSubsidizedLoanLimitFlagLength2526]), // Field # 633
+		NSLDSUndergraduateSubsidizedLoanLimitFlag: preprocessString(record[nsldsUndergraduateSubsidizedLoanLimitFlagStartIndex2526-1 : (nsldsUndergraduateSubsidizedLoanLimitFlagStartIndex2526-1)+nsldsUndergraduateSubsidizedLoanLimitFlagLength2526]), // Field # 633
 
-		NSLDSUndergraduateCombinedLoanLimitFlag: strings.TrimSpace(record[nsldsUndergraduateCombinedLoanLimitFlagStartIndex2526-1 : (nsldsUndergraduateCombinedLoanLimitFlagStartIndex2526-1)+nsldsUndergraduateCombinedLoanLimitFlagLength2526]), // Field # 634
+		NSLDSUndergraduateCombinedLoanLimitFlag: preprocessString(record[nsldsUndergraduateCombinedLoanLimitFlagStartIndex2526-1 : (nsldsUndergraduateCombinedLoanLimitFlagStartIndex2526-1)+nsldsUndergraduateCombinedLoanLimitFlagLength2526]), // Field # 634
 
-		NSLDSGraduateSubsidizedLoanLimitFlag: strings.TrimSpace(record[nsldsGraduateSubsidizedLoanLimitFlagStartIndex2526-1 : (nsldsGraduateSubsidizedLoanLimitFlagStartIndex2526-1)+nsldsGraduateSubsidizedLoanLimitFlagLength2526]), // Field # 635
+		NSLDSGraduateSubsidizedLoanLimitFlag: preprocessString(record[nsldsGraduateSubsidizedLoanLimitFlagStartIndex2526-1 : (nsldsGraduateSubsidizedLoanLimitFlagStartIndex2526-1)+nsldsGraduateSubsidizedLoanLimitFlagLength2526]), // Field # 635
 
-		NSLDSGraduateCombinedLoanLimitFlag: strings.TrimSpace(record[nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1 : (nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1)+nsldsGraduateCombinedLoanLimitFlagLength2526]), // Field # 636
+		NSLDSGraduateCombinedLoanLimitFlag: preprocessString(record[nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1 : (nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1)+nsldsGraduateCombinedLoanLimitFlagLength2526]), // Field # 636
 
-		NSLDSLEULimitIndicator: strings.TrimSpace(record[nsldsLEULimitIndicatorStartIndex2526-1 : (nsldsLEULimitIndicatorStartIndex2526-1)+nsldsLEULimitIndicatorLength2526]), // Field # 637
+		NSLDSLEULimitIndicator: preprocessString(record[nsldsLEULimitIndicatorStartIndex2526-1 : (nsldsLEULimitIndicatorStartIndex2526-1)+nsldsLEULimitIndicatorLength2526]), // Field # 637
 
-		NSLDSPellLifetimeEligibilityUsed: strings.TrimSpace(record[nsldsPellLifetimeEligibilityUsedStartIndex2526-1 : (nsldsPellLifetimeEligibilityUsedStartIndex2526-1)+nsldsPellLifetimeEligibilityUsedLength2526]), // Field # 638
+		NSLDSPellLifetimeEligibilityUsed: preprocessString(record[nsldsPellLifetimeEligibilityUsedStartIndex2526-1 : (nsldsPellLifetimeEligibilityUsedStartIndex2526-1)+nsldsPellLifetimeEligibilityUsedLength2526]), // Field # 638
 
-		NSLDSSULAFlag: strings.TrimSpace(record[nsldsSULAFlagStartIndex2526-1 : (nsldsSULAFlagStartIndex2526-1)+nsldsSULAFlagLength2526]), // Field # 639
+		NSLDSSULAFlag: preprocessString(record[nsldsSULAFlagStartIndex2526-1 : (nsldsSULAFlagStartIndex2526-1)+nsldsSULAFlagLength2526]), // Field # 639
 
-		NSLDSSubsidizedLimitEligibilityFlag: strings.TrimSpace(record[nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1 : (nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1)+nsldsSubsidizedLimitEligibilityFlagLength2526]), // Field # 640
+		NSLDSSubsidizedLimitEligibilityFlag: preprocessString(record[nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1 : (nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1)+nsldsSubsidizedLimitEligibilityFlagLength2526]), // Field # 640
 
-		NSLDSUnusualEnrollmentHistoryFlag: strings.TrimSpace(record[nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1 : (nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1)+nsldsUnusualEnrollmentHistoryFlagLength2526]), // Field # 641
+		NSLDSUnusualEnrollmentHistoryFlag: preprocessString(record[nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1 : (nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1)+nsldsUnusualEnrollmentHistoryFlagLength2526]), // Field # 641
 
-		NSLDSPellSequenceNumber1: strings.TrimSpace(record[nsldsPellSequenceNumber1StartIndex2526-1 : (nsldsPellSequenceNumber1StartIndex2526-1)+nsldsPellSequenceNumber1Length2526]), // Field # 643
+		NSLDSPellSequenceNumber1: preprocessString(record[nsldsPellSequenceNumber1StartIndex2526-1 : (nsldsPellSequenceNumber1StartIndex2526-1)+nsldsPellSequenceNumber1Length2526]), // Field # 643
 
-		NSLDSPellVerificationFlag1: strings.TrimSpace(record[nsldsPellVerificationFlag1StartIndex2526-1 : (nsldsPellVerificationFlag1StartIndex2526-1)+nsldsPellVerificationFlag1Length2526]), // Field # 644
+		NSLDSPellVerificationFlag1: preprocessString(record[nsldsPellVerificationFlag1StartIndex2526-1 : (nsldsPellVerificationFlag1StartIndex2526-1)+nsldsPellVerificationFlag1Length2526]), // Field # 644
 
-		NSLDSSAI1: strings.TrimSpace(record[nsldsSAI1StartIndex2526-1 : (nsldsSAI1StartIndex2526-1)+nsldsSAI1Length2526]), // Field # 645
+		NSLDSSAI1: preprocessString(record[nsldsSAI1StartIndex2526-1 : (nsldsSAI1StartIndex2526-1)+nsldsSAI1Length2526]), // Field # 645
 
-		NSLDSPellSchoolCode1: strings.TrimSpace(record[nsldsPellSchoolCode1StartIndex2526-1 : (nsldsPellSchoolCode1StartIndex2526-1)+nsldsPellSchoolCode1Length2526]), // Field # 646
+		NSLDSPellSchoolCode1: preprocessString(record[nsldsPellSchoolCode1StartIndex2526-1 : (nsldsPellSchoolCode1StartIndex2526-1)+nsldsPellSchoolCode1Length2526]), // Field # 646
 
-		NSLDSPellTransactionNumber1: strings.TrimSpace(record[nsldsPellTransactionNumber1StartIndex2526-1 : (nsldsPellTransactionNumber1StartIndex2526-1)+nsldsPellTransactionNumber1Length2526]), // Field # 647
+		NSLDSPellTransactionNumber1: preprocessString(record[nsldsPellTransactionNumber1StartIndex2526-1 : (nsldsPellTransactionNumber1StartIndex2526-1)+nsldsPellTransactionNumber1Length2526]), // Field # 647
 
-		NSLDSPellLastDisbursementDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsPellLastDisbursementDate1StartIndex2526-1 : (nsldsPellLastDisbursementDate1StartIndex2526-1)+nsldsPellLastDisbursementDate1Length2526])), // Field # 648
+		NSLDSPellLastDisbursementDate1: parseISIRDate2526(preprocessString(record[nsldsPellLastDisbursementDate1StartIndex2526-1 : (nsldsPellLastDisbursementDate1StartIndex2526-1)+nsldsPellLastDisbursementDate1Length2526])), // Field # 648
 
-		NSLDSPellScheduledAmount1: strings.TrimSpace(record[nsldsPellScheduledAmount1StartIndex2526-1 : (nsldsPellScheduledAmount1StartIndex2526-1)+nsldsPellScheduledAmount1Length2526]), // Field # 649
+		NSLDSPellScheduledAmount1: preprocessString(record[nsldsPellScheduledAmount1StartIndex2526-1 : (nsldsPellScheduledAmount1StartIndex2526-1)+nsldsPellScheduledAmount1Length2526]), // Field # 649
 
-		NSLDSPellAmountPaidToDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsPellAmountPaidToDate1StartIndex2526-1 : (nsldsPellAmountPaidToDate1StartIndex2526-1)+nsldsPellAmountPaidToDate1Length2526])), // Field # 650
+		NSLDSPellAmountPaidToDate1: parseISIRDate2526(preprocessString(record[nsldsPellAmountPaidToDate1StartIndex2526-1 : (nsldsPellAmountPaidToDate1StartIndex2526-1)+nsldsPellAmountPaidToDate1Length2526])), // Field # 650
 
-		NSLDSPellPercentEligibilityUsedDecimal1: strings.TrimSpace(record[nsldsPellPercentEligibilityUsedDecimal1StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal1StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal1Length2526]), // Field # 651
+		NSLDSPellPercentEligibilityUsedDecimal1: preprocessString(record[nsldsPellPercentEligibilityUsedDecimal1StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal1StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal1Length2526]), // Field # 651
 
-		NSLDSPellAwardAmount1: strings.TrimSpace(record[nsldsPellAwardAmount1StartIndex2526-1 : (nsldsPellAwardAmount1StartIndex2526-1)+nsldsPellAwardAmount1Length2526]), // Field # 652
+		NSLDSPellAwardAmount1: preprocessString(record[nsldsPellAwardAmount1StartIndex2526-1 : (nsldsPellAwardAmount1StartIndex2526-1)+nsldsPellAwardAmount1Length2526]), // Field # 652
 
-		NSLDSAdditionalEligibilityIndicator1: strings.TrimSpace(record[nsldsAdditionalEligibilityIndicator1StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator1StartIndex2526-1)+nsldsAdditionalEligibilityIndicator1Length2526]), // Field # 653
+		NSLDSAdditionalEligibilityIndicator1: preprocessString(record[nsldsAdditionalEligibilityIndicator1StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator1StartIndex2526-1)+nsldsAdditionalEligibilityIndicator1Length2526]), // Field # 653
 
-		NSLDSPellSequenceNumber2: strings.TrimSpace(record[nsldsPellSequenceNumber2StartIndex2526-1 : (nsldsPellSequenceNumber2StartIndex2526-1)+nsldsPellSequenceNumber2Length2526]), // Field # 655
+		NSLDSPellSequenceNumber2: preprocessString(record[nsldsPellSequenceNumber2StartIndex2526-1 : (nsldsPellSequenceNumber2StartIndex2526-1)+nsldsPellSequenceNumber2Length2526]), // Field # 655
 
-		NSLDSPellVerificationFlag2: strings.TrimSpace(record[nsldsPellVerificationFlag2StartIndex2526-1 : (nsldsPellVerificationFlag2StartIndex2526-1)+nsldsPellVerificationFlag2Length2526]), // Field # 656
+		NSLDSPellVerificationFlag2: preprocessString(record[nsldsPellVerificationFlag2StartIndex2526-1 : (nsldsPellVerificationFlag2StartIndex2526-1)+nsldsPellVerificationFlag2Length2526]), // Field # 656
 
-		NSLDSSAI2: strings.TrimSpace(record[nsldsSAI2StartIndex2526-1 : (nsldsSAI2StartIndex2526-1)+nsldsSAI2Length2526]), // Field # 657
+		NSLDSSAI2: preprocessString(record[nsldsSAI2StartIndex2526-1 : (nsldsSAI2StartIndex2526-1)+nsldsSAI2Length2526]), // Field # 657
 
-		NSLDSPellSchoolCode2: strings.TrimSpace(record[nsldsPellSchoolCode2StartIndex2526-1 : (nsldsPellSchoolCode2StartIndex2526-1)+nsldsPellSchoolCode2Length2526]), // Field # 658
+		NSLDSPellSchoolCode2: preprocessString(record[nsldsPellSchoolCode2StartIndex2526-1 : (nsldsPellSchoolCode2StartIndex2526-1)+nsldsPellSchoolCode2Length2526]), // Field # 658
 
-		NSLDSPellTransactionNumber2: strings.TrimSpace(record[nsldsPellTransactionNumber2StartIndex2526-1 : (nsldsPellTransactionNumber2StartIndex2526-1)+nsldsPellTransactionNumber2Length2526]), // Field # 659
+		NSLDSPellTransactionNumber2: preprocessString(record[nsldsPellTransactionNumber2StartIndex2526-1 : (nsldsPellTransactionNumber2StartIndex2526-1)+nsldsPellTransactionNumber2Length2526]), // Field # 659
 
-		NSLDSPellLastDisbursementDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsPellLastDisbursementDate2StartIndex2526-1 : (nsldsPellLastDisbursementDate2StartIndex2526-1)+nsldsPellLastDisbursementDate2Length2526])), // Field # 660
+		NSLDSPellLastDisbursementDate2: parseISIRDate2526(preprocessString(record[nsldsPellLastDisbursementDate2StartIndex2526-1 : (nsldsPellLastDisbursementDate2StartIndex2526-1)+nsldsPellLastDisbursementDate2Length2526])), // Field # 660
 
-		NSLDSPellScheduledAmount2: strings.TrimSpace(record[nsldsPellScheduledAmount2StartIndex2526-1 : (nsldsPellScheduledAmount2StartIndex2526-1)+nsldsPellScheduledAmount2Length2526]), // Field # 661
+		NSLDSPellScheduledAmount2: preprocessString(record[nsldsPellScheduledAmount2StartIndex2526-1 : (nsldsPellScheduledAmount2StartIndex2526-1)+nsldsPellScheduledAmount2Length2526]), // Field # 661
 
-		NSLDSPellAmountPaidToDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsPellAmountPaidToDate2StartIndex2526-1 : (nsldsPellAmountPaidToDate2StartIndex2526-1)+nsldsPellAmountPaidToDate2Length2526])), // Field # 662
+		NSLDSPellAmountPaidToDate2: parseISIRDate2526(preprocessString(record[nsldsPellAmountPaidToDate2StartIndex2526-1 : (nsldsPellAmountPaidToDate2StartIndex2526-1)+nsldsPellAmountPaidToDate2Length2526])), // Field # 662
 
-		NSLDSPellPercentEligibilityUsedDecimal2: strings.TrimSpace(record[nsldsPellPercentEligibilityUsedDecimal2StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal2StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal2Length2526]), // Field # 663
+		NSLDSPellPercentEligibilityUsedDecimal2: preprocessString(record[nsldsPellPercentEligibilityUsedDecimal2StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal2StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal2Length2526]), // Field # 663
 
-		NSLDSPellAwardAmount2: strings.TrimSpace(record[nsldsPellAwardAmount2StartIndex2526-1 : (nsldsPellAwardAmount2StartIndex2526-1)+nsldsPellAwardAmount2Length2526]), // Field # 664
+		NSLDSPellAwardAmount2: preprocessString(record[nsldsPellAwardAmount2StartIndex2526-1 : (nsldsPellAwardAmount2StartIndex2526-1)+nsldsPellAwardAmount2Length2526]), // Field # 664
 
-		NSLDSAdditionalEligibilityIndicator2: strings.TrimSpace(record[nsldsAdditionalEligibilityIndicator2StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator2StartIndex2526-1)+nsldsAdditionalEligibilityIndicator2Length2526]), // Field # 665
+		NSLDSAdditionalEligibilityIndicator2: preprocessString(record[nsldsAdditionalEligibilityIndicator2StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator2StartIndex2526-1)+nsldsAdditionalEligibilityIndicator2Length2526]), // Field # 665
 
-		NSLDSPellSequenceNumber3: strings.TrimSpace(record[nsldsPellSequenceNumber3StartIndex2526-1 : (nsldsPellSequenceNumber3StartIndex2526-1)+nsldsPellSequenceNumber3Length2526]), // Field # 667
+		NSLDSPellSequenceNumber3: preprocessString(record[nsldsPellSequenceNumber3StartIndex2526-1 : (nsldsPellSequenceNumber3StartIndex2526-1)+nsldsPellSequenceNumber3Length2526]), // Field # 667
 
-		NSLDSPellVerificationFlag3: strings.TrimSpace(record[nsldsPellVerificationFlag3StartIndex2526-1 : (nsldsPellVerificationFlag3StartIndex2526-1)+nsldsPellVerificationFlag3Length2526]), // Field # 668
+		NSLDSPellVerificationFlag3: preprocessString(record[nsldsPellVerificationFlag3StartIndex2526-1 : (nsldsPellVerificationFlag3StartIndex2526-1)+nsldsPellVerificationFlag3Length2526]), // Field # 668
 
-		NSLDSSAI3: strings.TrimSpace(record[nsldsSAI3StartIndex2526-1 : (nsldsSAI3StartIndex2526-1)+nsldsSAI3Length2526]), // Field # 669
+		NSLDSSAI3: preprocessString(record[nsldsSAI3StartIndex2526-1 : (nsldsSAI3StartIndex2526-1)+nsldsSAI3Length2526]), // Field # 669
 
-		NSLDSPellSchoolCode3: strings.TrimSpace(record[nsldsPellSchoolCode3StartIndex2526-1 : (nsldsPellSchoolCode3StartIndex2526-1)+nsldsPellSchoolCode3Length2526]), // Field # 670
+		NSLDSPellSchoolCode3: preprocessString(record[nsldsPellSchoolCode3StartIndex2526-1 : (nsldsPellSchoolCode3StartIndex2526-1)+nsldsPellSchoolCode3Length2526]), // Field # 670
 
-		NSLDSPellTransactionNumber3: strings.TrimSpace(record[nsldsPellTransactionNumber3StartIndex2526-1 : (nsldsPellTransactionNumber3StartIndex2526-1)+nsldsPellTransactionNumber3Length2526]), // Field # 671
+		NSLDSPellTransactionNumber3: preprocessString(record[nsldsPellTransactionNumber3StartIndex2526-1 : (nsldsPellTransactionNumber3StartIndex2526-1)+nsldsPellTransactionNumber3Length2526]), // Field # 671
 
-		NSLDSPellLastDisbursementDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsPellLastDisbursementDate3StartIndex2526-1 : (nsldsPellLastDisbursementDate3StartIndex2526-1)+nsldsPellLastDisbursementDate3Length2526])), // Field # 672
+		NSLDSPellLastDisbursementDate3: parseISIRDate2526(preprocessString(record[nsldsPellLastDisbursementDate3StartIndex2526-1 : (nsldsPellLastDisbursementDate3StartIndex2526-1)+nsldsPellLastDisbursementDate3Length2526])), // Field # 672
 
-		NSLDSPellScheduledAmount3: strings.TrimSpace(record[nsldsPellScheduledAmount3StartIndex2526-1 : (nsldsPellScheduledAmount3StartIndex2526-1)+nsldsPellScheduledAmount3Length2526]), // Field # 673
+		NSLDSPellScheduledAmount3: preprocessString(record[nsldsPellScheduledAmount3StartIndex2526-1 : (nsldsPellScheduledAmount3StartIndex2526-1)+nsldsPellScheduledAmount3Length2526]), // Field # 673
 
-		NSLDSPellAmountPaidToDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsPellAmountPaidToDate3StartIndex2526-1 : (nsldsPellAmountPaidToDate3StartIndex2526-1)+nsldsPellAmountPaidToDate3Length2526])), // Field # 674
+		NSLDSPellAmountPaidToDate3: parseISIRDate2526(preprocessString(record[nsldsPellAmountPaidToDate3StartIndex2526-1 : (nsldsPellAmountPaidToDate3StartIndex2526-1)+nsldsPellAmountPaidToDate3Length2526])), // Field # 674
 
-		NSLDSPellPercentEligibilityUsedDecimal3: strings.TrimSpace(record[nsldsPellPercentEligibilityUsedDecimal3StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal3StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal3Length2526]), // Field # 675
+		NSLDSPellPercentEligibilityUsedDecimal3: preprocessString(record[nsldsPellPercentEligibilityUsedDecimal3StartIndex2526-1 : (nsldsPellPercentEligibilityUsedDecimal3StartIndex2526-1)+nsldsPellPercentEligibilityUsedDecimal3Length2526]), // Field # 675
 
-		NSLDSPellAwardAmount3: strings.TrimSpace(record[nsldsPellAwardAmount3StartIndex2526-1 : (nsldsPellAwardAmount3StartIndex2526-1)+nsldsPellAwardAmount3Length2526]), // Field # 676
+		NSLDSPellAwardAmount3: preprocessString(record[nsldsPellAwardAmount3StartIndex2526-1 : (nsldsPellAwardAmount3StartIndex2526-1)+nsldsPellAwardAmount3Length2526]), // Field # 676
 
-		NSLDSAdditionalEligibilityIndicator3: strings.TrimSpace(record[nsldsAdditionalEligibilityIndicator3StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator3StartIndex2526-1)+nsldsAdditionalEligibilityIndicator3Length2526]), // Field # 677
+		NSLDSAdditionalEligibilityIndicator3: preprocessString(record[nsldsAdditionalEligibilityIndicator3StartIndex2526-1 : (nsldsAdditionalEligibilityIndicator3StartIndex2526-1)+nsldsAdditionalEligibilityIndicator3Length2526]), // Field # 677
 
-		NSLDSTEACHGrantSequence1: strings.TrimSpace(record[nsldsTEACHGrantSequence1StartIndex2526-1 : (nsldsTEACHGrantSequence1StartIndex2526-1)+nsldsTEACHGrantSequence1Length2526]), // Field # 679
+		NSLDSTEACHGrantSequence1: preprocessString(record[nsldsTEACHGrantSequence1StartIndex2526-1 : (nsldsTEACHGrantSequence1StartIndex2526-1)+nsldsTEACHGrantSequence1Length2526]), // Field # 679
 
-		NSLDSTEACHGrantSchoolCode1: strings.TrimSpace(record[nsldsTEACHGrantSchoolCode1StartIndex2526-1 : (nsldsTEACHGrantSchoolCode1StartIndex2526-1)+nsldsTEACHGrantSchoolCode1Length2526]), // Field # 680
+		NSLDSTEACHGrantSchoolCode1: preprocessString(record[nsldsTEACHGrantSchoolCode1StartIndex2526-1 : (nsldsTEACHGrantSchoolCode1StartIndex2526-1)+nsldsTEACHGrantSchoolCode1Length2526]), // Field # 680
 
-		NSLDSTEACHGrantTransactionNumber1: strings.TrimSpace(record[nsldsTEACHGrantTransactionNumber1StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber1StartIndex2526-1)+nsldsTEACHGrantTransactionNumber1Length2526]), // Field # 681
+		NSLDSTEACHGrantTransactionNumber1: preprocessString(record[nsldsTEACHGrantTransactionNumber1StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber1StartIndex2526-1)+nsldsTEACHGrantTransactionNumber1Length2526]), // Field # 681
 
-		NSLDSTEACHGrantLastDisbursementDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantLastDisbursementDate1StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate1StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate1Length2526])), // Field # 682
+		NSLDSTEACHGrantLastDisbursementDate1: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantLastDisbursementDate1StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate1StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate1Length2526])), // Field # 682
 
-		NSLDSTEACHGrantScheduledAmount1: strings.TrimSpace(record[nsldsTEACHGrantScheduledAmount1StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount1StartIndex2526-1)+nsldsTEACHGrantScheduledAmount1Length2526]), // Field # 683
+		NSLDSTEACHGrantScheduledAmount1: preprocessString(record[nsldsTEACHGrantScheduledAmount1StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount1StartIndex2526-1)+nsldsTEACHGrantScheduledAmount1Length2526]), // Field # 683
 
-		NSLDSTEACHGrantAmountPaidToDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantAmountPaidToDate1StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate1StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate1Length2526])), // Field # 684
+		NSLDSTEACHGrantAmountPaidToDate1: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantAmountPaidToDate1StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate1StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate1Length2526])), // Field # 684
 
-		NSLDSTEACHGrantAwardAmount1: strings.TrimSpace(record[nsldsTEACHGrantAwardAmount1StartIndex2526-1 : (nsldsTEACHGrantAwardAmount1StartIndex2526-1)+nsldsTEACHGrantAwardAmount1Length2526]), // Field # 685
+		NSLDSTEACHGrantAwardAmount1: preprocessString(record[nsldsTEACHGrantAwardAmount1StartIndex2526-1 : (nsldsTEACHGrantAwardAmount1StartIndex2526-1)+nsldsTEACHGrantAwardAmount1Length2526]), // Field # 685
 
-		NSLDSTEACHGrantAcademicYearLevel1: strings.TrimSpace(record[nsldsTEACHGrantAcademicYearLevel1StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel1StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel1Length2526]), // Field # 686
+		NSLDSTEACHGrantAcademicYearLevel1: preprocessString(record[nsldsTEACHGrantAcademicYearLevel1StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel1StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel1Length2526]), // Field # 686
 
-		NSLDSTEACHGrantAwardYear1: strings.TrimSpace(record[nsldsTEACHGrantAwardYear1StartIndex2526-1 : (nsldsTEACHGrantAwardYear1StartIndex2526-1)+nsldsTEACHGrantAwardYear1Length2526]), // Field # 687
+		NSLDSTEACHGrantAwardYear1: preprocessString(record[nsldsTEACHGrantAwardYear1StartIndex2526-1 : (nsldsTEACHGrantAwardYear1StartIndex2526-1)+nsldsTEACHGrantAwardYear1Length2526]), // Field # 687
 
-		NSLDSTEACHGrantLoanConversionFlag1: strings.TrimSpace(record[nsldsTEACHGrantLoanConversionFlag1StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag1StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag1Length2526]), // Field # 688
+		NSLDSTEACHGrantLoanConversionFlag1: preprocessString(record[nsldsTEACHGrantLoanConversionFlag1StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag1StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag1Length2526]), // Field # 688
 
-		NSLDSTEACHGrantDischargeCode1: strings.TrimSpace(record[nsldsTEACHGrantDischargeCode1StartIndex2526-1 : (nsldsTEACHGrantDischargeCode1StartIndex2526-1)+nsldsTEACHGrantDischargeCode1Length2526]), // Field # 689
+		NSLDSTEACHGrantDischargeCode1: preprocessString(record[nsldsTEACHGrantDischargeCode1StartIndex2526-1 : (nsldsTEACHGrantDischargeCode1StartIndex2526-1)+nsldsTEACHGrantDischargeCode1Length2526]), // Field # 689
 
-		NSLDSTEACHGrantDischargeAmount1: strings.TrimSpace(record[nsldsTEACHGrantDischargeAmount1StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount1StartIndex2526-1)+nsldsTEACHGrantDischargeAmount1Length2526]), // Field # 690
+		NSLDSTEACHGrantDischargeAmount1: preprocessString(record[nsldsTEACHGrantDischargeAmount1StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount1StartIndex2526-1)+nsldsTEACHGrantDischargeAmount1Length2526]), // Field # 690
 
-		NSLDSTEACHGrantAdjustedDisbursement1: strings.TrimSpace(record[nsldsTEACHGrantAdjustedDisbursement1StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement1StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement1Length2526]), // Field # 691
+		NSLDSTEACHGrantAdjustedDisbursement1: preprocessString(record[nsldsTEACHGrantAdjustedDisbursement1StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement1StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement1Length2526]), // Field # 691
 
-		NSLDSTEACHGrantSequence2: strings.TrimSpace(record[nsldsTEACHGrantSequence2StartIndex2526-1 : (nsldsTEACHGrantSequence2StartIndex2526-1)+nsldsTEACHGrantSequence2Length2526]), // Field # 693
+		NSLDSTEACHGrantSequence2: preprocessString(record[nsldsTEACHGrantSequence2StartIndex2526-1 : (nsldsTEACHGrantSequence2StartIndex2526-1)+nsldsTEACHGrantSequence2Length2526]), // Field # 693
 
-		NSLDSTEACHGrantSchoolCode2: strings.TrimSpace(record[nsldsTEACHGrantSchoolCode2StartIndex2526-1 : (nsldsTEACHGrantSchoolCode2StartIndex2526-1)+nsldsTEACHGrantSchoolCode2Length2526]), // Field # 694
+		NSLDSTEACHGrantSchoolCode2: preprocessString(record[nsldsTEACHGrantSchoolCode2StartIndex2526-1 : (nsldsTEACHGrantSchoolCode2StartIndex2526-1)+nsldsTEACHGrantSchoolCode2Length2526]), // Field # 694
 
-		NSLDSTEACHGrantTransactionNumber2: strings.TrimSpace(record[nsldsTEACHGrantTransactionNumber2StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber2StartIndex2526-1)+nsldsTEACHGrantTransactionNumber2Length2526]), // Field # 695
+		NSLDSTEACHGrantTransactionNumber2: preprocessString(record[nsldsTEACHGrantTransactionNumber2StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber2StartIndex2526-1)+nsldsTEACHGrantTransactionNumber2Length2526]), // Field # 695
 
-		NSLDSTEACHGrantLastDisbursementDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantLastDisbursementDate2StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate2StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate2Length2526])), // Field # 696
+		NSLDSTEACHGrantLastDisbursementDate2: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantLastDisbursementDate2StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate2StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate2Length2526])), // Field # 696
 
-		NSLDSTEACHGrantScheduledAmount2: strings.TrimSpace(record[nsldsTEACHGrantScheduledAmount2StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount2StartIndex2526-1)+nsldsTEACHGrantScheduledAmount2Length2526]), // Field # 697
+		NSLDSTEACHGrantScheduledAmount2: preprocessString(record[nsldsTEACHGrantScheduledAmount2StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount2StartIndex2526-1)+nsldsTEACHGrantScheduledAmount2Length2526]), // Field # 697
 
-		NSLDSTEACHGrantAmountPaidToDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantAmountPaidToDate2StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate2StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate2Length2526])), // Field # 698
+		NSLDSTEACHGrantAmountPaidToDate2: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantAmountPaidToDate2StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate2StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate2Length2526])), // Field # 698
 
-		NSLDSTEACHGrantAwardAmount2: strings.TrimSpace(record[nsldsTEACHGrantAwardAmount2StartIndex2526-1 : (nsldsTEACHGrantAwardAmount2StartIndex2526-1)+nsldsTEACHGrantAwardAmount2Length2526]), // Field # 699
+		NSLDSTEACHGrantAwardAmount2: preprocessString(record[nsldsTEACHGrantAwardAmount2StartIndex2526-1 : (nsldsTEACHGrantAwardAmount2StartIndex2526-1)+nsldsTEACHGrantAwardAmount2Length2526]), // Field # 699
 
-		NSLDSTEACHGrantAcademicYearLevel2: strings.TrimSpace(record[nsldsTEACHGrantAcademicYearLevel2StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel2StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel2Length2526]), // Field # 700
+		NSLDSTEACHGrantAcademicYearLevel2: preprocessString(record[nsldsTEACHGrantAcademicYearLevel2StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel2StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel2Length2526]), // Field # 700
 
-		NSLDSTEACHGrantAwardYear2: strings.TrimSpace(record[nsldsTEACHGrantAwardYear2StartIndex2526-1 : (nsldsTEACHGrantAwardYear2StartIndex2526-1)+nsldsTEACHGrantAwardYear2Length2526]), // Field # 701
+		NSLDSTEACHGrantAwardYear2: preprocessString(record[nsldsTEACHGrantAwardYear2StartIndex2526-1 : (nsldsTEACHGrantAwardYear2StartIndex2526-1)+nsldsTEACHGrantAwardYear2Length2526]), // Field # 701
 
-		NSLDSTEACHGrantLoanConversionFlag2: strings.TrimSpace(record[nsldsTEACHGrantLoanConversionFlag2StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag2StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag2Length2526]), // Field # 702
+		NSLDSTEACHGrantLoanConversionFlag2: preprocessString(record[nsldsTEACHGrantLoanConversionFlag2StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag2StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag2Length2526]), // Field # 702
 
-		NSLDSTEACHGrantDischargeCode2: strings.TrimSpace(record[nsldsTEACHGrantDischargeCode2StartIndex2526-1 : (nsldsTEACHGrantDischargeCode2StartIndex2526-1)+nsldsTEACHGrantDischargeCode2Length2526]), // Field # 703
+		NSLDSTEACHGrantDischargeCode2: preprocessString(record[nsldsTEACHGrantDischargeCode2StartIndex2526-1 : (nsldsTEACHGrantDischargeCode2StartIndex2526-1)+nsldsTEACHGrantDischargeCode2Length2526]), // Field # 703
 
-		NSLDSTEACHGrantDischargeAmount2: strings.TrimSpace(record[nsldsTEACHGrantDischargeAmount2StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount2StartIndex2526-1)+nsldsTEACHGrantDischargeAmount2Length2526]), // Field # 704
+		NSLDSTEACHGrantDischargeAmount2: preprocessString(record[nsldsTEACHGrantDischargeAmount2StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount2StartIndex2526-1)+nsldsTEACHGrantDischargeAmount2Length2526]), // Field # 704
 
-		NSLDSTEACHGrantAdjustedDisbursement2: strings.TrimSpace(record[nsldsTEACHGrantAdjustedDisbursement2StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement2StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement2Length2526]), // Field # 705
+		NSLDSTEACHGrantAdjustedDisbursement2: preprocessString(record[nsldsTEACHGrantAdjustedDisbursement2StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement2StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement2Length2526]), // Field # 705
 
-		NSLDSTEACHGrantSequence3: strings.TrimSpace(record[nsldsTEACHGrantSequence3StartIndex2526-1 : (nsldsTEACHGrantSequence3StartIndex2526-1)+nsldsTEACHGrantSequence3Length2526]), // Field # 707
+		NSLDSTEACHGrantSequence3: preprocessString(record[nsldsTEACHGrantSequence3StartIndex2526-1 : (nsldsTEACHGrantSequence3StartIndex2526-1)+nsldsTEACHGrantSequence3Length2526]), // Field # 707
 
-		NSLDSTEACHGrantSchoolCode3: strings.TrimSpace(record[nsldsTEACHGrantSchoolCode3StartIndex2526-1 : (nsldsTEACHGrantSchoolCode3StartIndex2526-1)+nsldsTEACHGrantSchoolCode3Length2526]), // Field # 708
+		NSLDSTEACHGrantSchoolCode3: preprocessString(record[nsldsTEACHGrantSchoolCode3StartIndex2526-1 : (nsldsTEACHGrantSchoolCode3StartIndex2526-1)+nsldsTEACHGrantSchoolCode3Length2526]), // Field # 708
 
-		NSLDSTEACHGrantTransactionNumber3: strings.TrimSpace(record[nsldsTEACHGrantTransactionNumber3StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber3StartIndex2526-1)+nsldsTEACHGrantTransactionNumber3Length2526]), // Field # 709
+		NSLDSTEACHGrantTransactionNumber3: preprocessString(record[nsldsTEACHGrantTransactionNumber3StartIndex2526-1 : (nsldsTEACHGrantTransactionNumber3StartIndex2526-1)+nsldsTEACHGrantTransactionNumber3Length2526]), // Field # 709
 
-		NSLDSTEACHGrantLastDisbursementDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantLastDisbursementDate3StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate3StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate3Length2526])), // Field # 710
+		NSLDSTEACHGrantLastDisbursementDate3: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantLastDisbursementDate3StartIndex2526-1 : (nsldsTEACHGrantLastDisbursementDate3StartIndex2526-1)+nsldsTEACHGrantLastDisbursementDate3Length2526])), // Field # 710
 
-		NSLDSTEACHGrantScheduledAmount3: strings.TrimSpace(record[nsldsTEACHGrantScheduledAmount3StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount3StartIndex2526-1)+nsldsTEACHGrantScheduledAmount3Length2526]), // Field # 711
+		NSLDSTEACHGrantScheduledAmount3: preprocessString(record[nsldsTEACHGrantScheduledAmount3StartIndex2526-1 : (nsldsTEACHGrantScheduledAmount3StartIndex2526-1)+nsldsTEACHGrantScheduledAmount3Length2526]), // Field # 711
 
-		NSLDSTEACHGrantAmountPaidToDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsTEACHGrantAmountPaidToDate3StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate3StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate3Length2526])), // Field # 712
+		NSLDSTEACHGrantAmountPaidToDate3: parseISIRDate2526(preprocessString(record[nsldsTEACHGrantAmountPaidToDate3StartIndex2526-1 : (nsldsTEACHGrantAmountPaidToDate3StartIndex2526-1)+nsldsTEACHGrantAmountPaidToDate3Length2526])), // Field # 712
 
-		NSLDSTEACHGrantAwardAmount3: strings.TrimSpace(record[nsldsTEACHGrantAwardAmount3StartIndex2526-1 : (nsldsTEACHGrantAwardAmount3StartIndex2526-1)+nsldsTEACHGrantAwardAmount3Length2526]), // Field # 713
+		NSLDSTEACHGrantAwardAmount3: preprocessString(record[nsldsTEACHGrantAwardAmount3StartIndex2526-1 : (nsldsTEACHGrantAwardAmount3StartIndex2526-1)+nsldsTEACHGrantAwardAmount3Length2526]), // Field # 713
 
-		NSLDSTEACHGrantAcademicYearLevel3: strings.TrimSpace(record[nsldsTEACHGrantAcademicYearLevel3StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel3StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel3Length2526]), // Field # 714
+		NSLDSTEACHGrantAcademicYearLevel3: preprocessString(record[nsldsTEACHGrantAcademicYearLevel3StartIndex2526-1 : (nsldsTEACHGrantAcademicYearLevel3StartIndex2526-1)+nsldsTEACHGrantAcademicYearLevel3Length2526]), // Field # 714
 
-		NSLDSTEACHGrantAwardYear3: strings.TrimSpace(record[nsldsTEACHGrantAwardYear3StartIndex2526-1 : (nsldsTEACHGrantAwardYear3StartIndex2526-1)+nsldsTEACHGrantAwardYear3Length2526]), // Field # 715
+		NSLDSTEACHGrantAwardYear3: preprocessString(record[nsldsTEACHGrantAwardYear3StartIndex2526-1 : (nsldsTEACHGrantAwardYear3StartIndex2526-1)+nsldsTEACHGrantAwardYear3Length2526]), // Field # 715
 
-		NSLDSTEACHGrantLoanConversionFlag3: strings.TrimSpace(record[nsldsTEACHGrantLoanConversionFlag3StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag3StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag3Length2526]), // Field # 716
+		NSLDSTEACHGrantLoanConversionFlag3: preprocessString(record[nsldsTEACHGrantLoanConversionFlag3StartIndex2526-1 : (nsldsTEACHGrantLoanConversionFlag3StartIndex2526-1)+nsldsTEACHGrantLoanConversionFlag3Length2526]), // Field # 716
 
-		NSLDSTEACHGrantDischargeCode3: strings.TrimSpace(record[nsldsTEACHGrantDischargeCode3StartIndex2526-1 : (nsldsTEACHGrantDischargeCode3StartIndex2526-1)+nsldsTEACHGrantDischargeCode3Length2526]), // Field # 717
+		NSLDSTEACHGrantDischargeCode3: preprocessString(record[nsldsTEACHGrantDischargeCode3StartIndex2526-1 : (nsldsTEACHGrantDischargeCode3StartIndex2526-1)+nsldsTEACHGrantDischargeCode3Length2526]), // Field # 717
 
-		NSLDSTEACHGrantDischargeAmount3: strings.TrimSpace(record[nsldsTEACHGrantDischargeAmount3StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount3StartIndex2526-1)+nsldsTEACHGrantDischargeAmount3Length2526]), // Field # 718
+		NSLDSTEACHGrantDischargeAmount3: preprocessString(record[nsldsTEACHGrantDischargeAmount3StartIndex2526-1 : (nsldsTEACHGrantDischargeAmount3StartIndex2526-1)+nsldsTEACHGrantDischargeAmount3Length2526]), // Field # 718
 
-		NSLDSTEACHGrantAdjustedDisbursement3: strings.TrimSpace(record[nsldsTEACHGrantAdjustedDisbursement3StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement3StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement3Length2526]), // Field # 719
+		NSLDSTEACHGrantAdjustedDisbursement3: preprocessString(record[nsldsTEACHGrantAdjustedDisbursement3StartIndex2526-1 : (nsldsTEACHGrantAdjustedDisbursement3StartIndex2526-1)+nsldsTEACHGrantAdjustedDisbursement3Length2526]), // Field # 719
 
-		NSLDSLoanSequenceNumber1: strings.TrimSpace(record[nsldsLoanSequenceNumber1StartIndex2526-1 : (nsldsLoanSequenceNumber1StartIndex2526-1)+nsldsLoanSequenceNumber1Length2526]), // Field # 721
+		NSLDSLoanSequenceNumber1: preprocessString(record[nsldsLoanSequenceNumber1StartIndex2526-1 : (nsldsLoanSequenceNumber1StartIndex2526-1)+nsldsLoanSequenceNumber1Length2526]), // Field # 721
 
-		NSLDSLoanDefaultedRecentIndicator1: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator1StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator1StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator1Length2526]), // Field # 722
+		NSLDSLoanDefaultedRecentIndicator1: preprocessString(record[nsldsLoanDefaultedRecentIndicator1StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator1StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator1Length2526]), // Field # 722
 
-		NSLDSLoanChangeFlag1: strings.TrimSpace(record[nsldsLoanChangeFlag1StartIndex2526-1 : (nsldsLoanChangeFlag1StartIndex2526-1)+nsldsLoanChangeFlag1Length2526]), // Field # 723
+		NSLDSLoanChangeFlag1: preprocessString(record[nsldsLoanChangeFlag1StartIndex2526-1 : (nsldsLoanChangeFlag1StartIndex2526-1)+nsldsLoanChangeFlag1Length2526]), // Field # 723
 
-		NSLDSLoanTypeCode1: strings.TrimSpace(record[nsldsLoanTypeCode1StartIndex2526-1 : (nsldsLoanTypeCode1StartIndex2526-1)+nsldsLoanTypeCode1Length2526]), // Field # 724
+		NSLDSLoanTypeCode1: preprocessString(record[nsldsLoanTypeCode1StartIndex2526-1 : (nsldsLoanTypeCode1StartIndex2526-1)+nsldsLoanTypeCode1Length2526]), // Field # 724
 
-		NSLDSLoanNetAmount1: strings.TrimSpace(record[nsldsLoanNetAmount1StartIndex2526-1 : (nsldsLoanNetAmount1StartIndex2526-1)+nsldsLoanNetAmount1Length2526]), // Field # 725
+		NSLDSLoanNetAmount1: preprocessString(record[nsldsLoanNetAmount1StartIndex2526-1 : (nsldsLoanNetAmount1StartIndex2526-1)+nsldsLoanNetAmount1Length2526]), // Field # 725
 
-		NSLDSLoanCurrentStatusCode1: strings.TrimSpace(record[nsldsLoanCurrentStatusCode1StartIndex2526-1 : (nsldsLoanCurrentStatusCode1StartIndex2526-1)+nsldsLoanCurrentStatusCode1Length2526]), // Field # 726
+		NSLDSLoanCurrentStatusCode1: preprocessString(record[nsldsLoanCurrentStatusCode1StartIndex2526-1 : (nsldsLoanCurrentStatusCode1StartIndex2526-1)+nsldsLoanCurrentStatusCode1Length2526]), // Field # 726
 
-		NSLDSLoanCurrentStatusDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate1StartIndex2526-1 : (nsldsLoanCurrentStatusDate1StartIndex2526-1)+nsldsLoanCurrentStatusDate1Length2526])), // Field # 727
+		NSLDSLoanCurrentStatusDate1: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate1StartIndex2526-1 : (nsldsLoanCurrentStatusDate1StartIndex2526-1)+nsldsLoanCurrentStatusDate1Length2526])), // Field # 727
 
-		NSLDSLoanOutstandingPrincipalBalance1: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance1StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance1StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance1Length2526]), // Field # 728
+		NSLDSLoanOutstandingPrincipalBalance1: preprocessString(record[nsldsLoanOutstandingPrincipalBalance1StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance1StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance1Length2526]), // Field # 728
 
-		NSLDSLoanOutstandingPrincipalBalanceDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate1StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate1StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate1Length2526])), // Field # 729
+		NSLDSLoanOutstandingPrincipalBalanceDate1: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate1StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate1StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate1Length2526])), // Field # 729
 
-		NSLDSLoanPeriodBeginDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate1StartIndex2526-1 : (nsldsLoanPeriodBeginDate1StartIndex2526-1)+nsldsLoanPeriodBeginDate1Length2526])), // Field # 730
+		NSLDSLoanPeriodBeginDate1: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate1StartIndex2526-1 : (nsldsLoanPeriodBeginDate1StartIndex2526-1)+nsldsLoanPeriodBeginDate1Length2526])), // Field # 730
 
-		NSLDSLoanPeriodEndDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate1StartIndex2526-1 : (nsldsLoanPeriodEndDate1StartIndex2526-1)+nsldsLoanPeriodEndDate1Length2526])), // Field # 731
+		NSLDSLoanPeriodEndDate1: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate1StartIndex2526-1 : (nsldsLoanPeriodEndDate1StartIndex2526-1)+nsldsLoanPeriodEndDate1Length2526])), // Field # 731
 
-		NSLDSLoanGuarantyAgencyCode1: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode1StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode1StartIndex2526-1)+nsldsLoanGuarantyAgencyCode1Length2526]), // Field # 732
+		NSLDSLoanGuarantyAgencyCode1: preprocessString(record[nsldsLoanGuarantyAgencyCode1StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode1StartIndex2526-1)+nsldsLoanGuarantyAgencyCode1Length2526]), // Field # 732
 
-		NSLDSLoanContactType1: strings.TrimSpace(record[nsldsLoanContactType1StartIndex2526-1 : (nsldsLoanContactType1StartIndex2526-1)+nsldsLoanContactType1Length2526]), // Field # 733
+		NSLDSLoanContactType1: preprocessString(record[nsldsLoanContactType1StartIndex2526-1 : (nsldsLoanContactType1StartIndex2526-1)+nsldsLoanContactType1Length2526]), // Field # 733
 
-		NSLDSLoanSchoolCode1: strings.TrimSpace(record[nsldsLoanSchoolCode1StartIndex2526-1 : (nsldsLoanSchoolCode1StartIndex2526-1)+nsldsLoanSchoolCode1Length2526]), // Field # 734
+		NSLDSLoanSchoolCode1: preprocessString(record[nsldsLoanSchoolCode1StartIndex2526-1 : (nsldsLoanSchoolCode1StartIndex2526-1)+nsldsLoanSchoolCode1Length2526]), // Field # 734
 
-		NSLDSLoanContactCode1: strings.TrimSpace(record[nsldsLoanContactCode1StartIndex2526-1 : (nsldsLoanContactCode1StartIndex2526-1)+nsldsLoanContactCode1Length2526]), // Field # 735
+		NSLDSLoanContactCode1: preprocessString(record[nsldsLoanContactCode1StartIndex2526-1 : (nsldsLoanContactCode1StartIndex2526-1)+nsldsLoanContactCode1Length2526]), // Field # 735
 
-		NSLDSLoanGradeLevel1: strings.TrimSpace(record[nsldsLoanGradeLevel1StartIndex2526-1 : (nsldsLoanGradeLevel1StartIndex2526-1)+nsldsLoanGradeLevel1Length2526]), // Field # 736
+		NSLDSLoanGradeLevel1: preprocessString(record[nsldsLoanGradeLevel1StartIndex2526-1 : (nsldsLoanGradeLevel1StartIndex2526-1)+nsldsLoanGradeLevel1Length2526]), // Field # 736
 
-		NSLDSLoanAdditionalUnsubsidizedFlag1: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag1StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag1StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag1Length2526]), // Field # 737
+		NSLDSLoanAdditionalUnsubsidizedFlag1: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag1StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag1StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag1Length2526]), // Field # 737
 
-		NSLDSLoanCapitalizedInterestFlag1: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag1StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag1StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag1Length2526]), // Field # 738
+		NSLDSLoanCapitalizedInterestFlag1: preprocessString(record[nsldsLoanCapitalizedInterestFlag1StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag1StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag1Length2526]), // Field # 738
 
-		NSLDSLoanDisbursementAmount1: strings.TrimSpace(record[nsldsLoanDisbursementAmount1StartIndex2526-1 : (nsldsLoanDisbursementAmount1StartIndex2526-1)+nsldsLoanDisbursementAmount1Length2526]), // Field # 739
+		NSLDSLoanDisbursementAmount1: preprocessString(record[nsldsLoanDisbursementAmount1StartIndex2526-1 : (nsldsLoanDisbursementAmount1StartIndex2526-1)+nsldsLoanDisbursementAmount1Length2526]), // Field # 739
 
-		NSLDSLoanDisbursementDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate1StartIndex2526-1 : (nsldsLoanDisbursementDate1StartIndex2526-1)+nsldsLoanDisbursementDate1Length2526])), // Field # 740
+		NSLDSLoanDisbursementDate1: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate1StartIndex2526-1 : (nsldsLoanDisbursementDate1StartIndex2526-1)+nsldsLoanDisbursementDate1Length2526])), // Field # 740
 
-		NSLDSLoanConfirmedLoanSubsidyStatus1: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus1Length2526]), // Field # 741
+		NSLDSLoanConfirmedLoanSubsidyStatus1: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus1Length2526]), // Field # 741
 
-		NSLDSLoanSubsidyStatusDate1: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate1StartIndex2526-1 : (nsldsLoanSubsidyStatusDate1StartIndex2526-1)+nsldsLoanSubsidyStatusDate1Length2526])), // Field # 742
+		NSLDSLoanSubsidyStatusDate1: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate1StartIndex2526-1 : (nsldsLoanSubsidyStatusDate1StartIndex2526-1)+nsldsLoanSubsidyStatusDate1Length2526])), // Field # 742
 
-		NSLDSLoanSequenceNumber2: strings.TrimSpace(record[nsldsLoanSequenceNumber2StartIndex2526-1 : (nsldsLoanSequenceNumber2StartIndex2526-1)+nsldsLoanSequenceNumber2Length2526]), // Field # 744
+		NSLDSLoanSequenceNumber2: preprocessString(record[nsldsLoanSequenceNumber2StartIndex2526-1 : (nsldsLoanSequenceNumber2StartIndex2526-1)+nsldsLoanSequenceNumber2Length2526]), // Field # 744
 
-		NSLDSLoanDefaultedRecentIndicator2: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator2StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator2StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator2Length2526]), // Field # 745
+		NSLDSLoanDefaultedRecentIndicator2: preprocessString(record[nsldsLoanDefaultedRecentIndicator2StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator2StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator2Length2526]), // Field # 745
 
-		NSLDSLoanChangeFlag2: strings.TrimSpace(record[nsldsLoanChangeFlag2StartIndex2526-1 : (nsldsLoanChangeFlag2StartIndex2526-1)+nsldsLoanChangeFlag2Length2526]), // Field # 746
+		NSLDSLoanChangeFlag2: preprocessString(record[nsldsLoanChangeFlag2StartIndex2526-1 : (nsldsLoanChangeFlag2StartIndex2526-1)+nsldsLoanChangeFlag2Length2526]), // Field # 746
 
-		NSLDSLoanTypeCode2: strings.TrimSpace(record[nsldsLoanTypeCode2StartIndex2526-1 : (nsldsLoanTypeCode2StartIndex2526-1)+nsldsLoanTypeCode2Length2526]), // Field # 747
+		NSLDSLoanTypeCode2: preprocessString(record[nsldsLoanTypeCode2StartIndex2526-1 : (nsldsLoanTypeCode2StartIndex2526-1)+nsldsLoanTypeCode2Length2526]), // Field # 747
 
-		NSLDSLoanNetAmount2: strings.TrimSpace(record[nsldsLoanNetAmount2StartIndex2526-1 : (nsldsLoanNetAmount2StartIndex2526-1)+nsldsLoanNetAmount2Length2526]), // Field # 748
+		NSLDSLoanNetAmount2: preprocessString(record[nsldsLoanNetAmount2StartIndex2526-1 : (nsldsLoanNetAmount2StartIndex2526-1)+nsldsLoanNetAmount2Length2526]), // Field # 748
 
-		NSLDSLoanCurrentStatusCode2: strings.TrimSpace(record[nsldsLoanCurrentStatusCode2StartIndex2526-1 : (nsldsLoanCurrentStatusCode2StartIndex2526-1)+nsldsLoanCurrentStatusCode2Length2526]), // Field # 749
+		NSLDSLoanCurrentStatusCode2: preprocessString(record[nsldsLoanCurrentStatusCode2StartIndex2526-1 : (nsldsLoanCurrentStatusCode2StartIndex2526-1)+nsldsLoanCurrentStatusCode2Length2526]), // Field # 749
 
-		NSLDSLoanCurrentStatusDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate2StartIndex2526-1 : (nsldsLoanCurrentStatusDate2StartIndex2526-1)+nsldsLoanCurrentStatusDate2Length2526])), // Field # 750
+		NSLDSLoanCurrentStatusDate2: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate2StartIndex2526-1 : (nsldsLoanCurrentStatusDate2StartIndex2526-1)+nsldsLoanCurrentStatusDate2Length2526])), // Field # 750
 
-		NSLDSLoanOutstandingPrincipalBalance2: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance2StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance2StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance2Length2526]), // Field # 751
+		NSLDSLoanOutstandingPrincipalBalance2: preprocessString(record[nsldsLoanOutstandingPrincipalBalance2StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance2StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance2Length2526]), // Field # 751
 
-		NSLDSLoanOutstandingPrincipalBalanceDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate2StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate2StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate2Length2526])), // Field # 752
+		NSLDSLoanOutstandingPrincipalBalanceDate2: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate2StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate2StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate2Length2526])), // Field # 752
 
-		NSLDSLoanPeriodBeginDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate2StartIndex2526-1 : (nsldsLoanPeriodBeginDate2StartIndex2526-1)+nsldsLoanPeriodBeginDate2Length2526])), // Field # 753
+		NSLDSLoanPeriodBeginDate2: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate2StartIndex2526-1 : (nsldsLoanPeriodBeginDate2StartIndex2526-1)+nsldsLoanPeriodBeginDate2Length2526])), // Field # 753
 
-		NSLDSLoanPeriodEndDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate2StartIndex2526-1 : (nsldsLoanPeriodEndDate2StartIndex2526-1)+nsldsLoanPeriodEndDate2Length2526])), // Field # 754
+		NSLDSLoanPeriodEndDate2: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate2StartIndex2526-1 : (nsldsLoanPeriodEndDate2StartIndex2526-1)+nsldsLoanPeriodEndDate2Length2526])), // Field # 754
 
-		NSLDSLoanGuarantyAgencyCode2: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode2StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode2StartIndex2526-1)+nsldsLoanGuarantyAgencyCode2Length2526]), // Field # 755
+		NSLDSLoanGuarantyAgencyCode2: preprocessString(record[nsldsLoanGuarantyAgencyCode2StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode2StartIndex2526-1)+nsldsLoanGuarantyAgencyCode2Length2526]), // Field # 755
 
-		NSLDSLoanContactType2: strings.TrimSpace(record[nsldsLoanContactType2StartIndex2526-1 : (nsldsLoanContactType2StartIndex2526-1)+nsldsLoanContactType2Length2526]), // Field # 756
+		NSLDSLoanContactType2: preprocessString(record[nsldsLoanContactType2StartIndex2526-1 : (nsldsLoanContactType2StartIndex2526-1)+nsldsLoanContactType2Length2526]), // Field # 756
 
-		NSLDSLoanSchoolCode2: strings.TrimSpace(record[nsldsLoanSchoolCode2StartIndex2526-1 : (nsldsLoanSchoolCode2StartIndex2526-1)+nsldsLoanSchoolCode2Length2526]), // Field # 757
+		NSLDSLoanSchoolCode2: preprocessString(record[nsldsLoanSchoolCode2StartIndex2526-1 : (nsldsLoanSchoolCode2StartIndex2526-1)+nsldsLoanSchoolCode2Length2526]), // Field # 757
 
-		NSLDSLoanContactCode2: strings.TrimSpace(record[nsldsLoanContactCode2StartIndex2526-1 : (nsldsLoanContactCode2StartIndex2526-1)+nsldsLoanContactCode2Length2526]), // Field # 758
+		NSLDSLoanContactCode2: preprocessString(record[nsldsLoanContactCode2StartIndex2526-1 : (nsldsLoanContactCode2StartIndex2526-1)+nsldsLoanContactCode2Length2526]), // Field # 758
 
-		NSLDSLoanGradeLevel2: strings.TrimSpace(record[nsldsLoanGradeLevel2StartIndex2526-1 : (nsldsLoanGradeLevel2StartIndex2526-1)+nsldsLoanGradeLevel2Length2526]), // Field # 759
+		NSLDSLoanGradeLevel2: preprocessString(record[nsldsLoanGradeLevel2StartIndex2526-1 : (nsldsLoanGradeLevel2StartIndex2526-1)+nsldsLoanGradeLevel2Length2526]), // Field # 759
 
-		NSLDSLoanAdditionalUnsubsidizedFlag2: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag2StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag2StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag2Length2526]), // Field # 760
+		NSLDSLoanAdditionalUnsubsidizedFlag2: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag2StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag2StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag2Length2526]), // Field # 760
 
-		NSLDSLoanCapitalizedInterestFlag2: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag2StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag2StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag2Length2526]), // Field # 761
+		NSLDSLoanCapitalizedInterestFlag2: preprocessString(record[nsldsLoanCapitalizedInterestFlag2StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag2StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag2Length2526]), // Field # 761
 
-		NSLDSLoanDisbursementAmount2: strings.TrimSpace(record[nsldsLoanDisbursementAmount2StartIndex2526-1 : (nsldsLoanDisbursementAmount2StartIndex2526-1)+nsldsLoanDisbursementAmount2Length2526]), // Field # 762
+		NSLDSLoanDisbursementAmount2: preprocessString(record[nsldsLoanDisbursementAmount2StartIndex2526-1 : (nsldsLoanDisbursementAmount2StartIndex2526-1)+nsldsLoanDisbursementAmount2Length2526]), // Field # 762
 
-		NSLDSLoanDisbursementDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate2StartIndex2526-1 : (nsldsLoanDisbursementDate2StartIndex2526-1)+nsldsLoanDisbursementDate2Length2526])), // Field # 763
+		NSLDSLoanDisbursementDate2: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate2StartIndex2526-1 : (nsldsLoanDisbursementDate2StartIndex2526-1)+nsldsLoanDisbursementDate2Length2526])), // Field # 763
 
-		NSLDSLoanConfirmedLoanSubsidyStatus2: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus2Length2526]), // Field # 764
+		NSLDSLoanConfirmedLoanSubsidyStatus2: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus2Length2526]), // Field # 764
 
-		NSLDSLoanSubsidyStatusDate2: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate2StartIndex2526-1 : (nsldsLoanSubsidyStatusDate2StartIndex2526-1)+nsldsLoanSubsidyStatusDate2Length2526])), // Field # 765
+		NSLDSLoanSubsidyStatusDate2: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate2StartIndex2526-1 : (nsldsLoanSubsidyStatusDate2StartIndex2526-1)+nsldsLoanSubsidyStatusDate2Length2526])), // Field # 765
 
-		NSLDSLoanSequenceNumber3: strings.TrimSpace(record[nsldsLoanSequenceNumber3StartIndex2526-1 : (nsldsLoanSequenceNumber3StartIndex2526-1)+nsldsLoanSequenceNumber3Length2526]), // Field # 767
+		NSLDSLoanSequenceNumber3: preprocessString(record[nsldsLoanSequenceNumber3StartIndex2526-1 : (nsldsLoanSequenceNumber3StartIndex2526-1)+nsldsLoanSequenceNumber3Length2526]), // Field # 767
 
-		NSLDSLoanDefaultedRecentIndicator3: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator3StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator3StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator3Length2526]), // Field # 768
+		NSLDSLoanDefaultedRecentIndicator3: preprocessString(record[nsldsLoanDefaultedRecentIndicator3StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator3StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator3Length2526]), // Field # 768
 
-		NSLDSLoanChangeFlag3: strings.TrimSpace(record[nsldsLoanChangeFlag3StartIndex2526-1 : (nsldsLoanChangeFlag3StartIndex2526-1)+nsldsLoanChangeFlag3Length2526]), // Field # 769
+		NSLDSLoanChangeFlag3: preprocessString(record[nsldsLoanChangeFlag3StartIndex2526-1 : (nsldsLoanChangeFlag3StartIndex2526-1)+nsldsLoanChangeFlag3Length2526]), // Field # 769
 
-		NSLDSLoanTypeCode3: strings.TrimSpace(record[nsldsLoanTypeCode3StartIndex2526-1 : (nsldsLoanTypeCode3StartIndex2526-1)+nsldsLoanTypeCode3Length2526]), // Field # 770
+		NSLDSLoanTypeCode3: preprocessString(record[nsldsLoanTypeCode3StartIndex2526-1 : (nsldsLoanTypeCode3StartIndex2526-1)+nsldsLoanTypeCode3Length2526]), // Field # 770
 
-		NSLDSLoanNetAmount3: strings.TrimSpace(record[nsldsLoanNetAmount3StartIndex2526-1 : (nsldsLoanNetAmount3StartIndex2526-1)+nsldsLoanNetAmount3Length2526]), // Field # 771
+		NSLDSLoanNetAmount3: preprocessString(record[nsldsLoanNetAmount3StartIndex2526-1 : (nsldsLoanNetAmount3StartIndex2526-1)+nsldsLoanNetAmount3Length2526]), // Field # 771
 
-		NSLDSLoanCurrentStatusCode3: strings.TrimSpace(record[nsldsLoanCurrentStatusCode3StartIndex2526-1 : (nsldsLoanCurrentStatusCode3StartIndex2526-1)+nsldsLoanCurrentStatusCode3Length2526]), // Field # 772
+		NSLDSLoanCurrentStatusCode3: preprocessString(record[nsldsLoanCurrentStatusCode3StartIndex2526-1 : (nsldsLoanCurrentStatusCode3StartIndex2526-1)+nsldsLoanCurrentStatusCode3Length2526]), // Field # 772
 
-		NSLDSLoanCurrentStatusDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate3StartIndex2526-1 : (nsldsLoanCurrentStatusDate3StartIndex2526-1)+nsldsLoanCurrentStatusDate3Length2526])), // Field # 773
+		NSLDSLoanCurrentStatusDate3: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate3StartIndex2526-1 : (nsldsLoanCurrentStatusDate3StartIndex2526-1)+nsldsLoanCurrentStatusDate3Length2526])), // Field # 773
 
-		NSLDSLoanOutstandingPrincipalBalance3: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance3StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance3StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance3Length2526]), // Field # 774
+		NSLDSLoanOutstandingPrincipalBalance3: preprocessString(record[nsldsLoanOutstandingPrincipalBalance3StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance3StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance3Length2526]), // Field # 774
 
-		NSLDSLoanOutstandingPrincipalBalanceDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate3StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate3StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate3Length2526])), // Field # 775
+		NSLDSLoanOutstandingPrincipalBalanceDate3: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate3StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate3StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate3Length2526])), // Field # 775
 
-		NSLDSLoanPeriodBeginDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate3StartIndex2526-1 : (nsldsLoanPeriodBeginDate3StartIndex2526-1)+nsldsLoanPeriodBeginDate3Length2526])), // Field # 776
+		NSLDSLoanPeriodBeginDate3: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate3StartIndex2526-1 : (nsldsLoanPeriodBeginDate3StartIndex2526-1)+nsldsLoanPeriodBeginDate3Length2526])), // Field # 776
 
-		NSLDSLoanPeriodEndDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate3StartIndex2526-1 : (nsldsLoanPeriodEndDate3StartIndex2526-1)+nsldsLoanPeriodEndDate3Length2526])), // Field # 777
+		NSLDSLoanPeriodEndDate3: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate3StartIndex2526-1 : (nsldsLoanPeriodEndDate3StartIndex2526-1)+nsldsLoanPeriodEndDate3Length2526])), // Field # 777
 
-		NSLDSLoanGuarantyAgencyCode3: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode3StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode3StartIndex2526-1)+nsldsLoanGuarantyAgencyCode3Length2526]), // Field # 778
+		NSLDSLoanGuarantyAgencyCode3: preprocessString(record[nsldsLoanGuarantyAgencyCode3StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode3StartIndex2526-1)+nsldsLoanGuarantyAgencyCode3Length2526]), // Field # 778
 
-		NSLDSLoanContactType3: strings.TrimSpace(record[nsldsLoanContactType3StartIndex2526-1 : (nsldsLoanContactType3StartIndex2526-1)+nsldsLoanContactType3Length2526]), // Field # 779
+		NSLDSLoanContactType3: preprocessString(record[nsldsLoanContactType3StartIndex2526-1 : (nsldsLoanContactType3StartIndex2526-1)+nsldsLoanContactType3Length2526]), // Field # 779
 
-		NSLDSLoanSchoolCode3: strings.TrimSpace(record[nsldsLoanSchoolCode3StartIndex2526-1 : (nsldsLoanSchoolCode3StartIndex2526-1)+nsldsLoanSchoolCode3Length2526]), // Field # 780
+		NSLDSLoanSchoolCode3: preprocessString(record[nsldsLoanSchoolCode3StartIndex2526-1 : (nsldsLoanSchoolCode3StartIndex2526-1)+nsldsLoanSchoolCode3Length2526]), // Field # 780
 
-		NSLDSLoanContactCode3: strings.TrimSpace(record[nsldsLoanContactCode3StartIndex2526-1 : (nsldsLoanContactCode3StartIndex2526-1)+nsldsLoanContactCode3Length2526]), // Field # 781
+		NSLDSLoanContactCode3: preprocessString(record[nsldsLoanContactCode3StartIndex2526-1 : (nsldsLoanContactCode3StartIndex2526-1)+nsldsLoanContactCode3Length2526]), // Field # 781
 
-		NSLDSLoanGradeLevel3: strings.TrimSpace(record[nsldsLoanGradeLevel3StartIndex2526-1 : (nsldsLoanGradeLevel3StartIndex2526-1)+nsldsLoanGradeLevel3Length2526]), // Field # 782
+		NSLDSLoanGradeLevel3: preprocessString(record[nsldsLoanGradeLevel3StartIndex2526-1 : (nsldsLoanGradeLevel3StartIndex2526-1)+nsldsLoanGradeLevel3Length2526]), // Field # 782
 
-		NSLDSLoanAdditionalUnsubsidizedFlag3: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag3StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag3StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag3Length2526]), // Field # 783
+		NSLDSLoanAdditionalUnsubsidizedFlag3: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag3StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag3StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag3Length2526]), // Field # 783
 
-		NSLDSLoanCapitalizedInterestFlag3: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag3StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag3StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag3Length2526]), // Field # 784
+		NSLDSLoanCapitalizedInterestFlag3: preprocessString(record[nsldsLoanCapitalizedInterestFlag3StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag3StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag3Length2526]), // Field # 784
 
-		NSLDSLoanDisbursementAmount3: strings.TrimSpace(record[nsldsLoanDisbursementAmount3StartIndex2526-1 : (nsldsLoanDisbursementAmount3StartIndex2526-1)+nsldsLoanDisbursementAmount3Length2526]), // Field # 785
+		NSLDSLoanDisbursementAmount3: preprocessString(record[nsldsLoanDisbursementAmount3StartIndex2526-1 : (nsldsLoanDisbursementAmount3StartIndex2526-1)+nsldsLoanDisbursementAmount3Length2526]), // Field # 785
 
-		NSLDSLoanDisbursementDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate3StartIndex2526-1 : (nsldsLoanDisbursementDate3StartIndex2526-1)+nsldsLoanDisbursementDate3Length2526])), // Field # 786
+		NSLDSLoanDisbursementDate3: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate3StartIndex2526-1 : (nsldsLoanDisbursementDate3StartIndex2526-1)+nsldsLoanDisbursementDate3Length2526])), // Field # 786
 
-		NSLDSLoanConfirmedLoanSubsidyStatus3: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus3Length2526]), // Field # 787
+		NSLDSLoanConfirmedLoanSubsidyStatus3: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus3Length2526]), // Field # 787
 
-		NSLDSLoanSubsidyStatusDate3: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate3StartIndex2526-1 : (nsldsLoanSubsidyStatusDate3StartIndex2526-1)+nsldsLoanSubsidyStatusDate3Length2526])), // Field # 788
+		NSLDSLoanSubsidyStatusDate3: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate3StartIndex2526-1 : (nsldsLoanSubsidyStatusDate3StartIndex2526-1)+nsldsLoanSubsidyStatusDate3Length2526])), // Field # 788
 
-		NSLDSLoanSequenceNumber4: strings.TrimSpace(record[nsldsLoanSequenceNumber4StartIndex2526-1 : (nsldsLoanSequenceNumber4StartIndex2526-1)+nsldsLoanSequenceNumber4Length2526]), // Field # 790
+		NSLDSLoanSequenceNumber4: preprocessString(record[nsldsLoanSequenceNumber4StartIndex2526-1 : (nsldsLoanSequenceNumber4StartIndex2526-1)+nsldsLoanSequenceNumber4Length2526]), // Field # 790
 
-		NSLDSLoanDefaultedRecentIndicator4: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator4StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator4StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator4Length2526]), // Field # 791
+		NSLDSLoanDefaultedRecentIndicator4: preprocessString(record[nsldsLoanDefaultedRecentIndicator4StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator4StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator4Length2526]), // Field # 791
 
-		NSLDSLoanChangeFlag4: strings.TrimSpace(record[nsldsLoanChangeFlag4StartIndex2526-1 : (nsldsLoanChangeFlag4StartIndex2526-1)+nsldsLoanChangeFlag4Length2526]), // Field # 792
+		NSLDSLoanChangeFlag4: preprocessString(record[nsldsLoanChangeFlag4StartIndex2526-1 : (nsldsLoanChangeFlag4StartIndex2526-1)+nsldsLoanChangeFlag4Length2526]), // Field # 792
 
-		NSLDSLoanTypeCode4: strings.TrimSpace(record[nsldsLoanTypeCode4StartIndex2526-1 : (nsldsLoanTypeCode4StartIndex2526-1)+nsldsLoanTypeCode4Length2526]), // Field # 793
+		NSLDSLoanTypeCode4: preprocessString(record[nsldsLoanTypeCode4StartIndex2526-1 : (nsldsLoanTypeCode4StartIndex2526-1)+nsldsLoanTypeCode4Length2526]), // Field # 793
 
-		NSLDSLoanNetAmount4: strings.TrimSpace(record[nsldsLoanNetAmount4StartIndex2526-1 : (nsldsLoanNetAmount4StartIndex2526-1)+nsldsLoanNetAmount4Length2526]), // Field # 794
+		NSLDSLoanNetAmount4: preprocessString(record[nsldsLoanNetAmount4StartIndex2526-1 : (nsldsLoanNetAmount4StartIndex2526-1)+nsldsLoanNetAmount4Length2526]), // Field # 794
 
-		NSLDSLoanCurrentStatusCode4: strings.TrimSpace(record[nsldsLoanCurrentStatusCode4StartIndex2526-1 : (nsldsLoanCurrentStatusCode4StartIndex2526-1)+nsldsLoanCurrentStatusCode4Length2526]), // Field # 795
+		NSLDSLoanCurrentStatusCode4: preprocessString(record[nsldsLoanCurrentStatusCode4StartIndex2526-1 : (nsldsLoanCurrentStatusCode4StartIndex2526-1)+nsldsLoanCurrentStatusCode4Length2526]), // Field # 795
 
-		NSLDSLoanCurrentStatusDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate4StartIndex2526-1 : (nsldsLoanCurrentStatusDate4StartIndex2526-1)+nsldsLoanCurrentStatusDate4Length2526])), // Field # 796
+		NSLDSLoanCurrentStatusDate4: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate4StartIndex2526-1 : (nsldsLoanCurrentStatusDate4StartIndex2526-1)+nsldsLoanCurrentStatusDate4Length2526])), // Field # 796
 
-		NSLDSLoanOutstandingPrincipalBalance4: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance4StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance4StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance4Length2526]), // Field # 797
+		NSLDSLoanOutstandingPrincipalBalance4: preprocessString(record[nsldsLoanOutstandingPrincipalBalance4StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance4StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance4Length2526]), // Field # 797
 
-		NSLDSLoanOutstandingPrincipalBalanceDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate4StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate4StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate4Length2526])), // Field # 798
+		NSLDSLoanOutstandingPrincipalBalanceDate4: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate4StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate4StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate4Length2526])), // Field # 798
 
-		NSLDSLoanPeriodBeginDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate4StartIndex2526-1 : (nsldsLoanPeriodBeginDate4StartIndex2526-1)+nsldsLoanPeriodBeginDate4Length2526])), // Field # 799
+		NSLDSLoanPeriodBeginDate4: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate4StartIndex2526-1 : (nsldsLoanPeriodBeginDate4StartIndex2526-1)+nsldsLoanPeriodBeginDate4Length2526])), // Field # 799
 
-		NSLDSLoanPeriodEndDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate4StartIndex2526-1 : (nsldsLoanPeriodEndDate4StartIndex2526-1)+nsldsLoanPeriodEndDate4Length2526])), // Field # 800
+		NSLDSLoanPeriodEndDate4: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate4StartIndex2526-1 : (nsldsLoanPeriodEndDate4StartIndex2526-1)+nsldsLoanPeriodEndDate4Length2526])), // Field # 800
 
-		NSLDSLoanGuarantyAgencyCode4: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode4StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode4StartIndex2526-1)+nsldsLoanGuarantyAgencyCode4Length2526]), // Field # 801
+		NSLDSLoanGuarantyAgencyCode4: preprocessString(record[nsldsLoanGuarantyAgencyCode4StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode4StartIndex2526-1)+nsldsLoanGuarantyAgencyCode4Length2526]), // Field # 801
 
-		NSLDSLoanContactType4: strings.TrimSpace(record[nsldsLoanContactType4StartIndex2526-1 : (nsldsLoanContactType4StartIndex2526-1)+nsldsLoanContactType4Length2526]), // Field # 802
+		NSLDSLoanContactType4: preprocessString(record[nsldsLoanContactType4StartIndex2526-1 : (nsldsLoanContactType4StartIndex2526-1)+nsldsLoanContactType4Length2526]), // Field # 802
 
-		NSLDSLoanSchoolCode4: strings.TrimSpace(record[nsldsLoanSchoolCode4StartIndex2526-1 : (nsldsLoanSchoolCode4StartIndex2526-1)+nsldsLoanSchoolCode4Length2526]), // Field # 803
+		NSLDSLoanSchoolCode4: preprocessString(record[nsldsLoanSchoolCode4StartIndex2526-1 : (nsldsLoanSchoolCode4StartIndex2526-1)+nsldsLoanSchoolCode4Length2526]), // Field # 803
 
-		NSLDSLoanContactCode4: strings.TrimSpace(record[nsldsLoanContactCode4StartIndex2526-1 : (nsldsLoanContactCode4StartIndex2526-1)+nsldsLoanContactCode4Length2526]), // Field # 804
+		NSLDSLoanContactCode4: preprocessString(record[nsldsLoanContactCode4StartIndex2526-1 : (nsldsLoanContactCode4StartIndex2526-1)+nsldsLoanContactCode4Length2526]), // Field # 804
 
-		NSLDSLoanGradeLevel4: strings.TrimSpace(record[nsldsLoanGradeLevel4StartIndex2526-1 : (nsldsLoanGradeLevel4StartIndex2526-1)+nsldsLoanGradeLevel4Length2526]), // Field # 805
+		NSLDSLoanGradeLevel4: preprocessString(record[nsldsLoanGradeLevel4StartIndex2526-1 : (nsldsLoanGradeLevel4StartIndex2526-1)+nsldsLoanGradeLevel4Length2526]), // Field # 805
 
-		NSLDSLoanAdditionalUnsubsidizedFlag4: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag4StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag4StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag4Length2526]), // Field # 806
+		NSLDSLoanAdditionalUnsubsidizedFlag4: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag4StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag4StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag4Length2526]), // Field # 806
 
-		NSLDSLoanCapitalizedInterestFlag4: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag4StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag4StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag4Length2526]), // Field # 807
+		NSLDSLoanCapitalizedInterestFlag4: preprocessString(record[nsldsLoanCapitalizedInterestFlag4StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag4StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag4Length2526]), // Field # 807
 
-		NSLDSLoanDisbursementAmount4: strings.TrimSpace(record[nsldsLoanDisbursementAmount4StartIndex2526-1 : (nsldsLoanDisbursementAmount4StartIndex2526-1)+nsldsLoanDisbursementAmount4Length2526]), // Field # 808
+		NSLDSLoanDisbursementAmount4: preprocessString(record[nsldsLoanDisbursementAmount4StartIndex2526-1 : (nsldsLoanDisbursementAmount4StartIndex2526-1)+nsldsLoanDisbursementAmount4Length2526]), // Field # 808
 
-		NSLDSLoanDisbursementDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate4StartIndex2526-1 : (nsldsLoanDisbursementDate4StartIndex2526-1)+nsldsLoanDisbursementDate4Length2526])), // Field # 809
+		NSLDSLoanDisbursementDate4: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate4StartIndex2526-1 : (nsldsLoanDisbursementDate4StartIndex2526-1)+nsldsLoanDisbursementDate4Length2526])), // Field # 809
 
-		NSLDSLoanConfirmedLoanSubsidyStatus4: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus4StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus4StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus4Length2526]), // Field # 810
+		NSLDSLoanConfirmedLoanSubsidyStatus4: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus4StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus4StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus4Length2526]), // Field # 810
 
-		NSLDSLoanSubsidyStatusDate4: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate4StartIndex2526-1 : (nsldsLoanSubsidyStatusDate4StartIndex2526-1)+nsldsLoanSubsidyStatusDate4Length2526])), // Field # 811
+		NSLDSLoanSubsidyStatusDate4: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate4StartIndex2526-1 : (nsldsLoanSubsidyStatusDate4StartIndex2526-1)+nsldsLoanSubsidyStatusDate4Length2526])), // Field # 811
 
-		NSLDSLoanSequenceNumber5: strings.TrimSpace(record[nsldsLoanSequenceNumber5StartIndex2526-1 : (nsldsLoanSequenceNumber5StartIndex2526-1)+nsldsLoanSequenceNumber5Length2526]), // Field # 813
+		NSLDSLoanSequenceNumber5: preprocessString(record[nsldsLoanSequenceNumber5StartIndex2526-1 : (nsldsLoanSequenceNumber5StartIndex2526-1)+nsldsLoanSequenceNumber5Length2526]), // Field # 813
 
-		NSLDSLoanDefaultedRecentIndicator5: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator5StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator5StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator5Length2526]), // Field # 814
+		NSLDSLoanDefaultedRecentIndicator5: preprocessString(record[nsldsLoanDefaultedRecentIndicator5StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator5StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator5Length2526]), // Field # 814
 
-		NSLDSLoanChangeFlag5: strings.TrimSpace(record[nsldsLoanChangeFlag5StartIndex2526-1 : (nsldsLoanChangeFlag5StartIndex2526-1)+nsldsLoanChangeFlag5Length2526]), // Field # 815
+		NSLDSLoanChangeFlag5: preprocessString(record[nsldsLoanChangeFlag5StartIndex2526-1 : (nsldsLoanChangeFlag5StartIndex2526-1)+nsldsLoanChangeFlag5Length2526]), // Field # 815
 
-		NSLDSLoanTypeCode5: strings.TrimSpace(record[nsldsLoanTypeCode5StartIndex2526-1 : (nsldsLoanTypeCode5StartIndex2526-1)+nsldsLoanTypeCode5Length2526]), // Field # 816
+		NSLDSLoanTypeCode5: preprocessString(record[nsldsLoanTypeCode5StartIndex2526-1 : (nsldsLoanTypeCode5StartIndex2526-1)+nsldsLoanTypeCode5Length2526]), // Field # 816
 
-		NSLDSLoanNetAmount5: strings.TrimSpace(record[nsldsLoanNetAmount5StartIndex2526-1 : (nsldsLoanNetAmount5StartIndex2526-1)+nsldsLoanNetAmount5Length2526]), // Field # 817
+		NSLDSLoanNetAmount5: preprocessString(record[nsldsLoanNetAmount5StartIndex2526-1 : (nsldsLoanNetAmount5StartIndex2526-1)+nsldsLoanNetAmount5Length2526]), // Field # 817
 
-		NSLDSLoanCurrentStatusCode5: strings.TrimSpace(record[nsldsLoanCurrentStatusCode5StartIndex2526-1 : (nsldsLoanCurrentStatusCode5StartIndex2526-1)+nsldsLoanCurrentStatusCode5Length2526]), // Field # 818
+		NSLDSLoanCurrentStatusCode5: preprocessString(record[nsldsLoanCurrentStatusCode5StartIndex2526-1 : (nsldsLoanCurrentStatusCode5StartIndex2526-1)+nsldsLoanCurrentStatusCode5Length2526]), // Field # 818
 
-		NSLDSLoanCurrentStatusDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate5StartIndex2526-1 : (nsldsLoanCurrentStatusDate5StartIndex2526-1)+nsldsLoanCurrentStatusDate5Length2526])), // Field # 819
+		NSLDSLoanCurrentStatusDate5: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate5StartIndex2526-1 : (nsldsLoanCurrentStatusDate5StartIndex2526-1)+nsldsLoanCurrentStatusDate5Length2526])), // Field # 819
 
-		NSLDSLoanOutstandingPrincipalBalance5: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance5StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance5StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance5Length2526]), // Field # 820
+		NSLDSLoanOutstandingPrincipalBalance5: preprocessString(record[nsldsLoanOutstandingPrincipalBalance5StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance5StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance5Length2526]), // Field # 820
 
-		NSLDSLoanOutstandingPrincipalBalanceDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate5StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate5StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate5Length2526])), // Field # 821
+		NSLDSLoanOutstandingPrincipalBalanceDate5: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate5StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate5StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate5Length2526])), // Field # 821
 
-		NSLDSLoanPeriodBeginDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate5StartIndex2526-1 : (nsldsLoanPeriodBeginDate5StartIndex2526-1)+nsldsLoanPeriodBeginDate5Length2526])), // Field # 822
+		NSLDSLoanPeriodBeginDate5: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate5StartIndex2526-1 : (nsldsLoanPeriodBeginDate5StartIndex2526-1)+nsldsLoanPeriodBeginDate5Length2526])), // Field # 822
 
-		NSLDSLoanPeriodEndDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate5StartIndex2526-1 : (nsldsLoanPeriodEndDate5StartIndex2526-1)+nsldsLoanPeriodEndDate5Length2526])), // Field # 823
+		NSLDSLoanPeriodEndDate5: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate5StartIndex2526-1 : (nsldsLoanPeriodEndDate5StartIndex2526-1)+nsldsLoanPeriodEndDate5Length2526])), // Field # 823
 
-		NSLDSLoanGuarantyAgencyCode5: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode5StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode5StartIndex2526-1)+nsldsLoanGuarantyAgencyCode5Length2526]), // Field # 824
+		NSLDSLoanGuarantyAgencyCode5: preprocessString(record[nsldsLoanGuarantyAgencyCode5StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode5StartIndex2526-1)+nsldsLoanGuarantyAgencyCode5Length2526]), // Field # 824
 
-		NSLDSLoanContactType5: strings.TrimSpace(record[nsldsLoanContactType5StartIndex2526-1 : (nsldsLoanContactType5StartIndex2526-1)+nsldsLoanContactType5Length2526]), // Field # 825
+		NSLDSLoanContactType5: preprocessString(record[nsldsLoanContactType5StartIndex2526-1 : (nsldsLoanContactType5StartIndex2526-1)+nsldsLoanContactType5Length2526]), // Field # 825
 
-		NSLDSLoanSchoolCode5: strings.TrimSpace(record[nsldsLoanSchoolCode5StartIndex2526-1 : (nsldsLoanSchoolCode5StartIndex2526-1)+nsldsLoanSchoolCode5Length2526]), // Field # 826
+		NSLDSLoanSchoolCode5: preprocessString(record[nsldsLoanSchoolCode5StartIndex2526-1 : (nsldsLoanSchoolCode5StartIndex2526-1)+nsldsLoanSchoolCode5Length2526]), // Field # 826
 
-		NSLDSLoanContactCode5: strings.TrimSpace(record[nsldsLoanContactCode5StartIndex2526-1 : (nsldsLoanContactCode5StartIndex2526-1)+nsldsLoanContactCode5Length2526]), // Field # 827
+		NSLDSLoanContactCode5: preprocessString(record[nsldsLoanContactCode5StartIndex2526-1 : (nsldsLoanContactCode5StartIndex2526-1)+nsldsLoanContactCode5Length2526]), // Field # 827
 
-		NSLDSLoanGradeLevel5: strings.TrimSpace(record[nsldsLoanGradeLevel5StartIndex2526-1 : (nsldsLoanGradeLevel5StartIndex2526-1)+nsldsLoanGradeLevel5Length2526]), // Field # 828
+		NSLDSLoanGradeLevel5: preprocessString(record[nsldsLoanGradeLevel5StartIndex2526-1 : (nsldsLoanGradeLevel5StartIndex2526-1)+nsldsLoanGradeLevel5Length2526]), // Field # 828
 
-		NSLDSLoanAdditionalUnsubsidizedFlag5: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag5StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag5StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag5Length2526]), // Field # 829
+		NSLDSLoanAdditionalUnsubsidizedFlag5: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag5StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag5StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag5Length2526]), // Field # 829
 
-		NSLDSLoanCapitalizedInterestFlag5: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag5StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag5StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag5Length2526]), // Field # 830
+		NSLDSLoanCapitalizedInterestFlag5: preprocessString(record[nsldsLoanCapitalizedInterestFlag5StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag5StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag5Length2526]), // Field # 830
 
-		NSLDSLoanDisbursementAmount5: strings.TrimSpace(record[nsldsLoanDisbursementAmount5StartIndex2526-1 : (nsldsLoanDisbursementAmount5StartIndex2526-1)+nsldsLoanDisbursementAmount5Length2526]), // Field # 831
+		NSLDSLoanDisbursementAmount5: preprocessString(record[nsldsLoanDisbursementAmount5StartIndex2526-1 : (nsldsLoanDisbursementAmount5StartIndex2526-1)+nsldsLoanDisbursementAmount5Length2526]), // Field # 831
 
-		NSLDSLoanDisbursementDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate5StartIndex2526-1 : (nsldsLoanDisbursementDate5StartIndex2526-1)+nsldsLoanDisbursementDate5Length2526])), // Field # 832
+		NSLDSLoanDisbursementDate5: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate5StartIndex2526-1 : (nsldsLoanDisbursementDate5StartIndex2526-1)+nsldsLoanDisbursementDate5Length2526])), // Field # 832
 
-		NSLDSLoanConfirmedLoanSubsidyStatus5: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus5StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus5StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus5Length2526]), // Field # 833
+		NSLDSLoanConfirmedLoanSubsidyStatus5: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus5StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus5StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus5Length2526]), // Field # 833
 
-		NSLDSLoanSubsidyStatusDate5: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate5StartIndex2526-1 : (nsldsLoanSubsidyStatusDate5StartIndex2526-1)+nsldsLoanSubsidyStatusDate5Length2526])), // Field # 834
+		NSLDSLoanSubsidyStatusDate5: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate5StartIndex2526-1 : (nsldsLoanSubsidyStatusDate5StartIndex2526-1)+nsldsLoanSubsidyStatusDate5Length2526])), // Field # 834
 
-		NSLDSLoanSequenceNumber6: strings.TrimSpace(record[nsldsLoanSequenceNumber6StartIndex2526-1 : (nsldsLoanSequenceNumber6StartIndex2526-1)+nsldsLoanSequenceNumber6Length2526]), // Field # 836
+		NSLDSLoanSequenceNumber6: preprocessString(record[nsldsLoanSequenceNumber6StartIndex2526-1 : (nsldsLoanSequenceNumber6StartIndex2526-1)+nsldsLoanSequenceNumber6Length2526]), // Field # 836
 
-		NSLDSLoanDefaultedRecentIndicator6: strings.TrimSpace(record[nsldsLoanDefaultedRecentIndicator6StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator6StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator6Length2526]), // Field # 837
+		NSLDSLoanDefaultedRecentIndicator6: preprocessString(record[nsldsLoanDefaultedRecentIndicator6StartIndex2526-1 : (nsldsLoanDefaultedRecentIndicator6StartIndex2526-1)+nsldsLoanDefaultedRecentIndicator6Length2526]), // Field # 837
 
-		NSLDSLoanChangeFlag6: strings.TrimSpace(record[nsldsLoanChangeFlag6StartIndex2526-1 : (nsldsLoanChangeFlag6StartIndex2526-1)+nsldsLoanChangeFlag6Length2526]), // Field # 838
+		NSLDSLoanChangeFlag6: preprocessString(record[nsldsLoanChangeFlag6StartIndex2526-1 : (nsldsLoanChangeFlag6StartIndex2526-1)+nsldsLoanChangeFlag6Length2526]), // Field # 838
 
-		NSLDSLoanTypeCode6: strings.TrimSpace(record[nsldsLoanTypeCode6StartIndex2526-1 : (nsldsLoanTypeCode6StartIndex2526-1)+nsldsLoanTypeCode6Length2526]), // Field # 839
+		NSLDSLoanTypeCode6: preprocessString(record[nsldsLoanTypeCode6StartIndex2526-1 : (nsldsLoanTypeCode6StartIndex2526-1)+nsldsLoanTypeCode6Length2526]), // Field # 839
 
-		NSLDSLoanNetAmount6: strings.TrimSpace(record[nsldsLoanNetAmount6StartIndex2526-1 : (nsldsLoanNetAmount6StartIndex2526-1)+nsldsLoanNetAmount6Length2526]), // Field # 840
+		NSLDSLoanNetAmount6: preprocessString(record[nsldsLoanNetAmount6StartIndex2526-1 : (nsldsLoanNetAmount6StartIndex2526-1)+nsldsLoanNetAmount6Length2526]), // Field # 840
 
-		NSLDSLoanCurrentStatusCode6: strings.TrimSpace(record[nsldsLoanCurrentStatusCode6StartIndex2526-1 : (nsldsLoanCurrentStatusCode6StartIndex2526-1)+nsldsLoanCurrentStatusCode6Length2526]), // Field # 841
+		NSLDSLoanCurrentStatusCode6: preprocessString(record[nsldsLoanCurrentStatusCode6StartIndex2526-1 : (nsldsLoanCurrentStatusCode6StartIndex2526-1)+nsldsLoanCurrentStatusCode6Length2526]), // Field # 841
 
-		NSLDSLoanCurrentStatusDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanCurrentStatusDate6StartIndex2526-1 : (nsldsLoanCurrentStatusDate6StartIndex2526-1)+nsldsLoanCurrentStatusDate6Length2526])), // Field # 842
+		NSLDSLoanCurrentStatusDate6: parseISIRDate2526(preprocessString(record[nsldsLoanCurrentStatusDate6StartIndex2526-1 : (nsldsLoanCurrentStatusDate6StartIndex2526-1)+nsldsLoanCurrentStatusDate6Length2526])), // Field # 842
 
-		NSLDSLoanOutstandingPrincipalBalance6: strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalance6StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance6StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance6Length2526]), // Field # 843
+		NSLDSLoanOutstandingPrincipalBalance6: preprocessString(record[nsldsLoanOutstandingPrincipalBalance6StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalance6StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalance6Length2526]), // Field # 843
 
-		NSLDSLoanOutstandingPrincipalBalanceDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanOutstandingPrincipalBalanceDate6StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate6StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate6Length2526])), // Field # 844
+		NSLDSLoanOutstandingPrincipalBalanceDate6: parseISIRDate2526(preprocessString(record[nsldsLoanOutstandingPrincipalBalanceDate6StartIndex2526-1 : (nsldsLoanOutstandingPrincipalBalanceDate6StartIndex2526-1)+nsldsLoanOutstandingPrincipalBalanceDate6Length2526])), // Field # 844
 
-		NSLDSLoanPeriodBeginDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodBeginDate6StartIndex2526-1 : (nsldsLoanPeriodBeginDate6StartIndex2526-1)+nsldsLoanPeriodBeginDate6Length2526])), // Field # 845
+		NSLDSLoanPeriodBeginDate6: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodBeginDate6StartIndex2526-1 : (nsldsLoanPeriodBeginDate6StartIndex2526-1)+nsldsLoanPeriodBeginDate6Length2526])), // Field # 845
 
-		NSLDSLoanPeriodEndDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanPeriodEndDate6StartIndex2526-1 : (nsldsLoanPeriodEndDate6StartIndex2526-1)+nsldsLoanPeriodEndDate6Length2526])), // Field # 846
+		NSLDSLoanPeriodEndDate6: parseISIRDate2526(preprocessString(record[nsldsLoanPeriodEndDate6StartIndex2526-1 : (nsldsLoanPeriodEndDate6StartIndex2526-1)+nsldsLoanPeriodEndDate6Length2526])), // Field # 846
 
-		NSLDSLoanGuarantyAgencyCode6: strings.TrimSpace(record[nsldsLoanGuarantyAgencyCode6StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode6StartIndex2526-1)+nsldsLoanGuarantyAgencyCode6Length2526]), // Field # 847
+		NSLDSLoanGuarantyAgencyCode6: preprocessString(record[nsldsLoanGuarantyAgencyCode6StartIndex2526-1 : (nsldsLoanGuarantyAgencyCode6StartIndex2526-1)+nsldsLoanGuarantyAgencyCode6Length2526]), // Field # 847
 
-		NSLDSLoanContactType6: strings.TrimSpace(record[nsldsLoanContactType6StartIndex2526-1 : (nsldsLoanContactType6StartIndex2526-1)+nsldsLoanContactType6Length2526]), // Field # 848
+		NSLDSLoanContactType6: preprocessString(record[nsldsLoanContactType6StartIndex2526-1 : (nsldsLoanContactType6StartIndex2526-1)+nsldsLoanContactType6Length2526]), // Field # 848
 
-		NSLDSLoanSchoolCode6: strings.TrimSpace(record[nsldsLoanSchoolCode6StartIndex2526-1 : (nsldsLoanSchoolCode6StartIndex2526-1)+nsldsLoanSchoolCode6Length2526]), // Field # 849
+		NSLDSLoanSchoolCode6: preprocessString(record[nsldsLoanSchoolCode6StartIndex2526-1 : (nsldsLoanSchoolCode6StartIndex2526-1)+nsldsLoanSchoolCode6Length2526]), // Field # 849
 
-		NSLDSLoanContactCode6: strings.TrimSpace(record[nsldsLoanContactCode6StartIndex2526-1 : (nsldsLoanContactCode6StartIndex2526-1)+nsldsLoanContactCode6Length2526]), // Field # 850
+		NSLDSLoanContactCode6: preprocessString(record[nsldsLoanContactCode6StartIndex2526-1 : (nsldsLoanContactCode6StartIndex2526-1)+nsldsLoanContactCode6Length2526]), // Field # 850
 
-		NSLDSLoanGradeLevel6: strings.TrimSpace(record[nsldsLoanGradeLevel6StartIndex2526-1 : (nsldsLoanGradeLevel6StartIndex2526-1)+nsldsLoanGradeLevel6Length2526]), // Field # 851
+		NSLDSLoanGradeLevel6: preprocessString(record[nsldsLoanGradeLevel6StartIndex2526-1 : (nsldsLoanGradeLevel6StartIndex2526-1)+nsldsLoanGradeLevel6Length2526]), // Field # 851
 
-		NSLDSLoanAdditionalUnsubsidizedFlag6: strings.TrimSpace(record[nsldsLoanAdditionalUnsubsidizedFlag6StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag6StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag6Length2526]), // Field # 852
+		NSLDSLoanAdditionalUnsubsidizedFlag6: preprocessString(record[nsldsLoanAdditionalUnsubsidizedFlag6StartIndex2526-1 : (nsldsLoanAdditionalUnsubsidizedFlag6StartIndex2526-1)+nsldsLoanAdditionalUnsubsidizedFlag6Length2526]), // Field # 852
 
-		NSLDSLoanCapitalizedInterestFlag6: strings.TrimSpace(record[nsldsLoanCapitalizedInterestFlag6StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag6StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag6Length2526]), // Field # 853
+		NSLDSLoanCapitalizedInterestFlag6: preprocessString(record[nsldsLoanCapitalizedInterestFlag6StartIndex2526-1 : (nsldsLoanCapitalizedInterestFlag6StartIndex2526-1)+nsldsLoanCapitalizedInterestFlag6Length2526]), // Field # 853
 
-		NSLDSLoanDisbursementAmount6: strings.TrimSpace(record[nsldsLoanDisbursementAmount6StartIndex2526-1 : (nsldsLoanDisbursementAmount6StartIndex2526-1)+nsldsLoanDisbursementAmount6Length2526]), // Field # 854
+		NSLDSLoanDisbursementAmount6: preprocessString(record[nsldsLoanDisbursementAmount6StartIndex2526-1 : (nsldsLoanDisbursementAmount6StartIndex2526-1)+nsldsLoanDisbursementAmount6Length2526]), // Field # 854
 
-		NSLDSLoanDisbursementDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanDisbursementDate6StartIndex2526-1 : (nsldsLoanDisbursementDate6StartIndex2526-1)+nsldsLoanDisbursementDate6Length2526])), // Field # 855
+		NSLDSLoanDisbursementDate6: parseISIRDate2526(preprocessString(record[nsldsLoanDisbursementDate6StartIndex2526-1 : (nsldsLoanDisbursementDate6StartIndex2526-1)+nsldsLoanDisbursementDate6Length2526])), // Field # 855
 
-		NSLDSLoanConfirmedLoanSubsidyStatus6: strings.TrimSpace(record[nsldsLoanConfirmedLoanSubsidyStatus6StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus6StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus6Length2526]), // Field # 856
+		NSLDSLoanConfirmedLoanSubsidyStatus6: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus6StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus6StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus6Length2526]), // Field # 856
 
-		NSLDSLoanSubsidyStatusDate6: parseISIRDate2526(strings.TrimSpace(record[nsldsLoanSubsidyStatusDate6StartIndex2526-1 : (nsldsLoanSubsidyStatusDate6StartIndex2526-1)+nsldsLoanSubsidyStatusDate6Length2526])), // Field # 857
+		NSLDSLoanSubsidyStatusDate6: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate6StartIndex2526-1 : (nsldsLoanSubsidyStatusDate6StartIndex2526-1)+nsldsLoanSubsidyStatusDate6Length2526])), // Field # 857
 
-		FTILabelStart: strings.TrimSpace(record[ftiLabelStartStartIndex2526-1 : (ftiLabelStartStartIndex2526-1)+ftiLabelStartLength2526]), // Field # 861
+		FTILabelStart: preprocessString(record[ftiLabelStartStartIndex2526-1 : (ftiLabelStartStartIndex2526-1)+ftiLabelStartLength2526]), // Field # 861
 
-		StudentFTIMReturnedTaxYear: strings.TrimSpace(record[studentFTIMReturnedTaxYearStartIndex2526-1 : (studentFTIMReturnedTaxYearStartIndex2526-1)+studentFTIMReturnedTaxYearLength2526]), // Field # 862
+		StudentFTIMReturnedTaxYear: preprocessString(record[studentFTIMReturnedTaxYearStartIndex2526-1 : (studentFTIMReturnedTaxYearStartIndex2526-1)+studentFTIMReturnedTaxYearLength2526]), // Field # 862
 
-		StudentFTIMFilingStatusCode: strings.TrimSpace(record[studentFTIMFilingStatusCodeStartIndex2526-1 : (studentFTIMFilingStatusCodeStartIndex2526-1)+studentFTIMFilingStatusCodeLength2526]), // Field # 863
+		StudentFTIMFilingStatusCode: preprocessString(record[studentFTIMFilingStatusCodeStartIndex2526-1 : (studentFTIMFilingStatusCodeStartIndex2526-1)+studentFTIMFilingStatusCodeLength2526]), // Field # 863
 
-		StudentFTIMAdjustedGrossIncome: strings.TrimSpace(record[studentFTIMAdjustedGrossIncomeStartIndex2526-1 : (studentFTIMAdjustedGrossIncomeStartIndex2526-1)+studentFTIMAdjustedGrossIncomeLength2526]), // Field # 864
+		StudentFTIMAdjustedGrossIncome: preprocessString(record[studentFTIMAdjustedGrossIncomeStartIndex2526-1 : (studentFTIMAdjustedGrossIncomeStartIndex2526-1)+studentFTIMAdjustedGrossIncomeLength2526]), // Field # 864
 
-		StudentFTIMNumberOfExemptions: strings.TrimSpace(record[studentFTIMNumberOfExemptionsStartIndex2526-1 : (studentFTIMNumberOfExemptionsStartIndex2526-1)+studentFTIMNumberOfExemptionsLength2526]), // Field # 865
+		StudentFTIMNumberOfExemptions: preprocessString(record[studentFTIMNumberOfExemptionsStartIndex2526-1 : (studentFTIMNumberOfExemptionsStartIndex2526-1)+studentFTIMNumberOfExemptionsLength2526]), // Field # 865
 
-		StudentFTIMNumberOfDependents: strings.TrimSpace(record[studentFTIMNumberOfDependentsStartIndex2526-1 : (studentFTIMNumberOfDependentsStartIndex2526-1)+studentFTIMNumberOfDependentsLength2526]), // Field # 866
+		StudentFTIMNumberOfDependents: preprocessString(record[studentFTIMNumberOfDependentsStartIndex2526-1 : (studentFTIMNumberOfDependentsStartIndex2526-1)+studentFTIMNumberOfDependentsLength2526]), // Field # 866
 
-		StudentFTIMTotalIncomeEarnedAmount: strings.TrimSpace(record[studentFTIMTotalIncomeEarnedAmountStartIndex2526-1 : (studentFTIMTotalIncomeEarnedAmountStartIndex2526-1)+studentFTIMTotalIncomeEarnedAmountLength2526]), // Field # 867
+		StudentFTIMTotalIncomeEarnedAmount: preprocessString(record[studentFTIMTotalIncomeEarnedAmountStartIndex2526-1 : (studentFTIMTotalIncomeEarnedAmountStartIndex2526-1)+studentFTIMTotalIncomeEarnedAmountLength2526]), // Field # 867
 
-		StudentFTIMIncomeTaxPaid: strings.TrimSpace(record[studentFTIMIncomeTaxPaidStartIndex2526-1 : (studentFTIMIncomeTaxPaidStartIndex2526-1)+studentFTIMIncomeTaxPaidLength2526]), // Field # 868
+		StudentFTIMIncomeTaxPaid: preprocessString(record[studentFTIMIncomeTaxPaidStartIndex2526-1 : (studentFTIMIncomeTaxPaidStartIndex2526-1)+studentFTIMIncomeTaxPaidLength2526]), // Field # 868
 
-		StudentFTIMEducationCredits: strings.TrimSpace(record[studentFTIMEducationCreditsStartIndex2526-1 : (studentFTIMEducationCreditsStartIndex2526-1)+studentFTIMEducationCreditsLength2526]), // Field # 869
+		StudentFTIMEducationCredits: preprocessString(record[studentFTIMEducationCreditsStartIndex2526-1 : (studentFTIMEducationCreditsStartIndex2526-1)+studentFTIMEducationCreditsLength2526]), // Field # 869
 
-		StudentFTIMUntaxedIRADistributions: strings.TrimSpace(record[studentFTIMUntaxedIRADistributionsStartIndex2526-1 : (studentFTIMUntaxedIRADistributionsStartIndex2526-1)+studentFTIMUntaxedIRADistributionsLength2526]), // Field # 870
+		StudentFTIMUntaxedIRADistributions: preprocessString(record[studentFTIMUntaxedIRADistributionsStartIndex2526-1 : (studentFTIMUntaxedIRADistributionsStartIndex2526-1)+studentFTIMUntaxedIRADistributionsLength2526]), // Field # 870
 
-		StudentFTIMIRADeductibleAndPayments: strings.TrimSpace(record[studentFTIMIRADeductibleAndPaymentsStartIndex2526-1 : (studentFTIMIRADeductibleAndPaymentsStartIndex2526-1)+studentFTIMIRADeductibleAndPaymentsLength2526]), // Field # 871
+		StudentFTIMIRADeductibleAndPayments: preprocessString(record[studentFTIMIRADeductibleAndPaymentsStartIndex2526-1 : (studentFTIMIRADeductibleAndPaymentsStartIndex2526-1)+studentFTIMIRADeductibleAndPaymentsLength2526]), // Field # 871
 
-		StudentFTIMTaxExemptInterest: strings.TrimSpace(record[studentFTIMTaxExemptInterestStartIndex2526-1 : (studentFTIMTaxExemptInterestStartIndex2526-1)+studentFTIMTaxExemptInterestLength2526]), // Field # 872
+		StudentFTIMTaxExemptInterest: preprocessString(record[studentFTIMTaxExemptInterestStartIndex2526-1 : (studentFTIMTaxExemptInterestStartIndex2526-1)+studentFTIMTaxExemptInterestLength2526]), // Field # 872
 
-		StudentFTIMUntaxedPensionsAmount: strings.TrimSpace(record[studentFTIMUntaxedPensionsAmountStartIndex2526-1 : (studentFTIMUntaxedPensionsAmountStartIndex2526-1)+studentFTIMUntaxedPensionsAmountLength2526]), // Field # 873
+		StudentFTIMUntaxedPensionsAmount: preprocessString(record[studentFTIMUntaxedPensionsAmountStartIndex2526-1 : (studentFTIMUntaxedPensionsAmountStartIndex2526-1)+studentFTIMUntaxedPensionsAmountLength2526]), // Field # 873
 
-		StudentFTIMScheduleCNetProfitLoss: strings.TrimSpace(record[studentFTIMScheduleCNetProfitLossStartIndex2526-1 : (studentFTIMScheduleCNetProfitLossStartIndex2526-1)+studentFTIMScheduleCNetProfitLossLength2526]), // Field # 874
+		StudentFTIMScheduleCNetProfitLoss: preprocessString(record[studentFTIMScheduleCNetProfitLossStartIndex2526-1 : (studentFTIMScheduleCNetProfitLossStartIndex2526-1)+studentFTIMScheduleCNetProfitLossLength2526]), // Field # 874
 
-		StudentFTIMScheduleAIndicator: strings.TrimSpace(record[studentFTIMScheduleAIndicatorStartIndex2526-1 : (studentFTIMScheduleAIndicatorStartIndex2526-1)+studentFTIMScheduleAIndicatorLength2526]), // Field # 875
+		StudentFTIMScheduleAIndicator: preprocessString(record[studentFTIMScheduleAIndicatorStartIndex2526-1 : (studentFTIMScheduleAIndicatorStartIndex2526-1)+studentFTIMScheduleAIndicatorLength2526]), // Field # 875
 
-		StudentFTIMScheduleBIndicator: strings.TrimSpace(record[studentFTIMScheduleBIndicatorStartIndex2526-1 : (studentFTIMScheduleBIndicatorStartIndex2526-1)+studentFTIMScheduleBIndicatorLength2526]), // Field # 876
+		StudentFTIMScheduleBIndicator: preprocessString(record[studentFTIMScheduleBIndicatorStartIndex2526-1 : (studentFTIMScheduleBIndicatorStartIndex2526-1)+studentFTIMScheduleBIndicatorLength2526]), // Field # 876
 
-		StudentFTIMScheduleDIndicator: strings.TrimSpace(record[studentFTIMScheduleDIndicatorStartIndex2526-1 : (studentFTIMScheduleDIndicatorStartIndex2526-1)+studentFTIMScheduleDIndicatorLength2526]), // Field # 877
+		StudentFTIMScheduleDIndicator: preprocessString(record[studentFTIMScheduleDIndicatorStartIndex2526-1 : (studentFTIMScheduleDIndicatorStartIndex2526-1)+studentFTIMScheduleDIndicatorLength2526]), // Field # 877
 
-		StudentFTIMScheduleEIndicator: strings.TrimSpace(record[studentFTIMScheduleEIndicatorStartIndex2526-1 : (studentFTIMScheduleEIndicatorStartIndex2526-1)+studentFTIMScheduleEIndicatorLength2526]), // Field # 878
+		StudentFTIMScheduleEIndicator: preprocessString(record[studentFTIMScheduleEIndicatorStartIndex2526-1 : (studentFTIMScheduleEIndicatorStartIndex2526-1)+studentFTIMScheduleEIndicatorLength2526]), // Field # 878
 
-		StudentFTIMScheduleFIndicator: strings.TrimSpace(record[studentFTIMScheduleFIndicatorStartIndex2526-1 : (studentFTIMScheduleFIndicatorStartIndex2526-1)+studentFTIMScheduleFIndicatorLength2526]), // Field # 879
+		StudentFTIMScheduleFIndicator: preprocessString(record[studentFTIMScheduleFIndicatorStartIndex2526-1 : (studentFTIMScheduleFIndicatorStartIndex2526-1)+studentFTIMScheduleFIndicatorLength2526]), // Field # 879
 
-		StudentFTIMScheduleHIndicator: strings.TrimSpace(record[studentFTIMScheduleHIndicatorStartIndex2526-1 : (studentFTIMScheduleHIndicatorStartIndex2526-1)+studentFTIMScheduleHIndicatorLength2526]), // Field # 880
+		StudentFTIMScheduleHIndicator: preprocessString(record[studentFTIMScheduleHIndicatorStartIndex2526-1 : (studentFTIMScheduleHIndicatorStartIndex2526-1)+studentFTIMScheduleHIndicatorLength2526]), // Field # 880
 
-		StudentFTIMIRSResponseCode: strings.TrimSpace(record[studentFTIMIRSResponseCodeStartIndex2526-1 : (studentFTIMIRSResponseCodeStartIndex2526-1)+studentFTIMIRSResponseCodeLength2526]), // Field # 881
+		StudentFTIMIRSResponseCode: preprocessString(record[studentFTIMIRSResponseCodeStartIndex2526-1 : (studentFTIMIRSResponseCodeStartIndex2526-1)+studentFTIMIRSResponseCodeLength2526]), // Field # 881
 
-		StudentFTIMSpouseReturnedTaxYear: strings.TrimSpace(record[studentFTIMSpouseReturnedTaxYearStartIndex2526-1 : (studentFTIMSpouseReturnedTaxYearStartIndex2526-1)+studentFTIMSpouseReturnedTaxYearLength2526]), // Field # 882
+		StudentFTIMSpouseReturnedTaxYear: preprocessString(record[studentFTIMSpouseReturnedTaxYearStartIndex2526-1 : (studentFTIMSpouseReturnedTaxYearStartIndex2526-1)+studentFTIMSpouseReturnedTaxYearLength2526]), // Field # 882
 
-		StudentFTIMSpouseFilingStatusCode: strings.TrimSpace(record[studentFTIMSpouseFilingStatusCodeStartIndex2526-1 : (studentFTIMSpouseFilingStatusCodeStartIndex2526-1)+studentFTIMSpouseFilingStatusCodeLength2526]), // Field # 883
+		StudentFTIMSpouseFilingStatusCode: preprocessString(record[studentFTIMSpouseFilingStatusCodeStartIndex2526-1 : (studentFTIMSpouseFilingStatusCodeStartIndex2526-1)+studentFTIMSpouseFilingStatusCodeLength2526]), // Field # 883
 
-		StudentFTIMSpouseAdjustedGrossIncome: strings.TrimSpace(record[studentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1 : (studentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1)+studentFTIMSpouseAdjustedGrossIncomeLength2526]), // Field # 884
+		StudentFTIMSpouseAdjustedGrossIncome: preprocessString(record[studentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1 : (studentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1)+studentFTIMSpouseAdjustedGrossIncomeLength2526]), // Field # 884
 
-		StudentFTIMSpouseNumberOfExemptions: strings.TrimSpace(record[studentFTIMSpouseNumberOfExemptionsStartIndex2526-1 : (studentFTIMSpouseNumberOfExemptionsStartIndex2526-1)+studentFTIMSpouseNumberOfExemptionsLength2526]), // Field # 885
+		StudentFTIMSpouseNumberOfExemptions: preprocessString(record[studentFTIMSpouseNumberOfExemptionsStartIndex2526-1 : (studentFTIMSpouseNumberOfExemptionsStartIndex2526-1)+studentFTIMSpouseNumberOfExemptionsLength2526]), // Field # 885
 
-		StudentFTIMSpouseNumberOfDependents: strings.TrimSpace(record[studentFTIMSpouseNumberOfDependentsStartIndex2526-1 : (studentFTIMSpouseNumberOfDependentsStartIndex2526-1)+studentFTIMSpouseNumberOfDependentsLength2526]), // Field # 886
+		StudentFTIMSpouseNumberOfDependents: preprocessString(record[studentFTIMSpouseNumberOfDependentsStartIndex2526-1 : (studentFTIMSpouseNumberOfDependentsStartIndex2526-1)+studentFTIMSpouseNumberOfDependentsLength2526]), // Field # 886
 
-		StudentFTIMSpouseTotalIncomeEarnedAmount: strings.TrimSpace(record[studentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1 : (studentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1)+studentFTIMSpouseTotalIncomeEarnedAmountLength2526]), // Field # 887
+		StudentFTIMSpouseTotalIncomeEarnedAmount: preprocessString(record[studentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1 : (studentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1)+studentFTIMSpouseTotalIncomeEarnedAmountLength2526]), // Field # 887
 
-		StudentFTIMSpouseIncomeTaxPaid: strings.TrimSpace(record[studentFTIMSpouseIncomeTaxPaidStartIndex2526-1 : (studentFTIMSpouseIncomeTaxPaidStartIndex2526-1)+studentFTIMSpouseIncomeTaxPaidLength2526]), // Field # 888
+		StudentFTIMSpouseIncomeTaxPaid: preprocessString(record[studentFTIMSpouseIncomeTaxPaidStartIndex2526-1 : (studentFTIMSpouseIncomeTaxPaidStartIndex2526-1)+studentFTIMSpouseIncomeTaxPaidLength2526]), // Field # 888
 
-		StudentFTIMSpouseEducationCredits: strings.TrimSpace(record[studentFTIMSpouseEducationCreditsStartIndex2526-1 : (studentFTIMSpouseEducationCreditsStartIndex2526-1)+studentFTIMSpouseEducationCreditsLength2526]), // Field # 889
+		StudentFTIMSpouseEducationCredits: preprocessString(record[studentFTIMSpouseEducationCreditsStartIndex2526-1 : (studentFTIMSpouseEducationCreditsStartIndex2526-1)+studentFTIMSpouseEducationCreditsLength2526]), // Field # 889
 
-		StudentFTIMSpouseUntaxedIRADistributions: strings.TrimSpace(record[studentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1 : (studentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1)+studentFTIMSpouseUntaxedIRADistributionsLength2526]), // Field # 890
+		StudentFTIMSpouseUntaxedIRADistributions: preprocessString(record[studentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1 : (studentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1)+studentFTIMSpouseUntaxedIRADistributionsLength2526]), // Field # 890
 
-		StudentFTIMSpouseIRADeductibleAndPayments: strings.TrimSpace(record[studentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1 : (studentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1)+studentFTIMSpouseIRADeductibleAndPaymentsLength2526]), // Field # 891
+		StudentFTIMSpouseIRADeductibleAndPayments: preprocessString(record[studentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1 : (studentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1)+studentFTIMSpouseIRADeductibleAndPaymentsLength2526]), // Field # 891
 
-		StudentFTIMSpouseTaxExemptInterest: strings.TrimSpace(record[studentFTIMSpouseTaxExemptInterestStartIndex2526-1 : (studentFTIMSpouseTaxExemptInterestStartIndex2526-1)+studentFTIMSpouseTaxExemptInterestLength2526]), // Field # 892
+		StudentFTIMSpouseTaxExemptInterest: preprocessString(record[studentFTIMSpouseTaxExemptInterestStartIndex2526-1 : (studentFTIMSpouseTaxExemptInterestStartIndex2526-1)+studentFTIMSpouseTaxExemptInterestLength2526]), // Field # 892
 
-		StudentFTIMSpouseUntaxedPensionsAmount: strings.TrimSpace(record[studentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1 : (studentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1)+studentFTIMSpouseUntaxedPensionsAmountLength2526]), // Field # 893
+		StudentFTIMSpouseUntaxedPensionsAmount: preprocessString(record[studentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1 : (studentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1)+studentFTIMSpouseUntaxedPensionsAmountLength2526]), // Field # 893
 
-		StudentFTIMSpouseScheduleCNetProfitLoss: strings.TrimSpace(record[studentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1 : (studentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1)+studentFTIMSpouseScheduleCNetProfitLossLength2526]), // Field # 894
+		StudentFTIMSpouseScheduleCNetProfitLoss: preprocessString(record[studentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1 : (studentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1)+studentFTIMSpouseScheduleCNetProfitLossLength2526]), // Field # 894
 
-		StudentFTIMSpouseScheduleAIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleAIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleAIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleAIndicatorLength2526]), // Field # 895
+		StudentFTIMSpouseScheduleAIndicator: preprocessString(record[studentFTIMSpouseScheduleAIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleAIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleAIndicatorLength2526]), // Field # 895
 
-		StudentFTIMSpouseScheduleBIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleBIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleBIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleBIndicatorLength2526]), // Field # 896
+		StudentFTIMSpouseScheduleBIndicator: preprocessString(record[studentFTIMSpouseScheduleBIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleBIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleBIndicatorLength2526]), // Field # 896
 
-		StudentFTIMSpouseScheduleDIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleDIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleDIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleDIndicatorLength2526]), // Field # 897
+		StudentFTIMSpouseScheduleDIndicator: preprocessString(record[studentFTIMSpouseScheduleDIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleDIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleDIndicatorLength2526]), // Field # 897
 
-		StudentFTIMSpouseScheduleEIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleEIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleEIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleEIndicatorLength2526]), // Field # 898
+		StudentFTIMSpouseScheduleEIndicator: preprocessString(record[studentFTIMSpouseScheduleEIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleEIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleEIndicatorLength2526]), // Field # 898
 
-		StudentFTIMSpouseScheduleFIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleFIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleFIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleFIndicatorLength2526]), // Field # 899
+		StudentFTIMSpouseScheduleFIndicator: preprocessString(record[studentFTIMSpouseScheduleFIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleFIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleFIndicatorLength2526]), // Field # 899
 
-		StudentFTIMSpouseScheduleHIndicator: strings.TrimSpace(record[studentFTIMSpouseScheduleHIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleHIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleHIndicatorLength2526]), // Field # 900
+		StudentFTIMSpouseScheduleHIndicator: preprocessString(record[studentFTIMSpouseScheduleHIndicatorStartIndex2526-1 : (studentFTIMSpouseScheduleHIndicatorStartIndex2526-1)+studentFTIMSpouseScheduleHIndicatorLength2526]), // Field # 900
 
-		StudentFTIMSpouseIRSResponseCode: strings.TrimSpace(record[studentFTIMSpouseIRSResponseCodeStartIndex2526-1 : (studentFTIMSpouseIRSResponseCodeStartIndex2526-1)+studentFTIMSpouseIRSResponseCodeLength2526]), // Field # 901
+		StudentFTIMSpouseIRSResponseCode: preprocessString(record[studentFTIMSpouseIRSResponseCodeStartIndex2526-1 : (studentFTIMSpouseIRSResponseCodeStartIndex2526-1)+studentFTIMSpouseIRSResponseCodeLength2526]), // Field # 901
 
-		ParentFTIMReturnedTaxYear: strings.TrimSpace(record[parentFTIMReturnedTaxYearStartIndex2526-1 : (parentFTIMReturnedTaxYearStartIndex2526-1)+parentFTIMReturnedTaxYearLength2526]), // Field # 902
+		ParentFTIMReturnedTaxYear: preprocessString(record[parentFTIMReturnedTaxYearStartIndex2526-1 : (parentFTIMReturnedTaxYearStartIndex2526-1)+parentFTIMReturnedTaxYearLength2526]), // Field # 902
 
-		ParentFTIMFilingStatusCode: strings.TrimSpace(record[parentFTIMFilingStatusCodeStartIndex2526-1 : (parentFTIMFilingStatusCodeStartIndex2526-1)+parentFTIMFilingStatusCodeLength2526]), // Field # 903
+		ParentFTIMFilingStatusCode: preprocessString(record[parentFTIMFilingStatusCodeStartIndex2526-1 : (parentFTIMFilingStatusCodeStartIndex2526-1)+parentFTIMFilingStatusCodeLength2526]), // Field # 903
 
-		ParentFTIMAdjustedGrossIncome: strings.TrimSpace(record[parentFTIMAdjustedGrossIncomeStartIndex2526-1 : (parentFTIMAdjustedGrossIncomeStartIndex2526-1)+parentFTIMAdjustedGrossIncomeLength2526]), // Field # 904
+		ParentFTIMAdjustedGrossIncome: preprocessString(record[parentFTIMAdjustedGrossIncomeStartIndex2526-1 : (parentFTIMAdjustedGrossIncomeStartIndex2526-1)+parentFTIMAdjustedGrossIncomeLength2526]), // Field # 904
 
-		ParentFTIMNumberOfExemptions: strings.TrimSpace(record[parentFTIMNumberOfExemptionsStartIndex2526-1 : (parentFTIMNumberOfExemptionsStartIndex2526-1)+parentFTIMNumberOfExemptionsLength2526]), // Field # 905
+		ParentFTIMNumberOfExemptions: preprocessString(record[parentFTIMNumberOfExemptionsStartIndex2526-1 : (parentFTIMNumberOfExemptionsStartIndex2526-1)+parentFTIMNumberOfExemptionsLength2526]), // Field # 905
 
-		ParentFTIMNumberOfDependents: strings.TrimSpace(record[parentFTIMNumberOfDependentsStartIndex2526-1 : (parentFTIMNumberOfDependentsStartIndex2526-1)+parentFTIMNumberOfDependentsLength2526]), // Field # 906
+		ParentFTIMNumberOfDependents: preprocessString(record[parentFTIMNumberOfDependentsStartIndex2526-1 : (parentFTIMNumberOfDependentsStartIndex2526-1)+parentFTIMNumberOfDependentsLength2526]), // Field # 906
 
-		ParentFTIMTotalIncomeEarnedAmount: strings.TrimSpace(record[parentFTIMTotalIncomeEarnedAmountStartIndex2526-1 : (parentFTIMTotalIncomeEarnedAmountStartIndex2526-1)+parentFTIMTotalIncomeEarnedAmountLength2526]), // Field # 907
+		ParentFTIMTotalIncomeEarnedAmount: preprocessString(record[parentFTIMTotalIncomeEarnedAmountStartIndex2526-1 : (parentFTIMTotalIncomeEarnedAmountStartIndex2526-1)+parentFTIMTotalIncomeEarnedAmountLength2526]), // Field # 907
 
-		ParentFTIMIncomeTaxPaid: strings.TrimSpace(record[parentFTIMIncomeTaxPaidStartIndex2526-1 : (parentFTIMIncomeTaxPaidStartIndex2526-1)+parentFTIMIncomeTaxPaidLength2526]), // Field # 908
+		ParentFTIMIncomeTaxPaid: preprocessString(record[parentFTIMIncomeTaxPaidStartIndex2526-1 : (parentFTIMIncomeTaxPaidStartIndex2526-1)+parentFTIMIncomeTaxPaidLength2526]), // Field # 908
 
-		ParentFTIMEducationCredits: strings.TrimSpace(record[parentFTIMEducationCreditsStartIndex2526-1 : (parentFTIMEducationCreditsStartIndex2526-1)+parentFTIMEducationCreditsLength2526]), // Field # 909
+		ParentFTIMEducationCredits: preprocessString(record[parentFTIMEducationCreditsStartIndex2526-1 : (parentFTIMEducationCreditsStartIndex2526-1)+parentFTIMEducationCreditsLength2526]), // Field # 909
 
-		ParentFTIMUntaxedIRADistributions: strings.TrimSpace(record[parentFTIMUntaxedIRADistributionsStartIndex2526-1 : (parentFTIMUntaxedIRADistributionsStartIndex2526-1)+parentFTIMUntaxedIRADistributionsLength2526]), // Field # 910
+		ParentFTIMUntaxedIRADistributions: preprocessString(record[parentFTIMUntaxedIRADistributionsStartIndex2526-1 : (parentFTIMUntaxedIRADistributionsStartIndex2526-1)+parentFTIMUntaxedIRADistributionsLength2526]), // Field # 910
 
-		ParentFTIMIRADeductibleAndPayments: strings.TrimSpace(record[parentFTIMIRADeductibleAndPaymentsStartIndex2526-1 : (parentFTIMIRADeductibleAndPaymentsStartIndex2526-1)+parentFTIMIRADeductibleAndPaymentsLength2526]), // Field # 911
+		ParentFTIMIRADeductibleAndPayments: preprocessString(record[parentFTIMIRADeductibleAndPaymentsStartIndex2526-1 : (parentFTIMIRADeductibleAndPaymentsStartIndex2526-1)+parentFTIMIRADeductibleAndPaymentsLength2526]), // Field # 911
 
-		ParentFTIMTaxExemptInterest: strings.TrimSpace(record[parentFTIMTaxExemptInterestStartIndex2526-1 : (parentFTIMTaxExemptInterestStartIndex2526-1)+parentFTIMTaxExemptInterestLength2526]), // Field # 912
+		ParentFTIMTaxExemptInterest: preprocessString(record[parentFTIMTaxExemptInterestStartIndex2526-1 : (parentFTIMTaxExemptInterestStartIndex2526-1)+parentFTIMTaxExemptInterestLength2526]), // Field # 912
 
-		ParentFTIMUntaxedPensionsAmount: strings.TrimSpace(record[parentFTIMUntaxedPensionsAmountStartIndex2526-1 : (parentFTIMUntaxedPensionsAmountStartIndex2526-1)+parentFTIMUntaxedPensionsAmountLength2526]), // Field # 913
+		ParentFTIMUntaxedPensionsAmount: preprocessString(record[parentFTIMUntaxedPensionsAmountStartIndex2526-1 : (parentFTIMUntaxedPensionsAmountStartIndex2526-1)+parentFTIMUntaxedPensionsAmountLength2526]), // Field # 913
 
-		ParentFTIMScheduleCNetProfitLoss: strings.TrimSpace(record[parentFTIMScheduleCNetProfitLossStartIndex2526-1 : (parentFTIMScheduleCNetProfitLossStartIndex2526-1)+parentFTIMScheduleCNetProfitLossLength2526]), // Field # 914
+		ParentFTIMScheduleCNetProfitLoss: preprocessString(record[parentFTIMScheduleCNetProfitLossStartIndex2526-1 : (parentFTIMScheduleCNetProfitLossStartIndex2526-1)+parentFTIMScheduleCNetProfitLossLength2526]), // Field # 914
 
-		ParentFTIMScheduleAIndicator: strings.TrimSpace(record[parentFTIMScheduleAIndicatorStartIndex2526-1 : (parentFTIMScheduleAIndicatorStartIndex2526-1)+parentFTIMScheduleAIndicatorLength2526]), // Field # 915
+		ParentFTIMScheduleAIndicator: preprocessString(record[parentFTIMScheduleAIndicatorStartIndex2526-1 : (parentFTIMScheduleAIndicatorStartIndex2526-1)+parentFTIMScheduleAIndicatorLength2526]), // Field # 915
 
-		ParentFTIMScheduleBIndicator: strings.TrimSpace(record[parentFTIMScheduleBIndicatorStartIndex2526-1 : (parentFTIMScheduleBIndicatorStartIndex2526-1)+parentFTIMScheduleBIndicatorLength2526]), // Field # 916
+		ParentFTIMScheduleBIndicator: preprocessString(record[parentFTIMScheduleBIndicatorStartIndex2526-1 : (parentFTIMScheduleBIndicatorStartIndex2526-1)+parentFTIMScheduleBIndicatorLength2526]), // Field # 916
 
-		ParentFTIMScheduleDIndicator: strings.TrimSpace(record[parentFTIMScheduleDIndicatorStartIndex2526-1 : (parentFTIMScheduleDIndicatorStartIndex2526-1)+parentFTIMScheduleDIndicatorLength2526]), // Field # 917
+		ParentFTIMScheduleDIndicator: preprocessString(record[parentFTIMScheduleDIndicatorStartIndex2526-1 : (parentFTIMScheduleDIndicatorStartIndex2526-1)+parentFTIMScheduleDIndicatorLength2526]), // Field # 917
 
-		ParentFTIMScheduleEIndicator: strings.TrimSpace(record[parentFTIMScheduleEIndicatorStartIndex2526-1 : (parentFTIMScheduleEIndicatorStartIndex2526-1)+parentFTIMScheduleEIndicatorLength2526]), // Field # 918
+		ParentFTIMScheduleEIndicator: preprocessString(record[parentFTIMScheduleEIndicatorStartIndex2526-1 : (parentFTIMScheduleEIndicatorStartIndex2526-1)+parentFTIMScheduleEIndicatorLength2526]), // Field # 918
 
-		ParentFTIMScheduleFIndicator: strings.TrimSpace(record[parentFTIMScheduleFIndicatorStartIndex2526-1 : (parentFTIMScheduleFIndicatorStartIndex2526-1)+parentFTIMScheduleFIndicatorLength2526]), // Field # 919
+		ParentFTIMScheduleFIndicator: preprocessString(record[parentFTIMScheduleFIndicatorStartIndex2526-1 : (parentFTIMScheduleFIndicatorStartIndex2526-1)+parentFTIMScheduleFIndicatorLength2526]), // Field # 919
 
-		ParentFTIMScheduleHIndicator: strings.TrimSpace(record[parentFTIMScheduleHIndicatorStartIndex2526-1 : (parentFTIMScheduleHIndicatorStartIndex2526-1)+parentFTIMScheduleHIndicatorLength2526]), // Field # 920
+		ParentFTIMScheduleHIndicator: preprocessString(record[parentFTIMScheduleHIndicatorStartIndex2526-1 : (parentFTIMScheduleHIndicatorStartIndex2526-1)+parentFTIMScheduleHIndicatorLength2526]), // Field # 920
 
-		ParentFTIMIRSResponseCode: strings.TrimSpace(record[parentFTIMIRSResponseCodeStartIndex2526-1 : (parentFTIMIRSResponseCodeStartIndex2526-1)+parentFTIMIRSResponseCodeLength2526]), // Field # 921
+		ParentFTIMIRSResponseCode: preprocessString(record[parentFTIMIRSResponseCodeStartIndex2526-1 : (parentFTIMIRSResponseCodeStartIndex2526-1)+parentFTIMIRSResponseCodeLength2526]), // Field # 921
 
-		ParentFTIMSpouseReturnedTaxYear: strings.TrimSpace(record[parentFTIMSpouseReturnedTaxYearStartIndex2526-1 : (parentFTIMSpouseReturnedTaxYearStartIndex2526-1)+parentFTIMSpouseReturnedTaxYearLength2526]), // Field # 922
+		ParentFTIMSpouseReturnedTaxYear: preprocessString(record[parentFTIMSpouseReturnedTaxYearStartIndex2526-1 : (parentFTIMSpouseReturnedTaxYearStartIndex2526-1)+parentFTIMSpouseReturnedTaxYearLength2526]), // Field # 922
 
-		ParentFTIMSpouseFilingStatusCode: strings.TrimSpace(record[parentFTIMSpouseFilingStatusCodeStartIndex2526-1 : (parentFTIMSpouseFilingStatusCodeStartIndex2526-1)+parentFTIMSpouseFilingStatusCodeLength2526]), // Field # 923
+		ParentFTIMSpouseFilingStatusCode: preprocessString(record[parentFTIMSpouseFilingStatusCodeStartIndex2526-1 : (parentFTIMSpouseFilingStatusCodeStartIndex2526-1)+parentFTIMSpouseFilingStatusCodeLength2526]), // Field # 923
 
-		ParentFTIMSpouseAdjustedGrossIncome: strings.TrimSpace(record[parentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1 : (parentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1)+parentFTIMSpouseAdjustedGrossIncomeLength2526]), // Field # 924
+		ParentFTIMSpouseAdjustedGrossIncome: preprocessString(record[parentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1 : (parentFTIMSpouseAdjustedGrossIncomeStartIndex2526-1)+parentFTIMSpouseAdjustedGrossIncomeLength2526]), // Field # 924
 
-		ParentFTIMSpouseNumberOfExemptions: strings.TrimSpace(record[parentFTIMSpouseNumberOfExemptionsStartIndex2526-1 : (parentFTIMSpouseNumberOfExemptionsStartIndex2526-1)+parentFTIMSpouseNumberOfExemptionsLength2526]), // Field # 925
+		ParentFTIMSpouseNumberOfExemptions: preprocessString(record[parentFTIMSpouseNumberOfExemptionsStartIndex2526-1 : (parentFTIMSpouseNumberOfExemptionsStartIndex2526-1)+parentFTIMSpouseNumberOfExemptionsLength2526]), // Field # 925
 
-		ParentFTIMSpouseNumberOfDependents: strings.TrimSpace(record[parentFTIMSpouseNumberOfDependentsStartIndex2526-1 : (parentFTIMSpouseNumberOfDependentsStartIndex2526-1)+parentFTIMSpouseNumberOfDependentsLength2526]), // Field # 926
+		ParentFTIMSpouseNumberOfDependents: preprocessString(record[parentFTIMSpouseNumberOfDependentsStartIndex2526-1 : (parentFTIMSpouseNumberOfDependentsStartIndex2526-1)+parentFTIMSpouseNumberOfDependentsLength2526]), // Field # 926
 
-		ParentFTIMSpouseTotalIncomeEarnedAmount: strings.TrimSpace(record[parentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1 : (parentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1)+parentFTIMSpouseTotalIncomeEarnedAmountLength2526]), // Field # 927
+		ParentFTIMSpouseTotalIncomeEarnedAmount: preprocessString(record[parentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1 : (parentFTIMSpouseTotalIncomeEarnedAmountStartIndex2526-1)+parentFTIMSpouseTotalIncomeEarnedAmountLength2526]), // Field # 927
 
-		ParentFTIMSpouseIncomeTaxPaid: strings.TrimSpace(record[parentFTIMSpouseIncomeTaxPaidStartIndex2526-1 : (parentFTIMSpouseIncomeTaxPaidStartIndex2526-1)+parentFTIMSpouseIncomeTaxPaidLength2526]), // Field # 928
+		ParentFTIMSpouseIncomeTaxPaid: preprocessString(record[parentFTIMSpouseIncomeTaxPaidStartIndex2526-1 : (parentFTIMSpouseIncomeTaxPaidStartIndex2526-1)+parentFTIMSpouseIncomeTaxPaidLength2526]), // Field # 928
 
-		ParentFTIMSpouseEducationCredits: strings.TrimSpace(record[parentFTIMSpouseEducationCreditsStartIndex2526-1 : (parentFTIMSpouseEducationCreditsStartIndex2526-1)+parentFTIMSpouseEducationCreditsLength2526]), // Field # 929
+		ParentFTIMSpouseEducationCredits: preprocessString(record[parentFTIMSpouseEducationCreditsStartIndex2526-1 : (parentFTIMSpouseEducationCreditsStartIndex2526-1)+parentFTIMSpouseEducationCreditsLength2526]), // Field # 929
 
-		ParentFTIMSpouseUntaxedIRADistributions: strings.TrimSpace(record[parentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1 : (parentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1)+parentFTIMSpouseUntaxedIRADistributionsLength2526]), // Field # 930
+		ParentFTIMSpouseUntaxedIRADistributions: preprocessString(record[parentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1 : (parentFTIMSpouseUntaxedIRADistributionsStartIndex2526-1)+parentFTIMSpouseUntaxedIRADistributionsLength2526]), // Field # 930
 
-		ParentFTIMSpouseIRADeductibleAndPayments: strings.TrimSpace(record[parentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1 : (parentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1)+parentFTIMSpouseIRADeductibleAndPaymentsLength2526]), // Field # 931
+		ParentFTIMSpouseIRADeductibleAndPayments: preprocessString(record[parentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1 : (parentFTIMSpouseIRADeductibleAndPaymentsStartIndex2526-1)+parentFTIMSpouseIRADeductibleAndPaymentsLength2526]), // Field # 931
 
-		ParentFTIMSpouseTaxExemptInterest: strings.TrimSpace(record[parentFTIMSpouseTaxExemptInterestStartIndex2526-1 : (parentFTIMSpouseTaxExemptInterestStartIndex2526-1)+parentFTIMSpouseTaxExemptInterestLength2526]), // Field # 932
+		ParentFTIMSpouseTaxExemptInterest: preprocessString(record[parentFTIMSpouseTaxExemptInterestStartIndex2526-1 : (parentFTIMSpouseTaxExemptInterestStartIndex2526-1)+parentFTIMSpouseTaxExemptInterestLength2526]), // Field # 932
 
-		ParentFTIMSpouseUntaxedPensionsAmount: strings.TrimSpace(record[parentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1 : (parentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1)+parentFTIMSpouseUntaxedPensionsAmountLength2526]), // Field # 933
+		ParentFTIMSpouseUntaxedPensionsAmount: preprocessString(record[parentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1 : (parentFTIMSpouseUntaxedPensionsAmountStartIndex2526-1)+parentFTIMSpouseUntaxedPensionsAmountLength2526]), // Field # 933
 
-		ParentFTIMSpouseScheduleCNetProfitLoss: strings.TrimSpace(record[parentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1 : (parentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1)+parentFTIMSpouseScheduleCNetProfitLossLength2526]), // Field # 934
+		ParentFTIMSpouseScheduleCNetProfitLoss: preprocessString(record[parentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1 : (parentFTIMSpouseScheduleCNetProfitLossStartIndex2526-1)+parentFTIMSpouseScheduleCNetProfitLossLength2526]), // Field # 934
 
-		ParentFTIMSpouseScheduleAIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleAIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleAIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleAIndicatorLength2526]), // Field # 935
+		ParentFTIMSpouseScheduleAIndicator: preprocessString(record[parentFTIMSpouseScheduleAIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleAIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleAIndicatorLength2526]), // Field # 935
 
-		ParentFTIMSpouseScheduleBIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleBIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleBIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleBIndicatorLength2526]), // Field # 936
+		ParentFTIMSpouseScheduleBIndicator: preprocessString(record[parentFTIMSpouseScheduleBIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleBIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleBIndicatorLength2526]), // Field # 936
 
-		ParentFTIMSpouseScheduleDIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleDIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleDIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleDIndicatorLength2526]), // Field # 937
+		ParentFTIMSpouseScheduleDIndicator: preprocessString(record[parentFTIMSpouseScheduleDIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleDIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleDIndicatorLength2526]), // Field # 937
 
-		ParentFTIMSpouseScheduleEIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleEIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleEIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleEIndicatorLength2526]), // Field # 938
+		ParentFTIMSpouseScheduleEIndicator: preprocessString(record[parentFTIMSpouseScheduleEIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleEIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleEIndicatorLength2526]), // Field # 938
 
-		ParentFTIMSpouseScheduleFIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleFIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleFIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleFIndicatorLength2526]), // Field # 939
+		ParentFTIMSpouseScheduleFIndicator: preprocessString(record[parentFTIMSpouseScheduleFIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleFIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleFIndicatorLength2526]), // Field # 939
 
-		ParentFTIMSpouseScheduleHIndicator: strings.TrimSpace(record[parentFTIMSpouseScheduleHIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleHIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleHIndicatorLength2526]), // Field # 940
+		ParentFTIMSpouseScheduleHIndicator: preprocessString(record[parentFTIMSpouseScheduleHIndicatorStartIndex2526-1 : (parentFTIMSpouseScheduleHIndicatorStartIndex2526-1)+parentFTIMSpouseScheduleHIndicatorLength2526]), // Field # 940
 
-		ParentFTIMSpouseIRSResponseCode: strings.TrimSpace(record[parentFTIMSpouseIRSResponseCodeStartIndex2526-1 : (parentFTIMSpouseIRSResponseCodeStartIndex2526-1)+parentFTIMSpouseIRSResponseCodeLength2526]), // Field # 941
+		ParentFTIMSpouseIRSResponseCode: preprocessString(record[parentFTIMSpouseIRSResponseCodeStartIndex2526-1 : (parentFTIMSpouseIRSResponseCodeStartIndex2526-1)+parentFTIMSpouseIRSResponseCodeLength2526]), // Field # 941
 
-		FTILabelEnd: strings.TrimSpace(record[ftiLabelEndStartIndex2526-1 : (ftiLabelEndStartIndex2526-1)+ftiLabelEndLength2526]), // Field # 942
+		FTILabelEnd: preprocessString(record[ftiLabelEndStartIndex2526-1 : (ftiLabelEndStartIndex2526-1)+ftiLabelEndLength2526]), // Field # 942
 
-		StudentTotalIncome: strings.TrimSpace(record[studentTotalIncomeStartIndex2526-1 : (studentTotalIncomeStartIndex2526-1)+studentTotalIncomeLength2526]), // Field # 944
+		StudentTotalIncome: preprocessString(record[studentTotalIncomeStartIndex2526-1 : (studentTotalIncomeStartIndex2526-1)+studentTotalIncomeLength2526]), // Field # 944
 
-		ParentTotalIncome: strings.TrimSpace(record[parentTotalIncomeStartIndex2526-1 : (parentTotalIncomeStartIndex2526-1)+parentTotalIncomeLength2526]), // Field # 945
+		ParentTotalIncome: preprocessString(record[parentTotalIncomeStartIndex2526-1 : (parentTotalIncomeStartIndex2526-1)+parentTotalIncomeLength2526]), // Field # 945
 
-		FISAPTotalIncome: strings.TrimSpace(record[fisapTotalIncomeStartIndex2526-1 : (fisapTotalIncomeStartIndex2526-1)+fisapTotalIncomeLength2526]), // Field # 946
+		FISAPTotalIncome: preprocessString(record[fisapTotalIncomeStartIndex2526-1 : (fisapTotalIncomeStartIndex2526-1)+fisapTotalIncomeLength2526]), // Field # 946
 	}
 	slog.Debug("Parsed ISIR record", "correlationId", cid.String(), "func", "ISIRParser2526.ParseISIR()")
 	//</editor-fold>
 	return r, nil
 }
 
-func parseISIRDate2526(s string) time.Time {
+// proprocessString trims whitespace and checks for any indications of a null or missing value from FSA, returning an empty string if so
+// in order for the zero value to be used in the struct.  For example, "N/A" is a common value used by FSA to indicate a null value.
+func preprocessString(s string) string {
+	p := strings.TrimSpace(s)
+	if p == "N/A" {
+		p = ""
+	}
+
+	return p
+}
+
+func parseISIRDate2526(s string) *time.Time {
 	parsedDate, err := time.Parse(isirDateLayout2526, s)
 
 	if err != nil {
-		return time.Time{}
+		return nil
 	}
 
-	return parsedDate
+	return &parsedDate
 }
 
-func parseISIRDateShort2526(s string) time.Time {
+func parseISIRDateShort2526(s string) *time.Time {
 	parsedDate, err := time.Parse(isirDateShortLayout2526, s)
 
 	if err != nil {
-		return time.Time{}
+		return nil
 	}
 
-	return parsedDate
+	return &parsedDate
 }
