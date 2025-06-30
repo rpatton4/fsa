@@ -31,11 +31,14 @@ This is a library for the Go language, and as such it uses the standard module m
 The module is `github.com/rpatton4/fsa` so you would add the import to your go.mod file
 with `go get github.com/rpatton4/fsa`. After that you should see something like the
 following in your go.mod file: `github.com/rpatton4/fsa v0.1.6-alpha // indirect`
+The library tried to be self-sufficient, but may rely on other libraries.  See below for
+the list and 'go get' them as appropriate.
 
 ## Prerequisites
 - Go 1.24.x
+- Google's GUID library, `github.com/google/uuid` v1.6.0 or later
 
-The library will likely work fine with earlier versions given Go's backwards compatibility, at least to 1.21.x,
+The library will likely work fine with earlier versions of Go given Go's backwards compatibility, at least to 1.21.x,
 but it is only tested on current releases.
 
 # Usage

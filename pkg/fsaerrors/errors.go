@@ -20,6 +20,7 @@ const (
 	ISIRParseError
 	LibraryConfigurationErrorISIRAYUnrecognized
 	AYDeterminationErrorEmptyISIRInputLine
+	LibrarySystemErrorCorrelationIDGeneration
 )
 
 // Error The implementation of an error, specific to the FSA module.  This simply extends the concept of

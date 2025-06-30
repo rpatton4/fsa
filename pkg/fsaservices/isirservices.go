@@ -5,6 +5,7 @@ package fsaservices
 
 import (
 	"bufio"
+	"github.com/google/uuid"
 	"github.com/rpatton4/fsa/internal/isirparser"
 	"github.com/rpatton4/fsa/pkg/fsaconstants"
 	"github.com/rpatton4/fsa/pkg/fsaerrors"
@@ -15,7 +16,20 @@ import (
 )
 
 func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error) {
-	slog.Debug("ParseISIRStream(stream) starting")
+	cid, err := uuid.NewV7()
+	if err != nil {
+		slog.Error("Error generating UUID for ISIR stream parsing", "errorMessage", err.Error(), "func", "ParseISIRStreamWithCorrelationId()")
+		return nil, &fsaerrors.Error{
+			Code:    fsaerrors.LibrarySystemErrorCorrelationIDGeneration,
+			Message: "ParseISIRStream() Failed to generate UUID for ISIR stream parsing",
+		}
+	}
+	slog.Debug("Generated correlation ID for ISIR stream parsing", "correlationId", cid.String(), "func", "ParseISIRStream()")
+	return ParseISIRStreamWithCorrelationId(stream, cid)
+}
+
+func ParseISIRStreamWithCorrelationId(stream io.Reader, cid uuid.UUID) ([]fsamodels.ISIRecord, *fsaerrors.Error) {
+	slog.Info("Parsing ISIR stream", "correlationId", cid.String(), "func", "ParseISIRStreamWithCorrelationId()")
 	records := make([]fsamodels.ISIRecord, 0)
 	linesParsed, linesSkipped := 0, 0
 	fScanner := bufio.NewScanner(stream)
@@ -26,13 +40,13 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 
 		// Determine whether the line is empty, meaning invalid, and skip if so
 		if strings.TrimSpace(line) == "" {
-			slog.Debug("Skipping empty line in ISIR stream")
+			slog.Debug("Skipping empty line in ISIR stream", "correlationId", cid.String(), "func", "ParseISIRStreamWithCorrelationId()")
 			continue
 		}
 
-		ay, err := isirparser.DetermineAYFromISIRLine(line)
+		ay, err := isirparser.DetermineAYFromISIRLine(line, cid)
 		if err != nil {
-			slog.Error("Error determining AY from ISIR line, skipping ISIR line", "errorMessage", err.Error())
+			slog.Error("Error determining AY from ISIR line, skipping ISIR line", "errorMessage", err.Error(), "correlationId", cid.String(), "func", "ParseISIRStreamWithCorrelationId()")
 			linesSkipped++
 			continue
 		}
@@ -42,9 +56,9 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 
 		// Reuse parsers we've already created
 		if !ok {
-			np, err := isirparser.CreateISIRParser(ay)
+			np, err := isirparser.CreateISIRParser(ay, cid)
 			if err != nil {
-				slog.Error("Error creating parser for ISIR line, skipping line", "errorMessage", err.Error())
+				slog.Error("Error creating parser for ISIR line, skipping line", "errorMessage", err.Error(), "correlationId", cid.String(), "func", "ParseISIRStreamWithCorrelationId()")
 				linesSkipped++
 				continue
 			}
@@ -55,7 +69,7 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 			slog.Debug("Reusing existing ISIR parser for AY", "ay", ay)
 		}
 
-		rec, err := p.ParseISIR(line)
+		rec, err := p.ParseISIR(line, cid)
 		if err != nil {
 			slog.Error("Error parsing line from ISIR file, stopping stream processing", "errorMessage", err.Error())
 			return records, err
@@ -63,6 +77,6 @@ func ParseISIRStream(stream io.Reader) ([]fsamodels.ISIRecord, *fsaerrors.Error)
 		records = append(records, rec)
 		linesParsed++
 	}
-	slog.Debug("ParseISIRStream(stream) finished", "lines_parsed", linesParsed, "lines_skipped", linesSkipped, "records produced", len(records))
+	slog.Info("Parsed ISIR stream", "lines_parsed", linesParsed, "lines_skipped", linesSkipped)
 	return records, nil
 }
