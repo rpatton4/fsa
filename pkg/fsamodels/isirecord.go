@@ -5,8 +5,8 @@ package fsamodels
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/google/uuid"
-	"log/slog"
 	"time"
 )
 
@@ -2781,8 +2781,7 @@ type ISIRecord struct {
 func (r *ISIRecord) JsonString(cid uuid.UUID) string {
 	j, err := json.MarshalIndent(r, "", "    ")
 	if err != nil {
-		slog.Error("error while marshalling ISIRecord to JSON", "errorMessage", err.Error(), "correlationId", cid.String())
-		return ""
+		return fmt.Sprintf("{\"errorMessage\":\"%s\",\"correlationID\":\"%s\"}", err.Error(), cid.String())
 	}
 	return string(j)
 }

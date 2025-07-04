@@ -19,7 +19,6 @@ import (
 	"github.com/rpatton4/fsa/pkg/fsaconstants"
 	"github.com/rpatton4/fsa/pkg/fsaerrors"
 	"github.com/rpatton4/fsa/pkg/fsamodels"
-	"log/slog"
 )
 
 type ISIRParser interface {
@@ -33,8 +32,10 @@ func CreateISIRParser(y fsaconstants.AwardYear, cid uuid.UUID) (ISIRParser, *fsa
 		return &ISIRParser2526{}, nil
 	default:
 		return nil, &fsaerrors.Error{
-			Code:    fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,
-			Message: fmt.Sprintf("no ISIR Parser available for AY '%s' correlation id='%s'", y.String(), cid.String()),
+			Code:          fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,
+			Message:       fmt.Sprintf("no ISIR Parser available for AY '%s'", y.String()),
+			Func:          "CreateISIRParser()",
+			CorrelationID: cid.String(),
 		}
 	}
 }
@@ -52,11 +53,12 @@ func DetermineAYFromISIRLine(l string, cid uuid.UUID) (fsaconstants.AwardYear, *
 	case "6":
 		return fsaconstants.AwardYear2526, nil
 	default:
-		msg := fmt.Sprintf("unable to determine the Award Year from the ISIR, value='%s' correlation id='%s'", v, cid.String())
-		slog.Error(msg)
+		msg := fmt.Sprintf("unable to determine the Award Year from the ISIR, value='%s'", v)
 		return fsaconstants.AwardYearUnknown, &fsaerrors.Error{
-			Code:    fsaerrors.AYDeterminationErrorEmptyISIRInputLine,
-			Message: msg,
+			Code:          fsaerrors.AYDeterminationErrorEmptyISIRInputLine,
+			Message:       msg,
+			Func:          "DetermineAYFromISIRLine()",
+			CorrelationID: cid.String(),
 		}
 	}
 }
@@ -66,10 +68,10 @@ func DetermineAYFromISIRLine(l string, cid uuid.UUID) (fsaconstants.AwardYear, *
 func getAwardYearValue(l string) (string, *fsaerrors.Error) {
 	if len(l) < 1 {
 		msg := "unable to determine AY value from an empty record"
-		slog.Error(msg)
 		return "", &fsaerrors.Error{
 			Code:    fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,
 			Message: msg,
+			Func:    "getAwardYearValue()",
 		}
 	}
 	// As of June 2025, the AY field is always the first character of the line
