@@ -32,9 +32,12 @@ const (
 type Error struct {
 	Code           ErrorCode
 	Message        string
+	Func           string
+	CorrelationID  string
 	UpstreamErrors []*Error
 }
 
 func (e *Error) Error() string {
-	return fmt.Sprintf("code: %d, message: %s, upstream errors: %d", e.Code, e.Message, len(e.UpstreamErrors))
+	return fmt.Sprintf("code: %d, message: %s, func: %s, correlationID: %s, upstream errors: %d",
+		e.Code, e.Message, e.Func, e.CorrelationID, len(e.UpstreamErrors))
 }
