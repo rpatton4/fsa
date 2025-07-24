@@ -28,6 +28,8 @@ type ISIRParser interface {
 // Factory method to create a parser which understands the format for the given award year
 func CreateISIRParser(y fsaconstants.AwardYear, cid uuid.UUID) (ISIRParser, *fsaerrors.Error) {
 	switch y {
+	case fsaconstants.AwardYear2425:
+		return &ISIRParser2526{}, nil // 2425 is the same as 2526
 	case fsaconstants.AwardYear2526:
 		return &ISIRParser2526{}, nil
 	default:

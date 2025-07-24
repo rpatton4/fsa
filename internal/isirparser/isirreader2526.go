@@ -5565,7 +5565,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 	return r, nil
 }
 
-// proprocessString trims whitespace and checks for any indications of a null or missing value from FSA, returning an empty string if so
+// preprocessString trims whitespace and checks for any indications of a null or missing value from FSA, returning an empty string if so
 // in order for the zero value to be used in the struct.  For example, "N/A" is a common value used by FSA to indicate a null value.
 func preprocessString(s string) string {
 	p := strings.TrimSpace(s)
