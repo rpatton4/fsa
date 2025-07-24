@@ -3713,6 +3713,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 			Code:          fsaerrors.ISIRParseError,
 			Message:       fmt.Sprintf("input ISIR string is the incorrect length, expected %d and received %d, correlation id='%s'", totalISIRLength2526, len(record), cid.String()),
 			Func:          "ParseISIR()",
+			Record:        record,
 			CorrelationID: cid.String(),
 		}
 	}

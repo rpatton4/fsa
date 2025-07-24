@@ -34,6 +34,7 @@ type Error struct {
 	Message        string
 	Func           string
 	CorrelationID  string
+	Record         string // The record that caused the error, if applicable
 	UpstreamErrors []*Error
 }
 
