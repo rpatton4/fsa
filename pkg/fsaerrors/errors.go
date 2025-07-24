@@ -39,6 +39,6 @@ type Error struct {
 }
 
 func (e *Error) Error() string {
-	return fmt.Sprintf("code: %d, message: %s, func: %s, correlationID: %s, upstream errors: %d",
-		e.Code, e.Message, e.Func, e.CorrelationID, len(e.UpstreamErrors))
+	return fmt.Sprintf("code: %d, message: %s, func: %s, correlationID: %s upstream errors: %d source record: `%s`",
+		e.Code, e.Message, e.Func, e.CorrelationID, len(e.UpstreamErrors), e.Record)
 }
