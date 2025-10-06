@@ -3798,7 +3798,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentGradeLevel: preprocessString(record[studentGradeLevelStartIndex2526-1 : (studentGradeLevelStartIndex2526-1)+studentGradeLevelLength2526]), // Field # 41
 
-		StudentFirstBachelorsDegreeBefore2526: preprocessString(record[studentFirstBachelorsDegreeBefore2526StartIndex2526-1 : (studentFirstBachelorsDegreeBefore2526StartIndex2526-1)+studentFirstBachelorsDegreeBefore2526Length2526]), // Field # 42
+		StudentHasBachelorsDegree: preprocessString(record[studentFirstBachelorsDegreeBefore2526StartIndex2526-1 : (studentFirstBachelorsDegreeBefore2526StartIndex2526-1)+studentFirstBachelorsDegreeBefore2526Length2526]), // Field # 42
 
 		StudentPursuingTeacherCertification: preprocessString(record[studentPursuingTeacherCertificationStartIndex2526-1 : (studentPursuingTeacherCertificationStartIndex2526-1)+studentPursuingTeacherCertificationLength2526]), // Field # 43
 

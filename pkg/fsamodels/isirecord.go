@@ -129,7 +129,7 @@ type ISIRecord struct {
 	StudentGradeLevel string `json:",omitempty"`
 
 	// Field # 42
-	StudentFirstBachelorsDegreeBefore2526 string `json:",omitempty"`
+	StudentHasBachelorsDegree string `json:",omitempty"`
 
 	// Field # 43
 	StudentPursuingTeacherCertification string `json:",omitempty"`

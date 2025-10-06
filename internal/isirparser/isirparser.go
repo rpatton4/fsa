@@ -15,6 +15,7 @@ package isirparser
 
 import (
 	"fmt"
+
 	"github.com/google/uuid"
 	"github.com/rpatton4/fsa/pkg/fsaconstants"
 	"github.com/rpatton4/fsa/pkg/fsaerrors"
@@ -32,6 +33,8 @@ func CreateISIRParser(y fsaconstants.AwardYear, cid uuid.UUID) (ISIRParser, *fsa
 		return &ISIRParser2526{}, nil // 2425 is the same as 2526
 	case fsaconstants.AwardYear2526:
 		return &ISIRParser2526{}, nil
+	case fsaconstants.AwardYear2627:
+		return &ISIRParser2627{}, nil
 	default:
 		return nil, &fsaerrors.Error{
 			Code:          fsaerrors.LibraryConfigurationErrorISIRAYUnrecognized,

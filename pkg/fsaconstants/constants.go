@@ -22,6 +22,9 @@ const AwardYear2526 AwardYear = 6
 // Indicates the Award Year 2026-2027 using the same value as Ed does within the ISIR data stream
 const AwardYear2627 AwardYear = 7
 
+// Indicates the Award Year 2027-2028 using the same value as Ed does within the ISIR data stream
+const AwardYear2728 AwardYear = 8
+
 func (ay AwardYear) String() string {
 	switch ay {
 	case AwardYear2425:
@@ -30,6 +33,8 @@ func (ay AwardYear) String() string {
 		return "2526"
 	case AwardYear2627:
 		return "2627"
+	case AwardYear2728:
+		return "2728"
 	default:
 		return "Unknown"
 	}
