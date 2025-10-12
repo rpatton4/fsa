@@ -4974,7 +4974,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSGraduateCombinedLoanLimitFlag: preprocessString(record[nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1 : (nsldsGraduateCombinedLoanLimitFlagStartIndex2526-1)+nsldsGraduateCombinedLoanLimitFlagLength2526]), // Field # 636
 
-		NSLDSLEULimitIndicator: preprocessString(record[nsldsLEULimitIndicatorStartIndex2526-1 : (nsldsLEULimitIndicatorStartIndex2526-1)+nsldsLEULimitIndicatorLength2526]), // Field # 637
+		NSLDSPellLifetimeLimitFlag: preprocessString(record[nsldsLEULimitIndicatorStartIndex2526-1 : (nsldsLEULimitIndicatorStartIndex2526-1)+nsldsLEULimitIndicatorLength2526]), // Field # 637
 
 		NSLDSPellLifetimeEligibilityUsed: preprocessString(record[nsldsPellLifetimeEligibilityUsedStartIndex2526-1 : (nsldsPellLifetimeEligibilityUsedStartIndex2526-1)+nsldsPellLifetimeEligibilityUsedLength2526]), // Field # 638
 
@@ -4994,7 +4994,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSPellTransactionNumber1: preprocessString(record[nsldsPellTransactionNumber1StartIndex2526-1 : (nsldsPellTransactionNumber1StartIndex2526-1)+nsldsPellTransactionNumber1Length2526]), // Field # 647
 
-		NSLDSPellLastDisbursementDate1: parseISIRDate2526(preprocessString(record[nsldsPellLastDisbursementDate1StartIndex2526-1 : (nsldsPellLastDisbursementDate1StartIndex2526-1)+nsldsPellLastDisbursementDate1Length2526])), // Field # 648
+		NSLDSPellDisbursementDate1: parseISIRDate2526(preprocessString(record[nsldsPellLastDisbursementDate1StartIndex2526-1 : (nsldsPellLastDisbursementDate1StartIndex2526-1)+nsldsPellLastDisbursementDate1Length2526])), // Field # 648
 
 		NSLDSPellScheduledAmount1: preprocessString(record[nsldsPellScheduledAmount1StartIndex2526-1 : (nsldsPellScheduledAmount1StartIndex2526-1)+nsldsPellScheduledAmount1Length2526]), // Field # 649
 
@@ -5170,7 +5170,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSLoanConfirmedLoanSubsidyStatus1: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus1StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus1Length2526]), // Field # 741
 
-		NSLDSLoanSubsidyStatusDate1: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate1StartIndex2526-1 : (nsldsLoanSubsidyStatusDate1StartIndex2526-1)+nsldsLoanSubsidyStatusDate1Length2526])), // Field # 742
+		NSLDSLoanConfirmedLoanSubsidyStatusDate1: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate1StartIndex2526-1 : (nsldsLoanSubsidyStatusDate1StartIndex2526-1)+nsldsLoanSubsidyStatusDate1Length2526])), // Field # 742
 
 		NSLDSLoanSequenceNumber2: preprocessString(record[nsldsLoanSequenceNumber2StartIndex2526-1 : (nsldsLoanSequenceNumber2StartIndex2526-1)+nsldsLoanSequenceNumber2Length2526]), // Field # 744
 
@@ -5214,7 +5214,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSLoanConfirmedLoanSubsidyStatus2: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus2StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus2Length2526]), // Field # 764
 
-		NSLDSLoanSubsidyStatusDate2: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate2StartIndex2526-1 : (nsldsLoanSubsidyStatusDate2StartIndex2526-1)+nsldsLoanSubsidyStatusDate2Length2526])), // Field # 765
+		NSLDSLoanConfirmedLoanSubsidyStatusDate2: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate2StartIndex2526-1 : (nsldsLoanSubsidyStatusDate2StartIndex2526-1)+nsldsLoanSubsidyStatusDate2Length2526])), // Field # 765
 
 		NSLDSLoanSequenceNumber3: preprocessString(record[nsldsLoanSequenceNumber3StartIndex2526-1 : (nsldsLoanSequenceNumber3StartIndex2526-1)+nsldsLoanSequenceNumber3Length2526]), // Field # 767
 
@@ -5258,7 +5258,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSLoanConfirmedLoanSubsidyStatus3: preprocessString(record[nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1 : (nsldsLoanConfirmedLoanSubsidyStatus3StartIndex2526-1)+nsldsLoanConfirmedLoanSubsidyStatus3Length2526]), // Field # 787
 
-		NSLDSLoanSubsidyStatusDate3: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate3StartIndex2526-1 : (nsldsLoanSubsidyStatusDate3StartIndex2526-1)+nsldsLoanSubsidyStatusDate3Length2526])), // Field # 788
+		NSLDSLoanConfirmedLoanSubsidyStatusDate3: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate3StartIndex2526-1 : (nsldsLoanSubsidyStatusDate3StartIndex2526-1)+nsldsLoanSubsidyStatusDate3Length2526])), // Field # 788
 
 		NSLDSLoanSequenceNumber4: preprocessString(record[nsldsLoanSequenceNumber4StartIndex2526-1 : (nsldsLoanSequenceNumber4StartIndex2526-1)+nsldsLoanSequenceNumber4Length2526]), // Field # 790
 
@@ -5392,7 +5392,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSLoanSubsidyStatusDate6: parseISIRDate2526(preprocessString(record[nsldsLoanSubsidyStatusDate6StartIndex2526-1 : (nsldsLoanSubsidyStatusDate6StartIndex2526-1)+nsldsLoanSubsidyStatusDate6Length2526])), // Field # 857
 
-		FTILabelStart: preprocessString(record[ftiLabelStartStartIndex2526-1 : (ftiLabelStartStartIndex2526-1)+ftiLabelStartLength2526]), // Field # 861
+		//FTILabelStart: preprocessString(record[ftiLabelStartStartIndex2526-1 : (ftiLabelStartStartIndex2526-1)+ftiLabelStartLength2526]), // Field # 861
 
 		StudentFTIMReturnedTaxYear: preprocessString(record[studentFTIMReturnedTaxYearStartIndex2526-1 : (studentFTIMReturnedTaxYearStartIndex2526-1)+studentFTIMReturnedTaxYearLength2526]), // Field # 862
 

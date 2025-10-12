@@ -6,8 +6,9 @@ package fsamodels
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/google/uuid"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type ISIRecord struct {
@@ -1893,7 +1894,7 @@ type ISIRecord struct {
 	NSLDSGraduateCombinedLoanLimitFlag string `json:",omitempty"`
 
 	// Field # 637
-	NSLDSLEULimitIndicator string `json:",omitempty"`
+	NSLDSPellLifetimeLimitFlag string `json:",omitempty"`
 
 	// Field # 638
 	NSLDSPellLifetimeEligibilityUsed string `json:",omitempty"`
@@ -1923,7 +1924,7 @@ type ISIRecord struct {
 	NSLDSPellTransactionNumber1 string `json:",omitempty"`
 
 	// Field # 648
-	NSLDSPellLastDisbursementDate1 *time.Time `json:",omitempty"`
+	NSLDSPellDisbursementDate1 *time.Time `json:",omitempty"`
 
 	// Field # 649
 	NSLDSPellScheduledAmount1 string `json:",omitempty"`
@@ -2187,7 +2188,7 @@ type ISIRecord struct {
 	NSLDSLoanConfirmedLoanSubsidyStatus1 string `json:",omitempty"`
 
 	// Field # 742
-	NSLDSLoanSubsidyStatusDate1 *time.Time `json:",omitempty"`
+	NSLDSLoanConfirmedLoanSubsidyStatusDate1 *time.Time `json:",omitempty"`
 
 	// Field # 744
 	NSLDSLoanSequenceNumber2 string `json:",omitempty"`
@@ -2253,7 +2254,7 @@ type ISIRecord struct {
 	NSLDSLoanConfirmedLoanSubsidyStatus2 string `json:",omitempty"`
 
 	// Field # 765
-	NSLDSLoanSubsidyStatusDate2 *time.Time `json:",omitempty"`
+	NSLDSLoanConfirmedLoanSubsidyStatusDate2 *time.Time `json:",omitempty"`
 
 	// Field # 767
 	NSLDSLoanSequenceNumber3 string `json:",omitempty"`
@@ -2319,7 +2320,7 @@ type ISIRecord struct {
 	NSLDSLoanConfirmedLoanSubsidyStatus3 string `json:",omitempty"`
 
 	// Field # 788
-	NSLDSLoanSubsidyStatusDate3 *time.Time `json:",omitempty"`
+	NSLDSLoanConfirmedLoanSubsidyStatusDate3 *time.Time `json:",omitempty"`
 
 	// Field # 790
 	NSLDSLoanSequenceNumber4 string `json:",omitempty"`
@@ -2520,7 +2521,7 @@ type ISIRecord struct {
 	NSLDSLoanSubsidyStatusDate6 *time.Time `json:",omitempty"`
 
 	// Field # 861
-	FTILabelStart string `json:",omitempty"`
+	//FTILabelStart string `json:",omitempty"`
 
 	// Field # 862
 	StudentFTIMReturnedTaxYear string `json:",omitempty"`
