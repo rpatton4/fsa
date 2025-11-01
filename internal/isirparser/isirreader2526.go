@@ -5,11 +5,12 @@ package isirparser
 
 import (
 	"fmt"
+	"strings"
+	"time"
+
 	"github.com/google/uuid"
 	"github.com/rpatton4/fsa/pkg/fsaerrors"
 	"github.com/rpatton4/fsa/pkg/fsamodels"
-	"strings"
-	"time"
 )
 
 // <editor-fold desc="Field Definition Constants">
@@ -1375,8 +1376,8 @@ const studentGradeLevelInCollegeCHVFlagsStartIndex2526 int = 3226
 const studentGradeLevelInCollegeCHVFlagsLength2526 int = 3
 
 // Field # 347
-const studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526 int = 3229
-const studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsLength2526 int = 3
+const studentHasBachelorsDegreeCHVFlagsStartIndex2526 int = 3229
+const studentHasBachelorsDegreeCHVFlagsLength2526 int = 3
 
 // Field # 348
 const studentPursuingTeacherCertificationCHVFlagsStartIndex2526 int = 3232
@@ -3362,10 +3363,6 @@ const nsldsLoanConfirmedLoanSubsidyStatus6Length2526 int = 1
 const nsldsLoanSubsidyStatusDate6StartIndex2526 int = 5828
 const nsldsLoanSubsidyStatusDate6Length2526 int = 8
 
-// Field # 861
-const ftiLabelStartStartIndex2526 int = 7086
-const ftiLabelStartLength2526 int = 11
-
 // Field # 862
 const studentFTIMReturnedTaxYearStartIndex2526 int = 7097
 const studentFTIMReturnedTaxYearLength2526 int = 4
@@ -3908,7 +3905,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentManuallyEnteredIncomeTaxPaid: preprocessString(record[studentManuallyEnteredIncomeTaxPaidStartIndex2526-1 : (studentManuallyEnteredIncomeTaxPaidStartIndex2526-1)+studentManuallyEnteredIncomeTaxPaidLength2526]), // Field # 96
 
-		StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear: preprocessString(record[studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 97
+		StudentManuallyEnteredEITCReceivedDuringTaxYear: preprocessString(record[studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1 : (studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearStartIndex2526-1)+studentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYearLength2526]), // Field # 97
 
 		StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther: preprocessString(record[studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1 : (studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherStartIndex2526-1)+studentManuallyEnteredDeductiblePaymentsToIRAKeoghOtherLength2526]), // Field # 98
 
@@ -4398,7 +4395,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentGradeLevelInCollegeCHVFlags: preprocessString(record[studentGradeLevelInCollegeCHVFlagsStartIndex2526-1 : (studentGradeLevelInCollegeCHVFlagsStartIndex2526-1)+studentGradeLevelInCollegeCHVFlagsLength2526]), // Field # 346
 
-		StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags: preprocessString(record[studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1 : (studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsStartIndex2526-1)+studentFirstBachelorsDegreeBeforeSchoolYearCHVFlagsLength2526]), // Field # 347
+		StudentHasBachelorsDegreeCHVFlags: preprocessString(record[studentHasBachelorsDegreeCHVFlagsStartIndex2526-1 : (studentHasBachelorsDegreeCHVFlagsStartIndex2526-1)+studentHasBachelorsDegreeCHVFlagsLength2526]), // Field # 347
 
 		StudentPursuingTeacherCertificationCHVFlags: preprocessString(record[studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1 : (studentPursuingTeacherCertificationCHVFlagsStartIndex2526-1)+studentPursuingTeacherCertificationCHVFlagsLength2526]), // Field # 348
 
@@ -4420,7 +4417,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentPersonalCircumstancesNoneOfTheAboveCHVFlags: preprocessString(record[studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1 : (studentPersonalCircumstancesNoneOfTheAboveCHVFlagsStartIndex2526-1)+studentPersonalCircumstancesNoneOfTheAboveCHVFlagsLength2526]), // Field # 357
 
-		StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags: preprocessString(record[studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1 : (studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1)+studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsLength2526]), // Field # 358
+		StudentUnaccompaniedHomelessOrIsUnaccompaniedCHVFlags: preprocessString(record[studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1 : (studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsStartIndex2526-1)+studentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRIskSelfSupportingCHVFlagsLength2526]), // Field # 358
 
 		StudentUnaccompaniedAndHomelessGeneralCHVFlags: preprocessString(record[studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1 : (studentUnaccompaniedAndHomelessGeneralCHVFlagsStartIndex2526-1)+studentUnaccompaniedAndHomelessGeneralCHVFlagsLength2526]), // Field # 359
 
@@ -4904,7 +4901,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSAggregateCombinedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateCombinedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateCombinedOutstandingPrincipalBalanceLength2526]), // Field # 601
 
-		NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceLength2526]), // Field # 602
+		NSLDSAggregateUnallocConsolidatedOutstandingPrincipalBalance: preprocessString(record[nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1 : (nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceStartIndex2526-1)+nsldsAggregateUnallocatedConsolidatedOutstandingPrincipalBalanceLength2526]), // Field # 602
 
 		NSLDSAggregateTEACHLoanPrincipalBalance: preprocessString(record[nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1 : (nsldsAggregateTEACHLoanPrincipalBalanceStartIndex2526-1)+nsldsAggregateTEACHLoanPrincipalBalanceLength2526]), // Field # 603
 

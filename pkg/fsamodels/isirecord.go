@@ -295,7 +295,7 @@ type ISIRecord struct {
 	StudentManuallyEnteredIncomeTaxPaid string `json:",omitempty"`
 
 	// Field # 97
-	StudentManuallyEnteredEarnedIncomeTaxCreditReceivedDuringTaxYear string `json:",omitempty"`
+	StudentManuallyEnteredEITCReceivedDuringTaxYear string `json:",omitempty"`
 
 	// Field # 98
 	StudentManuallyEnteredDeductiblePaymentsToIRAKeoghOther string `json:",omitempty"`
@@ -1030,7 +1030,7 @@ type ISIRecord struct {
 	StudentGradeLevelInCollegeCHVFlags string `json:",omitempty"`
 
 	// Field # 347
-	StudentFirstBachelorsDegreeBeforeSchoolYearCHVFlags string `json:",omitempty"`
+	StudentHasBachelorsDegreeCHVFlags string `json:",omitempty"`
 
 	// Field # 348
 	StudentPursuingTeacherCertificationCHVFlags string `json:",omitempty"`
@@ -1063,7 +1063,7 @@ type ISIRecord struct {
 	StudentPersonalCircumstancesNoneOfTheAboveCHVFlags string `json:",omitempty"`
 
 	// Field # 358
-	StudentUnaccompaniedHomelessYouthOrIsUnaccompaniedAtRiskSelfSupportingCHVFlags string `json:",omitempty"`
+	StudentUnaccompaniedHomelessOrIsUnaccompaniedCHVFlags string `json:",omitempty"`
 
 	// Field # 359
 	StudentUnaccompaniedAndHomelessGeneralCHVFlags string `json:",omitempty"`
@@ -1789,7 +1789,7 @@ type ISIRecord struct {
 	NSLDSAggregateCombinedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 602
-	NSLDSAggregateUnallocatedConsolidatedOutstandingPrincipalBalance string `json:",omitempty"`
+	NSLDSAggregateUnallocConsolidatedOutstandingPrincipalBalance string `json:",omitempty"`
 
 	// Field # 603
 	NSLDSAggregateTEACHLoanPrincipalBalance string `json:",omitempty"`
