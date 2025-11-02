@@ -1,7 +1,7 @@
 # Makefile for the OrbundAwardIntegrationJob batch job
 
 main_package_path =./
-binary_name = OrbundAwardIntegrationJob
+binary_name = fsa_cli
 build_dir = ./bin
 
 .PHONY: help

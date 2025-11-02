@@ -4977,7 +4977,7 @@ func (parser *ISIRParser2526) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		NSLDSSULAFlag: preprocessString(record[nsldsSULAFlagStartIndex2526-1 : (nsldsSULAFlagStartIndex2526-1)+nsldsSULAFlagLength2526]), // Field # 639
 
-		NSLDSSubsidizedLimitEligibilityFlag: preprocessString(record[nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1 : (nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1)+nsldsSubsidizedLimitEligibilityFlagLength2526]), // Field # 640
+		NSLDSSubsidizedLimitEligibilityUsed: preprocessString(record[nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1 : (nsldsSubsidizedLimitEligibilityFlagStartIndex2526-1)+nsldsSubsidizedLimitEligibilityFlagLength2526]), // Field # 640
 
 		NSLDSUnusualEnrollmentHistoryFlag: preprocessString(record[nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1 : (nsldsUnusualEnrollmentHistoryFlagStartIndex2526-1)+nsldsUnusualEnrollmentHistoryFlagLength2526]), // Field # 641
 

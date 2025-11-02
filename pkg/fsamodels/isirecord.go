@@ -1903,7 +1903,7 @@ type ISIRecord struct {
 	NSLDSSULAFlag string `json:",omitempty"`
 
 	// Field # 640
-	NSLDSSubsidizedLimitEligibilityFlag string `json:",omitempty"`
+	NSLDSSubsidizedLimitEligibilityUsed string `json:",omitempty"`
 
 	// Field # 641
 	NSLDSUnusualEnrollmentHistoryFlag string `json:",omitempty"`
