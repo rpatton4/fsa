@@ -17,7 +17,7 @@ import (
 const isirDateLayout2627 = "20060102"    // CCYYMMDD
 const isirDateShortLayout2627 = "200601" // CCYYMM
 
-const totalISIRLength2627 int = 7704
+const totalISIRLength2627 int = 7944
 
 // Field # 1
 const yearIndicatorStartIndex2627 int = 1

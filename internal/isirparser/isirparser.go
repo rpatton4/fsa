@@ -57,6 +57,8 @@ func DetermineAYFromISIRLine(l string, cid uuid.UUID) (fsaconstants.AwardYear, *
 		return fsaconstants.AwardYear2425, nil
 	case "6":
 		return fsaconstants.AwardYear2526, nil
+	case "7":
+		return fsaconstants.AwardYear2627, nil
 	default:
 		msg := fmt.Sprintf("unable to determine the Award Year from the ISIR, value='%s'", v)
 		return fsaconstants.AwardYearUnknown, &fsaerrors.Error{
