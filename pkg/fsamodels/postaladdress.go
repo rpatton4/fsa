@@ -20,8 +20,10 @@ type PostalAddress struct {
 	CountryCode       fsatypes.CountryCode
 }
 
+// NewPostalAddress Creates a new PostalAddress from the provided parameters. The parameters are validated for
+// length in regards to what COD will accept.
 func NewPostalAddress(line1 string, line2 string, line3 string, city string, stateProvinceCode string, postalCode string, countryCode string) (*PostalAddress, *fsaerrors.Error) {
-	var pa PostalAddress
+	var newAddress PostalAddress
 	wrapperError := fsaerrors.Error{
 		Code:    fsaerrors.PostalAddressValidationFailed,
 		Message: "postal address failed validation, see upstream errors",
@@ -32,7 +34,8 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.AddressLine1 = l1
+
+		newAddress.AddressLine1 = l1
 	}
 
 	if line2 != "" {
@@ -40,7 +43,8 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.AddressLine2 = l2
+
+		newAddress.AddressLine2 = l2
 	}
 
 	if line3 != "" {
@@ -48,7 +52,8 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.AddressLine2 = l3
+
+		newAddress.AddressLine2 = l3
 	}
 
 	if city != "" {
@@ -56,7 +61,8 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.City = c
+
+		newAddress.City = c
 	}
 
 	// Default to US / Domestic
@@ -65,13 +71,15 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.StateProvinceCode = sp
+
+		newAddress.StateProvinceCode = sp
 	} else {
 		sp, err := fsatypes.NewInternationalStateProvince(stateProvinceCode)
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.StateProvinceCode = sp
+
+		newAddress.StateProvinceCode = sp
 	}
 
 	if postalCode != "" {
@@ -79,7 +87,8 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.PostalCode = pc
+
+		newAddress.PostalCode = pc
 	}
 
 	if countryCode != "" {
@@ -87,11 +96,12 @@ func NewPostalAddress(line1 string, line2 string, line3 string, city string, sta
 		if err != nil {
 			wrapperError.UpstreamErrors = append(wrapperError.UpstreamErrors, err)
 		}
-		pa.CountryCode = cc
+
+		newAddress.CountryCode = cc
 	}
 
 	if len(wrapperError.UpstreamErrors) > 0 {
 		return nil, &wrapperError
 	}
-	return &pa, nil
+	return &newAddress, nil
 }

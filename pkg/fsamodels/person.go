@@ -4,8 +4,9 @@
 package fsamodels
 
 import (
-	"github.com/rpatton4/fsa/pkg/fsatypes"
 	"time"
+
+	"github.com/rpatton4/fsa/pkg/fsatypes"
 )
 
 // Person A representation of a person (versus student, parent etc.) with properties commonly
@@ -27,10 +28,10 @@ type Person struct {
 
 	DriversLicenseState string
 	// Free text identifier assigned by the state which is present on a driver's license
-	DriversLicenseId fsatypes.StateID
-	// CommonRecord calls this the SchoolAssignedPersonId, but it would more typically be known as the
+	DriversLicenseID fsatypes.StateID
+	// CommonRecord calls this the SchoolAssignedPersonID, but it would more typically be known as the
 	// Student ID.
-	SchoolAssignedPersonId fsatypes.StudentID
+	SchoolAssignedPersonID fsatypes.StudentID
 
 	// Name: The following fields are used to construct the Person's Name complex type along with the
 	// previously declared LastName

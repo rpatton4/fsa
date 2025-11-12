@@ -1,0 +1,77 @@
+version: "2"
+
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  default: all
+  #enable:
+  #  - tagliatelle
+
+  settings:
+    tagliatelle:
+      case:
+        rules:
+          json: pascal
+        extended-rules:
+          json:
+            case: pascal
+            extra-initialisms: true
+            initialism-overrides:
+              FAFSAUUID: true
+              UUID: true
+              FPS: true
+              SAI: true
+              SSN: true
+              ITIN: true
+              HS: true
+              TRIO: true
+              FAA: true
+              EITC: true
+              SNAP: true
+              TANF: true
+              WIC: true
+              NR: true
+              IRA: true
+              ABDEFH: true
+              FTI: true
+              US: true
+              IRAR: true
+              EIN: true
+              IASG: true
+              NSLDS: true
+              SAAI: true
+              ISIR: true
+              CHV: true
+              SSNCHV: true
+              FPSC: true
+              NSLDSFSEOG: true
+              SSA: true
+              NSLDSSAI1: true
+              NSLDSSAI2: true
+              NSLDSSAI3: true
+              NSLDSTEACH: true
+              FTIM: true
+              FTIMIRA: true
+              TEACH: true
+              FISAP: true
+              IRS: true
+              DHS: true
+              ABDEFHCHV: true
+              FTIMIRS: true
+              VA: true
+              NRCHV: true
+              FTICHV: true
+              WICCHV: true
+              TANFCHV: true
+              SNAPCHV: true
+              EITCCHV: true
+              ITINCHV: true
+              FAACHV: true
+              TRIOCHV: true
+              HSCHV: true
+              NSLDSSULA: true
+              PLUS: true
+              
+        use-field-name: true

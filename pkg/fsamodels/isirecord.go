@@ -988,19 +988,19 @@ type ISIRecord struct {
 	StudentMiddleNameCHVFlags string `json:",omitempty"`
 
 	// Field # 333
-	StudentLastNameCHVFLags string `json:",omitempty"`
+	StudentLastNameCHVFlags string `json:",omitempty"`
 
 	// Field # 334
-	StudentSuffixCHVFLags string `json:",omitempty"`
+	StudentSuffixCHVFlags string `json:",omitempty"`
 
 	// Field # 335
-	StudentDateOfBirthCHVFLags string `json:",omitempty"`
+	StudentDateOfBirthCHVFlags string `json:",omitempty"`
 
 	// Field # 336
 	StudentSSNCHVFlags string `json:",omitempty"`
 
 	// Field # 337
-	StudentITINCHVFLags string `json:",omitempty"`
+	StudentITINCHVFlags string `json:",omitempty"`
 
 	// Field # 338
 	StudentPhoneNumberCHVFlags string `json:",omitempty"`
@@ -1012,7 +1012,7 @@ type ISIRecord struct {
 	StudentStreetAddressCHVFlags string `json:",omitempty"`
 
 	// Field # 341
-	StudentCityCHVFLags string `json:",omitempty"`
+	StudentCityCHVFlags string `json:",omitempty"`
 
 	// Field # 342
 	StudentStateCHVFlags string `json:",omitempty"`

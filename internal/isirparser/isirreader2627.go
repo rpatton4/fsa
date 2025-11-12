@@ -4402,15 +4402,15 @@ func (parser *ISIRParser2627) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentMiddleNameCHVFlags: preprocessString2627(record[studentMiddleNameCHVFlagsStartIndex2627-1 : (studentMiddleNameCHVFlagsStartIndex2627-1)+studentMiddleNameCHVFlagsLength2627]), // Field # 332
 
-		StudentLastNameCHVFLags: preprocessString2627(record[studentLastNameCHVFLagsStartIndex2627-1 : (studentLastNameCHVFLagsStartIndex2627-1)+studentLastNameCHVFLagsLength2627]), // Field # 333
+		StudentLastNameCHVFlags: preprocessString2627(record[studentLastNameCHVFLagsStartIndex2627-1 : (studentLastNameCHVFLagsStartIndex2627-1)+studentLastNameCHVFLagsLength2627]), // Field # 333
 
-		StudentSuffixCHVFLags: preprocessString2627(record[studentSuffixCHVFLagsStartIndex2627-1 : (studentSuffixCHVFLagsStartIndex2627-1)+studentSuffixCHVFLagsLength2627]), // Field # 334
+		StudentSuffixCHVFlags: preprocessString2627(record[studentSuffixCHVFLagsStartIndex2627-1 : (studentSuffixCHVFLagsStartIndex2627-1)+studentSuffixCHVFLagsLength2627]), // Field # 334
 
-		StudentDateOfBirthCHVFLags: preprocessString2627(record[studentDateOfBirthCHVFLagsStartIndex2627-1 : (studentDateOfBirthCHVFLagsStartIndex2627-1)+studentDateOfBirthCHVFLagsLength2627]), // Field # 335
+		StudentDateOfBirthCHVFlags: preprocessString2627(record[studentDateOfBirthCHVFLagsStartIndex2627-1 : (studentDateOfBirthCHVFLagsStartIndex2627-1)+studentDateOfBirthCHVFLagsLength2627]), // Field # 335
 
 		StudentSSNCHVFlags: preprocessString2627(record[studentSSNCHVFlagsStartIndex2627-1 : (studentSSNCHVFlagsStartIndex2627-1)+studentSSNCHVFlagsLength2627]), // Field # 336
 
-		StudentITINCHVFLags: preprocessString2627(record[studentITINCHVFLagsStartIndex2627-1 : (studentITINCHVFLagsStartIndex2627-1)+studentITINCHVFLagsLength2627]), // Field # 337
+		StudentITINCHVFlags: preprocessString2627(record[studentITINCHVFLagsStartIndex2627-1 : (studentITINCHVFLagsStartIndex2627-1)+studentITINCHVFLagsLength2627]), // Field # 337
 
 		StudentPhoneNumberCHVFlags: preprocessString2627(record[studentPhoneNumberCHVFlagsStartIndex2627-1 : (studentPhoneNumberCHVFlagsStartIndex2627-1)+studentPhoneNumberCHVFlagsLength2627]), // Field # 338
 
@@ -4418,7 +4418,7 @@ func (parser *ISIRParser2627) ParseISIR(record string, cid uuid.UUID) (fsamodels
 
 		StudentStreetAddressCHVFlags: preprocessString2627(record[studentStreetAddressCHVFlagsStartIndex2627-1 : (studentStreetAddressCHVFlagsStartIndex2627-1)+studentStreetAddressCHVFlagsLength2627]), // Field # 340
 
-		StudentCityCHVFLags: preprocessString2627(record[studentCityCHVFLagsStartIndex2627-1 : (studentCityCHVFLagsStartIndex2627-1)+studentCityCHVFLagsLength2627]), // Field # 341
+		StudentCityCHVFlags: preprocessString2627(record[studentCityCHVFLagsStartIndex2627-1 : (studentCityCHVFLagsStartIndex2627-1)+studentCityCHVFLagsLength2627]), // Field # 341
 
 		StudentStateCHVFlags: preprocessString2627(record[studentStateCHVFlagsStartIndex2627-1 : (studentStateCHVFlagsStartIndex2627-1)+studentStateCHVFlagsLength2627]), // Field # 342
 
